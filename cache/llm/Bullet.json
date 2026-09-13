@@ -1,70 +1,170 @@
 {
   "name": "Bullet",
   "model": "gemini-3.5-flash-lite",
-  "prompt_hash": "5d200d4a422ff4b6e62f43b38410f98445beb6d0c295cf0ea63b9353e62c465f",
-  "created_at": "2026-09-13T12:33:17Z",
+  "prompt_hash": "295ac3570afeb169e4c8c25cf1a58a489ae82557ca7c7182bff167e8323240e4",
+  "created_at": "2026-09-13T12:49:47Z",
   "attempts": 1,
-  "raw_response": "{\n  \"team\": {\n    \"summary\": \"Adi and Alex, YC S26 founders fresh out of AppLovin and Citadel, built Bullet after six pivots.\",\n    \"source\": \"hn_post\"\n  },\n  \"product\": {\n    \"summary\": \"Bullet is a faster coding agent and harness featuring model routing, targeted search, context hygiene, and parallel tool execution.\",\n    \"source\": \"hn_post\"\n  },\n  \"market\": {\n    \"summary\": \"Software engineers and developers experiencing latency with existing coding agents like Claude Code and Codex.\",\n    \"source\": \"hn_post\"\n  },\n  \"risks\": [\n    {\n      \"risk\": \"Proprietary binary-only distribution raises supply chain security and trust concerns among engineers.\",\n      \"source\": \"comments\"\n    },\n    {\n      \"risk\": \"Harness features can be easily cloned or replicated via custom prompts and open-source alternatives.\",\n      \"source\": \"comments\"\n    },\n    {\n      \"risk\": \"History of frequent pivots makes some users skeptical about long-term commitment.\",\n      \"source\": \"comments\"\n    }\n  ],\n  \"scores\": {\n    \"founder_depth\": {\n      \"score\": 19,\n      \"why\": \"Founders have background at AppLovin and Citadel, show deep domain engagement, and shipped multiple iterations before landing on Bullet.\",\n      \"source\": \"hn_post\"\n    },\n    \"shipping_evidence\": {\n      \"score\": 19,\n      \"why\": \"Live downloadable desktop app, CLI tool via npm (`@trybullet/cli`), video demo, benchmark results, and regular updates.\",\n      \"source\": \"hn_post\"\n    },\n    \"demand_signal\": {\n      \"score\": 14,\n      \"why\": \"Solid HN engagement with 121 points and 89 comments, with active users testing and giving feedback, though no named revenue customers yet.\",\n      \"source\": \"hn_post\"\n    },\n    \"defensibility\": {\n      \"score\": 7,\n      \"why\": \"Commenters point out that it is a wrapper/harness easily replicated with prompts or open source, and lacks open-source transparency.\",\n      \"source\": \"comments\"\n    }\n  },\n  \"thesis_fit\": \"on-thesis\",\n  \"thesis_fit_reason\": \"Bullet is an AI dev tool (coding agent harness) built by technical founders for software engineers.\",\n  \"case_summary\": \"Strong engineering velocity and shipping evidence, offset by low defensibility as an easily cloneable closed-source harness.\",\n  \"would_change_my_mind\": [\n    \"Open-sourcing the core harness to build community trust\",\n    \"Demonstrating proprietary moats beyond routing and prompting\",\n    \"Showing sustained commercial traction or paying enterprise users\"\n  ],\n  \"data_gaps\": [\n    \"Revenue and customer metrics\",\n    \"Exact model provider architecture and API routing mechanics\"\n  ]\n}",
+  "raw_response": "{\n  \"team\": {\n    \"summary\": \"Founders Adi and Alex are YC S26 founders fresh out of working at AppLovin and Citadel, where they built background in optimization and agent context.\",\n    \"evidence\": [\n      {\n        \"quote\": \"Hi HN! We’re Adi and Alex, founders of Bullet, a faster coding agent.\",\n        \"source\": \"hn_post\"\n      },\n      {\n        \"quote\": \"We were fresh out of working at AppLovin and Citadel, and naturally thought we were on a sure path to startup success.\",\n        \"source\": \"hn_post\"\n      }\n    ]\n  },\n  \"product\": {\n    \"summary\": \"Bullet is a faster coding agent harness featuring model routing, targeted search, aggressive context hygiene, and parallel execution.\",\n    \"evidence\": [\n      {\n        \"quote\": \"Bullet is a faster coding agent\",\n        \"source\": \"hn_post\"\n      },\n      {\n        \"quote\": \"Same model → tools → results pattern. A tighter loop around it.\",\n        \"source\": \"site\"\n      }\n    ]\n  },\n  \"market\": {\n    \"size_hint\": {\n      \"summary\": \"Target market consists of developers and software engineers utilizing coding agents who experience latency issues.\",\n      \"evidence\": [\n        {\n          \"quote\": \"We hope that you guys try out Bullet if you are suffering with speed as much as we were\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    },\n    \"competitors\": {\n      \"summary\": \"Commenters and post text mention several competing coding agents, harnesses, and tools like Claude Code, Codex, OpenCode, and mini-SWE-agent.\",\n      \"names\": [\n        \"Claude Code\",\n        \"Codex\",\n        \"OpenCode\",\n        \"mini-SWE-agent\",\n        \"Fable\"\n      ],\n      \"evidence\": [\n        {\n          \"quote\": \"Let’s take on Claude Code and Codex, we can do it!\",\n          \"source\": \"hn_post\",\n          \"author\": \"hn_post\"\n        },\n        {\n          \"quote\": \"I would stick to OpenCode.\",\n          \"source\": \"comments\",\n          \"author\": \"esafak\"\n        }\n      ]\n    },\n    \"why_now\": {\n      \"summary\": \"Coding agents like Claude Code and Codex have gained massive usage, but engineers suffer from slow iteration speed and high latency.\",\n      \"evidence\": [\n        {\n          \"quote\": \"We were spending hours waiting for coding agents like Claude Code and Codex\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    }\n  },\n  \"risks\": [\n    {\n      \"risk\": \"Proprietary software model lacking open-source code makes users hesitant to trust it with root access and binary execution.\",\n      \"evidence\": [\n        {\n          \"quote\": \"So, I am supposed to just give a random binary on a website that may or may not be malware... and I am not even allowed to review the code?\",\n          \"source\": \"comments\"\n        }\n      ]\n    },\n    {\n      \"risk\": \"Many commenters note that harness improvements can easily be replicated via prompting or custom scripts, raising defensibility questions.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Proprietary software is no longer a moat, and for something like this it just makes your software very hard to trust.\",\n          \"source\": \"comments\"\n        }\n      ]\n    },\n    {\n      \"risk\": \"History of numerous rapid pivots prior to landing on this product idea.\",\n      \"evidence\": [\n        {\n          \"quote\": \"So, Bullet started as an AI hedge fund, a browser-use agent, synthetic financial data (oof), a mobile IDE, and a bunch of other things.\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    }\n  ],\n  \"scores\": {\n    \"founder_depth\": {\n      \"score\": 15,\n      \"why\": \"Founders have technical backgrounds at quantitative and ad-tech firms (AppLovin, Citadel) and have shipped multiple product iterations, but lack deep long-term open-source domain history in this specific category.\",\n      \"evidence\": [\n        {\n          \"quote\": \"We were fresh out of working at AppLovin and Citadel\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    },\n    \"shipping_evidence\": {\n      \"score\": 20,\n      \"why\": \"The product is live with a downloadable client, CLI installation via npm, and benchmark test results published.\",\n      \"evidence\": [\n        {\n          \"quote\": \"INSTALL CLI npm install -g @trybullet/cli $ bullet\",\n          \"source\": \"site\"\n        },\n        {\n          \"quote\": \"On SWE-bench Verified, Bullet resolved 479/500 (95.8%) in one attempt\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    },\n    \"demand_signal\": {\n      \"score\": 15,\n      \"why\": \"Solid HN launch engagement with 121 points and 89 comments, including users testing it out, though no revenue or named enterprise customers are mentioned.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Points: 121 Comments: 89\",\n          \"source\": \"hn_post\"\n        },\n        {\n          \"quote\": \"I'm giving it a try on a new project I'm spinning up. It does seem faster\",\n          \"source\": \"comments\"\n        }\n      ]\n    },\n    \"defensibility\": {\n      \"score\": 5,\n      \"why\": \"Multiple commenters point out that the harness features can be replicated via prompts, custom scripts, or open-source configurations.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Proprietary software is no longer a moat, and for something like this it just makes your software very hard to trust.\",\n          \"source\": \"comments\"\n        }\n      ]\n    }\n  },\n  \"thesis_fit\": \"on-thesis\",\n  \"thesis_fit_reason\": \"Bullet is an AI dev tool coding agent harness used by software engineers, offered as free software downloads and CLI packages.\",\n  \"case_summary\": \"Strong shipping velocity and active engagement on launch day, offset by concerns over software defensibility and closed-source trust.\",\n  \"would_change_my_mind\": [\n    \"Open-sourcing the harness repository to address supply chain security concerns.\",\n    \"Demonstrating strong recurring revenue or retention metrics from engineering teams.\",\n    \"Proving structural technical advantages that cannot be replicated via standard prompting.\"\n  ],\n  \"data_gaps\": [\n    \"Revenue or paying customer metrics\",\n    \"GitHub repository link or open-source availability\",\n    \"Details on active user retention and usage frequency\"\n  ]\n}",
   "analysis": {
     "team": {
-      "summary": "Adi and Alex, YC S26 founders fresh out of AppLovin and Citadel, built Bullet after six pivots.",
-      "source": "hn_post"
+      "summary": "Founders Adi and Alex are YC S26 founders fresh out of working at AppLovin and Citadel, where they built background in optimization and agent context.",
+      "evidence": [
+        {
+          "quote": "Hi HN! We’re Adi and Alex, founders of Bullet, a faster coding agent.",
+          "source": "hn_post"
+        },
+        {
+          "quote": "We were fresh out of working at AppLovin and Citadel, and naturally thought we were on a sure path to startup success.",
+          "source": "hn_post"
+        }
+      ]
     },
     "product": {
-      "summary": "Bullet is a faster coding agent and harness featuring model routing, targeted search, context hygiene, and parallel tool execution.",
-      "source": "hn_post"
+      "summary": "Bullet is a faster coding agent harness featuring model routing, targeted search, aggressive context hygiene, and parallel execution.",
+      "evidence": [
+        {
+          "quote": "Bullet is a faster coding agent",
+          "source": "hn_post"
+        },
+        {
+          "quote": "Same model → tools → results pattern. A tighter loop around it.",
+          "source": "site"
+        }
+      ]
     },
     "market": {
-      "summary": "Software engineers and developers experiencing latency with existing coding agents like Claude Code and Codex.",
-      "source": "hn_post"
+      "size_hint": {
+        "summary": "Target market consists of developers and software engineers utilizing coding agents who experience latency issues.",
+        "evidence": [
+          {
+            "quote": "We hope that you guys try out Bullet if you are suffering with speed as much as we were",
+            "source": "hn_post"
+          }
+        ]
+      },
+      "competitors": {
+        "summary": "Commenters and post text mention several competing coding agents, harnesses, and tools like Claude Code, Codex, OpenCode, and mini-SWE-agent.",
+        "names": [
+          "Claude Code",
+          "Codex",
+          "OpenCode",
+          "mini-SWE-agent",
+          "Fable"
+        ],
+        "evidence": [
+          {
+            "quote": "Let’s take on Claude Code and Codex, we can do it!",
+            "source": "hn_post",
+            "author": "hn_post"
+          },
+          {
+            "quote": "I would stick to OpenCode.",
+            "source": "comments",
+            "author": "esafak"
+          }
+        ]
+      },
+      "why_now": {
+        "summary": "Coding agents like Claude Code and Codex have gained massive usage, but engineers suffer from slow iteration speed and high latency.",
+        "evidence": [
+          {
+            "quote": "We were spending hours waiting for coding agents like Claude Code and Codex",
+            "source": "hn_post"
+          }
+        ]
+      }
     },
     "risks": [
       {
-        "risk": "Proprietary binary-only distribution raises supply chain security and trust concerns among engineers.",
-        "source": "comments"
+        "risk": "Proprietary software model lacking open-source code makes users hesitant to trust it with root access and binary execution.",
+        "evidence": [
+          {
+            "quote": "So, I am supposed to just give a random binary on a website that may or may not be malware... and I am not even allowed to review the code?",
+            "source": "comments"
+          }
+        ]
       },
       {
-        "risk": "Harness features can be easily cloned or replicated via custom prompts and open-source alternatives.",
-        "source": "comments"
+        "risk": "Many commenters note that harness improvements can easily be replicated via prompting or custom scripts, raising defensibility questions.",
+        "evidence": [
+          {
+            "quote": "Proprietary software is no longer a moat, and for something like this it just makes your software very hard to trust.",
+            "source": "comments"
+          }
+        ]
       },
       {
-        "risk": "History of frequent pivots makes some users skeptical about long-term commitment.",
-        "source": "comments"
+        "risk": "History of numerous rapid pivots prior to landing on this product idea.",
+        "evidence": [
+          {
+            "quote": "So, Bullet started as an AI hedge fund, a browser-use agent, synthetic financial data (oof), a mobile IDE, and a bunch of other things.",
+            "source": "hn_post"
+          }
+        ]
       }
     ],
     "scores": {
       "founder_depth": {
-        "score": 19,
-        "why": "Founders have background at AppLovin and Citadel, show deep domain engagement, and shipped multiple iterations before landing on Bullet.",
-        "source": "hn_post"
+        "score": 15,
+        "why": "Founders have technical backgrounds at quantitative and ad-tech firms (AppLovin, Citadel) and have shipped multiple product iterations, but lack deep long-term open-source domain history in this specific category.",
+        "evidence": [
+          {
+            "quote": "We were fresh out of working at AppLovin and Citadel",
+            "source": "hn_post"
+          }
+        ]
       },
       "shipping_evidence": {
-        "score": 19,
-        "why": "Live downloadable desktop app, CLI tool via npm (`@trybullet/cli`), video demo, benchmark results, and regular updates.",
-        "source": "hn_post"
+        "score": 20,
+        "why": "The product is live with a downloadable client, CLI installation via npm, and benchmark test results published.",
+        "evidence": [
+          {
+            "quote": "INSTALL CLI npm install -g @trybullet/cli $ bullet",
+            "source": "site"
+          },
+          {
+            "quote": "On SWE-bench Verified, Bullet resolved 479/500 (95.8%) in one attempt",
+            "source": "hn_post"
+          }
+        ]
       },
       "demand_signal": {
-        "score": 14,
-        "why": "Solid HN engagement with 121 points and 89 comments, with active users testing and giving feedback, though no named revenue customers yet.",
-        "source": "hn_post"
+        "score": 15,
+        "why": "Solid HN launch engagement with 121 points and 89 comments, including users testing it out, though no revenue or named enterprise customers are mentioned.",
+        "evidence": [
+          {
+            "quote": "Points: 121 Comments: 89",
+            "source": "hn_post"
+          },
+          {
+            "quote": "I'm giving it a try on a new project I'm spinning up. It does seem faster",
+            "source": "comments"
+          }
+        ]
       },
       "defensibility": {
-        "score": 7,
-        "why": "Commenters point out that it is a wrapper/harness easily replicated with prompts or open source, and lacks open-source transparency.",
-        "source": "comments"
+        "score": 5,
+        "why": "Multiple commenters point out that the harness features can be replicated via prompts, custom scripts, or open-source configurations.",
+        "evidence": [
+          {
+            "quote": "Proprietary software is no longer a moat, and for something like this it just makes your software very hard to trust.",
+            "source": "comments"
+          }
+        ]
       }
     },
     "thesis_fit": "on-thesis",
-    "thesis_fit_reason": "Bullet is an AI dev tool (coding agent harness) built by technical founders for software engineers.",
-    "case_summary": "Strong engineering velocity and shipping evidence, offset by low defensibility as an easily cloneable closed-source harness.",
+    "thesis_fit_reason": "Bullet is an AI dev tool coding agent harness used by software engineers, offered as free software downloads and CLI packages.",
+    "case_summary": "Strong shipping velocity and active engagement on launch day, offset by concerns over software defensibility and closed-source trust.",
     "would_change_my_mind": [
-      "Open-sourcing the core harness to build community trust",
-      "Demonstrating proprietary moats beyond routing and prompting",
-      "Showing sustained commercial traction or paying enterprise users"
+      "Open-sourcing the harness repository to address supply chain security concerns.",
+      "Demonstrating strong recurring revenue or retention metrics from engineering teams.",
+      "Proving structural technical advantages that cannot be replicated via standard prompting."
     ],
     "data_gaps": [
-      "Revenue and customer metrics",
-      "Exact model provider architecture and API routing mechanics"
+      "Revenue or paying customer metrics",
+      "GitHub repository link or open-source availability",
+      "Details on active user retention and usage frequency"
     ]
   }
 }

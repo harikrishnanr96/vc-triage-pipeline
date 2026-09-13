@@ -48,8 +48,9 @@ THESIS_SCOPE = """IN SCOPE:
 OUT OF SCOPE:
 - Hardware and physical products, including robots and devices, even when
   sold to developers.
-- Manufacturing, logistics, or brokerage services where software is a layer
-  over physical work.
+- Manufacturing, logistics, or brokerage services where customers pay for
+  physical goods or orders, even if the company also ships software such as
+  plugins or automation to win or run that work.
 - Healthcare, pharma, consumer, fintech, insurance, and other vertical
   businesses that are not AI infrastructure or engineering tools."""
 
@@ -63,9 +64,9 @@ THESIS: [THESIS]
 
 [SCOPE]
 
-THESIS FIT: decide "on-thesis" or "off-thesis" only from what the product is
-and who uses it. Never decide fit from quality, traction, team strength, or
-defensibility. Those belong in the scores.
+THESIS FIT: decide "on-thesis" or "off-thesis" only from what the product is,
+who uses it, and what customers pay for. Never decide fit from quality,
+traction, team strength, or defensibility. Those belong in the scores.
 
 Analyse ONLY from the text provided. If something isn't in the
 text, write "not found in sources". Never use outside knowledge
@@ -86,21 +87,33 @@ Reserve 18-25 for strong, explicit evidence in the sources.
   named competitors; 9-17 some workflow, integration, or data depth;
   18-25 proprietary data, a hard technical moat, or network effects.
 
+EVIDENCE: every claim needs "evidence", a list of 1-3 short quotes copied
+word for word from the SOURCES (each quote under 25 words). Do not paraphrase
+inside a quote, do not fix typos, do not join text from different places.
+"source" is the section the quote came from: hn_post, comments, site, or
+github. For comments, also give "author", the commenter's username exactly as
+shown. If nothing supports a claim, write "not found in sources" as the
+summary and return an empty evidence list.
+
 Return JSON only, no markdown fences:
 
 {
-  "team": {"summary": "...", "source": "hn_post|comments|site|github"},
-  "product": {"summary": "...", "source": "..."},
-  "market": {"summary": "...", "source": "..."},
-  "risks": [{"risk": "...", "source": "..."}],
+  "team":    {"summary": "...", "evidence": [{"quote": "...", "source": "hn_post"}]},
+  "product": {"summary": "...", "evidence": [...]},
+  "market": {
+    "size_hint":   {"summary": "...", "evidence": [...]},
+    "competitors": {"summary": "...", "names": ["..."], "evidence": [{"quote": "...", "source": "comments", "author": "..."}]},
+    "why_now":     {"summary": "...", "evidence": [...]}
+  },
+  "risks": [{"risk": "...", "evidence": [...]}],
   "scores": {
-    "founder_depth":     {"score": 0-25, "why": "...", "source": "..."},
-    "shipping_evidence": {"score": 0-25, "why": "...", "source": "..."},
-    "demand_signal":     {"score": 0-25, "why": "...", "source": "..."},
-    "defensibility":     {"score": 0-25, "why": "...", "source": "..."}
+    "founder_depth":     {"score": 0-25, "why": "...", "evidence": [...]},
+    "shipping_evidence": {"score": 0-25, "why": "...", "evidence": [...]},
+    "demand_signal":     {"score": 0-25, "why": "...", "evidence": [...]},
+    "defensibility":     {"score": 0-25, "why": "...", "evidence": [...]}
   },
   "thesis_fit": "on-thesis|off-thesis",
-  "thesis_fit_reason": "one sentence on what the product is and who uses it",
+  "thesis_fit_reason": "one sentence on what the product is, who uses it, and what they pay for",
   "case_summary": "one sentence: the strongest point for and against",
   "would_change_my_mind": ["...", "...", "..."],
   "data_gaps": ["..."]
@@ -115,6 +128,8 @@ REQUIRED_KEYS = (
     "thesis_fit_reason", "case_summary", "would_change_my_mind", "data_gaps",
 )
 SCORE_KEYS = ("founder_depth", "shipping_evidence", "demand_signal", "defensibility")
+MARKET_KEYS = ("size_hint", "competitors", "why_now")
+TEMPERATURE = 0  # lowest run-to-run variance, though scores can still drift slightly
 
 # The verdict is set here, not by the model, so the thesis is applied the same
 # way to every company. Off-thesis is always Pass.
@@ -135,7 +150,7 @@ def get_model():
         genai.configure(api_key=api_key)
         _model = genai.GenerativeModel(
             MODEL_NAME,
-            generation_config={"response_mime_type": "application/json", "temperature": 0.2},
+            generation_config={"response_mime_type": "application/json", "temperature": TEMPERATURE},
         )
     return _model
 
@@ -181,9 +196,9 @@ def safe_filename(name):
     return re.sub(r"[^A-Za-z0-9._-]+", "_", name).strip("._") or "unnamed"
 
 
-def build_sources(row):
-    lines = [
-        "=== HN POST [source: hn_post] ===",
+def source_sections(row):
+    """Return {source name: text}, the exact text the model sees for each source."""
+    hn_post = "\n".join([
         "Name: {}".format(row.get("name")),
         "YC batch: {}".format(row.get("yc_batch") or "unknown"),
         "Tagline: {}".format(row.get("tagline") or ""),
@@ -191,38 +206,101 @@ def build_sources(row):
         "Points: {}  Comments: {}".format(row.get("points"), row.get("num_comments")),
         "",
         row.get("hn_post_text") or "(no post text)",
-        "",
-        "=== COMMENTS [source: comments] ===",
-    ]
+    ])
+
     comments = row.get("hn_comments") or []
-    if not comments:
-        lines.append("(no comments)")
-    for comment in comments:
-        lines.append("- {} ({}): {}".format(
-            comment.get("author"), (comment.get("created_at") or "")[:10], comment.get("text")))
+    comment_lines = ["- {} ({}): {}".format(
+        c.get("author"), (c.get("created_at") or "")[:10], c.get("text")) for c in comments]
 
-    lines += ["", "=== WEBSITE TEXT [source: site] ==="]
     if row.get("site_text"):
-        lines.append(row["site_text"])
+        site = row["site_text"]
     elif row.get("github"):
-        lines.append("(no website fetched: the launch linked to a GitHub repository)")
+        site = "(no website fetched: the launch linked to a GitHub repository)"
     elif not row.get("site_url"):
-        lines.append("(no website: text-only launch post)")
+        site = "(no website: text-only launch post)"
     else:
-        lines.append("(website could not be fetched)")
+        site = "(website could not be fetched)"
 
-    lines += ["", "=== GITHUB [source: github] ==="]
     github = row.get("github")
     if github:
-        lines += [
+        github_text = "\n".join([
             "Repository: {}".format(github.get("repo")),
             "Stars: {}".format(github.get("stars")),
             "Last commit: {}".format(github.get("last_commit_date")),
             "Open issues (excluding pull requests): {}".format(github.get("open_issues")),
-        ]
+        ])
     else:
-        lines.append("(no GitHub repository linked from the launch)")
-    return "\n".join(lines)
+        github_text = "(no GitHub repository linked from the launch)"
+
+    return {
+        "hn_post": hn_post,
+        "comments": "\n".join(comment_lines) or "(no comments)",
+        "site": site,
+        "github": github_text,
+    }
+
+
+SECTION_TITLES = {"hn_post": "HN POST", "comments": "COMMENTS", "site": "WEBSITE TEXT", "github": "GITHUB"}
+
+
+def build_sources(row):
+    return "\n\n".join("=== {} [source: {}] ===\n{}".format(SECTION_TITLES[name], name, text)
+                       for name, text in source_sections(row).items())
+
+
+def normalise(text):
+    # Models swap curly quotes and dashes, turn double quotes into single ones to
+    # keep the JSON valid, and re-flow whitespace, even when told to copy exactly.
+    # None of that alters meaning, so ignore it when matching.
+    text = (text or "").lower()
+    for fancy, plain in (("‘", "'"), ("’", "'"), ("“", "'"), ("”", "'"),
+                         ('"', "'"), ("–", "-"), ("—", "-"), ("…", "...")):
+        text = text.replace(fancy, plain)
+    return " ".join(text.split())
+
+
+def quote_found(item, sections, row):
+    """True when every fragment of the quote appears verbatim in its claimed source."""
+    source = item.get("source")
+    if source == "comments" and item.get("author"):
+        haystack = "\n".join(c.get("text") or "" for c in row.get("hn_comments") or []
+                             if c.get("author") == item["author"])
+    else:
+        haystack = sections.get(source, "")
+    haystack = normalise(haystack)
+    # An ellipsis marks a deliberate cut, so each side must match on its own.
+    fragments = [f.strip(" .,;:\"'") for f in normalise(item.get("quote")).split("...")]
+    fragments = [f for f in fragments if f]
+    return bool(fragments) and bool(haystack) and all(f in haystack for f in fragments)
+
+
+def evidence_lists(analysis):
+    """Yield (label, evidence list) for every claim in an analysis."""
+    for key in ("team", "product"):
+        yield key, (analysis.get(key) or {}).get("evidence")
+    for key in MARKET_KEYS:
+        yield "market." + key, ((analysis.get("market") or {}).get(key) or {}).get("evidence")
+    for i, risk in enumerate(analysis.get("risks") or []):
+        yield "risks[{}]".format(i), (risk or {}).get("evidence")
+    for key in SCORE_KEYS:
+        yield "scores." + key, ((analysis.get("scores") or {}).get(key) or {}).get("evidence")
+
+
+def check_quotes(analysis, row):
+    """Mark each quote verified or not, and summarise. Mutates the analysis in place."""
+    sections = source_sections(row)
+    total, verified, unverified = 0, 0, []
+    for label, evidence in evidence_lists(analysis):
+        for item in evidence if isinstance(evidence, list) else []:
+            if not isinstance(item, dict):
+                continue
+            item["verified"] = quote_found(item, sections, row)
+            total += 1
+            if item["verified"]:
+                verified += 1
+            else:
+                unverified.append({"claim": label, "source": item.get("source"), "quote": item.get("quote")})
+    return {"total": total, "verified": verified, "unverified": unverified}
 
 
 def parse_response(text):
@@ -237,6 +315,10 @@ def parse_response(text):
     missing = [key for key in REQUIRED_KEYS if key not in data]
     if missing:
         return None, "missing keys: {}".format(", ".join(missing))
+    market = data["market"] if isinstance(data["market"], dict) else {}
+    missing = [key for key in MARKET_KEYS if not isinstance(market.get(key), dict)]
+    if missing:
+        return None, "market is missing: {}".format(", ".join(missing))
     if data["thesis_fit"] not in ("on-thesis", "off-thesis"):
         return None, "thesis_fit must be on-thesis or off-thesis, got {!r}".format(data["thesis_fit"])
     scores = data["scores"] if isinstance(data["scores"], dict) else {}
@@ -263,8 +345,9 @@ def analyze(row):
     """Return (analysis, error, from_cache)."""
     prompt = (PROMPT_TEMPLATE.replace("[THESIS]", THESIS).replace("[SCOPE]", THESIS_SCOPE)
               .replace("[SOURCES]", build_sources(row)))
-    # The model name is part of the key so switching models never serves a stale answer.
-    prompt_hash = hashlib.sha256((MODEL_NAME + "\n" + prompt).encode("utf-8")).hexdigest()
+    # Model and temperature are part of the key so changing either never serves a stale answer.
+    key = "{}\ntemperature={}\n{}".format(MODEL_NAME, TEMPERATURE, prompt)
+    prompt_hash = hashlib.sha256(key.encode("utf-8")).hexdigest()
     cache_path = os.path.join(CACHE_DIR, safe_filename(row["name"]) + ".json")
 
     if os.path.exists(cache_path):
@@ -323,16 +406,20 @@ for row in rows:
 
     row["analysis"] = analysis
     row["analysis_error"] = error
-    row["score"], row["verdict"], row["verdict_rule"] = None, None, None
+    row["model"] = MODEL_NAME
+    row["thesis"] = THESIS
+    row["score"], row["verdict"], row["verdict_rule"], row["quote_check"] = None, None, None, None
     if analysis is not None:
-        # Applied to cached answers too, so changing a cutoff needs no API calls.
+        # Applied to cached answers too, so changing a cutoff or the quote check
+        # needs no API calls.
         row["score"], row["verdict"], row["verdict_rule"] = decide(analysis)
+        row["quote_check"] = check_quotes(analysis, row)
     results.append(row)
 
     if analysis is not None:
-        print("{:<20.20} {:<6} {:<15} score={:<4} {:<11} {}".format(
-            str(row.get("name")), "cached" if from_cache else "live",
-            row["verdict"], row["score"], analysis["thesis_fit"], row["verdict_rule"]))
+        print("{:<20.20} {:<6} {:<15} score={:<4} {:<11} quotes {}/{}".format(
+            str(row.get("name")), "cached" if from_cache else "live", row["verdict"], row["score"],
+            analysis["thesis_fit"], row["quote_check"]["verified"], row["quote_check"]["total"]))
     else:
         print("{:<20.20} ERROR  {}".format(str(row.get("name")), " ".join(error.split())[:150]))
 

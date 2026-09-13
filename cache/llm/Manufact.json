@@ -1,66 +1,174 @@
 {
   "name": "Manufact",
   "model": "gemini-3.5-flash-lite",
-  "prompt_hash": "98ff656efc82d67144fc116f32161f264f7dbc1234899a2857843dafb22c96f8",
-  "created_at": "2026-09-13T12:34:10Z",
+  "prompt_hash": "b6d689057ee96cebfa732ca2f9a7f356b1dc8d2fce7d414dab20ed60be5f72ae",
+  "created_at": "2026-09-13T12:50:40Z",
   "attempts": 1,
-  "raw_response": "{\n  \"team\": {\n    \"summary\": \"Pietro and Luigi, cofounders of Manufact (formerly mcp-use), building open source SDKs for Model Context Protocol (MCP) since April 2025.\",\n    \"source\": \"hn_post\"\n  },\n  \"product\": {\n    \"summary\": \"Manufact is an MCP vertical cloud (Vercel-for-MCP) that handles hosting, cross-client testing across ChatGPT and Claude, publishing checks for app stores, cloud inspection, and analytics for MCP apps and servers.\",\n    \"source\": \"site\"\n  },\n  \"market\": {\n    \"summary\": \"Dev teams and tech companies building MCP apps and servers for AI chat platforms and agent marketplaces.\",\n    \"source\": \"hn_post\"\n  },\n  \"risks\": [\n    {\n      \"risk\": \"Skepticism in the community regarding whether MCP is a durable protocol or a passing trend / dead end compared to CLI tools and skills.\",\n      \"source\": \"comments\"\n    },\n    {\n      \"risk\": \"Potential platform risk if major AI hosts (OpenAI, Anthropic) change protocol specs or absorb hosting/testing natively.\",\n      \"source\": \"hn_post\"\n    }\n  ],\n  \"scores\": {\n    \"founder_depth\": {\n      \"score\": 19,\n      \"why\": \"Founders have been building open source MCP SDKs (mcp-use) since April 2025, demonstrating deep domain expertise and prior shipped open-source tools with significant adoption.\",\n      \"source\": \"hn_post\"\n    },\n    \"shipping_evidence\": {\n      \"score\": 22,\n      \"why\": \"Fully live product with 10M+ SDK downloads, 10k+ GitHub stars, production templates, active cloud platform deployment, and documentation.\",\n      \"source\": \"site\"\n    },\n    \"demand_signal\": {\n      \"score\": 18,\n      \"why\": \"Strong HN engagement (111 points, 70 comments), named customers like PredictLeads, AgentMail, and Meilleurtaux, and active developers reporting long-term usage.\",\n      \"source\": \"hn_post\"\n    },\n    \"defensibility\": {\n      \"score\": 14,\n      \"why\": \"Built on top of an open-source framework and protocol (MCP) with several competing frameworks emerging (like Skybridge), though capturing the deployment, testing, and compliance workflow creates stickiness.\",\n      \"source\": \"comments\"\n    }\n  },\n  \"thesis_fit\": \"on-thesis\",\n  \"thesis_fit_reason\": \"Manufact is an AI infrastructure and developer tool platform providing hosting, testing, and deployment for Model Context Protocol (MCP) apps and servers used by software engineering teams.\",\n  \"case_summary\": \"Strong open-source developer adoption and comprehensive product surface for MCP workflows, countered by debate over the long-term architectural durability of MCP.\",\n  \"would_change_my_mind\": [\n    \"Major AI clients build native hosting and store compliance tools that bypass third-party MCP clouds.\",\n    \"Developer migration away from MCP toward raw CLI tools or custom skills accelerates permanently.\",\n    \"Net revenue retention or paid enterprise conversion rates stall.\"\n  ],\n  \"data_gaps\": [\n    \"Exact revenue figures or paid customer count.\",\n    \"Founders' prior professional background and exits before mcp-use.\"\n  ]\n}",
+  "raw_response": "{\n  \"team\": {\n    \"summary\": \"Pietro and Luigi are the co-founders of Manufact, previously known as mcp-use, who have been building open-source SDKs and tools for the Model Context Protocol (MCP) since April 2025.\",\n    \"evidence\": [\n      {\n        \"quote\": \"Hi HN, we are Pietro and Luigi, cofounders of Manufact ( https://manufact.com ), a cloud for MCP apps and servers.\",\n        \"source\": \"hn_post\"\n      },\n      {\n        \"quote\": \"We have been working on MCP since April 2025.\",\n        \"source\": \"hn_post\"\n      }\n    ]\n  },\n  \"product\": {\n    \"summary\": \"Manufact is an MCP vertical cloud platform that provides hosting, cross-client testing, analytics, and publishing submission packs for Model Context Protocol (MCP) apps and servers, built by the creators of the open-source mcp-use SDKs.\",\n    \"evidence\": [\n      {\n        \"quote\": \"Manufact is an MCP vertical cloud designed for dev teams putting MCP Apps and servers in production.\",\n        \"source\": \"hn_post\"\n      },\n      {\n        \"quote\": \"Manufact (formerly mcp-use) is a platform for deploying, testing, observing, and publishing MCP servers and MCP apps.\",\n        \"source\": \"site\"\n      }\n    ]\n  },\n  \"market\": {\n    \"size_hint\": {\n      \"summary\": \"The target market consists of developer teams building MCP apps and servers for AI clients and agent harnesses like ChatGPT, Claude, Cursor, and others, backed by open-source traction of 10M+ SDK downloads and 10k+ GitHub stars.\",\n      \"evidence\": [\n        {\n          \"quote\": \"10M+ SDK downloads across Python and TypeScript.\",\n          \"source\": \"site\"\n        },\n        {\n          \"quote\": \"10k+ GitHub stars. Open-source since day one.\",\n          \"source\": \"site\"\n        }\n      ]\n    },\n    \"competitors\": {\n      \"summary\": \"Other tools and frameworks in the MCP hosting and development ecosystem include Skybridge and Stainless.\",\n      \"names\": [\n        \"Skybridge\",\n        \"Stainless\"\n      ],\n      \"evidence\": [\n        {\n          \"quote\": \"You may want to have a look at Skybridge, a TypeScript framework designed to build MCP servers and MCP Apps\",\n          \"source\": \"comments\",\n          \"author\": \"harijoe\"\n        },\n        {\n          \"quote\": \"i'm migrating off stainless after anthropic bought them, we have to be off by september\",\n          \"source\": \"comments\",\n          \"author\": \"ICodeSometimes\"\n        }\n      ]\n    },\n    \"why_now\": {\n      \"summary\": \"AI chat clients are opening up official marketplaces and app stores (such as ChatGPT Apps Store and Claude Connectors) and adopting MCP extension standards, creating an urgent need for deployment, compliance, and testing tooling for developers.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Late 2025. The stores open. ChatGPT starts accepting app submissions, Claude grows its connector directory with selected partners.\",\n          \"source\": \"hn_post\"\n        },\n        {\n          \"quote\": \"Jan 2026. MCP Apps becomes official. SEP-1865 merges as the first MCP extension\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    }\n  },\n  \"risks\": [\n    {\n      \"risk\": \"S skepticism over whether MCP is a durable protocol or a passing architectural fad compared to standard REST APIs or direct tool use.\",\n      \"evidence\": [\n        {\n          \"quote\": \"MCP is a deadend. CLI use is the future.\",\n          \"source\": \"comments\"\n        },\n        {\n          \"quote\": \"Saying MCPs are the new websites is like saying \\\"SOAP\\\" is the new websites, or \\\"REST\\\" is the new websites.\",\n          \"source\": \"comments\"\n        }\n      ]\n    },\n    {\n      \"risk\": \"Platform risk where major AI host providers might build native publishing and testing utilities directly into their ecosystems.\",\n      \"evidence\": [\n        {\n          \"quote\": \"OpenAI and Anthropic review and approve their own listings.\",\n          \"source\": \"site\"\n        }\n      ]\n    }\n  ],\n  \"scores\": {\n    \"founder_depth\": {\n      \"score\": 19,\n      \"why\": \"Founders have been building open-source MCP tooling and SDKs since April 2025 with extensive public GitHub traction and ecosystem depth.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Hi HN, we are Pietro and Luigi, cofounders of Manufact ( https://manufact.com ), a cloud for MCP apps and servers.\",\n          \"source\": \"hn_post\"\n        },\n        {\n          \"quote\": \"We have been working on MCP since April 2025.\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    },\n    \"shipping_evidence\": {\n      \"score\": 22,\n      \"why\": \"Product is live with cloud deployments, an open-source SDK with 10M+ downloads, preview deployments, an active inspector, and usage-based plans.\",\n      \"evidence\": [\n        {\n          \"quote\": \"10M+ SDK downloads across Python and TypeScript.\",\n          \"source\": \"site\"\n        },\n        {\n          \"quote\": \"You can try out https://manufact.com for free today.\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    },\n    \"demand_signal\": {\n      \"score\": 20,\n      \"why\": \"Strong HN engagement with 111 points and 70 comments, explicit customer testimonials, and users stating they have used the product for months.\",\n      \"evidence\": [\n        {\n          \"quote\": \"we've been using manufact for months now. couldn't build mcps another way.\",\n          \"source\": \"comments\",\n          \"author\": \"sebastiancrossa\"\n        },\n        {\n          \"quote\": \"Points: 111 Comments: 70\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    },\n    \"defensibility\": {\n      \"score\": 12,\n      \"why\": \"Provides developer workflow depth around hosting, cross-client test runners, and store compliance checks, but faces open-source alternatives and protocol-layer dependencies.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Manufact is an MCP vertical cloud designed for dev teams putting MCP Apps and servers in production.\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    }\n  },\n  \"thesis_fit\": \"on-thesis\",\n  \"thesis_fit_reason\": \"Manufact is an AI infrastructure and developer tool that provides cloud hosting, testing, and compliance for MCP apps and servers, used by engineering teams paying usage-based fees.\",\n  \"case_summary\": \"Strong open-source adoption and active engineering trail from day one, offset by ongoing debate over the long-term architectural durability of MCP.\",\n  \"would_change_my_mind\": [\n    \"A major shift by developers away from MCP toward alternative agent tool-calling standards.\",\n    \"Clear evidence of recurring enterprise revenue contracts rather than usage-based free tier activity.\",\n    \"Platform risk materializing if Anthropic or OpenAI release native first-party hosting and testing clouds for MCP.\"\n  ],\n  \"data_gaps\": [\n    \"Exact revenue figures or paying customer counts.\",\n    \"Detailed background on founder work history prior to April 2025.\"\n  ]\n}",
   "analysis": {
     "team": {
-      "summary": "Pietro and Luigi, cofounders of Manufact (formerly mcp-use), building open source SDKs for Model Context Protocol (MCP) since April 2025.",
-      "source": "hn_post"
+      "summary": "Pietro and Luigi are the co-founders of Manufact, previously known as mcp-use, who have been building open-source SDKs and tools for the Model Context Protocol (MCP) since April 2025.",
+      "evidence": [
+        {
+          "quote": "Hi HN, we are Pietro and Luigi, cofounders of Manufact ( https://manufact.com ), a cloud for MCP apps and servers.",
+          "source": "hn_post"
+        },
+        {
+          "quote": "We have been working on MCP since April 2025.",
+          "source": "hn_post"
+        }
+      ]
     },
     "product": {
-      "summary": "Manufact is an MCP vertical cloud (Vercel-for-MCP) that handles hosting, cross-client testing across ChatGPT and Claude, publishing checks for app stores, cloud inspection, and analytics for MCP apps and servers.",
-      "source": "site"
+      "summary": "Manufact is an MCP vertical cloud platform that provides hosting, cross-client testing, analytics, and publishing submission packs for Model Context Protocol (MCP) apps and servers, built by the creators of the open-source mcp-use SDKs.",
+      "evidence": [
+        {
+          "quote": "Manufact is an MCP vertical cloud designed for dev teams putting MCP Apps and servers in production.",
+          "source": "hn_post"
+        },
+        {
+          "quote": "Manufact (formerly mcp-use) is a platform for deploying, testing, observing, and publishing MCP servers and MCP apps.",
+          "source": "site"
+        }
+      ]
     },
     "market": {
-      "summary": "Dev teams and tech companies building MCP apps and servers for AI chat platforms and agent marketplaces.",
-      "source": "hn_post"
+      "size_hint": {
+        "summary": "The target market consists of developer teams building MCP apps and servers for AI clients and agent harnesses like ChatGPT, Claude, Cursor, and others, backed by open-source traction of 10M+ SDK downloads and 10k+ GitHub stars.",
+        "evidence": [
+          {
+            "quote": "10M+ SDK downloads across Python and TypeScript.",
+            "source": "site"
+          },
+          {
+            "quote": "10k+ GitHub stars. Open-source since day one.",
+            "source": "site"
+          }
+        ]
+      },
+      "competitors": {
+        "summary": "Other tools and frameworks in the MCP hosting and development ecosystem include Skybridge and Stainless.",
+        "names": [
+          "Skybridge",
+          "Stainless"
+        ],
+        "evidence": [
+          {
+            "quote": "You may want to have a look at Skybridge, a TypeScript framework designed to build MCP servers and MCP Apps",
+            "source": "comments",
+            "author": "harijoe"
+          },
+          {
+            "quote": "i'm migrating off stainless after anthropic bought them, we have to be off by september",
+            "source": "comments",
+            "author": "ICodeSometimes"
+          }
+        ]
+      },
+      "why_now": {
+        "summary": "AI chat clients are opening up official marketplaces and app stores (such as ChatGPT Apps Store and Claude Connectors) and adopting MCP extension standards, creating an urgent need for deployment, compliance, and testing tooling for developers.",
+        "evidence": [
+          {
+            "quote": "Late 2025. The stores open. ChatGPT starts accepting app submissions, Claude grows its connector directory with selected partners.",
+            "source": "hn_post"
+          },
+          {
+            "quote": "Jan 2026. MCP Apps becomes official. SEP-1865 merges as the first MCP extension",
+            "source": "hn_post"
+          }
+        ]
+      }
     },
     "risks": [
       {
-        "risk": "Skepticism in the community regarding whether MCP is a durable protocol or a passing trend / dead end compared to CLI tools and skills.",
-        "source": "comments"
+        "risk": "S skepticism over whether MCP is a durable protocol or a passing architectural fad compared to standard REST APIs or direct tool use.",
+        "evidence": [
+          {
+            "quote": "MCP is a deadend. CLI use is the future.",
+            "source": "comments"
+          },
+          {
+            "quote": "Saying MCPs are the new websites is like saying \"SOAP\" is the new websites, or \"REST\" is the new websites.",
+            "source": "comments"
+          }
+        ]
       },
       {
-        "risk": "Potential platform risk if major AI hosts (OpenAI, Anthropic) change protocol specs or absorb hosting/testing natively.",
-        "source": "hn_post"
+        "risk": "Platform risk where major AI host providers might build native publishing and testing utilities directly into their ecosystems.",
+        "evidence": [
+          {
+            "quote": "OpenAI and Anthropic review and approve their own listings.",
+            "source": "site"
+          }
+        ]
       }
     ],
     "scores": {
       "founder_depth": {
         "score": 19,
-        "why": "Founders have been building open source MCP SDKs (mcp-use) since April 2025, demonstrating deep domain expertise and prior shipped open-source tools with significant adoption.",
-        "source": "hn_post"
+        "why": "Founders have been building open-source MCP tooling and SDKs since April 2025 with extensive public GitHub traction and ecosystem depth.",
+        "evidence": [
+          {
+            "quote": "Hi HN, we are Pietro and Luigi, cofounders of Manufact ( https://manufact.com ), a cloud for MCP apps and servers.",
+            "source": "hn_post"
+          },
+          {
+            "quote": "We have been working on MCP since April 2025.",
+            "source": "hn_post"
+          }
+        ]
       },
       "shipping_evidence": {
         "score": 22,
-        "why": "Fully live product with 10M+ SDK downloads, 10k+ GitHub stars, production templates, active cloud platform deployment, and documentation.",
-        "source": "site"
+        "why": "Product is live with cloud deployments, an open-source SDK with 10M+ downloads, preview deployments, an active inspector, and usage-based plans.",
+        "evidence": [
+          {
+            "quote": "10M+ SDK downloads across Python and TypeScript.",
+            "source": "site"
+          },
+          {
+            "quote": "You can try out https://manufact.com for free today.",
+            "source": "hn_post"
+          }
+        ]
       },
       "demand_signal": {
-        "score": 18,
-        "why": "Strong HN engagement (111 points, 70 comments), named customers like PredictLeads, AgentMail, and Meilleurtaux, and active developers reporting long-term usage.",
-        "source": "hn_post"
+        "score": 20,
+        "why": "Strong HN engagement with 111 points and 70 comments, explicit customer testimonials, and users stating they have used the product for months.",
+        "evidence": [
+          {
+            "quote": "we've been using manufact for months now. couldn't build mcps another way.",
+            "source": "comments",
+            "author": "sebastiancrossa"
+          },
+          {
+            "quote": "Points: 111 Comments: 70",
+            "source": "hn_post"
+          }
+        ]
       },
       "defensibility": {
-        "score": 14,
-        "why": "Built on top of an open-source framework and protocol (MCP) with several competing frameworks emerging (like Skybridge), though capturing the deployment, testing, and compliance workflow creates stickiness.",
-        "source": "comments"
+        "score": 12,
+        "why": "Provides developer workflow depth around hosting, cross-client test runners, and store compliance checks, but faces open-source alternatives and protocol-layer dependencies.",
+        "evidence": [
+          {
+            "quote": "Manufact is an MCP vertical cloud designed for dev teams putting MCP Apps and servers in production.",
+            "source": "hn_post"
+          }
+        ]
       }
     },
     "thesis_fit": "on-thesis",
-    "thesis_fit_reason": "Manufact is an AI infrastructure and developer tool platform providing hosting, testing, and deployment for Model Context Protocol (MCP) apps and servers used by software engineering teams.",
-    "case_summary": "Strong open-source developer adoption and comprehensive product surface for MCP workflows, countered by debate over the long-term architectural durability of MCP.",
+    "thesis_fit_reason": "Manufact is an AI infrastructure and developer tool that provides cloud hosting, testing, and compliance for MCP apps and servers, used by engineering teams paying usage-based fees.",
+    "case_summary": "Strong open-source adoption and active engineering trail from day one, offset by ongoing debate over the long-term architectural durability of MCP.",
     "would_change_my_mind": [
-      "Major AI clients build native hosting and store compliance tools that bypass third-party MCP clouds.",
-      "Developer migration away from MCP toward raw CLI tools or custom skills accelerates permanently.",
-      "Net revenue retention or paid enterprise conversion rates stall."
+      "A major shift by developers away from MCP toward alternative agent tool-calling standards.",
+      "Clear evidence of recurring enterprise revenue contracts rather than usage-based free tier activity.",
+      "Platform risk materializing if Anthropic or OpenAI release native first-party hosting and testing clouds for MCP."
     ],
     "data_gaps": [
-      "Exact revenue figures or paid customer count.",
-      "Founders' prior professional background and exits before mcp-use."
+      "Exact revenue figures or paying customer counts.",
+      "Detailed background on founder work history prior to April 2025."
     ]
   }
 }

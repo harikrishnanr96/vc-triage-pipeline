@@ -1,66 +1,160 @@
 {
   "name": "Speko",
   "model": "gemini-3.5-flash-lite",
-  "prompt_hash": "4af04f82262ed26be977063d7708442fb6485a067eda37d0218b8a90635d2133",
-  "created_at": "2026-09-13T12:33:57Z",
+  "prompt_hash": "41102729af4d771f1a7071135da0e2ed5b9671fa3ca65f1bf0739066d054a640",
+  "created_at": "2026-09-13T12:50:26Z",
   "attempts": 1,
-  "raw_response": "{\n  \"team\": {\n    \"summary\": \"Founder Bek spent four years as cofounder and CTO building voice agents for enterprises across Asia in 10+ languages.\",\n    \"source\": \"hn_post\"\n  },\n  \"product\": {\n    \"summary\": \"Speko is a routing and benchmarking platform for Voice AI (STT, LLM, TTS) providing an API router and an open-source client-side gateway for voice agents.\",\n    \"source\": \"hn_post\"\n  },\n  \"market\": {\n    \"summary\": \"Developers and companies building production voice AI agents who need to optimize across multiple speech and language models.\",\n    \"source\": \"hn_post\"\n  },\n  \"risks\": [\n    {\n      \"risk\": \"Industry trend moving towards one-model end-to-end trained voice models rather than three-piece architectures (STT + LLM + TTS).\",\n      \"source\": \"comments\"\n    },\n    {\n      \"risk\": \"Developers often make model selection decisions once at the start of a project rather than dynamically routing every call.\",\n      \"source\": \"comments\"\n    }\n  ],\n  \"scores\": {\n    \"founder_depth\": {\n      \"score\": 20,\n      \"why\": \"Four years as cofounder and CTO building enterprise voice agents across multiple languages and regions.\",\n      \"source\": \"hn_post\"\n    },\n    \"shipping_evidence\": {\n      \"score\": 19,\n      \"why\": \"Live hosted router platform, public benchmarks, open-source Go gateway binary on GitHub, and documented API integrations.\",\n      \"source\": \"hn_post\"\n    },\n    \"demand_signal\": {\n      \"score\": 16,\n      \"why\": \"118 points and 69 comments on HN with active user interest, customer stories, and 25% weekly usage growth since batch start.\",\n      \"source\": \"hn_post\"\n    },\n    \"defensibility\": {\n      \"score\": 12,\n      \"why\": \"Built on proprietary benchmark data and automated scoring models for TTS naturalness, but faces potential commoditization and doubts on router value vs static choices.\",\n      \"source\": \"hn_post\"\n    }\n  },\n  \"thesis_fit\": \"on-thesis\",\n  \"thesis_fit_reason\": \"Speko provides AI infrastructure and routing tools for voice AI developers.\",\n  \"case_summary\": \"Strong domain expertise and live multi-model benchmarking tooling, but faces strategic questions on whether voice routing will endure as end-to-end multimodal models evolve.\",\n  \"would_change_my_mind\": [\n    \"Widespread adoption of single end-to-end voice models replacing the three-tier STT/LLM/TTS architecture entirely\",\n    \"Evidence that developers prefer static single-vendor selections over dynamic routing in production\",\n    \"Significant enterprise retention and revenue generated purely from the routing layer vs the evaluation tools\"\n  ],\n  \"data_gaps\": [\n    \"Exact current revenue figures and number of paying customers\",\n    \"Detailed metrics on gateway download and self-hosted usage volume\"\n  ]\n}",
+  "raw_response": "{\n  \"team\": {\n    \"summary\": \"Bek is the founder and YC S26 participant, with four years of prior experience as co-founder and CTO building voice agents for enterprises across Asia.\",\n    \"evidence\": [\n      {\n        \"quote\": \"Hi HN! I'm Bek, founder of Speko, a platform that finds an optimal combination of speech-to-text\",\n        \"source\": \"hn_post\"\n      },\n      {\n        \"quote\": \"Before founding Speko, I spent four years as cofounder and CTO building voice agents for enterprises across Asia in 10+ languages.\",\n        \"source\": \"hn_post\"\n      }\n    ]\n  },\n  \"product\": {\n    \"summary\": \"Speko is a router and evaluation platform for voice AI that dynamically selects and connects speech-to-text, LLM, and text-to-speech models via an API or open-source gateway.\",\n    \"evidence\": [\n      {\n        \"quote\": \"a platform that finds an optimal combination of speech-to-text, LLM, and text-to-speech models, given your constraints\",\n        \"source\": \"hn_post\"\n      },\n      {\n        \"quote\": \"The Router for Voice AI. Every speech model, benchmarked language by language, wired into one API.\",\n        \"source\": \"site\"\n      }\n    ]\n  },\n  \"market\": {\n    \"size_hint\": {\n      \"summary\": \"The market encompasses developers and enterprises building voice agents, with external usage growing about 25 percent per week since late June.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Since we started the batch in late June, external usage has grown about 25 percent per week on average\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    },\n    \"competitors\": {\n      \"summary\": \"Commenters noted potential overlap with LiveKit Gateway, Vapi, and existing evaluation tools like LM Arena and Artificial Analysis.\",\n      \"names\": [\n        \"Livekit Gateway\",\n        \"Vapi\",\n        \"LM Arena\",\n        \"Artificial Analysis\"\n      ],\n      \"evidence\": [\n        {\n          \"quote\": \"What is the difference with Livekit Gateway? https://livekit.com/blog/introducing-livekit-inference Or even something more managed like Vapi?\",\n          \"source\": \"comments\",\n          \"author\": \"MikhailTal\"\n        },\n        {\n          \"quote\": \"There are many companies now with evals as a core business model: LM Arena, Artificial Analysis, Prompt foo\",\n          \"source\": \"comments\",\n          \"author\": \"narrationbox\"\n        }\n      ]\n    },\n    \"why_now\": {\n      \"summary\": \"Rapid expansion of voice model options and frequent vendor updates make manual integration and static stacking obsolete, creating a need for automated routing.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Each of those layers offers a dozen credible vendors, and each month there are new models on the market. Almost everyone evaluates once, picks a stack of their choice, and never rechecks\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    }\n  },\n  \"risks\": [\n    {\n      \"risk\": \"Industry shifts toward end-to-end trained omni-models could bypass the multi-vendor STT/LLM/TTS stack architecture.\",\n      \"evidence\": [\n        {\n          \"quote\": \"The industry is very much moving towards one-model-does-all end to end trained similar to LLMs and VLMs.\",\n          \"source\": \"comments\"\n        }\n      ]\n    },\n    {\n      \"risk\": \"Stakeholders often make voice stack decisions only once at the project start, questioning the ongoing value of dynamic routing.\",\n      \"evidence\": [\n        {\n          \"quote\": \"stakeholders usually make this sort of decisions once at the start of the project.\",\n          \"source\": \"comments\"\n        }\n      ]\n    }\n  ],\n  \"scores\": {\n    \"founder_depth\": {\n      \"score\": 22,\n      \"why\": \"The founder spent four years as a cofounder and CTO building enterprise voice agents across multiple languages before launching Speko.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Before founding Speko, I spent four years as cofounder and CTO building voice agents for enterprises across Asia in 10+ languages.\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    },\n    \"shipping_evidence\": {\n      \"score\": 20,\n      \"why\": \"The product features a live hosted router, open-sourced gateway binary under MIT, and published multilingual benchmark boards.\",\n      \"evidence\": [\n        {\n          \"quote\": \"We also open sourced the gateway for teams who want to avoid an extra network hop... ( https://github.com/SpekoAI/gateway , MIT): one Go binary\",\n          \"source\": \"hn_post\"\n        },\n        {\n          \"quote\": \"Every speech model, benchmarked language by language, wired into one API.\",\n          \"source\": \"site\"\n        }\n      ]\n    },\n    \"demand_signal\": {\n      \"score\": 15,\n      \"why\": \"External usage has grown 25% per week since late June, and customer anecdotes indicate early adoption, though revenue figures are not disclosed.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Since we started the batch in late June, external usage has grown about 25 percent per week on average\",\n          \"source\": \"hn_post\"\n        },\n        {\n          \"quote\": \"A team running thousands of calls a day told us: \\\"we can literally go to this dashboard, switch the model, and it will do it for us.\\\"\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    },\n    \"defensibility\": {\n      \"score\": 11,\n      \"why\": \"Moat relies on proprietary evaluation methodologies and benchmark test suites for spontaneous speech and naturalness, though basic routing logic can be replicated.\",\n      \"evidence\": [\n        {\n          \"quote\": \"We trained an automatic scorer for TTS naturalness on our blind head-to-head listening votes\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    }\n  },\n  \"thesis_fit\": \"on-thesis\",\n  \"thesis_fit_reason\": \"Speko is an AI infrastructure and developer tool providing a model router and evaluation API for voice agents, used by software engineering teams building AI applications, who pay for hosted routing and managed keys.\",\n  \"case_summary\": \"Strong technical founder with deep domain experience and live open-source infra, but faces strategic risk from the industry trend toward end-to-end native voice models.\",\n  \"would_change_my_mind\": [\n    \"Evidence that end-to-end multimodal voice models completely replace multi-vendor architectures\",\n    \"Data showing net retention and recurring paid contracts from production teams\",\n    \"Proof that automated benchmark routing significantly outperforms static enterprise selections\"\n  ],\n  \"data_gaps\": [\n    \"Exact revenue or paying customer count\",\n    \"Granular architecture details of the automated scoring engine\",\n    \"Retention metrics beyond the initial 25% weekly growth claim\"\n  ]\n}",
   "analysis": {
     "team": {
-      "summary": "Founder Bek spent four years as cofounder and CTO building voice agents for enterprises across Asia in 10+ languages.",
-      "source": "hn_post"
+      "summary": "Bek is the founder and YC S26 participant, with four years of prior experience as co-founder and CTO building voice agents for enterprises across Asia.",
+      "evidence": [
+        {
+          "quote": "Hi HN! I'm Bek, founder of Speko, a platform that finds an optimal combination of speech-to-text",
+          "source": "hn_post"
+        },
+        {
+          "quote": "Before founding Speko, I spent four years as cofounder and CTO building voice agents for enterprises across Asia in 10+ languages.",
+          "source": "hn_post"
+        }
+      ]
     },
     "product": {
-      "summary": "Speko is a routing and benchmarking platform for Voice AI (STT, LLM, TTS) providing an API router and an open-source client-side gateway for voice agents.",
-      "source": "hn_post"
+      "summary": "Speko is a router and evaluation platform for voice AI that dynamically selects and connects speech-to-text, LLM, and text-to-speech models via an API or open-source gateway.",
+      "evidence": [
+        {
+          "quote": "a platform that finds an optimal combination of speech-to-text, LLM, and text-to-speech models, given your constraints",
+          "source": "hn_post"
+        },
+        {
+          "quote": "The Router for Voice AI. Every speech model, benchmarked language by language, wired into one API.",
+          "source": "site"
+        }
+      ]
     },
     "market": {
-      "summary": "Developers and companies building production voice AI agents who need to optimize across multiple speech and language models.",
-      "source": "hn_post"
+      "size_hint": {
+        "summary": "The market encompasses developers and enterprises building voice agents, with external usage growing about 25 percent per week since late June.",
+        "evidence": [
+          {
+            "quote": "Since we started the batch in late June, external usage has grown about 25 percent per week on average",
+            "source": "hn_post"
+          }
+        ]
+      },
+      "competitors": {
+        "summary": "Commenters noted potential overlap with LiveKit Gateway, Vapi, and existing evaluation tools like LM Arena and Artificial Analysis.",
+        "names": [
+          "Livekit Gateway",
+          "Vapi",
+          "LM Arena",
+          "Artificial Analysis"
+        ],
+        "evidence": [
+          {
+            "quote": "What is the difference with Livekit Gateway? https://livekit.com/blog/introducing-livekit-inference Or even something more managed like Vapi?",
+            "source": "comments",
+            "author": "MikhailTal"
+          },
+          {
+            "quote": "There are many companies now with evals as a core business model: LM Arena, Artificial Analysis, Prompt foo",
+            "source": "comments",
+            "author": "narrationbox"
+          }
+        ]
+      },
+      "why_now": {
+        "summary": "Rapid expansion of voice model options and frequent vendor updates make manual integration and static stacking obsolete, creating a need for automated routing.",
+        "evidence": [
+          {
+            "quote": "Each of those layers offers a dozen credible vendors, and each month there are new models on the market. Almost everyone evaluates once, picks a stack of their choice, and never rechecks",
+            "source": "hn_post"
+          }
+        ]
+      }
     },
     "risks": [
       {
-        "risk": "Industry trend moving towards one-model end-to-end trained voice models rather than three-piece architectures (STT + LLM + TTS).",
-        "source": "comments"
+        "risk": "Industry shifts toward end-to-end trained omni-models could bypass the multi-vendor STT/LLM/TTS stack architecture.",
+        "evidence": [
+          {
+            "quote": "The industry is very much moving towards one-model-does-all end to end trained similar to LLMs and VLMs.",
+            "source": "comments"
+          }
+        ]
       },
       {
-        "risk": "Developers often make model selection decisions once at the start of a project rather than dynamically routing every call.",
-        "source": "comments"
+        "risk": "Stakeholders often make voice stack decisions only once at the project start, questioning the ongoing value of dynamic routing.",
+        "evidence": [
+          {
+            "quote": "stakeholders usually make this sort of decisions once at the start of the project.",
+            "source": "comments"
+          }
+        ]
       }
     ],
     "scores": {
       "founder_depth": {
-        "score": 20,
-        "why": "Four years as cofounder and CTO building enterprise voice agents across multiple languages and regions.",
-        "source": "hn_post"
+        "score": 22,
+        "why": "The founder spent four years as a cofounder and CTO building enterprise voice agents across multiple languages before launching Speko.",
+        "evidence": [
+          {
+            "quote": "Before founding Speko, I spent four years as cofounder and CTO building voice agents for enterprises across Asia in 10+ languages.",
+            "source": "hn_post"
+          }
+        ]
       },
       "shipping_evidence": {
-        "score": 19,
-        "why": "Live hosted router platform, public benchmarks, open-source Go gateway binary on GitHub, and documented API integrations.",
-        "source": "hn_post"
+        "score": 20,
+        "why": "The product features a live hosted router, open-sourced gateway binary under MIT, and published multilingual benchmark boards.",
+        "evidence": [
+          {
+            "quote": "We also open sourced the gateway for teams who want to avoid an extra network hop... ( https://github.com/SpekoAI/gateway , MIT): one Go binary",
+            "source": "hn_post"
+          },
+          {
+            "quote": "Every speech model, benchmarked language by language, wired into one API.",
+            "source": "site"
+          }
+        ]
       },
       "demand_signal": {
-        "score": 16,
-        "why": "118 points and 69 comments on HN with active user interest, customer stories, and 25% weekly usage growth since batch start.",
-        "source": "hn_post"
+        "score": 15,
+        "why": "External usage has grown 25% per week since late June, and customer anecdotes indicate early adoption, though revenue figures are not disclosed.",
+        "evidence": [
+          {
+            "quote": "Since we started the batch in late June, external usage has grown about 25 percent per week on average",
+            "source": "hn_post"
+          },
+          {
+            "quote": "A team running thousands of calls a day told us: \"we can literally go to this dashboard, switch the model, and it will do it for us.\"",
+            "source": "hn_post"
+          }
+        ]
       },
       "defensibility": {
-        "score": 12,
-        "why": "Built on proprietary benchmark data and automated scoring models for TTS naturalness, but faces potential commoditization and doubts on router value vs static choices.",
-        "source": "hn_post"
+        "score": 11,
+        "why": "Moat relies on proprietary evaluation methodologies and benchmark test suites for spontaneous speech and naturalness, though basic routing logic can be replicated.",
+        "evidence": [
+          {
+            "quote": "We trained an automatic scorer for TTS naturalness on our blind head-to-head listening votes",
+            "source": "hn_post"
+          }
+        ]
       }
     },
     "thesis_fit": "on-thesis",
-    "thesis_fit_reason": "Speko provides AI infrastructure and routing tools for voice AI developers.",
-    "case_summary": "Strong domain expertise and live multi-model benchmarking tooling, but faces strategic questions on whether voice routing will endure as end-to-end multimodal models evolve.",
+    "thesis_fit_reason": "Speko is an AI infrastructure and developer tool providing a model router and evaluation API for voice agents, used by software engineering teams building AI applications, who pay for hosted routing and managed keys.",
+    "case_summary": "Strong technical founder with deep domain experience and live open-source infra, but faces strategic risk from the industry trend toward end-to-end native voice models.",
     "would_change_my_mind": [
-      "Widespread adoption of single end-to-end voice models replacing the three-tier STT/LLM/TTS architecture entirely",
-      "Evidence that developers prefer static single-vendor selections over dynamic routing in production",
-      "Significant enterprise retention and revenue generated purely from the routing layer vs the evaluation tools"
+      "Evidence that end-to-end multimodal voice models completely replace multi-vendor architectures",
+      "Data showing net retention and recurring paid contracts from production teams",
+      "Proof that automated benchmark routing significantly outperforms static enterprise selections"
     ],
     "data_gaps": [
-      "Exact current revenue figures and number of paying customers",
-      "Detailed metrics on gateway download and self-hosted usage volume"
+      "Exact revenue or paying customer count",
+      "Granular architecture details of the automated scoring engine",
+      "Retention metrics beyond the initial 25% weekly growth claim"
     ]
   }
 }
