@@ -1,49 +1,51 @@
 {
   "name": "TesterArmy",
-  "model": "gemini-3.5-flash-lite",
-  "prompt_hash": "ce0bea79a98a6307d99ec24e0ef910ed969b497d77aa2f1667b158880be70a4e",
-  "created_at": "2026-09-13T12:49:33Z",
+  "model": "gemini-3.5-flash",
+  "prompt_hash": "919e7d69c38adb7155f95b82cb8931938cd46da13ea3168d1b2980fb9c6b764e",
+  "created_at": "2026-09-13T13:43:21Z",
   "attempts": 1,
-  "raw_response": "{\n  \"team\": {\n    \"summary\": \"Oskar, Szymon, and Piotr are building TesterArmy, backed by Y Combinator (P26).\",\n    \"evidence\": [\n      {\n        \"quote\": \"Hey HN - we’re Oskar, Szymon, and Piotr, and we’re building TesterArmy\",\n        \"source\": \"hn_post\"\n      },\n      {\n        \"quote\": \"YC batch: P26\",\n        \"source\": \"hn_post\"\n      }\n    ]\n  },\n  \"product\": {\n    \"summary\": \"TesterArmy is an agentic end-to-end testing platform that runs checks before deployment and in production using natural language specifications and AI agents.\",\n    \"evidence\": [\n      {\n        \"quote\": \"TesterArmy is an agentic testing platform that runs end-to-end checks before deployment and in production.\",\n        \"source\": \"hn_post\"\n      },\n      {\n        \"quote\": \"we let you specify your tests in natural language and handle everything in between.\",\n        \"source\": \"hn_post\"\n      }\n    ]\n  },\n  \"market\": {\n    \"size_hint\": {\n      \"summary\": \"Targeting software engineering and development teams looking to speed up testing and avoid manual QA bottlenecks.\",\n      \"evidence\": [\n        {\n          \"quote\": \"TesterArmy's agents test every pull request like real users while your engineers ship.\",\n          \"source\": \"site\"\n        }\n      ]\n    },\n    \"competitors\": {\n      \"summary\": \"Commenters and site copy mention competitors like Cypress, Revyl, mobileboost.io, Rainforest QA, Playwright, Momentic, Spur, QA Wolf, Mabl, and BrowserStack.\",\n      \"names\": [\n        \"Cypress\",\n        \"Revyl\",\n        \"mobileboost.io\",\n        \"Rainforest QA\",\n        \"Playwright\",\n        \"Momentic\",\n        \"Spur\",\n        \"QA Wolf\",\n        \"Mabl\",\n        \"BrowserStack\"\n      ],\n      \"evidence\": [\n        {\n          \"quote\": \"We use cypress heavily for our core flows which has a similar ai prompt thing\",\n          \"source\": \"comments\",\n          \"author\": \"msencenb\"\n        },\n        {\n          \"quote\": \"I'm curious how your mobile testing compares to https://revyl.com\",\n          \"source\": \"comments\",\n          \"author\": \"tcoff91\"\n        },\n        {\n          \"quote\": \"Rainforest QA, for example, has been in this space for a while and also happens to be a YC company.\",\n          \"source\": \"comments\",\n          \"author\": \"fny\"\n        }\n      ]\n    },\n    \"why_now\": {\n      \"summary\": \"Advances in coding agents and large language models enable natural language test definition and autonomous browser navigation.\",\n      \"evidence\": [\n        {\n          \"quote\": \"AI coding tools have made it dramatically faster to write and ship code, but testing is still a bottleneck.\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    }\n  },\n  \"risks\": [\n    {\n      \"risk\": \"Third-party SaaS reliance and security/privacy concerns regarding outsourcing testing and credentials.\",\n      \"evidence\": [\n        {\n          \"quote\": \"also I feel uneasy about outsourcing this part with all the security issues these days.\",\n          \"source\": \"comments\",\n          \"author\": \"zuzululu\"\n        },\n        {\n          \"quote\": \"config overhead and potential security leaks makes it a no go\",\n          \"source\": \"comments\",\n          \"author\": \"negamax\"\n        }\n      ]\n    },\n    {\n      \"risk\": \"Token cost economics and stability of running continuous LLM-driven agents for every test execution.\",\n      \"evidence\": [\n        {\n          \"quote\": \"How would this compare to the token costs of running an agent the whole time for each test?\",\n          \"source\": \"comments\",\n          \"author\": \"poisonborz\"\n        }\n      ]\n    }\n  ],\n  \"scores\": {\n    \"founder_depth\": {\n      \"score\": 14,\n      \"why\": \"Founders are technical and participating in YC, but limited explicit background or prior exits are detailed in the sources.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Hey HN - we’re Oskar, Szymon, and Piotr, and we’re building TesterArmy\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    },\n    \"shipping_evidence\": {\n      \"score\": 20,\n      \"why\": \"Product is live with a functional demo, CLI integration, and documented feature releases.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Over the past few months, we scaled from 0 to 30+ teams using our product every day.\",\n          \"source\": \"hn_post\"\n        },\n        {\n          \"quote\": \"Check out our demo video: https://www.youtube.com/watch?v=291IkUbPrlk\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    },\n    \"demand_signal\": {\n      \"score\": 18,\n      \"why\": \"Strong HN engagement (132 points, 69 comments), 30+ teams using the product, and positive customer testimonials.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Points: 132  Comments: 69\",\n          \"source\": \"hn_post\"\n        },\n        {\n          \"quote\": \"Over the past few months, we scaled from 0 to 30+ teams using our product every day.\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    },\n    \"defensibility\": {\n      \"score\": 10,\n      \"why\": \"Provides workflow depth and integrations, but some commenters note similarity to existing tools and wrapper-like concerns.\",\n      \"evidence\": [\n        {\n          \"quote\": \"This is a solved problem, there are many that do this. Can't believe YC would fund this in 2026.\",\n          \"source\": \"comments\",\n          \"author\": \"mogili\"\n        }\n      ]\n    }\n  },\n  \"thesis_fit\": \"on-thesis\",\n  \"thesis_fit_reason\": \"TesterArmy is an AI-native developer and engineering tool used by software teams to automate end-to-end testing via agents, paid for through tiered usage plans.\",\n  \"case_summary\": \"Strong initial adoption and active user feedback contrast with skepticism regarding token costs and defensibility against existing testing frameworks and tools.\",\n  \"would_change_my_mind\": [\n    \"Published unit economics demonstrating profitability despite underlying LLM and vision model token costs.\",\n    \"Data showing low test flake rates compared to traditional deterministic code frameworks.\",\n    \"Enterprise customer case studies showing long-term retention and replacement of legacy test suites.\"\n  ],\n  \"data_gaps\": [\n    \"Exact revenue figures or pricing tier adoption metrics.\",\n    \"Detailed public GitHub repository with open source components.\",\n    \"Quantitative reliability benchmarks across standard test suites.\"\n  ]\n}",
+  "raw_response": "{\n  \"business_model\": {\n    \"customers_pay_for\": \"software\",\n    \"category\": \"engineering_software\",\n    \"summary\": \"An agentic end-to-end testing platform for web and mobile apps that allows engineers to define tests in natural language and pay for test runs or subscriptions.\",\n    \"evidence\": [\n      {\n        \"quote\": \"TesterArmy is an agentic testing platform that runs end-to-end checks before deployment and in production.\",\n        \"source\": \"hn_post\"\n      }\n    ]\n  },\n  \"team\": {\n    \"summary\": \"Founded by Oskar, Szymon, and Piotr, with no further details on their professional backgrounds or prior exits provided in the sources.\",\n    \"evidence\": [\n      {\n        \"quote\": \"we’re Oskar, Szymon, and Piotr, and we’re building TesterArmy\",\n        \"source\": \"hn_post\"\n      }\n    ]\n  },\n  \"product\": {\n    \"summary\": \"An agentic testing platform that executes end-to-end tests on web, iOS, and Android platforms using natural language inputs, integrating with CLI, GitHub, Slack, Discord, and coding agents.\",\n    \"evidence\": [\n      {\n        \"quote\": \"Instead of wasting hours on manual testing or maintaining static scripts, we let you specify your tests in natural language and handle everything in between.\",\n        \"source\": \"hn_post\"\n      },\n      {\n        \"quote\": \"Test web, iOS and Android.\",\n        \"source\": \"site\"\n      }\n    ]\n  },\n  \"market\": {\n    \"size_hint\": {\n      \"summary\": \"not found in sources\",\n      \"evidence\": []\n    },\n    \"competitors\": {\n      \"summary\": \"The company competes with traditional testing frameworks, AI-driven mobile testing tools, and established QA automation platforms.\",\n      \"names\": [\n        \"Cypress\",\n        \"Revyl\",\n        \"mobileboost.io\",\n        \"Rainforest QA\",\n        \"Playwright\",\n        \"Momentic\",\n        \"Spur\",\n        \"QA Wolf\",\n        \"Mabl\",\n        \"BrowserStack\"\n      ],\n      \"evidence\": [\n        {\n          \"quote\": \"We use cypress heavily for our core flows\",\n          \"source\": \"comments\",\n          \"author\": \"msencenb\"\n        },\n        {\n          \"quote\": \"I'm curious how your mobile testing compares to https://revyl.com\",\n          \"source\": \"comments\",\n          \"author\": \"tcoff91\"\n        },\n        {\n          \"quote\": \"Rainforest QA, for example, has been in this space for a while\",\n          \"source\": \"comments\",\n          \"author\": \"fny\"\n        }\n      ]\n    },\n    \"why_now\": {\n      \"summary\": \"AI coding tools have dramatically accelerated code generation, making testing the primary bottleneck, while LLMs now enable agentic, natural-language-driven testing.\",\n      \"evidence\": [\n        {\n          \"quote\": \"AI coding tools have made it dramatically faster to write and ship code, but testing is still a bottleneck.\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    }\n  },\n  \"risks\": [\n    {\n      \"risk\": \"High token costs and pricing sustainability for running LLM agents per test run.\",\n      \"evidence\": [\n        {\n          \"quote\": \"We tried out playwright mcp and it easily consumes 1M+ tokens for a test with ~20 steps\",\n          \"source\": \"comments\",\n          \"author\": \"pranshuchittora\"\n        }\n      ]\n    },\n    {\n      \"risk\": \"Security concerns and configuration overhead regarding outsourcing critical testing and potential credential leaks.\",\n      \"evidence\": [\n        {\n          \"quote\": \"But config overhead and potential security leaks makes it a no go\",\n          \"source\": \"comments\",\n          \"author\": \"negamax\"\n        }\n      ]\n    },\n    {\n      \"risk\": \"Nondeterminism and stability of agentic test runs.\",\n      \"evidence\": [\n        {\n          \"quote\": \"How do you make sure results stay stable regardless of the nondeterministic nature?\",\n          \"source\": \"comments\",\n          \"author\": \"poisonborz\"\n        }\n      ]\n    }\n  ],\n  \"scores\": {\n    \"founder_depth\": {\n      \"score\": 9,\n      \"why\": \"The founders are named but there is no information about their technical backgrounds, prior shipped products, or domain expertise in the sources.\",\n      \"evidence\": [\n        {\n          \"quote\": \"we’re Oskar, Szymon, and Piotr, and we’re building TesterArmy\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    },\n    \"shipping_evidence\": {\n      \"score\": 19,\n      \"why\": \"The product is live with 30+ daily active teams, integrations with major tools, and they have open-sourced a trace explorer tool called unbox-ai.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Over the past few months, we scaled from 0 to 30+ teams using our product every day.\",\n          \"source\": \"hn_post\"\n        },\n        {\n          \"quote\": \"We built unbox-ai to read our own QA agent's traces.\",\n          \"source\": \"site\"\n        }\n      ]\n    },\n    \"demand_signal\": {\n      \"score\": 20,\n      \"why\": \"They have 30+ daily active teams and numerous highly positive, named testimonials from developers, CTOs, and CEOs.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Over the past few months, we scaled from 0 to 30+ teams using our product every day.\",\n          \"source\": \"hn_post\"\n        },\n        {\n          \"quote\": \"In sixteen years of building mobile apps, TesterArmy is the first tool that actually does what I always expected AI-powered testing to do.\",\n          \"source\": \"site\"\n        }\n      ]\n    },\n    \"defensibility\": {\n      \"score\": 12,\n      \"why\": \"They offer workflow depth by handling OTPs, SSO, and captchas, but face risks of being bypassed by local LLM-based test generation or Playwright MCP.\",\n      \"evidence\": [\n        {\n          \"quote\": \"If I'm already using Opus to write the code, surely it would know best what E2E tests to write\",\n          \"source\": \"comments\",\n          \"author\": \"dbbk\"\n        },\n        {\n          \"quote\": \"We tried out playwright mcp and it easily consumes 1M+ tokens for a test with ~20 steps\",\n          \"source\": \"comments\",\n          \"author\": \"pranshuchittora\"\n        }\n      ]\n    }\n  },\n  \"case_summary\": \"The strongest point is the rapid adoption by 30+ daily active teams and strong testimonials from engineering leaders, while the weakest point is the high token cost of running LLM agents and the risk of customers building their own local solutions using open-source tools.\",\n  \"would_change_my_mind\": [\n    \"Evidence of unsustainable unit economics due to high LLM token consumption per test run.\",\n    \"A significant security breach or leak of encrypted customer credentials/OTPs.\",\n    \"Customers successfully migrating back to local, deterministic LLM-generated E2E tests to save costs.\"\n  ],\n  \"data_gaps\": [\n    \"The professional and technical backgrounds of the founders Oskar, Szymon, and Piotr.\",\n    \"The exact pricing structure and margins/token costs per test run.\",\n    \"Quantitative benchmarks proving the reliability and accuracy of their testing agents compared to traditional E2E frameworks.\"\n  ]\n}",
   "analysis": {
-    "team": {
-      "summary": "Oskar, Szymon, and Piotr are building TesterArmy, backed by Y Combinator (P26).",
+    "business_model": {
+      "customers_pay_for": "software",
+      "category": "engineering_software",
+      "summary": "An agentic end-to-end testing platform for web and mobile apps that allows engineers to define tests in natural language and pay for test runs or subscriptions.",
       "evidence": [
         {
-          "quote": "Hey HN - we’re Oskar, Szymon, and Piotr, and we’re building TesterArmy",
+          "quote": "TesterArmy is an agentic testing platform that runs end-to-end checks before deployment and in production.",
           "source": "hn_post"
-        },
+        }
+      ]
+    },
+    "team": {
+      "summary": "Founded by Oskar, Szymon, and Piotr, with no further details on their professional backgrounds or prior exits provided in the sources.",
+      "evidence": [
         {
-          "quote": "YC batch: P26",
+          "quote": "we’re Oskar, Szymon, and Piotr, and we’re building TesterArmy",
           "source": "hn_post"
         }
       ]
     },
     "product": {
-      "summary": "TesterArmy is an agentic end-to-end testing platform that runs checks before deployment and in production using natural language specifications and AI agents.",
+      "summary": "An agentic testing platform that executes end-to-end tests on web, iOS, and Android platforms using natural language inputs, integrating with CLI, GitHub, Slack, Discord, and coding agents.",
       "evidence": [
         {
-          "quote": "TesterArmy is an agentic testing platform that runs end-to-end checks before deployment and in production.",
+          "quote": "Instead of wasting hours on manual testing or maintaining static scripts, we let you specify your tests in natural language and handle everything in between.",
           "source": "hn_post"
         },
         {
-          "quote": "we let you specify your tests in natural language and handle everything in between.",
-          "source": "hn_post"
+          "quote": "Test web, iOS and Android.",
+          "source": "site"
         }
       ]
     },
     "market": {
       "size_hint": {
-        "summary": "Targeting software engineering and development teams looking to speed up testing and avoid manual QA bottlenecks.",
-        "evidence": [
-          {
-            "quote": "TesterArmy's agents test every pull request like real users while your engineers ship.",
-            "source": "site"
-          }
-        ]
+        "summary": "not found in sources",
+        "evidence": []
       },
       "competitors": {
-        "summary": "Commenters and site copy mention competitors like Cypress, Revyl, mobileboost.io, Rainforest QA, Playwright, Momentic, Spur, QA Wolf, Mabl, and BrowserStack.",
+        "summary": "The company competes with traditional testing frameworks, AI-driven mobile testing tools, and established QA automation platforms.",
         "names": [
           "Cypress",
           "Revyl",
@@ -58,7 +60,7 @@
         ],
         "evidence": [
           {
-            "quote": "We use cypress heavily for our core flows which has a similar ai prompt thing",
+            "quote": "We use cypress heavily for our core flows",
             "source": "comments",
             "author": "msencenb"
           },
@@ -68,14 +70,14 @@
             "author": "tcoff91"
           },
           {
-            "quote": "Rainforest QA, for example, has been in this space for a while and also happens to be a YC company.",
+            "quote": "Rainforest QA, for example, has been in this space for a while",
             "source": "comments",
             "author": "fny"
           }
         ]
       },
       "why_now": {
-        "summary": "Advances in coding agents and large language models enable natural language test definition and autonomous browser navigation.",
+        "summary": "AI coding tools have dramatically accelerated code generation, making testing the primary bottleneck, while LLMs now enable agentic, natural-language-driven testing.",
         "evidence": [
           {
             "quote": "AI coding tools have made it dramatically faster to write and ship code, but testing is still a bottleneck.",
@@ -86,25 +88,30 @@
     },
     "risks": [
       {
-        "risk": "Third-party SaaS reliance and security/privacy concerns regarding outsourcing testing and credentials.",
+        "risk": "High token costs and pricing sustainability for running LLM agents per test run.",
         "evidence": [
           {
-            "quote": "also I feel uneasy about outsourcing this part with all the security issues these days.",
+            "quote": "We tried out playwright mcp and it easily consumes 1M+ tokens for a test with ~20 steps",
             "source": "comments",
-            "author": "zuzululu"
-          },
+            "author": "pranshuchittora"
+          }
+        ]
+      },
+      {
+        "risk": "Security concerns and configuration overhead regarding outsourcing critical testing and potential credential leaks.",
+        "evidence": [
           {
-            "quote": "config overhead and potential security leaks makes it a no go",
+            "quote": "But config overhead and potential security leaks makes it a no go",
             "source": "comments",
             "author": "negamax"
           }
         ]
       },
       {
-        "risk": "Token cost economics and stability of running continuous LLM-driven agents for every test execution.",
+        "risk": "Nondeterminism and stability of agentic test runs.",
         "evidence": [
           {
-            "quote": "How would this compare to the token costs of running an agent the whole time for each test?",
+            "quote": "How do you make sure results stay stable regardless of the nondeterministic nature?",
             "source": "comments",
             "author": "poisonborz"
           }
@@ -113,67 +120,70 @@
     ],
     "scores": {
       "founder_depth": {
-        "score": 14,
-        "why": "Founders are technical and participating in YC, but limited explicit background or prior exits are detailed in the sources.",
+        "score": 9,
+        "why": "The founders are named but there is no information about their technical backgrounds, prior shipped products, or domain expertise in the sources.",
         "evidence": [
           {
-            "quote": "Hey HN - we’re Oskar, Szymon, and Piotr, and we’re building TesterArmy",
+            "quote": "we’re Oskar, Szymon, and Piotr, and we’re building TesterArmy",
             "source": "hn_post"
           }
         ]
       },
       "shipping_evidence": {
-        "score": 20,
-        "why": "Product is live with a functional demo, CLI integration, and documented feature releases.",
+        "score": 19,
+        "why": "The product is live with 30+ daily active teams, integrations with major tools, and they have open-sourced a trace explorer tool called unbox-ai.",
         "evidence": [
           {
             "quote": "Over the past few months, we scaled from 0 to 30+ teams using our product every day.",
             "source": "hn_post"
           },
           {
-            "quote": "Check out our demo video: https://www.youtube.com/watch?v=291IkUbPrlk",
-            "source": "hn_post"
+            "quote": "We built unbox-ai to read our own QA agent's traces.",
+            "source": "site"
           }
         ]
       },
       "demand_signal": {
-        "score": 18,
-        "why": "Strong HN engagement (132 points, 69 comments), 30+ teams using the product, and positive customer testimonials.",
+        "score": 20,
+        "why": "They have 30+ daily active teams and numerous highly positive, named testimonials from developers, CTOs, and CEOs.",
         "evidence": [
-          {
-            "quote": "Points: 132  Comments: 69",
-            "source": "hn_post"
-          },
           {
             "quote": "Over the past few months, we scaled from 0 to 30+ teams using our product every day.",
             "source": "hn_post"
+          },
+          {
+            "quote": "In sixteen years of building mobile apps, TesterArmy is the first tool that actually does what I always expected AI-powered testing to do.",
+            "source": "site"
           }
         ]
       },
       "defensibility": {
-        "score": 10,
-        "why": "Provides workflow depth and integrations, but some commenters note similarity to existing tools and wrapper-like concerns.",
+        "score": 12,
+        "why": "They offer workflow depth by handling OTPs, SSO, and captchas, but face risks of being bypassed by local LLM-based test generation or Playwright MCP.",
         "evidence": [
           {
-            "quote": "This is a solved problem, there are many that do this. Can't believe YC would fund this in 2026.",
+            "quote": "If I'm already using Opus to write the code, surely it would know best what E2E tests to write",
             "source": "comments",
-            "author": "mogili"
+            "author": "dbbk"
+          },
+          {
+            "quote": "We tried out playwright mcp and it easily consumes 1M+ tokens for a test with ~20 steps",
+            "source": "comments",
+            "author": "pranshuchittora"
           }
         ]
       }
     },
-    "thesis_fit": "on-thesis",
-    "thesis_fit_reason": "TesterArmy is an AI-native developer and engineering tool used by software teams to automate end-to-end testing via agents, paid for through tiered usage plans.",
-    "case_summary": "Strong initial adoption and active user feedback contrast with skepticism regarding token costs and defensibility against existing testing frameworks and tools.",
+    "case_summary": "The strongest point is the rapid adoption by 30+ daily active teams and strong testimonials from engineering leaders, while the weakest point is the high token cost of running LLM agents and the risk of customers building their own local solutions using open-source tools.",
     "would_change_my_mind": [
-      "Published unit economics demonstrating profitability despite underlying LLM and vision model token costs.",
-      "Data showing low test flake rates compared to traditional deterministic code frameworks.",
-      "Enterprise customer case studies showing long-term retention and replacement of legacy test suites."
+      "Evidence of unsustainable unit economics due to high LLM token consumption per test run.",
+      "A significant security breach or leak of encrypted customer credentials/OTPs.",
+      "Customers successfully migrating back to local, deterministic LLM-generated E2E tests to save costs."
     ],
     "data_gaps": [
-      "Exact revenue figures or pricing tier adoption metrics.",
-      "Detailed public GitHub repository with open source components.",
-      "Quantitative reliability benchmarks across standard test suites."
+      "The professional and technical backgrounds of the founders Oskar, Szymon, and Piotr.",
+      "The exact pricing structure and margins/token costs per test run.",
+      "Quantitative benchmarks proving the reliability and accuracy of their testing agents compared to traditional E2E frameworks."
     ]
   }
 }

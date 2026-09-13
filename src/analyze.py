@@ -15,14 +15,18 @@ INPUT_PATH = os.path.join("data", "enriched.jsonl")
 OUTPUT_PATH = os.path.join("data", "analyses.jsonl")
 CACHE_DIR = os.path.join("cache", "llm")
 # Pinned rather than an alias like "gemini-flash-latest", so a reviewer's rerun
-# gets the same model. Lite has its own free-tier quota, separate from Flash.
-MODEL_NAME = os.environ.get("GEMINI_MODEL", "gemini-3.5-flash-lite")
+# gets the same model. Flash Lite was tried first and kept labelling a
+# circuit-board maker as software even while quoting its per-order margin; full
+# Flash labels it correctly. Free tier: about 5 requests a minute and a small
+# daily cap per model, enough for one run of 10-20 companies.
+MODEL_NAME = os.environ.get("GEMINI_MODEL", "gemini-3.5-flash")
 ATTEMPTS = 2  # first try plus one retry when the JSON is unusable
 
 # Free-tier quotas are per minute, so space out live calls and, if Google still
 # rejects one, wait the delay it asks for instead of failing straight away.
 MIN_CALL_INTERVAL = float(os.environ.get("GEMINI_MIN_INTERVAL_SECONDS", "13"))
 RATE_LIMIT_RETRIES = 3
+REQUEST_TIMEOUT = 180  # seconds per Gemini call
 
 THESIS = (
     "Seed-stage AI infra and dev tools with technical founders shipping in public. "
@@ -30,29 +34,42 @@ THESIS = (
     "because the buyers are engineers."
 )
 
-# The boundary is what makes thesis_fit a category call instead of a quality call.
-# Borderline calls made on Sep 13: Discovered Materials (AI discovery harness) and
-# Adam (AI CAD for mechanical engineers) are both in.
-THESIS_SCOPE = """IN SCOPE:
-- AI infrastructure: model serving, routing, compute, evals and benchmarks,
-  agent harnesses and runtimes, data or web access for models and agents,
-  MCP and agent tooling.
-- Developer and engineering tools: software used by engineers of any
-  discipline (software, mechanical, electrical, hardware design) in their
-  technical work. This includes AI-native tools such as coding agents,
-  testing tools, and mechanical CAD or design software. The tool must be
-  software; a physical product is out of scope even if engineers buy it.
-- AI systems applied to a technical domain, when the AI system itself is the
-  main asset (for example, agents that run scientific discovery).
+# The model classifies the business; code decides thesis fit from that
+# classification (fit_from_business_model). Asking the model for fit directly
+# failed: it called a circuit-board maker a dev tool because it ships plugins.
+# Borderline calls made on Sep 13: Discovered Materials (AI discovery harness)
+# and Adam (AI CAD for mechanical engineers) are both in.
+PAY_FOR = {
+    "software": "subscriptions, usage-based APIs, licences, or software "
+                "products (including free or open-source software with paid tiers)",
+    "ip_or_research": "rights to discoveries, research results, or licensed IP",
+    "physical_goods": "hardware, devices, robots, manufactured "
+                      "goods, drugs, or orders of physical products",
+    "services": "work done by people, such as brokerage, consulting, manual operations, "
+                "or care delivered to patients",
+    "unclear": "the sources do not say what customers pay for",
+}
+CATEGORY = {
+    "ai_infrastructure": "model serving, routing, compute, evals and benchmarks, "
+                         "agent harnesses and runtimes, data or web access for "
+                         "models and agents, MCP and agent tooling",
+    "engineering_software": "software used by engineers of any discipline "
+                            "(software, mechanical, electrical, hardware design) "
+                            "in their technical work, such as coding agents, "
+                            "testing tools, or CAD",
+    "ai_for_technical_domain": "an AI system applied to a technical or scientific "
+                               "domain, where the AI system itself is the main asset",
+    "hardware": "hardware, robots, devices, or other physical products",
+    "other": "any other business, such as manufacturing, pharma, healthcare, "
+             "consumer, fintech, or insurance",
+}
+OFF_THESIS_PAY_FOR = ("physical_goods", "services")
+IN_SCOPE_CATEGORIES = ("ai_infrastructure", "engineering_software", "ai_for_technical_domain")
 
-OUT OF SCOPE:
-- Hardware and physical products, including robots and devices, even when
-  sold to developers.
-- Manufacturing, logistics, or brokerage services where customers pay for
-  physical goods or orders, even if the company also ships software such as
-  plugins or automation to win or run that work.
-- Healthcare, pharma, consumer, fintech, insurance, and other vertical
-  businesses that are not AI infrastructure or engineering tools."""
+
+def definitions(options):
+    return "\n".join('  "{}": {}'.format(key, text) for key, text in options.items())
+
 
 # Placeholders are swapped with str.replace, not str.format, because the JSON
 # example is full of literal braces.
@@ -62,15 +79,18 @@ comments on it, their website text, and GitHub stats if any.
 
 THESIS: [THESIS]
 
-[SCOPE]
-
-THESIS FIT: decide "on-thesis" or "off-thesis" only from what the product is,
-who uses it, and what customers pay for. Never decide fit from quality,
-traction, team strength, or defensibility. Those belong in the scores.
-
 Analyse ONLY from the text provided. If something isn't in the
 text, write "not found in sources". Never use outside knowledge
 about this company. Never guess.
+
+BUSINESS MODEL: classify the company as facts, not as a judgement of quality.
+"customers_pay_for" is what the company's revenue comes from, or will come
+from, according to the sources. Choose exactly one:
+[PAY_FOR]
+If a company gives away software to win orders for physical products, it is
+"physical_goods", not "software".
+"category" is what the core product is. Choose exactly one:
+[CATEGORY]
 
 SCORING (each 0-25). Missing evidence scores low, not in the middle.
 Reserve 18-25 for strong, explicit evidence in the sources.
@@ -98,7 +118,13 @@ summary and return an empty evidence list.
 Return JSON only, no markdown fences:
 
 {
-  "team":    {"summary": "...", "evidence": [{"quote": "...", "source": "hn_post"}]},
+  "business_model": {
+    "customers_pay_for": "one of the options above",
+    "category": "one of the options above",
+    "summary": "one sentence: what the product is, who uses it, and what they pay for",
+    "evidence": [{"quote": "...", "source": "hn_post"}]
+  },
+  "team":    {"summary": "...", "evidence": [...]},
   "product": {"summary": "...", "evidence": [...]},
   "market": {
     "size_hint":   {"summary": "...", "evidence": [...]},
@@ -112,8 +138,6 @@ Return JSON only, no markdown fences:
     "demand_signal":     {"score": 0-25, "why": "...", "evidence": [...]},
     "defensibility":     {"score": 0-25, "why": "...", "evidence": [...]}
   },
-  "thesis_fit": "on-thesis|off-thesis",
-  "thesis_fit_reason": "one sentence on what the product is, who uses it, and what they pay for",
   "case_summary": "one sentence: the strongest point for and against",
   "would_change_my_mind": ["...", "...", "..."],
   "data_gaps": ["..."]
@@ -124,8 +148,8 @@ SOURCES:
 """
 
 REQUIRED_KEYS = (
-    "team", "product", "market", "risks", "scores", "thesis_fit",
-    "thesis_fit_reason", "case_summary", "would_change_my_mind", "data_gaps",
+    "business_model", "team", "product", "market", "risks", "scores",
+    "case_summary", "would_change_my_mind", "data_gaps",
 )
 SCORE_KEYS = ("founder_depth", "shipping_evidence", "demand_signal", "defensibility")
 MARKET_KEYS = ("size_hint", "competitors", "why_now")
@@ -181,14 +205,16 @@ def call_model(prompt):
     for attempt in range(RATE_LIMIT_RETRIES + 1):
         throttle()
         try:
-            return get_model().generate_content(prompt).text
+            # Without a timeout a stalled request blocks the whole run indefinitely.
+            return get_model().generate_content(prompt, request_options={"timeout": REQUEST_TIMEOUT}).text
         except SystemExit:
             raise
         except Exception as exc:
-            if not is_rate_limited(exc) or attempt == RATE_LIMIT_RETRIES:
+            # A daily cap won't lift within minutes, so waiting on it only stalls the run.
+            if not is_rate_limited(exc) or "PerDay" in str(exc) or attempt == RATE_LIMIT_RETRIES:
                 raise
             delay = retry_delay_seconds(exc)
-            print("    rate limited, waiting {}s before retrying".format(delay))
+            print("    rate limited, waiting {}s before retrying".format(delay), flush=True)
             time.sleep(delay)
 
 
@@ -276,7 +302,7 @@ def quote_found(item, sections, row):
 
 def evidence_lists(analysis):
     """Yield (label, evidence list) for every claim in an analysis."""
-    for key in ("team", "product"):
+    for key in ("business_model", "team", "product"):
         yield key, (analysis.get(key) or {}).get("evidence")
     for key in MARKET_KEYS:
         yield "market." + key, ((analysis.get("market") or {}).get(key) or {}).get("evidence")
@@ -319,8 +345,11 @@ def parse_response(text):
     missing = [key for key in MARKET_KEYS if not isinstance(market.get(key), dict)]
     if missing:
         return None, "market is missing: {}".format(", ".join(missing))
-    if data["thesis_fit"] not in ("on-thesis", "off-thesis"):
-        return None, "thesis_fit must be on-thesis or off-thesis, got {!r}".format(data["thesis_fit"])
+    business = data["business_model"] if isinstance(data["business_model"], dict) else {}
+    for field, options in (("customers_pay_for", PAY_FOR), ("category", CATEGORY)):
+        if business.get(field) not in options:
+            return None, "business_model.{} must be one of {}, got {!r}".format(
+                field, ", ".join(options), business.get(field))
     scores = data["scores"] if isinstance(data["scores"], dict) else {}
     for key in SCORE_KEYS:
         value = (scores.get(key) or {}).get("score") if isinstance(scores.get(key), dict) else None
@@ -329,21 +358,38 @@ def parse_response(text):
     return data, None
 
 
+def fit_from_business_model(business):
+    """Apply the thesis to the model's classification. Returns (fit, rule)."""
+    pay_for, category = business["customers_pay_for"], business["category"]
+    if pay_for in OFF_THESIS_PAY_FOR:
+        return "off-thesis", "customers pay for {}".format(pay_for.replace("_", " "))
+    if category not in IN_SCOPE_CATEGORIES:
+        return "off-thesis", "category is {}".format(category.replace("_", " "))
+    return "on-thesis", "{}, customers pay for {}".format(
+        category.replace("_", " "), pay_for.replace("_", " "))
+
+
 def decide(analysis):
-    """Turn the model's scores and fit into a total and a verdict, by fixed rules."""
+    """Turn the model's classification and scores into fit, total, and verdict, by fixed rules."""
+    fit, fit_rule = fit_from_business_model(analysis["business_model"])
     score = sum(max(0, min(25, int(round(analysis["scores"][key]["score"])))) for key in SCORE_KEYS)
-    if analysis["thesis_fit"] == "off-thesis":
-        return score, "Pass", "off-thesis is always Pass"
-    if score >= MEETING_CUTOFF:
-        return score, "Take a meeting", "on-thesis and score {} >= {}".format(score, MEETING_CUTOFF)
-    if score >= WATCH_CUTOFF:
-        return score, "Watch", "on-thesis and score {} is {}-{}".format(score, WATCH_CUTOFF, MEETING_CUTOFF - 1)
-    return score, "Pass", "on-thesis but score {} < {}".format(score, WATCH_CUTOFF)
+    if fit == "off-thesis":
+        verdict, rule = "Pass", "off-thesis is always Pass"
+    elif score >= MEETING_CUTOFF:
+        verdict, rule = "Take a meeting", "on-thesis and score {} >= {}".format(score, MEETING_CUTOFF)
+    elif score >= WATCH_CUTOFF:
+        verdict, rule = "Watch", "on-thesis and score {} is {}-{}".format(score, WATCH_CUTOFF, MEETING_CUTOFF - 1)
+    else:
+        verdict, rule = "Pass", "on-thesis but score {} < {}".format(score, WATCH_CUTOFF)
+    return {"thesis_fit": fit, "thesis_fit_rule": fit_rule, "score": score,
+            "verdict": verdict, "verdict_rule": rule}
 
 
 def analyze(row):
     """Return (analysis, error, from_cache)."""
-    prompt = (PROMPT_TEMPLATE.replace("[THESIS]", THESIS).replace("[SCOPE]", THESIS_SCOPE)
+    prompt = (PROMPT_TEMPLATE.replace("[THESIS]", THESIS)
+              .replace("[PAY_FOR]", definitions(PAY_FOR))
+              .replace("[CATEGORY]", definitions(CATEGORY))
               .replace("[SOURCES]", build_sources(row)))
     # Model and temperature are part of the key so changing either never serves a stale answer.
     key = "{}\ntemperature={}\n{}".format(MODEL_NAME, TEMPERATURE, prompt)
@@ -360,6 +406,7 @@ def analyze(row):
             pass  # corrupt cache file: fall through and call the API again
 
     last_error = None
+    failures = []
     for attempt in range(1, ATTEMPTS + 1):
         try:
             text = call_model(prompt)
@@ -383,7 +430,12 @@ def analyze(row):
                     "analysis": analysis,
                 }, handle, indent=2, ensure_ascii=False)
             return analysis, None, False
+        failures.append({"attempt": attempt, "error": last_error, "raw_response": text})
 
+    # Kept beside the cache so a bad reply can be inspected; never read back as a result.
+    with io.open(cache_path.replace(".json", ".failed.json"), "w", encoding="utf-8") as handle:
+        json.dump({"name": row["name"], "model": MODEL_NAME, "failures": failures},
+                  handle, indent=2, ensure_ascii=False)
     return None, "unusable model output after {} attempts: {}".format(ATTEMPTS, last_error), False
 
 
@@ -408,20 +460,22 @@ for row in rows:
     row["analysis_error"] = error
     row["model"] = MODEL_NAME
     row["thesis"] = THESIS
-    row["score"], row["verdict"], row["verdict_rule"], row["quote_check"] = None, None, None, None
+    row.update({"thesis_fit": None, "thesis_fit_rule": None, "score": None,
+                "verdict": None, "verdict_rule": None, "quote_check": None})
     if analysis is not None:
-        # Applied to cached answers too, so changing a cutoff or the quote check
-        # needs no API calls.
-        row["score"], row["verdict"], row["verdict_rule"] = decide(analysis)
+        # Applied to cached answers too, so changing a rule, a cutoff, or the
+        # quote check needs no API calls.
+        row.update(decide(analysis))
         row["quote_check"] = check_quotes(analysis, row)
     results.append(row)
 
     if analysis is not None:
-        print("{:<20.20} {:<6} {:<15} score={:<4} {:<11} quotes {}/{}".format(
+        print("{:<20.20} {:<6} {:<15} score={:<4} {:<11} {:<48} quotes {}/{}".format(
             str(row.get("name")), "cached" if from_cache else "live", row["verdict"], row["score"],
-            analysis["thesis_fit"], row["quote_check"]["verified"], row["quote_check"]["total"]))
+            row["thesis_fit"], row["thesis_fit_rule"], row["quote_check"]["verified"],
+            row["quote_check"]["total"]), flush=True)
     else:
-        print("{:<20.20} ERROR  {}".format(str(row.get("name")), " ".join(error.split())[:150]))
+        print("{:<20.20} ERROR  {}".format(str(row.get("name")), " ".join(error.split())[:150]), flush=True)
 
 os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
 with io.open(OUTPUT_PATH, "w", encoding="utf-8") as handle:

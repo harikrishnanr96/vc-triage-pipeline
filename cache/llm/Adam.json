@@ -1,82 +1,95 @@
 {
   "name": "Adam",
-  "model": "gemini-3.5-flash-lite",
-  "prompt_hash": "1d77e7276dad82e19de9b3084e36fcbd3f2e4d94012bbab495794de0c22cde56",
-  "created_at": "2026-09-13T12:48:55Z",
+  "model": "gemini-3.5-flash",
+  "prompt_hash": "6082cfde5af3ad48eb32414fea56727b69e316dbe97132310f1fc1d4bd97d64c",
+  "created_at": "2026-09-13T13:41:49Z",
   "attempts": 1,
-  "raw_response": "{\n  \"team\": {\n    \"summary\": \"The team is led by founder Zach from YC W25, building Adam as an open-source AI CAD platform.\",\n    \"evidence\": [\n      {\n        \"quote\": \"Hey HN! I'm Zach from Adam ( https://adam.new/ ). We're building AI agents for mechanical CAD software.\",\n        \"source\": \"hn_post\"\n      },\n      {\n        \"quote\": \"YC batch: W25\",\n        \"source\": \"hn_post\"\n      }\n    ]\n  },\n  \"product\": {\n    \"summary\": \"CADAM is an open-source Text to CAD platform that generates parametric 3D models and textured meshes from natural language and images using OpenSCAD compiled to WebAssembly.\",\n    \"evidence\": [\n      {\n        \"quote\": \"We’re building CADAM, an open source Text to CAD platform.\",\n        \"source\": \"hn_post\"\n      },\n      {\n        \"quote\": \"Outputs OpenSCAD code with automatically extracted parameters that surface as interactive sliders for instant dimension tweaking\",\n        \"source\": \"hn_post\"\n      },\n      {\n        \"quote\": \"Runs fully in-browser by compiling OpenSCAD to WebAssembly\",\n        \"source\": \"hn_post\"\n      }\n    ]\n  },\n  \"market\": {\n    \"size_hint\": {\n      \"summary\": \"Targeting mechanical design and 3D modeling users who utilize CAD software for prototyping and manufacturing parts.\",\n      \"evidence\": [\n        {\n          \"quote\": \"AI will be the primary medium for creating mechanical designs just like it is in software today.\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    },\n    \"competitors\": {\n      \"summary\": \"Commenters noted alternatives in the text-to-CAD and AI design space including TinkerCAD, CADEM, tooltrace.ai, quidities.com, and ModelRift.\",\n      \"names\": [\n        \"TinkerCAD\",\n        \"CADEM\",\n        \"tooltrace.ai\",\n        \"quidities.com\",\n        \"ModelRift\"\n      ],\n      \"evidence\": [\n        {\n          \"quote\": \"Think of it like AI TinkerCAD.\",\n          \"source\": \"hn_post\"\n        },\n        {\n          \"quote\": \"FYI there is already a product with a very similar name, CADEM.\",\n          \"source\": \"comments\",\n          \"author\": \"zardo\"\n        },\n        {\n          \"quote\": \"Check out modelrift.com for another alternative\",\n          \"source\": \"comments\",\n          \"author\": \"jetter\"\n        }\n      ]\n    },\n    \"why_now\": {\n      \"summary\": \"Advancements in LLM code generation and in-browser WebAssembly compilation enable real-time text-to-CAD rendering and interactive parameter tweaking.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Runs fully in-browser by compiling OpenSCAD to WebAssembly (in a Web Worker, so the UI never blocks) and rendering with Three.js\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    }\n  },\n  \"risks\": [\n    {\n      \"risk\": \"LLMs lack reliable spatial reasoning and mechanical awareness, leading to inaccurate models.\",\n      \"evidence\": [\n        {\n          \"quote\": \"LLMs are still weak at spatial reasoning, but it gets better.\",\n          \"source\": \"comments\"\n        },\n        {\n          \"quote\": \"the resulting models may be visually close to what is required, but they are not technically accurate.\",\n          \"source\": \"comments\"\n        }\n      ]\n    },\n    {\n      \"risk\": \"Scepticism from professional engineers regarding the utility of OpenSCAD and text-based generation for real manufacturing workflows.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Even if all I need is a simple little bracket or something, I can model that and know it's right much quicker than I can ask the AI\",\n          \"source\": \"comments\"\n        },\n        {\n          \"quote\": \"OpenSCAD is a joke, and if you seriously try to tell me that 'the best paradigm for CAD generation is to generate CAD as code', I cannot take you seriously.\",\n          \"source\": \"comments\"\n        }\n      ]\n    }\n  ],\n  \"scores\": {\n    \"founder_depth\": {\n      \"score\": 15,\n      \"why\": \"Founder is technical and backed by YC W25 with a working open-source shipping product, though deep domain background details are light in the text.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Hey HN! I'm Zach from Adam ( https://adam.new/ ). We're building AI agents for mechanical CAD software.\",\n          \"source\": \"hn_post\"\n        },\n        {\n          \"quote\": \"YC batch: W25\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    },\n    \"shipping_evidence\": {\n      \"score\": 25,\n      \"why\": \"Extensive public code, GitHub repository with over 5,000 stars, live demo links, and local runnable code.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Try it: https://adam.new/cadam/\",\n          \"source\": \"hn_post\"\n        },\n        {\n          \"quote\": \"Repository: Adam-CAD/CADAM\",\n          \"source\": \"github\"\n        },\n        {\n          \"quote\": \"Stars: 5134\",\n          \"source\": \"github\"\n        }\n      ]\n    },\n    \"demand_signal\": {\n      \"score\": 20,\n      \"why\": \"High Hacker News engagement with 215 points and 97 comments, plus thousands of GitHub stars and users reporting successful prints.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Points: 215  Comments: 97\",\n          \"source\": \"hn_post\"\n        },\n        {\n          \"quote\": \"Saw this and after 5 minutes of prompting I have four custom bumpers printing. This is a great product.\",\n          \"source\": \"comments\"\n        }\n      ]\n    },\n    \"defensibility\": {\n      \"score\": 10,\n      \"why\": \"Open-source codebase wrapping OpenSCAD via Vercel AI SDK and WebAssembly, leading to questions from users regarding moats and ease of replication.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Model-agnostic via the Vercel AI SDK: Anthropic (Claude), Google (Gemini), and OpenAI/others through OpenRouter\",\n          \"source\": \"hn_post\"\n        },\n        {\n          \"quote\": \"How do you differentiate from other open source AI CAD solutions? I’ve also had a good experience with Claude Code and CadQuery... I.e. what’s your moat?\",\n          \"source\": \"comments\"\n        }\n      ]\n    }\n  },\n  \"thesis_fit\": \"on-thesis\",\n  \"thesis_fit_reason\": \"CADAM is an AI-powered developer and engineering tool used by technical designers to generate mechanical CAD code, offered as open-source software.\",\n  \"case_summary\": \"Strong public shipping trail and developer engagement, offset by deep skepticism from professional engineers regarding spatial reasoning and text-to-code CAD paradigms.\",\n  \"would_change_my_mind\": [\n    \"Demonstrable adoption by professional mechanical engineers for production-grade manufacturing assemblies.\",\n    \"Transition to geometry kernels or constraint-driven modeling like CadQuery/build123d solving spatial inaccuracies.\",\n    \"Evidence of sustainable commercial revenue or enterprise adoption of the paid adam.new product.\"\n  ],\n  \"data_gaps\": [\n    \"Details on revenue, team size, and commercial traction of the adam.new product.\",\n    \"Comprehensive benchmarks comparing OpenSCAD output accuracy against traditional CAD tools.\"\n  ]\n}",
+  "raw_response": "{\n  \"business_model\": {\n    \"customers_pay_for\": \"unclear\",\n    \"category\": \"engineering_software\",\n    \"summary\": \"An open-source AI-powered Text-to-CAD platform that generates parametric 3D models from natural language, though how the company plans to generate revenue is not specified in the sources.\",\n    \"evidence\": [\n      {\"quote\": \"We’re building CADAM, an open source Text to CAD platform.\", \"source\": \"hn_post\"},\n      {\"quote\": \"We're building AI agents for mechanical CAD software.\", \"source\": \"hn_post\"}\n    ]\n  },\n  \"team\": {\n    \"summary\": \"The team includes Zach, but further details about the founders' backgrounds, technical depth, or other team members are not found in the sources.\",\n    \"evidence\": [\n      {\"quote\": \"I'm Zach from Adam\", \"source\": \"hn_post\"}\n    ]\n  },\n  \"product\": {\n    \"summary\": \"CADAM is an open-source React app with a Supabase backend that compiles OpenSCAD to WebAssembly to run fully in-browser, generating parametric 3D models from text prompts and image references.\",\n    \"evidence\": [\n      {\"quote\": \"We’re building CADAM, an open source Text to CAD platform. It's a React app (TanStack Start) with a Supabase backend\", \"source\": \"hn_post\"},\n      {\"quote\": \"Generates parametric 3D models from natural language, with support for both text prompts and image references.\", \"source\": \"hn_post\"},\n      {\"quote\": \"Runs fully in-browser by compiling OpenSCAD to WebAssembly (in a Web Worker, so the UI never blocks) and rendering with Three.js\", \"source\": \"hn_post\"}\n    ]\n  },\n  \"market\": {\n    \"size_hint\": {\n      \"summary\": \"not found in sources\",\n      \"evidence\": []\n    },\n    \"competitors\": {\n      \"summary\": \"Competitors and alternative tools mentioned by commenters include CADEM, tooltrace.ai, modelrift.com, Claude Code with CadQuery, and quidities.com.\",\n      \"names\": [\"CADEM\", \"tooltrace.ai\", \"modelrift.com\", \"Claude Code\", \"CadQuery\", \"quidities.com\"],\n      \"evidence\": [\n        {\"quote\": \"FYI there is already a product with a very similar name, CADEM.\", \"source\": \"comments\", \"author\": \"zardo\"},\n        {\"quote\": \"I’ve also had a good experience with Claude Code and CadQuery\", \"source\": \"comments\", \"author\": \"fxtentacle\"},\n        {\"quote\": \"Check out modelrift.com for another alternative\", \"source\": \"comments\", \"author\": \"jetter\"},\n        {\"quote\": \"we've got a very early stage project with a lot of similar ideas at https://quidities.com/\", \"source\": \"comments\", \"author\": \"themgt\"}\n      ]\n    },\n    \"why_now\": {\n      \"summary\": \"The rise of newer LLMs with adaptive thinking and better code-generation capabilities, such as Gemini 3.1 Pro, enables more effective text-to-CAD generation.\",\n      \"evidence\": [\n        {\"quote\": \"Model-agnostic via the Vercel AI SDK: Anthropic (Claude), Google (Gemini), and OpenAI/others through OpenRouter, with adaptive thinking auto-enabled on newer models.\", \"source\": \"hn_post\"}\n      ]\n    }\n  },\n  \"risks\": [\n    {\n      \"risk\": \"LLMs currently have poor spatial awareness and reasoning, leading to technically inaccurate models that lack precision, correct tolerances, or proper assembly features.\",\n      \"evidence\": [\n        {\"quote\": \"I find all current LLMs to have pretty poor spatial awareness.\", \"source\": \"comments\", \"author\": \"murkt\"},\n        {\"quote\": \"the resulting models may be visually close to what is required, but they are not technically accurate.\", \"source\": \"comments\", \"author\": \"dmpanch\"}\n      ]\n    },\n    {\n      \"risk\": \"Professional engineers are highly skeptical of AI for mechanical design, noting that CAD modeling is only a small fraction of engineering work and that verifying AI-generated models can take longer than manual creation.\",\n      \"evidence\": [\n        {\"quote\": \"There are so many reasons why I, as an engineer, will never even attempt to use AI for mechanical design\", \"source\": \"comments\", \"author\": \"incorene2\"},\n        {\"quote\": \"Even if all I need is a simple little bracket or something, I can model that and know it's right much quicker than I can ask the AI to do it\", \"source\": \"comments\", \"author\": \"incorene2\"}\n      ]\n    },\n    {\n      \"risk\": \"The choice of OpenSCAD as the primary CAD paradigm is criticized by some users as being a 'joke' or less powerful than alternatives like CadQuery or FreeCAD.\",\n      \"evidence\": [\n        {\"quote\": \"And besides all of that, and with love....OpenSCAD is a joke\", \"source\": \"comments\", \"author\": \"incorene2\"},\n        {\"quote\": \"why did you choose OpenSCAD instead of more powerful alternatives like CadQuery?\", \"source\": \"comments\", \"author\": \"c7b\"}\n      ]\n    }\n  ],\n  \"scores\": {\n    \"founder_depth\": {\n      \"score\": 5,\n      \"why\": \"The sources only mention one founder, Zach, with no details about his technical background, prior shipped products, or domain depth.\",\n      \"evidence\": [\n        {\"quote\": \"I'm Zach from Adam\", \"source\": \"hn_post\"}\n      ]\n    },\n    \"shipping_evidence\": {\n      \"score\": 23,\n      \"why\": \"The product is live, open-source, runs fully in-browser, has a public GitHub repository with over 5,000 stars, and has a recent commit from September 2026.\",\n      \"evidence\": [\n        {\"quote\": \"Try it: https://adam.new/cadam/\", \"source\": \"hn_post\"},\n        {\"quote\": \"Stars: 5134\", \"source\": \"github\"},\n        {\"quote\": \"Last commit: 2026-09-02T20:58:07Z\", \"source\": \"github\"}\n      ]\n    },\n    \"demand_signal\": {\n      \"score\": 15,\n      \"why\": \"There is strong engagement on Hacker News (215 points, 97 comments) and some users report successful real-world usage (e.g., printing custom bumpers), though professional engineers express heavy skepticism about its accuracy and utility.\",\n      \"evidence\": [\n        {\"quote\": \"Points: 215\", \"source\": \"hn_post\"},\n        {\"quote\": \"Comments: 97\", \"source\": \"hn_post\"},\n        {\"quote\": \"Saw this and after 5 minutes of prompting I have four custom bumpers printing. This is a great product.\", \"source\": \"comments\", \"author\": \"tricky\"}\n      ]\n    },\n    \"defensibility\": {\n      \"score\": 10,\n      \"why\": \"The project is open-source (GPL licensed) and relies on third-party LLMs via Vercel AI SDK, though they are building custom workflows like in-browser WebAssembly compilation of OpenSCAD and plan to add UI for face/edge selection.\",\n      \"evidence\": [\n        {\"quote\": \"We’re building CADAM, an open source Text to CAD platform.\", \"source\": \"hn_post\"},\n        {\"quote\": \"Model-agnostic via the Vercel AI SDK\", \"source\": \"hn_post\"},\n        {\"quote\": \"Runs fully in-browser by compiling OpenSCAD to WebAssembly\", \"source\": \"hn_post\"}\n      ]\n    }\n  },\n  \"case_summary\": \"The strongest point is the highly accessible, open-source, in-browser implementation that has garnered significant developer interest (over 5,000 GitHub stars), while the weakest point is the fundamental limitation of current LLMs in spatial reasoning, leading to inaccurate models that fail to meet professional engineering standards.\",\n  \"would_change_my_mind\": [\n    \"Evidence of successful integration and accurate exports to professional CAD software like Fusion, Solidworks, or Onshape without losing constraints.\",\n    \"Release of the planned face/edge selection UI and viewport image integration that demonstrably improves LLM spatial context and accuracy.\",\n    \"A clear monetization strategy or revenue traction from the commercial product (adam.new) or plugins.\"\n  ],\n  \"data_gaps\": [\n    \"No information on the founders' professional backgrounds, technical expertise, or prior achievements.\",\n    \"No details on the commercial business model, pricing, or current revenue/paying customers.\",\n    \"No information on the team size or other contributors beyond Zach.\"\n  ]\n}",
   "analysis": {
-    "team": {
-      "summary": "The team is led by founder Zach from YC W25, building Adam as an open-source AI CAD platform.",
-      "evidence": [
-        {
-          "quote": "Hey HN! I'm Zach from Adam ( https://adam.new/ ). We're building AI agents for mechanical CAD software.",
-          "source": "hn_post"
-        },
-        {
-          "quote": "YC batch: W25",
-          "source": "hn_post"
-        }
-      ]
-    },
-    "product": {
-      "summary": "CADAM is an open-source Text to CAD platform that generates parametric 3D models and textured meshes from natural language and images using OpenSCAD compiled to WebAssembly.",
+    "business_model": {
+      "customers_pay_for": "unclear",
+      "category": "engineering_software",
+      "summary": "An open-source AI-powered Text-to-CAD platform that generates parametric 3D models from natural language, though how the company plans to generate revenue is not specified in the sources.",
       "evidence": [
         {
           "quote": "We’re building CADAM, an open source Text to CAD platform.",
           "source": "hn_post"
         },
         {
-          "quote": "Outputs OpenSCAD code with automatically extracted parameters that surface as interactive sliders for instant dimension tweaking",
+          "quote": "We're building AI agents for mechanical CAD software.",
+          "source": "hn_post"
+        }
+      ]
+    },
+    "team": {
+      "summary": "The team includes Zach, but further details about the founders' backgrounds, technical depth, or other team members are not found in the sources.",
+      "evidence": [
+        {
+          "quote": "I'm Zach from Adam",
+          "source": "hn_post"
+        }
+      ]
+    },
+    "product": {
+      "summary": "CADAM is an open-source React app with a Supabase backend that compiles OpenSCAD to WebAssembly to run fully in-browser, generating parametric 3D models from text prompts and image references.",
+      "evidence": [
+        {
+          "quote": "We’re building CADAM, an open source Text to CAD platform. It's a React app (TanStack Start) with a Supabase backend",
           "source": "hn_post"
         },
         {
-          "quote": "Runs fully in-browser by compiling OpenSCAD to WebAssembly",
+          "quote": "Generates parametric 3D models from natural language, with support for both text prompts and image references.",
+          "source": "hn_post"
+        },
+        {
+          "quote": "Runs fully in-browser by compiling OpenSCAD to WebAssembly (in a Web Worker, so the UI never blocks) and rendering with Three.js",
           "source": "hn_post"
         }
       ]
     },
     "market": {
       "size_hint": {
-        "summary": "Targeting mechanical design and 3D modeling users who utilize CAD software for prototyping and manufacturing parts.",
-        "evidence": [
-          {
-            "quote": "AI will be the primary medium for creating mechanical designs just like it is in software today.",
-            "source": "hn_post"
-          }
-        ]
+        "summary": "not found in sources",
+        "evidence": []
       },
       "competitors": {
-        "summary": "Commenters noted alternatives in the text-to-CAD and AI design space including TinkerCAD, CADEM, tooltrace.ai, quidities.com, and ModelRift.",
+        "summary": "Competitors and alternative tools mentioned by commenters include CADEM, tooltrace.ai, modelrift.com, Claude Code with CadQuery, and quidities.com.",
         "names": [
-          "TinkerCAD",
           "CADEM",
           "tooltrace.ai",
-          "quidities.com",
-          "ModelRift"
+          "modelrift.com",
+          "Claude Code",
+          "CadQuery",
+          "quidities.com"
         ],
         "evidence": [
-          {
-            "quote": "Think of it like AI TinkerCAD.",
-            "source": "hn_post"
-          },
           {
             "quote": "FYI there is already a product with a very similar name, CADEM.",
             "source": "comments",
             "author": "zardo"
           },
           {
+            "quote": "I’ve also had a good experience with Claude Code and CadQuery",
+            "source": "comments",
+            "author": "fxtentacle"
+          },
+          {
             "quote": "Check out modelrift.com for another alternative",
             "source": "comments",
             "author": "jetter"
+          },
+          {
+            "quote": "we've got a very early stage project with a lot of similar ideas at https://quidities.com/",
+            "source": "comments",
+            "author": "themgt"
           }
         ]
       },
       "why_now": {
-        "summary": "Advancements in LLM code generation and in-browser WebAssembly compilation enable real-time text-to-CAD rendering and interactive parameter tweaking.",
+        "summary": "The rise of newer LLMs with adaptive thinking and better code-generation capabilities, such as Gemini 3.1 Pro, enables more effective text-to-CAD generation.",
         "evidence": [
           {
-            "quote": "Runs fully in-browser by compiling OpenSCAD to WebAssembly (in a Web Worker, so the UI never blocks) and rendering with Three.js",
+            "quote": "Model-agnostic via the Vercel AI SDK: Anthropic (Claude), Google (Gemini), and OpenAI/others through OpenRouter, with adaptive thinking auto-enabled on newer models.",
             "source": "hn_post"
           }
         ]
@@ -84,105 +97,128 @@
     },
     "risks": [
       {
-        "risk": "LLMs lack reliable spatial reasoning and mechanical awareness, leading to inaccurate models.",
+        "risk": "LLMs currently have poor spatial awareness and reasoning, leading to technically inaccurate models that lack precision, correct tolerances, or proper assembly features.",
         "evidence": [
           {
-            "quote": "LLMs are still weak at spatial reasoning, but it gets better.",
-            "source": "comments"
+            "quote": "I find all current LLMs to have pretty poor spatial awareness.",
+            "source": "comments",
+            "author": "murkt"
           },
           {
             "quote": "the resulting models may be visually close to what is required, but they are not technically accurate.",
-            "source": "comments"
+            "source": "comments",
+            "author": "dmpanch"
           }
         ]
       },
       {
-        "risk": "Scepticism from professional engineers regarding the utility of OpenSCAD and text-based generation for real manufacturing workflows.",
+        "risk": "Professional engineers are highly skeptical of AI for mechanical design, noting that CAD modeling is only a small fraction of engineering work and that verifying AI-generated models can take longer than manual creation.",
         "evidence": [
           {
-            "quote": "Even if all I need is a simple little bracket or something, I can model that and know it's right much quicker than I can ask the AI",
-            "source": "comments"
+            "quote": "There are so many reasons why I, as an engineer, will never even attempt to use AI for mechanical design",
+            "source": "comments",
+            "author": "incorene2"
           },
           {
-            "quote": "OpenSCAD is a joke, and if you seriously try to tell me that 'the best paradigm for CAD generation is to generate CAD as code', I cannot take you seriously.",
-            "source": "comments"
+            "quote": "Even if all I need is a simple little bracket or something, I can model that and know it's right much quicker than I can ask the AI to do it",
+            "source": "comments",
+            "author": "incorene2"
+          }
+        ]
+      },
+      {
+        "risk": "The choice of OpenSCAD as the primary CAD paradigm is criticized by some users as being a 'joke' or less powerful than alternatives like CadQuery or FreeCAD.",
+        "evidence": [
+          {
+            "quote": "And besides all of that, and with love....OpenSCAD is a joke",
+            "source": "comments",
+            "author": "incorene2"
+          },
+          {
+            "quote": "why did you choose OpenSCAD instead of more powerful alternatives like CadQuery?",
+            "source": "comments",
+            "author": "c7b"
           }
         ]
       }
     ],
     "scores": {
       "founder_depth": {
-        "score": 15,
-        "why": "Founder is technical and backed by YC W25 with a working open-source shipping product, though deep domain background details are light in the text.",
+        "score": 5,
+        "why": "The sources only mention one founder, Zach, with no details about his technical background, prior shipped products, or domain depth.",
         "evidence": [
           {
-            "quote": "Hey HN! I'm Zach from Adam ( https://adam.new/ ). We're building AI agents for mechanical CAD software.",
-            "source": "hn_post"
-          },
-          {
-            "quote": "YC batch: W25",
+            "quote": "I'm Zach from Adam",
             "source": "hn_post"
           }
         ]
       },
       "shipping_evidence": {
-        "score": 25,
-        "why": "Extensive public code, GitHub repository with over 5,000 stars, live demo links, and local runnable code.",
+        "score": 23,
+        "why": "The product is live, open-source, runs fully in-browser, has a public GitHub repository with over 5,000 stars, and has a recent commit from September 2026.",
         "evidence": [
           {
             "quote": "Try it: https://adam.new/cadam/",
             "source": "hn_post"
           },
           {
-            "quote": "Repository: Adam-CAD/CADAM",
+            "quote": "Stars: 5134",
             "source": "github"
           },
           {
-            "quote": "Stars: 5134",
+            "quote": "Last commit: 2026-09-02T20:58:07Z",
             "source": "github"
           }
         ]
       },
       "demand_signal": {
-        "score": 20,
-        "why": "High Hacker News engagement with 215 points and 97 comments, plus thousands of GitHub stars and users reporting successful prints.",
+        "score": 15,
+        "why": "There is strong engagement on Hacker News (215 points, 97 comments) and some users report successful real-world usage (e.g., printing custom bumpers), though professional engineers express heavy skepticism about its accuracy and utility.",
         "evidence": [
           {
-            "quote": "Points: 215  Comments: 97",
+            "quote": "Points: 215",
+            "source": "hn_post"
+          },
+          {
+            "quote": "Comments: 97",
             "source": "hn_post"
           },
           {
             "quote": "Saw this and after 5 minutes of prompting I have four custom bumpers printing. This is a great product.",
-            "source": "comments"
+            "source": "comments",
+            "author": "tricky"
           }
         ]
       },
       "defensibility": {
         "score": 10,
-        "why": "Open-source codebase wrapping OpenSCAD via Vercel AI SDK and WebAssembly, leading to questions from users regarding moats and ease of replication.",
+        "why": "The project is open-source (GPL licensed) and relies on third-party LLMs via Vercel AI SDK, though they are building custom workflows like in-browser WebAssembly compilation of OpenSCAD and plan to add UI for face/edge selection.",
         "evidence": [
           {
-            "quote": "Model-agnostic via the Vercel AI SDK: Anthropic (Claude), Google (Gemini), and OpenAI/others through OpenRouter",
+            "quote": "We’re building CADAM, an open source Text to CAD platform.",
             "source": "hn_post"
           },
           {
-            "quote": "How do you differentiate from other open source AI CAD solutions? I’ve also had a good experience with Claude Code and CadQuery... I.e. what’s your moat?",
-            "source": "comments"
+            "quote": "Model-agnostic via the Vercel AI SDK",
+            "source": "hn_post"
+          },
+          {
+            "quote": "Runs fully in-browser by compiling OpenSCAD to WebAssembly",
+            "source": "hn_post"
           }
         ]
       }
     },
-    "thesis_fit": "on-thesis",
-    "thesis_fit_reason": "CADAM is an AI-powered developer and engineering tool used by technical designers to generate mechanical CAD code, offered as open-source software.",
-    "case_summary": "Strong public shipping trail and developer engagement, offset by deep skepticism from professional engineers regarding spatial reasoning and text-to-code CAD paradigms.",
+    "case_summary": "The strongest point is the highly accessible, open-source, in-browser implementation that has garnered significant developer interest (over 5,000 GitHub stars), while the weakest point is the fundamental limitation of current LLMs in spatial reasoning, leading to inaccurate models that fail to meet professional engineering standards.",
     "would_change_my_mind": [
-      "Demonstrable adoption by professional mechanical engineers for production-grade manufacturing assemblies.",
-      "Transition to geometry kernels or constraint-driven modeling like CadQuery/build123d solving spatial inaccuracies.",
-      "Evidence of sustainable commercial revenue or enterprise adoption of the paid adam.new product."
+      "Evidence of successful integration and accurate exports to professional CAD software like Fusion, Solidworks, or Onshape without losing constraints.",
+      "Release of the planned face/edge selection UI and viewport image integration that demonstrably improves LLM spatial context and accuracy.",
+      "A clear monetization strategy or revenue traction from the commercial product (adam.new) or plugins."
     ],
     "data_gaps": [
-      "Details on revenue, team size, and commercial traction of the adam.new product.",
-      "Comprehensive benchmarks comparing OpenSCAD output accuracy against traditional CAD tools."
+      "No information on the founders' professional backgrounds, technical expertise, or prior achievements.",
+      "No details on the commercial business model, pricing, or current revenue/paying customers.",
+      "No information on the team size or other contributors beyond Zach."
     ]
   }
 }

@@ -1,53 +1,70 @@
 {
   "name": "Context.dev",
-  "model": "gemini-3.5-flash-lite",
-  "prompt_hash": "94e6daae82429e83246625b05801ab28dae83bb102234a13a6a5bffc2344379a",
-  "created_at": "2026-09-13T12:50:13Z",
+  "model": "gemini-3.5-flash",
+  "prompt_hash": "9847ff236eb435824c503d0868ed796a6abe58adebbc89c7b90d155db02c24d4",
+  "created_at": "2026-09-13T13:45:38Z",
   "attempts": 1,
-  "raw_response": "{\n  \"team\": {\n    \"summary\": \"Yahia, a solo founder with prior experience at Amazon and Sunrun, co-founded StockAlarm.io and essense.io (both acquired), built knifegeek.io, and previously built Brand.dev before expanding into Context.dev.\",\n    \"evidence\": [\n      {\n        \"quote\": \"Before, I worked at Amazon and Sunrun, and co-founded StockAlarm.io & essense.io, both of which were acquired.\",\n        \"source\": \"hn_post\"\n      },\n      {\n        \"quote\": \"Just before Context.dev, I built Brand.dev. The idea was that your software product should automatically know about your customer\",\n        \"source\": \"hn_post\"\n      }\n    ]\n  },\n  \"product\": {\n    \"summary\": \"Context.dev is an API providing web data extraction, rendering clean markdown, screenshots, brand data, and structured extraction via JSON schema for software applications and AI agents.\",\n    \"evidence\": [\n      {\n        \"quote\": \"Hi Hacker News, I’m Yahia. I built Context.dev ( https://www.context.dev/ ) to make it really easy to integrate web data into your products and agents.\",\n        \"source\": \"hn_post\"\n      },\n      {\n        \"quote\": \"You can send us a URL and get back clean Markdown, rendered HTML, screenshots, extracted images, etc..\",\n        \"source\": \"hn_post\"\n      }\n    ]\n  },\n  \"market\": {\n    \"size_hint\": {\n      \"summary\": \"The market encompasses developers building AI agents, chatbots, and onboarding workflows requiring live web context and company enrichment data, with enterprise plans handling high-volume traffic exceeding 2M credits per month.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Talk to sales if you need high-volume pricing beyond 2M credits/month, custom rate limits, SSO / SAML, SCIM provisioning, an uptime SLA\",\n          \"source\": \"comments\"\n        },\n        {\n          \"quote\": \"One API, every piece of web context your agent needs.\",\n          \"source\": \"site\"\n        }\n      ]\n    },\n    \"competitors\": {\n      \"summary\": \"Named competitors in the crowded web scraping and retrieval space include Firecrawl, BrowserUse, Browserbase, CloudCruise, NotteLabs, Intuned, Expand.ai, Reworkd, Parallel, Exa, Cloudflare, Zyte, Tavily, and Intercept.\",\n      \"names\": [\n        \"Firecrawl\",\n        \"BrowserUse\",\n        \"Browserbase\",\n        \"CloudCruise\",\n        \"NotteLabs\",\n        \"Intuned\",\n        \"Expand.ai\",\n        \"Reworkd\",\n        \"Parallel\",\n        \"Exa\",\n        \"Cloudflare\",\n        \"Zyte\",\n        \"Tavily\",\n        \"Intercept\"\n      ],\n      \"evidence\": [\n        {\n          \"quote\": \"Unclear what difference exists against Firecrawl - their team has been shipping great features extremely quickly lately\",\n          \"source\": \"comments\",\n          \"author\": \"m_w_\"\n        },\n        {\n          \"quote\": \"- Firecrawl\\n- BrowserUse\\n- Browserbase\\n- CloudCruise\\n- NotteLabs\\n- Intuned\\n- Expand.ai\\n- Reworkd\",\n          \"source\": \"comments\",\n          \"author\": \"jackienotchan\"\n        }\n      ]\n    },\n    \"why_now\": {\n      \"summary\": \"AI agents and LLM applications require real-time web context, structured extraction, and fresh retrieval augmented generation (RAG) data rather than static model cutoffs.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Agents need clean/current context from the web, and this is the best way I’ve found to give it to them.\",\n          \"source\": \"comments\",\n          \"author\": \"modo_\"\n        },\n        {\n          \"quote\": \"Feeding agents knowledge frozen at the model's cutoff\",\n          \"source\": \"site\"\n        }\n      ]\n    }\n  },\n  \"risks\": [\n    {\n      \"risk\": \"Extremely crowded and commoditized market with many direct competitors and well-funded alternatives.\",\n      \"evidence\": [\n        {\n          \"quote\": \"How did you find your differentiation in a highly commoditized space? It's probably one of the most crowded spaces.\",\n          \"source\": \"comments\",\n          \"author\": \"jackienotchan\"\n        }\n      ]\n    },\n    {\n      \"risk\": \"Website blocking, scraping restrictions, and friction around crawling infrastructure without robust rotating residential proxies.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Seems wildly expensive, furthermore not a single mention of \\\"ip\\\" on homepage? Not using rotating ip's, residential proxies? AKA unusable for high value data.\",\n          \"source\": \"comments\",\n          \"author\": \"seper8\"\n        }\n      ]\n    }\n  ],\n  \"scores\": {\n    \"founder_depth\": {\n      \"score\": 22,\n      \"why\": \"Founder has deep technical experience, having worked at Amazon/Sunrun, successfully co-founded and exited two startups (StockAlarm.io, essense.io), and previously shipped Brand.dev.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Before, I worked at Amazon and Sunrun, and co-founded StockAlarm.io & essense.io, both of which were acquired.\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    },\n    \"shipping_evidence\": {\n      \"score\": 22,\n      \"why\": \"Fully functional live product with public docs, SDKs across multiple languages, a self-serve dashboard, and active pricing tiers.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Since it’s an API, here are the docs: https://docs.context.dev/quickstart .\",\n          \"source\": \"hn_post\"\n        },\n        {\n          \"quote\": \"We provide official SDKs for TypeScript, Python, Ruby, Go, and PHP.\",\n          \"source\": \"site\"\n        }\n      ]\n    },\n    \"demand_signal\": {\n      \"score\": 20,\n      \"why\": \"Strong HN engagement with 119 points, active early adopters, and named production customers like Mintlify, SiteGPT, and Sourcely.\",\n      \"evidence\": [\n        {\n          \"quote\": \"SiteGPT, the AI chatbot platform for customer support, switched from Firecrawl to Context.dev to scrape entire websites\",\n          \"source\": \"site\"\n        },\n        {\n          \"quote\": \"Points: 119 Comments: 86\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    },\n    \"defensibility\": {\n      \"score\": 8,\n      \"why\": \"Operates in a highly crowded web-scraping and API abstraction space with numerous named competitors, open-source alternatives, and basic proxy capabilities.\",\n      \"evidence\": [\n        {\n          \"quote\": \"How did you find your differentiation in a highly commoditized space? It's probably one of the most crowded spaces.\",\n          \"source\": \"comments\",\n          \"author\": \"jackienotchan\"\n        }\n      ]\n    }\n  },\n  \"thesis_fit\": \"on-thesis\",\n  \"thesis_fit_reason\": \"Context.dev is an AI infrastructure and developer tool providing an API for web scraping and data extraction used by software engineers and AI agents, paying via metered API subscription plans.\",\n  \"case_summary\": \"Strong founder background with rapid shipping and named customers, countered by extreme competition in a crowded web scraping commodity market.\",\n  \"would_change_my_mind\": [\n    \"Demonstrating proprietary proxy or extraction infrastructure that outperforms standard headless browser clusters sustainably.\",\n    \"Proving net-negative churn and rapid ARR growth from high-volume enterprise contracts.\",\n    \"Significant defensibility via unique data assets that cannot be replicated by open-source scrapers or model providers.\"\n  ],\n  \"data_gaps\": [\n    \"Exact current ARR or paying user count metrics.\",\n    \"GitHub repository metrics and open-source contributions.\",\n    \"Detailed breakdown of margin per scrape operation.\"\n  ]\n}",
+  "raw_response": "{\n  \"business_model\": {\n    \"customers_pay_for\": \"software\",\n    \"category\": \"ai_infrastructure\",\n    \"summary\": \"Context.dev provides a web scraping and brand data API that delivers structured data, markdown, and brand intelligence to developers and AI agents on a subscription or usage-based credit model.\",\n    \"evidence\": [\n      {\n        \"quote\": \"Context.dev offers Developer ($25/mo), Pro ($149/mo), and Scale ($499/mo), plus Enterprise for teams that need more than 2M credits a month\",\n        \"source\": \"site\"\n      }\n    ]\n  },\n  \"team\": {\n    \"summary\": \"The company is led by solo founder Yahia, a former Amazon and Sunrun engineer who previously co-founded two acquired startups, StockAlarm.io and essense.io.\",\n    \"evidence\": [\n      {\n        \"quote\": \"Hi Hacker News, I’m Yahia.\",\n        \"source\": \"hn_post\"\n      },\n      {\n        \"quote\": \"Before, I worked at Amazon and Sunrun, and co-founded StockAlarm.io & essense.io, both of which were acquired.\",\n        \"source\": \"hn_post\"\n      },\n      {\n        \"quote\": \"re-applied at which point I got in as a solo founder.\",\n        \"source\": \"hn_post\"\n      }\n    ]\n  },\n  \"product\": {\n    \"summary\": \"Context.dev is an API that scrapes websites, crawls sitemaps, extracts structured data via JSON Schema, and retrieves brand assets like logos, colors, and fonts.\",\n    \"evidence\": [\n      {\n        \"quote\": \"You can send us a URL and get back clean Markdown, rendered HTML, screenshots, extracted images, etc..\",\n        \"source\": \"hn_post\"\n      },\n      {\n        \"quote\": \"For more custom use cases, you can send a URL plus a JSON Schema and ask us to extract structured data\",\n        \"source\": \"hn_post\"\n      }\n    ]\n  },\n  \"market\": {\n    \"size_hint\": {\n      \"summary\": \"The market is driven by the transition of the web to become legible to AI agents, requiring clean, real-time context rather than frozen training data.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Agents need clean/current context from the web, and this is the best way I’ve found to give it to them.\",\n          \"source\": \"comments\",\n          \"author\": \"modo_\"\n        },\n        {\n          \"quote\": \"The internet is clearly moving in this direction: companies are starting to realize their sites need to be legible to agents.\",\n          \"source\": \"comments\",\n          \"author\": \"modo_\"\n        }\n      ]\n    },\n    \"competitors\": {\n      \"summary\": \"The web scraping and retrieval space is highly crowded, featuring well-funded players, other YC startups, and self-hosted alternatives.\",\n      \"names\": [\n        \"Firecrawl\",\n        \"BrowserUse\",\n        \"Browserbase\",\n        \"CloudCruise\",\n        \"NotteLabs\",\n        \"Intuned\",\n        \"Expand.ai\",\n        \"Reworkd\",\n        \"Parallel\",\n        \"Exa\",\n        \"Cloudflare\",\n        \"Tavily\",\n        \"Zyte\",\n        \"Crawl4AI\"\n      ],\n      \"evidence\": [\n        {\n          \"quote\": \"Even within YC, there are many competitors that do pretty much the same thing: - Firecrawl - BrowserUse - Browserbase - CloudCruise\",\n          \"source\": \"comments\",\n          \"author\": \"jackienotchan\"\n        },\n        {\n          \"quote\": \"And then you have the extremely well-funded web retrieval players like Parallel and Exa.\",\n          \"source\": \"comments\",\n          \"author\": \"jackienotchan\"\n        },\n        {\n          \"quote\": \"how's this different from offerings from cloudflare, firecrawl, tavily, exa?\",\n          \"source\": \"comments\",\n          \"author\": \"htrp\"\n        }\n      ]\n    },\n    \"why_now\": {\n      \"summary\": \"AI agents and LLMs require real-time web context to avoid knowledge cutoff limitations, but building and maintaining custom scraping infrastructure internally is highly inefficient.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Feeding agents knowledge frozen at the model's cutoff\",\n          \"source\": \"site\"\n        },\n        {\n          \"quote\": \"Building crawlers, scrapers, and pipelines internally\",\n          \"source\": \"site\"\n        }\n      ]\n    }\n  },\n  \"risks\": [\n    {\n      \"risk\": \"Intense competition and commoditization in the web scraping and retrieval market, making differentiation difficult.\",\n      \"evidence\": [\n        {\n          \"quote\": \"How did you find your differentiation in a highly commoditized space? It's probably one of the most crowded spaces.\",\n          \"source\": \"comments\",\n          \"author\": \"jackienotchan\"\n        }\n      ]\n    },\n    {\n      \"risk\": \"Backlash and blocking from website owners due to the negative side effects of AI crawlers, such as costs and downtime.\",\n      \"evidence\": [\n        {\n          \"quote\": \"AI crawlers come with negative side effects for website owners (costs, downtime, etc.), as repeatedly reported here on HN\",\n          \"source\": \"comments\",\n          \"author\": \"jackienotchan\"\n        }\n      ]\n    },\n    {\n      \"risk\": \"Simple client-side workarounds using open-source libraries can replicate a significant portion of the product's core scraping value.\",\n      \"evidence\": [\n        {\n          \"quote\": \"If you want to vibe something that gets you 70% of the way to this well funded startup in like 15 minutes\",\n          \"source\": \"comments\",\n          \"author\": \"SOLAR_FIELDS\"\n        }\n      ]\n    }\n  ],\n  \"scores\": {\n    \"founder_depth\": {\n      \"score\": 23,\n      \"why\": \"Yahia is a solo founder with a strong technical background at Amazon and Sunrun, and a proven track record of building and successfully exiting two startups (StockAlarm.io and essense.io).\",\n      \"evidence\": [\n        {\n          \"quote\": \"Before, I worked at Amazon and Sunrun, and co-founded StockAlarm.io & essense.io, both of which were acquired.\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    },\n    \"shipping_evidence\": {\n      \"score\": 24,\n      \"why\": \"The product is fully live with comprehensive documentation, multiple official SDKs, and active paying users who have integrated the API into production.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Since it’s an API, here are the docs: https://docs.context.dev/quickstart .\",\n          \"source\": \"hn_post\"\n        },\n        {\n          \"quote\": \"We provide official SDKs for TypeScript, Python, Ruby, Go, and PHP.\",\n          \"source\": \"site\"\n        },\n        {\n          \"quote\": \"Had it in production within an hour of signing up\",\n          \"source\": \"comments\",\n          \"author\": \"modo_\"\n        }\n      ]\n    },\n    \"demand_signal\": {\n      \"score\": 23,\n      \"why\": \"Strong demand signal with multiple named, high-profile startup customers (Mintlify, SiteGPT, daily.dev, DocsBot, Tinfoil) actively using the product and migrating from competitors.\",\n      \"evidence\": [\n        {\n          \"quote\": \"SiteGPT, the AI chatbot platform for customer support, switched from Firecrawl to Context.dev\",\n          \"source\": \"site\"\n        },\n        {\n          \"quote\": \"We used Zyte before, but switched to Context.dev due to the ZDR offering\",\n          \"source\": \"site\"\n        }\n      ]\n    },\n    \"defensibility\": {\n      \"score\": 11,\n      \"why\": \"While the workflow integrations (JSON schema extraction, brand profiles) add value, the core technology relies on web scraping, which is highly commoditized and faces numerous direct competitors.\",\n      \"evidence\": [\n        {\n          \"quote\": \"How did you find your differentiation in a highly commoditized space? It's probably one of the most crowded spaces.\",\n          \"source\": \"comments\",\n          \"author\": \"jackienotchan\"\n        }\n      ]\n    }\n  },\n  \"case_summary\": \"The strongest point is the founder's proven track record of shipping and exits combined with immediate, high-quality customer adoption from named startups; the weakest point is the intense competition and low technical defensibility in a highly commoditized web scraping market.\",\n  \"would_change_my_mind\": [\n    \"If major competitors like Firecrawl or Exa aggressively cut prices, rendering Context.dev's pricing uncompetitive.\",\n    \"If website anti-bot protections (like Cloudflare Turnstile) become so advanced that Context.dev's bypass rates drop significantly, causing high failure rates.\",\n    \"If legal or regulatory crackdowns on AI web scraping make it impossible to scrape public websites without explicit opt-in.\"\n  ],\n  \"data_gaps\": [\n    \"No GitHub repository stats or public code repository links were provided to evaluate the open-source traction or code quality.\",\n    \"No exact revenue figures, MRR, or growth rates are disclosed in the sources.\",\n    \"No details on the exact infrastructure or proxy network used to bypass advanced bot protections (e.g., whether they use residential proxies).\"\n  ]\n}",
   "analysis": {
-    "team": {
-      "summary": "Yahia, a solo founder with prior experience at Amazon and Sunrun, co-founded StockAlarm.io and essense.io (both acquired), built knifegeek.io, and previously built Brand.dev before expanding into Context.dev.",
+    "business_model": {
+      "customers_pay_for": "software",
+      "category": "ai_infrastructure",
+      "summary": "Context.dev provides a web scraping and brand data API that delivers structured data, markdown, and brand intelligence to developers and AI agents on a subscription or usage-based credit model.",
       "evidence": [
+        {
+          "quote": "Context.dev offers Developer ($25/mo), Pro ($149/mo), and Scale ($499/mo), plus Enterprise for teams that need more than 2M credits a month",
+          "source": "site"
+        }
+      ]
+    },
+    "team": {
+      "summary": "The company is led by solo founder Yahia, a former Amazon and Sunrun engineer who previously co-founded two acquired startups, StockAlarm.io and essense.io.",
+      "evidence": [
+        {
+          "quote": "Hi Hacker News, I’m Yahia.",
+          "source": "hn_post"
+        },
         {
           "quote": "Before, I worked at Amazon and Sunrun, and co-founded StockAlarm.io & essense.io, both of which were acquired.",
           "source": "hn_post"
         },
         {
-          "quote": "Just before Context.dev, I built Brand.dev. The idea was that your software product should automatically know about your customer",
+          "quote": "re-applied at which point I got in as a solo founder.",
           "source": "hn_post"
         }
       ]
     },
     "product": {
-      "summary": "Context.dev is an API providing web data extraction, rendering clean markdown, screenshots, brand data, and structured extraction via JSON schema for software applications and AI agents.",
+      "summary": "Context.dev is an API that scrapes websites, crawls sitemaps, extracts structured data via JSON Schema, and retrieves brand assets like logos, colors, and fonts.",
       "evidence": [
         {
-          "quote": "Hi Hacker News, I’m Yahia. I built Context.dev ( https://www.context.dev/ ) to make it really easy to integrate web data into your products and agents.",
+          "quote": "You can send us a URL and get back clean Markdown, rendered HTML, screenshots, extracted images, etc..",
           "source": "hn_post"
         },
         {
-          "quote": "You can send us a URL and get back clean Markdown, rendered HTML, screenshots, extracted images, etc..",
+          "quote": "For more custom use cases, you can send a URL plus a JSON Schema and ask us to extract structured data",
           "source": "hn_post"
         }
       ]
     },
     "market": {
       "size_hint": {
-        "summary": "The market encompasses developers building AI agents, chatbots, and onboarding workflows requiring live web context and company enrichment data, with enterprise plans handling high-volume traffic exceeding 2M credits per month.",
+        "summary": "The market is driven by the transition of the web to become legible to AI agents, requiring clean, real-time context rather than frozen training data.",
         "evidence": [
           {
-            "quote": "Talk to sales if you need high-volume pricing beyond 2M credits/month, custom rate limits, SSO / SAML, SCIM provisioning, an uptime SLA",
-            "source": "comments"
+            "quote": "Agents need clean/current context from the web, and this is the best way I’ve found to give it to them.",
+            "source": "comments",
+            "author": "modo_"
           },
           {
-            "quote": "One API, every piece of web context your agent needs.",
-            "source": "site"
+            "quote": "The internet is clearly moving in this direction: companies are starting to realize their sites need to be legible to agents.",
+            "source": "comments",
+            "author": "modo_"
           }
         ]
       },
       "competitors": {
-        "summary": "Named competitors in the crowded web scraping and retrieval space include Firecrawl, BrowserUse, Browserbase, CloudCruise, NotteLabs, Intuned, Expand.ai, Reworkd, Parallel, Exa, Cloudflare, Zyte, Tavily, and Intercept.",
+        "summary": "The web scraping and retrieval space is highly crowded, featuring well-funded players, other YC startups, and self-hosted alternatives.",
         "names": [
           "Firecrawl",
           "BrowserUse",
@@ -60,33 +77,37 @@
           "Parallel",
           "Exa",
           "Cloudflare",
-          "Zyte",
           "Tavily",
-          "Intercept"
+          "Zyte",
+          "Crawl4AI"
         ],
         "evidence": [
           {
-            "quote": "Unclear what difference exists against Firecrawl - their team has been shipping great features extremely quickly lately",
-            "source": "comments",
-            "author": "m_w_"
-          },
-          {
-            "quote": "- Firecrawl\n- BrowserUse\n- Browserbase\n- CloudCruise\n- NotteLabs\n- Intuned\n- Expand.ai\n- Reworkd",
+            "quote": "Even within YC, there are many competitors that do pretty much the same thing: - Firecrawl - BrowserUse - Browserbase - CloudCruise",
             "source": "comments",
             "author": "jackienotchan"
+          },
+          {
+            "quote": "And then you have the extremely well-funded web retrieval players like Parallel and Exa.",
+            "source": "comments",
+            "author": "jackienotchan"
+          },
+          {
+            "quote": "how's this different from offerings from cloudflare, firecrawl, tavily, exa?",
+            "source": "comments",
+            "author": "htrp"
           }
         ]
       },
       "why_now": {
-        "summary": "AI agents and LLM applications require real-time web context, structured extraction, and fresh retrieval augmented generation (RAG) data rather than static model cutoffs.",
+        "summary": "AI agents and LLMs require real-time web context to avoid knowledge cutoff limitations, but building and maintaining custom scraping infrastructure internally is highly inefficient.",
         "evidence": [
           {
-            "quote": "Agents need clean/current context from the web, and this is the best way I’ve found to give it to them.",
-            "source": "comments",
-            "author": "modo_"
+            "quote": "Feeding agents knowledge frozen at the model's cutoff",
+            "source": "site"
           },
           {
-            "quote": "Feeding agents knowledge frozen at the model's cutoff",
+            "quote": "Building crawlers, scrapers, and pipelines internally",
             "source": "site"
           }
         ]
@@ -94,7 +115,7 @@
     },
     "risks": [
       {
-        "risk": "Extremely crowded and commoditized market with many direct competitors and well-funded alternatives.",
+        "risk": "Intense competition and commoditization in the web scraping and retrieval market, making differentiation difficult.",
         "evidence": [
           {
             "quote": "How did you find your differentiation in a highly commoditized space? It's probably one of the most crowded spaces.",
@@ -104,20 +125,30 @@
         ]
       },
       {
-        "risk": "Website blocking, scraping restrictions, and friction around crawling infrastructure without robust rotating residential proxies.",
+        "risk": "Backlash and blocking from website owners due to the negative side effects of AI crawlers, such as costs and downtime.",
         "evidence": [
           {
-            "quote": "Seems wildly expensive, furthermore not a single mention of \"ip\" on homepage? Not using rotating ip's, residential proxies? AKA unusable for high value data.",
+            "quote": "AI crawlers come with negative side effects for website owners (costs, downtime, etc.), as repeatedly reported here on HN",
             "source": "comments",
-            "author": "seper8"
+            "author": "jackienotchan"
+          }
+        ]
+      },
+      {
+        "risk": "Simple client-side workarounds using open-source libraries can replicate a significant portion of the product's core scraping value.",
+        "evidence": [
+          {
+            "quote": "If you want to vibe something that gets you 70% of the way to this well funded startup in like 15 minutes",
+            "source": "comments",
+            "author": "SOLAR_FIELDS"
           }
         ]
       }
     ],
     "scores": {
       "founder_depth": {
-        "score": 22,
-        "why": "Founder has deep technical experience, having worked at Amazon/Sunrun, successfully co-founded and exited two startups (StockAlarm.io, essense.io), and previously shipped Brand.dev.",
+        "score": 23,
+        "why": "Yahia is a solo founder with a strong technical background at Amazon and Sunrun, and a proven track record of building and successfully exiting two startups (StockAlarm.io and essense.io).",
         "evidence": [
           {
             "quote": "Before, I worked at Amazon and Sunrun, and co-founded StockAlarm.io & essense.io, both of which were acquired.",
@@ -126,8 +157,8 @@
         ]
       },
       "shipping_evidence": {
-        "score": 22,
-        "why": "Fully functional live product with public docs, SDKs across multiple languages, a self-serve dashboard, and active pricing tiers.",
+        "score": 24,
+        "why": "The product is fully live with comprehensive documentation, multiple official SDKs, and active paying users who have integrated the API into production.",
         "evidence": [
           {
             "quote": "Since it’s an API, here are the docs: https://docs.context.dev/quickstart .",
@@ -136,26 +167,31 @@
           {
             "quote": "We provide official SDKs for TypeScript, Python, Ruby, Go, and PHP.",
             "source": "site"
+          },
+          {
+            "quote": "Had it in production within an hour of signing up",
+            "source": "comments",
+            "author": "modo_"
           }
         ]
       },
       "demand_signal": {
-        "score": 20,
-        "why": "Strong HN engagement with 119 points, active early adopters, and named production customers like Mintlify, SiteGPT, and Sourcely.",
+        "score": 23,
+        "why": "Strong demand signal with multiple named, high-profile startup customers (Mintlify, SiteGPT, daily.dev, DocsBot, Tinfoil) actively using the product and migrating from competitors.",
         "evidence": [
           {
-            "quote": "SiteGPT, the AI chatbot platform for customer support, switched from Firecrawl to Context.dev to scrape entire websites",
+            "quote": "SiteGPT, the AI chatbot platform for customer support, switched from Firecrawl to Context.dev",
             "source": "site"
           },
           {
-            "quote": "Points: 119 Comments: 86",
-            "source": "hn_post"
+            "quote": "We used Zyte before, but switched to Context.dev due to the ZDR offering",
+            "source": "site"
           }
         ]
       },
       "defensibility": {
-        "score": 8,
-        "why": "Operates in a highly crowded web-scraping and API abstraction space with numerous named competitors, open-source alternatives, and basic proxy capabilities.",
+        "score": 11,
+        "why": "While the workflow integrations (JSON schema extraction, brand profiles) add value, the core technology relies on web scraping, which is highly commoditized and faces numerous direct competitors.",
         "evidence": [
           {
             "quote": "How did you find your differentiation in a highly commoditized space? It's probably one of the most crowded spaces.",
@@ -165,18 +201,16 @@
         ]
       }
     },
-    "thesis_fit": "on-thesis",
-    "thesis_fit_reason": "Context.dev is an AI infrastructure and developer tool providing an API for web scraping and data extraction used by software engineers and AI agents, paying via metered API subscription plans.",
-    "case_summary": "Strong founder background with rapid shipping and named customers, countered by extreme competition in a crowded web scraping commodity market.",
+    "case_summary": "The strongest point is the founder's proven track record of shipping and exits combined with immediate, high-quality customer adoption from named startups; the weakest point is the intense competition and low technical defensibility in a highly commoditized web scraping market.",
     "would_change_my_mind": [
-      "Demonstrating proprietary proxy or extraction infrastructure that outperforms standard headless browser clusters sustainably.",
-      "Proving net-negative churn and rapid ARR growth from high-volume enterprise contracts.",
-      "Significant defensibility via unique data assets that cannot be replicated by open-source scrapers or model providers."
+      "If major competitors like Firecrawl or Exa aggressively cut prices, rendering Context.dev's pricing uncompetitive.",
+      "If website anti-bot protections (like Cloudflare Turnstile) become so advanced that Context.dev's bypass rates drop significantly, causing high failure rates.",
+      "If legal or regulatory crackdowns on AI web scraping make it impossible to scrape public websites without explicit opt-in."
     ],
     "data_gaps": [
-      "Exact current ARR or paying user count metrics.",
-      "GitHub repository metrics and open-source contributions.",
-      "Detailed breakdown of margin per scrape operation."
+      "No GitHub repository stats or public code repository links were provided to evaluate the open-source traction or code quality.",
+      "No exact revenue figures, MRR, or growth rates are disclosed in the sources.",
+      "No details on the exact infrastructure or proxy network used to bypass advanced bot protections (e.g., whether they use residential proxies)."
     ]
   }
 }

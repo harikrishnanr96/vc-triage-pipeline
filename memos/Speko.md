@@ -1,23 +1,25 @@
 # Speko
 
-**Watch** | 68/100 | on-thesis | YC S26
+**Watch** | 72/100 | on-thesis | YC S26
 
-> Strong technical founder with deep domain experience and live open-source infra, but faces strategic risk from the industry trend toward end-to-end native voice models.
+> The strongest point is the founder's deep domain expertise and rapid shipping of a highly practical multi-model routing tool; the weakest point is the existential risk that the industry shifts to end-to-end or local voice models, rendering three-tier routing obsolete.
 
-**Why this call:** on-thesis and score 68 is 60-74. Speko is an AI infrastructure and developer tool providing a model router and evaluation API for voice agents, used by software engineering teams building AI applications, who pay for hosted routing and managed keys.
+**Why this call:** on-thesis and score 72 is 60-74 (ai infrastructure, customers pay for software). Speko provides a hosted router and open-source gateway that benchmarks and routes voice AI models, charging for the hosted router and managed keys.
+
+- "we charge for the hosted router and managed keys with consolidated billing." ([HN post](https://news.ycombinator.com/item?id=49332751))
 
 [HN launch](https://news.ycombinator.com/item?id=49332751) (118 points, 69 comments, 2026-08-17) | [website](https://speko.ai/)
 
-15 of 16 supporting quotes were found word for word in the sources.
+15 of 15 supporting quotes were found word for word in the sources.
 
 ## Scores
 
 | | Score | Why |
 |---|---|---|
-| Founder depth | 22/25 | The founder spent four years as a cofounder and CTO building enterprise voice agents across multiple languages before launching Speko. |
-| Shipping evidence | 20/25 | The product features a live hosted router, open-sourced gateway binary under MIT, and published multilingual benchmark boards. |
-| Demand signal | 15/25 | External usage has grown 25% per week since late June, and customer anecdotes indicate early adoption, though revenue figures are not disclosed. |
-| Defensibility | 11/25 | Moat relies on proprietary evaluation methodologies and benchmark test suites for spontaneous speech and naturalness, though basic routing logic can be replicated. |
+| Founder depth | 22/25 | The founder has four years of direct domain experience as a CTO building enterprise voice agents in multiple languages. |
+| Shipping evidence | 21/25 | The company has a live hosted router, public benchmarks, and an open-source gateway repository on GitHub. |
+| Demand signal | 16/25 | The startup reports strong weekly usage growth and has engaged users, though some commenters express skepticism about the longevity of the three-model architecture. |
+| Defensibility | 13/25 | While they have built a custom TTS naturalness scorer and aggregate valuable multi-language benchmarks, routing layers are vulnerable to competition from larger platforms like OpenRouter or direct integrations. |
 
 <details><summary>Quotes behind the scores</summary>
 
@@ -27,13 +29,12 @@
 
 **Shipping evidence**
 
-- "We also open sourced the gateway for teams who want to avoid an extra network hop... ( https://github.com/SpekoAI/gateway , MIT): one Go binary" ([HN post](https://news.ycombinator.com/item?id=49332751))
-- "Every speech model, benchmarked language by language, wired into one API." ([website](https://speko.ai/))
+- "We also open sourced the gateway for teams who want to avoid an extra network hop on the audio path" ([HN post](https://news.ycombinator.com/item?id=49332751))
+- "A hosted, provider-neutral STT, LLM and TTS data plane at router.speko.dev" ([website](https://speko.ai/))
 
 **Demand signal**
 
 - "Since we started the batch in late June, external usage has grown about 25 percent per week on average" ([HN post](https://news.ycombinator.com/item?id=49332751))
-- "A team running thousands of calls a day told us: "we can literally go to this dashboard, switch the model, and it will do it for us."" ([HN post](https://news.ycombinator.com/item?id=49332751))
 
 **Defensibility**
 
@@ -43,53 +44,47 @@
 
 ## Team
 
-Bek is the founder and YC S26 participant, with four years of prior experience as co-founder and CTO building voice agents for enterprises across Asia.
+The founder, Bek, has deep technical and domain expertise, having spent four years as a co-founder and CTO building voice agents for enterprises.
 
-- "Hi HN! I'm Bek, founder of Speko, a platform that finds an optimal combination of speech-to-text" ([HN post](https://news.ycombinator.com/item?id=49332751))
 - "Before founding Speko, I spent four years as cofounder and CTO building voice agents for enterprises across Asia in 10+ languages." ([HN post](https://news.ycombinator.com/item?id=49332751))
 
 ## Product
 
-Speko is a router and evaluation platform for voice AI that dynamically selects and connects speech-to-text, LLM, and text-to-speech models via an API or open-source gateway.
+Speko offers a hosted, provider-neutral routing data plane and an open-source gateway sidecar that optimizes STT, LLM, and TTS model combinations based on latency, cost, and accuracy constraints.
 
-- "a platform that finds an optimal combination of speech-to-text, LLM, and text-to-speech models, given your constraints" ([HN post](https://news.ycombinator.com/item?id=49332751))
-- "The Router for Voice AI. Every speech model, benchmarked language by language, wired into one API." ([website](https://speko.ai/)) **(not found word for word in this source)**
+- "A hosted, provider-neutral STT, LLM and TTS data plane at router.speko.dev, with typed contracts and managed routing." ([website](https://speko.ai/))
+- "We also open sourced the gateway for teams who want to avoid an extra network hop on the audio path" ([HN post](https://news.ycombinator.com/item?id=49332751))
 
 ## Market
 
-**Size:** The market encompasses developers and enterprises building voice agents, with external usage growing about 25 percent per week since late June.
-- "Since we started the batch in late June, external usage has grown about 25 percent per week on average" ([HN post](https://news.ycombinator.com/item?id=49332751))
+**Size:** not found in sources
 
-**Competitors:** Livekit Gateway, Vapi, LM Arena, Artificial Analysis. Commenters noted potential overlap with LiveKit Gateway, Vapi, and existing evaluation tools like LM Arena and Artificial Analysis.
+**Competitors:** Livekit Gateway, Vapi, OpenRouter, LM Arena, Artificial Analysis, Prompt foo. Commenters identify several competitors in the voice gateway, routing, and evaluation space, including Livekit, Vapi, OpenRouter, and various evaluation platforms.
 - "What is the difference with Livekit Gateway? https://livekit.com/blog/introducing-livekit-inference Or even something more managed like Vapi?" ([HN comment by MikhailTal](https://news.ycombinator.com/item?id=49332751))
-- "There are many companies now with evals as a core business model: LM Arena, Artificial Analysis, Prompt foo" ([HN comment by narrationbox](https://news.ycombinator.com/item?id=49332751))
+- "why isn't openrouter gonna be the openrouter for voice ?" ([HN comment by alexcnwy](https://news.ycombinator.com/item?id=49332751))
 
-**Why now:** Rapid expansion of voice model options and frequent vendor updates make manual integration and static stacking obsolete, creating a need for automated routing.
-- "Each of those layers offers a dozen credible vendors, and each month there are new models on the market. Almost everyone evaluates once, picks a stack of their choice, and never rechecks" ([HN post](https://news.ycombinator.com/item?id=49332751))
+**Why now:** The rapid release of new speech models makes manual benchmarking and switching difficult, creating a need for automated routing and evaluation.
+- "Each of those layers offers a dozen credible vendors, and each month there are new models on the market." ([HN post](https://news.ycombinator.com/item?id=49332751))
 
 ## Risks
 
-- Industry shifts toward end-to-end trained omni-models could bypass the multi-vendor STT/LLM/TTS stack architecture.
-  - "The industry is very much moving towards one-model-does-all end to end trained similar to LLMs and VLMs." ([HN comments](https://news.ycombinator.com/item?id=49332751))
-- Stakeholders often make voice stack decisions only once at the project start, questioning the ongoing value of dynamic routing.
-  - "stakeholders usually make this sort of decisions once at the start of the project." ([HN comments](https://news.ycombinator.com/item?id=49332751))
+- The industry is shifting toward end-to-end single-model voice architectures, which would eliminate the need for multi-model routing.
+  - "The industry is very much moving towards one-model-does-all end to end trained similar to LLMs and VLMs." ([HN comment by narrationbox](https://news.ycombinator.com/item?id=49332751))
+- Future voice processing may shift entirely to local, on-device models, bypassing cloud-based routing services.
+  - "hard to image a world where TTS and STT will not be done locally in the future" ([HN comment by cjjuice](https://news.ycombinator.com/item?id=49332751))
 
 ## What would change the call
 
-- Evidence that end-to-end multimodal voice models completely replace multi-vendor architectures
-- Data showing net retention and recurring paid contracts from production teams
-- Proof that automated benchmark routing significantly outperforms static enterprise selections
+- Widespread adoption of end-to-end voice models (like OpenAI's advanced voice) that perform better and cheaper than any routed ensemble.
+- OpenRouter or Livekit natively launching comprehensive voice routing and benchmarking, commoditizing Speko's core offering.
+- A decline in the 25% weekly growth rate as early adopters realize they prefer to lock in a single provider rather than dynamically route.
 
 ## Data gaps
 
-- Exact revenue or paying customer count
-- Granular architecture details of the automated scoring engine
-- Retention metrics beyond the initial 25% weekly growth claim
-
-## Quotes that failed the source check
-
-- product (site): "The Router for Voice AI. Every speech model, benchmarked language by language, wired into one API."
+- No GitHub repository statistics (stars, forks, commit history) are available in the sources.
+- No explicit details on current revenue or the exact number of paying customers.
+- No information on the size of the team beyond the single founder, Bek.
 
 ---
 
-*Generated by src/memo.py from data/analyses.jsonl. Analysis model: gemini-3.5-flash-lite.*
+*Generated by src/memo.py from data/analyses.jsonl. Analysis model: gemini-3.5-flash.*

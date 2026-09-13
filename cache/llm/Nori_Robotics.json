@@ -1,105 +1,158 @@
 {
   "name": "Nori Robotics",
-  "model": "gemini-3.5-flash-lite",
-  "prompt_hash": "0ffeee5dfdfb1ca307c15e1c9bd7ebfb94ca99075fcc845a71da5f51efc7260a",
-  "created_at": "2026-09-13T12:49:07Z",
+  "model": "gemini-3.5-flash",
+  "prompt_hash": "142864cc90abcd11d30ad00532d1eeb26ffd7cd864e3f94d7146750c0eec020c",
+  "created_at": "2026-09-13T13:42:21Z",
   "attempts": 1,
-  "raw_response": "{\n  \"team\": {\n    \"summary\": \"Founded by Antonio, who previously did robotics research at Columbia and worked on human demonstrations before building Nori Robotics in San Francisco.\",\n    \"evidence\": [\n      {\n        \"quote\": \"I started working on Nori while doing robotics research at Columbia.\",\n        \"source\": \"hn_post\"\n      },\n      {\n        \"quote\": \"We assemble each robot in San Francisco and have designed it to be easy to manufacture and repair\",\n        \"source\": \"hn_post\"\n      }\n    ]\n  },\n  \"product\": {\n    \"summary\": \"Nori A3 is a $1,688 bimanual mobile robot featuring 19 degrees of freedom, a telescoping lift, differential wheeled base, and multiple cameras, designed for robotics developers and researchers.\",\n    \"evidence\": [\n      {\n        \"quote\": \"We build a $1,688 bimanual mobile robot in San Francisco for robotics developers and researchers.\",\n        \"source\": \"hn_post\"\n      },\n      {\n        \"quote\": \"The most capable robot for $1,688\",\n        \"source\": \"site\"\n      }\n    ]\n  },\n  \"market\": {\n    \"size_hint\": {\n      \"summary\": \"Targeting robotics developers, researchers, and hobbyists looking for affordable bimanual hardware.\",\n      \"evidence\": [\n        {\n          \"quote\": \"for robotics developers and researchers.\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    },\n    \"competitors\": {\n      \"summary\": \"Mention of K-scale labs and low-cost Chinese robots as comparative platforms.\",\n      \"names\": [\n        \"K-scale labs\",\n        \"Unitree G1\"\n      ],\n      \"evidence\": [\n        {\n          \"quote\": \"Curious what the business model of this is to make the company sustainable. Asking that because I was part of the K-scale labs community and sad to see it shut down due to the competition with low-cost chinese robots\",\n          \"source\": \"comments\",\n          \"author\": \"TristanX\"\n        }\n      ]\n    },\n    \"why_now\": {\n      \"summary\": \"Advances in low-cost hardware components and open-source SDKs enabling sub-$2,000 humanoid and bimanual robotics development.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Getting this under $2,000 was the main engineering challenge.\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    }\n  },\n  \"risks\": [\n    {\n      \"risk\": \"Hardware reliability and limitations of RC-style servos leading to jerky or imprecise motions.\",\n      \"evidence\": [\n        {\n          \"quote\": \"The biggest problem is they are using RC style servos. This is why all the arm motions are jerky and lack precision.\",\n          \"source\": \"comments\"\n        }\n      ]\n    },\n    {\n      \"risk\": \"Skepticism over marketing claims regarding autonomous household task capabilities like cooking and folding clothes.\",\n      \"evidence\": [\n        {\n          \"quote\": \"So I guess my main question is: What do you hope to accomplish by shamelessly lying? I mean, beyond the lack of shame, you're selling a product here, so are you not at least afraid of the lawsuits?\",\n          \"source\": \"comments\"\n        }\n      ]\n    }\n  ],\n  \"scores\": {\n    \"founder_depth\": {\n      \"score\": 14,\n      \"why\": \"Founder has a relevant academic robotics research background at Columbia and has iterated on hardware designs, but limited prior commercial shipping history is detailed.\",\n      \"evidence\": [\n        {\n          \"quote\": \"I started working on Nori while doing robotics research at Columbia.\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    },\n    \"shipping_evidence\": {\n      \"score\": 12,\n      \"why\": \"Product is live with orders, a simulator, and an open SDK repository available, but engineering depth on public code repositories is minimal.\",\n      \"evidence\": [\n        {\n          \"quote\": \"We’ve shipped our first robot and are building the next batch.\",\n          \"source\": \"hn_post\"\n        },\n        {\n          \"quote\": \"Our open SDK includes teleoperation and demonstration tools: https://github.com/Nori-Robotics/nori-sdk-py\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    },\n    \"demand_signal\": {\n      \"score\": 15,\n      \"why\": \"High Hacker News engagement with over 200 points and 66 comments showing strong initial interest from developers and hobbyists.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Points: 201  Comments: 66\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    },\n    \"defensibility\": {\n      \"score\": 6,\n      \"why\": \"Low-cost hardware built from off-the-shelf components with open source SDKs and 3D files makes it susceptible to commoditization and easy to copy.\",\n      \"evidence\": [\n        {\n          \"quote\": \"We also built a browser-based simulator so you can try it out: https://lab.norirobotics.com/nori/model\",\n          \"source\": \"hn_post\"\n        },\n        {\n          \"quote\": \"we offer 3D files to print repairs\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    }\n  },\n  \"thesis_fit\": \"off-thesis\",\n  \"thesis_fit_reason\": \"Nori Robotics builds physical humanoid robot hardware and devices, which are explicitly out of scope for the software and infrastructure thesis.\",\n  \"case_summary\": \"Strong initial developer engagement and low price point for bimanual robotics, offset by the physical product category being out of scope and concerns over hardware limitations.\",\n  \"would_change_my_mind\": [\n    \"Expansion into pure AI-native control software for third-party hardware\",\n    \"Transition of the business model to focus primarily on agentic software infrastructure\",\n    \"Demonstration of sustained commercial scale in developer software tools\"\n  ],\n  \"data_gaps\": [\n    \"Detailed financial metrics and recurring software revenue breakdown\",\n    \"Comprehensive telemetry and safety compliance documentation\",\n    \"Complete bill of materials and supplier agreements\"\n  ]\n}",
+  "raw_response": "{\n  \"business_model\": {\n    \"customers_pay_for\": \"physical_goods\",\n    \"category\": \"hardware\",\n    \"summary\": \"Nori Robotics builds and sells a low-cost bimanual mobile robot for $1,688, targeted at robotics developers and researchers, with optional paid software.\",\n    \"evidence\": [\n      {\n        \"quote\": \"We make money by selling the hardware for $1,688, with optional paid software on top.\",\n        \"source\": \"hn_post\"\n      }\n    ]\n  },\n  \"team\": {\n    \"summary\": \"The company was founded by Antonio, who has a background in robotics research at Columbia University.\",\n    \"evidence\": [\n      {\n        \"quote\": \"I’m Antonio from Nori Robotics\",\n        \"source\": \"hn_post\"\n      },\n      {\n        \"quote\": \"I started working on Nori while doing robotics research at Columbia.\",\n        \"source\": \"hn_post\"\n      }\n    ]\n  },\n  \"product\": {\n    \"summary\": \"Nori A3 is a $1,688 bimanual mobile robot with 19 degrees of freedom, two arms, a wheeled base, four cameras, and a Raspberry Pi 5.\",\n    \"evidence\": [\n      {\n        \"quote\": \"We build a $1,688 bimanual mobile robot in San Francisco for robotics developers and researchers.\",\n        \"source\": \"hn_post\"\n      },\n      {\n        \"quote\": \"After seven iterations the latest Nori has: * 19 degrees of freedom * Two 7+1 DOF arms with a 1.5 kg payload per arm\",\n        \"source\": \"hn_post\"\n      }\n    ]\n  },\n  \"market\": {\n    \"size_hint\": {\n      \"summary\": \"not found in sources\",\n      \"evidence\": []\n    },\n    \"competitors\": {\n      \"summary\": \"The company faces competition from low-cost Chinese robots, K-scale labs, and Unitree.\",\n      \"names\": [\n        \"K-scale labs\",\n        \"Unitree G1\",\n        \"low-cost chinese robots\"\n      ],\n      \"evidence\": [\n        {\n          \"quote\": \"sad to see it shut down due to the competition with low-cost chinese robots\",\n          \"source\": \"comments\",\n          \"author\": \"TristanX\"\n        },\n        {\n          \"quote\": \"Have you chatted with the ex developers of KScale labs? What makes you different, given they went poof?\",\n          \"source\": \"comments\",\n          \"author\": \"OsrsNeedsf2P\"\n        },\n        {\n          \"quote\": \"when the Unitree G1 or whatever falls over the result is catastrophic.\",\n          \"source\": \"comments\",\n          \"author\": \"arjie\"\n        }\n      ]\n    },\n    \"why_now\": {\n      \"summary\": \"There is a strong need for affordable hardware in robotics research to enable large dataset collection and testing, which was previously limited by expensive robots.\",\n      \"evidence\": [\n        {\n          \"quote\": \"getting my hands on affordable hardware was difficult. Most labs have one or two expensive robots\",\n          \"source\": \"hn_post\"\n        },\n        {\n          \"quote\": \"Low-cost humanoids finally make those quirky home automation dev projects affordable.\",\n          \"source\": \"comments\",\n          \"author\": \"Mugshelf\"\n        }\n      ]\n    }\n  },\n  \"risks\": [\n    {\n      \"risk\": \"Intense competition from low-cost Chinese robots and the challenge of building a sustainable business in a hardware race to the bottom.\",\n      \"evidence\": [\n        {\n          \"quote\": \"sad to see it shut down due to the competition with low-cost chinese robots\",\n          \"source\": \"comments\",\n          \"author\": \"TristanX\"\n        },\n        {\n          \"quote\": \"making a sustainable business on a hardware race to the bottom sounds challenging.\",\n          \"source\": \"comments\",\n          \"author\": \"mNovak\"\n        }\n      ]\n    },\n    {\n      \"risk\": \"Technical limitations of cheap components, such as jerky RC servos and an underpowered Raspberry Pi 5.\",\n      \"evidence\": [\n        {\n          \"quote\": \"The biggest problem is they are using RC style servos. This is why all the arm motions are jerky and lack precision.\",\n          \"source\": \"comments\",\n          \"author\": \"elictronic\"\n        },\n        {\n          \"quote\": \"RPi5 seems a bit underpowered for all the sensors & control and offloading to a computer through wifi seems problematic.\",\n          \"source\": \"comments\",\n          \"author\": \"slug\"\n        }\n      ]\n    },\n    {\n      \"risk\": \"Skepticism regarding the truthfulness of the robot's advertised capabilities and video demonstrations.\",\n      \"evidence\": [\n        {\n          \"quote\": \"So I guess my main question is: What do you hope to accomplish by shamelessly lying?\",\n          \"source\": \"comments\",\n          \"author\": \"Mawr\"\n        },\n        {\n          \"quote\": \"Are these videos of it eg tidying up real or just staged / cherry picked?\",\n          \"source\": \"comments\",\n          \"author\": \"jonplackett\"\n        }\n      ]\n    }\n  ],\n  \"scores\": {\n    \"founder_depth\": {\n      \"score\": 12,\n      \"why\": \"Antonio has a technical background doing robotics research at Columbia and has iterated on the hardware, but there is no evidence of prior exits or commercial shipping experience.\",\n      \"evidence\": [\n        {\n          \"quote\": \"I started working on Nori while doing robotics research at Columbia.\",\n          \"source\": \"hn_post\"\n        },\n        {\n          \"quote\": \"After seven iterations the latest Nori has\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    },\n    \"shipping_evidence\": {\n      \"score\": 18,\n      \"why\": \"The company has shipped its first robot, published a hardware paper on arXiv, and released an open SDK on GitHub alongside a browser-based simulator.\",\n      \"evidence\": [\n        {\n          \"quote\": \"We’ve shipped our first robot and are building the next batch.\",\n          \"source\": \"hn_post\"\n        },\n        {\n          \"quote\": \"Our open SDK includes teleoperation and demonstration tools: https://github.com/Nori-Robotics/nori-sdk-py\",\n          \"source\": \"hn_post\"\n        },\n        {\n          \"quote\": \"More details are in our hardware paper: https://doi.org/10.48550/arXiv.2605.16537\",\n          \"source\": \"hn_post\"\n        }\n      ]\n    },\n    \"demand_signal\": {\n      \"score\": 12,\n      \"why\": \"There is strong interest and engagement on Hacker News regarding the low price point, but no named enterprise customers or revenue figures are provided.\",\n      \"evidence\": [\n        {\n          \"quote\": \"That price point is really tempting.\",\n          \"source\": \"comments\",\n          \"author\": \"Tepix\"\n        },\n        {\n          \"quote\": \"2k is the price point for me where I might buy a big thing every so many years\",\n          \"source\": \"comments\",\n          \"author\": \"mrnotcrazy\"\n        }\n      ]\n    },\n    \"defensibility\": {\n      \"score\": 8,\n      \"why\": \"The hardware relies on cheap off-the-shelf components like RC servos and is partially open-source, making it highly vulnerable to copycats and low-cost Chinese competitors.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Some main choices we made to get the cost low was using high-ratio servos instead of QDD motors\",\n          \"source\": \"hn_post\"\n        },\n        {\n          \"quote\": \"Parts of hardware are open source.\",\n          \"source\": \"hn_post\"\n        },\n        {\n          \"quote\": \"sad to see it shut down due to the competition with low-cost chinese robots\",\n          \"source\": \"comments\",\n          \"author\": \"TristanX\"\n        }\n      ]\n    }\n  },\n  \"case_summary\": \"The strongest point is the highly disruptive $1,688 price point that democratizes robotics development, while the weakest point is the severe technical limitation of using cheap RC servos and a Raspberry Pi 5, which may prevent the robot from performing precise real-world tasks.\",\n  \"would_change_my_mind\": [\n    \"Evidence of significant pre-orders or recurring software revenue from the optional paid software tier.\",\n    \"Demonstration of precise, non-jerky autonomous task execution in unstructured real-world environments without teleoperation.\",\n    \"Partnerships with major research labs or universities adopting Nori as their standard development platform.\"\n  ],\n  \"data_gaps\": [\n    \"No information on the pricing or features of the optional paid software.\",\n    \"No details on the exact number of pre-orders or revenue generated so far.\",\n    \"No information on the background or size of the rest of the founding team besides Antonio.\"\n  ]\n}",
   "analysis": {
-    "team": {
-      "summary": "Founded by Antonio, who previously did robotics research at Columbia and worked on human demonstrations before building Nori Robotics in San Francisco.",
+    "business_model": {
+      "customers_pay_for": "physical_goods",
+      "category": "hardware",
+      "summary": "Nori Robotics builds and sells a low-cost bimanual mobile robot for $1,688, targeted at robotics developers and researchers, with optional paid software.",
       "evidence": [
         {
-          "quote": "I started working on Nori while doing robotics research at Columbia.",
+          "quote": "We make money by selling the hardware for $1,688, with optional paid software on top.",
+          "source": "hn_post"
+        }
+      ]
+    },
+    "team": {
+      "summary": "The company was founded by Antonio, who has a background in robotics research at Columbia University.",
+      "evidence": [
+        {
+          "quote": "I’m Antonio from Nori Robotics",
           "source": "hn_post"
         },
         {
-          "quote": "We assemble each robot in San Francisco and have designed it to be easy to manufacture and repair",
+          "quote": "I started working on Nori while doing robotics research at Columbia.",
           "source": "hn_post"
         }
       ]
     },
     "product": {
-      "summary": "Nori A3 is a $1,688 bimanual mobile robot featuring 19 degrees of freedom, a telescoping lift, differential wheeled base, and multiple cameras, designed for robotics developers and researchers.",
+      "summary": "Nori A3 is a $1,688 bimanual mobile robot with 19 degrees of freedom, two arms, a wheeled base, four cameras, and a Raspberry Pi 5.",
       "evidence": [
         {
           "quote": "We build a $1,688 bimanual mobile robot in San Francisco for robotics developers and researchers.",
           "source": "hn_post"
         },
         {
-          "quote": "The most capable robot for $1,688",
-          "source": "site"
+          "quote": "After seven iterations the latest Nori has: * 19 degrees of freedom * Two 7+1 DOF arms with a 1.5 kg payload per arm",
+          "source": "hn_post"
         }
       ]
     },
     "market": {
       "size_hint": {
-        "summary": "Targeting robotics developers, researchers, and hobbyists looking for affordable bimanual hardware.",
-        "evidence": [
-          {
-            "quote": "for robotics developers and researchers.",
-            "source": "hn_post"
-          }
-        ]
+        "summary": "not found in sources",
+        "evidence": []
       },
       "competitors": {
-        "summary": "Mention of K-scale labs and low-cost Chinese robots as comparative platforms.",
+        "summary": "The company faces competition from low-cost Chinese robots, K-scale labs, and Unitree.",
         "names": [
           "K-scale labs",
-          "Unitree G1"
+          "Unitree G1",
+          "low-cost chinese robots"
         ],
         "evidence": [
           {
-            "quote": "Curious what the business model of this is to make the company sustainable. Asking that because I was part of the K-scale labs community and sad to see it shut down due to the competition with low-cost chinese robots",
+            "quote": "sad to see it shut down due to the competition with low-cost chinese robots",
             "source": "comments",
             "author": "TristanX"
+          },
+          {
+            "quote": "Have you chatted with the ex developers of KScale labs? What makes you different, given they went poof?",
+            "source": "comments",
+            "author": "OsrsNeedsf2P"
+          },
+          {
+            "quote": "when the Unitree G1 or whatever falls over the result is catastrophic.",
+            "source": "comments",
+            "author": "arjie"
           }
         ]
       },
       "why_now": {
-        "summary": "Advances in low-cost hardware components and open-source SDKs enabling sub-$2,000 humanoid and bimanual robotics development.",
+        "summary": "There is a strong need for affordable hardware in robotics research to enable large dataset collection and testing, which was previously limited by expensive robots.",
         "evidence": [
           {
-            "quote": "Getting this under $2,000 was the main engineering challenge.",
+            "quote": "getting my hands on affordable hardware was difficult. Most labs have one or two expensive robots",
             "source": "hn_post"
+          },
+          {
+            "quote": "Low-cost humanoids finally make those quirky home automation dev projects affordable.",
+            "source": "comments",
+            "author": "Mugshelf"
           }
         ]
       }
     },
     "risks": [
       {
-        "risk": "Hardware reliability and limitations of RC-style servos leading to jerky or imprecise motions.",
+        "risk": "Intense competition from low-cost Chinese robots and the challenge of building a sustainable business in a hardware race to the bottom.",
         "evidence": [
           {
-            "quote": "The biggest problem is they are using RC style servos. This is why all the arm motions are jerky and lack precision.",
-            "source": "comments"
+            "quote": "sad to see it shut down due to the competition with low-cost chinese robots",
+            "source": "comments",
+            "author": "TristanX"
+          },
+          {
+            "quote": "making a sustainable business on a hardware race to the bottom sounds challenging.",
+            "source": "comments",
+            "author": "mNovak"
           }
         ]
       },
       {
-        "risk": "Skepticism over marketing claims regarding autonomous household task capabilities like cooking and folding clothes.",
+        "risk": "Technical limitations of cheap components, such as jerky RC servos and an underpowered Raspberry Pi 5.",
         "evidence": [
           {
-            "quote": "So I guess my main question is: What do you hope to accomplish by shamelessly lying? I mean, beyond the lack of shame, you're selling a product here, so are you not at least afraid of the lawsuits?",
-            "source": "comments"
+            "quote": "The biggest problem is they are using RC style servos. This is why all the arm motions are jerky and lack precision.",
+            "source": "comments",
+            "author": "elictronic"
+          },
+          {
+            "quote": "RPi5 seems a bit underpowered for all the sensors & control and offloading to a computer through wifi seems problematic.",
+            "source": "comments",
+            "author": "slug"
+          }
+        ]
+      },
+      {
+        "risk": "Skepticism regarding the truthfulness of the robot's advertised capabilities and video demonstrations.",
+        "evidence": [
+          {
+            "quote": "So I guess my main question is: What do you hope to accomplish by shamelessly lying?",
+            "source": "comments",
+            "author": "Mawr"
+          },
+          {
+            "quote": "Are these videos of it eg tidying up real or just staged / cherry picked?",
+            "source": "comments",
+            "author": "jonplackett"
           }
         ]
       }
     ],
     "scores": {
       "founder_depth": {
-        "score": 14,
-        "why": "Founder has a relevant academic robotics research background at Columbia and has iterated on hardware designs, but limited prior commercial shipping history is detailed.",
+        "score": 12,
+        "why": "Antonio has a technical background doing robotics research at Columbia and has iterated on the hardware, but there is no evidence of prior exits or commercial shipping experience.",
         "evidence": [
           {
             "quote": "I started working on Nori while doing robotics research at Columbia.",
+            "source": "hn_post"
+          },
+          {
+            "quote": "After seven iterations the latest Nori has",
             "source": "hn_post"
           }
         ]
       },
       "shipping_evidence": {
-        "score": 12,
-        "why": "Product is live with orders, a simulator, and an open SDK repository available, but engineering depth on public code repositories is minimal.",
+        "score": 18,
+        "why": "The company has shipped its first robot, published a hardware paper on arXiv, and released an open SDK on GitHub alongside a browser-based simulator.",
         "evidence": [
           {
             "quote": "We’ve shipped our first robot and are building the next batch.",
@@ -108,46 +161,59 @@
           {
             "quote": "Our open SDK includes teleoperation and demonstration tools: https://github.com/Nori-Robotics/nori-sdk-py",
             "source": "hn_post"
+          },
+          {
+            "quote": "More details are in our hardware paper: https://doi.org/10.48550/arXiv.2605.16537",
+            "source": "hn_post"
           }
         ]
       },
       "demand_signal": {
-        "score": 15,
-        "why": "High Hacker News engagement with over 200 points and 66 comments showing strong initial interest from developers and hobbyists.",
+        "score": 12,
+        "why": "There is strong interest and engagement on Hacker News regarding the low price point, but no named enterprise customers or revenue figures are provided.",
         "evidence": [
           {
-            "quote": "Points: 201  Comments: 66",
-            "source": "hn_post"
+            "quote": "That price point is really tempting.",
+            "source": "comments",
+            "author": "Tepix"
+          },
+          {
+            "quote": "2k is the price point for me where I might buy a big thing every so many years",
+            "source": "comments",
+            "author": "mrnotcrazy"
           }
         ]
       },
       "defensibility": {
-        "score": 6,
-        "why": "Low-cost hardware built from off-the-shelf components with open source SDKs and 3D files makes it susceptible to commoditization and easy to copy.",
+        "score": 8,
+        "why": "The hardware relies on cheap off-the-shelf components like RC servos and is partially open-source, making it highly vulnerable to copycats and low-cost Chinese competitors.",
         "evidence": [
           {
-            "quote": "We also built a browser-based simulator so you can try it out: https://lab.norirobotics.com/nori/model",
+            "quote": "Some main choices we made to get the cost low was using high-ratio servos instead of QDD motors",
             "source": "hn_post"
           },
           {
-            "quote": "we offer 3D files to print repairs",
+            "quote": "Parts of hardware are open source.",
             "source": "hn_post"
+          },
+          {
+            "quote": "sad to see it shut down due to the competition with low-cost chinese robots",
+            "source": "comments",
+            "author": "TristanX"
           }
         ]
       }
     },
-    "thesis_fit": "off-thesis",
-    "thesis_fit_reason": "Nori Robotics builds physical humanoid robot hardware and devices, which are explicitly out of scope for the software and infrastructure thesis.",
-    "case_summary": "Strong initial developer engagement and low price point for bimanual robotics, offset by the physical product category being out of scope and concerns over hardware limitations.",
+    "case_summary": "The strongest point is the highly disruptive $1,688 price point that democratizes robotics development, while the weakest point is the severe technical limitation of using cheap RC servos and a Raspberry Pi 5, which may prevent the robot from performing precise real-world tasks.",
     "would_change_my_mind": [
-      "Expansion into pure AI-native control software for third-party hardware",
-      "Transition of the business model to focus primarily on agentic software infrastructure",
-      "Demonstration of sustained commercial scale in developer software tools"
+      "Evidence of significant pre-orders or recurring software revenue from the optional paid software tier.",
+      "Demonstration of precise, non-jerky autonomous task execution in unstructured real-world environments without teleoperation.",
+      "Partnerships with major research labs or universities adopting Nori as their standard development platform."
     ],
     "data_gaps": [
-      "Detailed financial metrics and recurring software revenue breakdown",
-      "Comprehensive telemetry and safety compliance documentation",
-      "Complete bill of materials and supplier agreements"
+      "No information on the pricing or features of the optional paid software.",
+      "No details on the exact number of pre-orders or revenue generated so far.",
+      "No information on the background or size of the rest of the founding team besides Antonio."
     ]
   }
 }

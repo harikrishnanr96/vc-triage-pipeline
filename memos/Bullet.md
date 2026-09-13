@@ -1,97 +1,100 @@
 # Bullet
 
-**Pass** | 55/100 | on-thesis | YC S26
+**Pass** | 48/100 | on-thesis | YC S26
 
-> Strong shipping velocity and active engagement on launch day, offset by concerns over software defensibility and closed-source trust.
+> The strongest point for Bullet is its impressive speed and high SWE-bench score (95.8%), while the strongest point against is its lack of defensibility as a closed-source agent harness that users can easily replicate or replace with open-source alternatives.
 
-**Why this call:** on-thesis but score 55 < 60. Bullet is an AI dev tool coding agent harness used by software engineers, offered as free software downloads and CLI packages.
+**Why this call:** on-thesis but score 48 < 60 (engineering software, customers pay for unclear). Bullet is a fast coding agent for software developers, currently offered for free with no clear monetization model mentioned.
+
+- "Free to use. No subscriptions. Just a faster way to ship." ([website](https://www.codewithbullet.com))
+- "A Faster Coding Agent" ([HN post](https://news.ycombinator.com/item?id=49283063))
 
 [HN launch](https://news.ycombinator.com/item?id=49283063) (121 points, 89 comments, 2026-08-13) | [website](https://www.codewithbullet.com)
 
-16 of 17 supporting quotes were found word for word in the sources.
+26 of 26 supporting quotes were found word for word in the sources.
 
 ## Scores
 
 | | Score | Why |
 |---|---|---|
-| Founder depth | 15/25 | Founders have technical backgrounds at quantitative and ad-tech firms (AppLovin, Citadel) and have shipped multiple product iterations, but lack deep long-term open-source domain history in this specific category. |
-| Shipping evidence | 20/25 | The product is live with a downloadable client, CLI installation via npm, and benchmark test results published. |
-| Demand signal | 15/25 | Solid HN launch engagement with 121 points and 89 comments, including users testing it out, though no revenue or named enterprise customers are mentioned. |
-| Defensibility | 5/25 | Multiple commenters point out that the harness features can be replicated via prompts, custom scripts, or open-source configurations. |
+| Founder depth | 13/25 | The founders have technical backgrounds from AppLovin and Citadel, but they are fresh out of college (dorm room startup) and have pivoted six times without prior exits or deep domain depth in AI research. |
+| Shipping evidence | 15/25 | The product is live with macOS, Linux, and Windows builds, a CLI, and published SWE-bench results, but the code is closed-source and there is no public GitHub repository. |
+| Demand signal | 14/25 | Solid HN engagement with some active users praising the speed, but many commenters are highly skeptical of the benchmark validity and the value of a proprietary harness. |
+| Defensibility | 6/25 | The product is a closed-source harness/wrapper around existing LLMs, which commenters note is easy to replicate, clone, or replace with custom prompts and open-source alternatives. |
 
 <details><summary>Quotes behind the scores</summary>
 
 **Founder depth**
 
-- "We were fresh out of working at AppLovin and Citadel" ([HN post](https://news.ycombinator.com/item?id=49283063))
+- "Bullet started in a senior year dorm. We were fresh out of working at AppLovin and Citadel" ([HN post](https://news.ycombinator.com/item?id=49283063))
 
 **Shipping evidence**
 
-- "INSTALL CLI npm install -g @trybullet/cli $ bullet" ([website](https://www.codewithbullet.com))
-- "On SWE-bench Verified, Bullet resolved 479/500 (95.8%) in one attempt" ([HN post](https://news.ycombinator.com/item?id=49283063))
+- "DOWNLOAD FOR MAC 1.4.17" ([website](https://www.codewithbullet.com))
+- "npm install -g @trybullet/cli" ([website](https://www.codewithbullet.com))
 
 **Demand signal**
 
-- "Points: 121 Comments: 89" ([HN post](https://news.ycombinator.com/item?id=49283063))
-- "I'm giving it a try on a new project I'm spinning up. It does seem faster" ([HN comments](https://news.ycombinator.com/item?id=49283063))
+- "I recently switched over to using primarily Bullet for my projects and the speed of it makes it very nice" ([HN comment by lucasdimarco](https://news.ycombinator.com/item?id=49283063))
+- "I think this adds no value. I would stick to OpenCode." ([HN comment by esafak](https://news.ycombinator.com/item?id=49283063))
 
 **Defensibility**
 
-- "Proprietary software is no longer a moat, and for something like this it just makes your software very hard to trust." ([HN comments](https://news.ycombinator.com/item?id=49283063))
+- "Proprietary software is no longer a moat" ([HN comment by lrvick](https://news.ycombinator.com/item?id=49283063))
+- "nobody would use it because they’d just point their own AI at it and clone it. It’s just not that hard." ([HN comment by lowbloodsugar](https://news.ycombinator.com/item?id=49283063))
 
 </details>
 
 ## Team
 
-Founders Adi and Alex are YC S26 founders fresh out of working at AppLovin and Citadel, where they built background in optimization and agent context.
+Founded by Adi and Alex, who started the company in their senior year dorm after working at AppLovin and Citadel.
 
-- "Hi HN! We’re Adi and Alex, founders of Bullet, a faster coding agent." ([HN post](https://news.ycombinator.com/item?id=49283063))
-- "We were fresh out of working at AppLovin and Citadel, and naturally thought we were on a sure path to startup success." ([HN post](https://news.ycombinator.com/item?id=49283063))
+- "We’re Adi and Alex, founders of Bullet, a faster coding agent." ([HN post](https://news.ycombinator.com/item?id=49283063))
+- "Bullet started in a senior year dorm. We were fresh out of working at AppLovin and Citadel" ([HN post](https://news.ycombinator.com/item?id=49283063))
 
 ## Product
 
-Bullet is a faster coding agent harness featuring model routing, targeted search, aggressive context hygiene, and parallel execution.
+A fast coding agent and harness that optimizes speed by reducing round trips, parallelizing independent tool calls, routing models, and performing targeted code search.
 
-- "Bullet is a faster coding agent" ([HN post](https://news.ycombinator.com/item?id=49283063)) **(not found word for word in this source)**
-- "Same model → tools → results pattern. A tighter loop around it." ([website](https://www.codewithbullet.com))
+- "Bullet routes, searches, and executes with one purpose: keeping up with you." ([website](https://www.codewithbullet.com))
+- "On SWE-bench Verified, Bullet resolved 479/500 (95.8%) in one attempt, averaging 119s per task" ([HN post](https://news.ycombinator.com/item?id=49283063))
 
 ## Market
 
-**Size:** Target market consists of developers and software engineers utilizing coding agents who experience latency issues.
-- "We hope that you guys try out Bullet if you are suffering with speed as much as we were" ([HN post](https://news.ycombinator.com/item?id=49283063))
+**Size:** not found in sources
 
-**Competitors:** Claude Code, Codex, OpenCode, mini-SWE-agent, Fable. Commenters and post text mention several competing coding agents, harnesses, and tools like Claude Code, Codex, OpenCode, and mini-SWE-agent.
+**Competitors:** Claude Code, Codex, OpenCode, maki.sh, pellmell.ai, mini-SWE-agent. Competes with existing coding agents and harnesses like Claude Code, Codex, OpenCode, maki.sh, and pellmell.ai.
 - "Let’s take on Claude Code and Codex, we can do it!" ([HN post](https://news.ycombinator.com/item?id=49283063))
-- "I would stick to OpenCode." ([HN comment by esafak](https://news.ycombinator.com/item?id=49283063))
+- "I guess I can fund raise just by having built https://maki.sh" ([HN comment by tontinton](https://news.ycombinator.com/item?id=49283063))
 
-**Why now:** Coding agents like Claude Code and Codex have gained massive usage, but engineers suffer from slow iteration speed and high latency.
-- "We were spending hours waiting for coding agents like Claude Code and Codex" ([HN post](https://news.ycombinator.com/item?id=49283063))
+**Why now:** Developers are increasingly frustrated by the slow execution speeds and high costs of existing coding agents.
+- "We were spending hours waiting for coding agents like Claude Code and Codex, and got so frustrated" ([HN post](https://news.ycombinator.com/item?id=49283063))
+- "At our company, we were burning hours waiting on agent runs." ([website](https://www.codewithbullet.com))
 
 ## Risks
 
-- Proprietary software model lacking open-source code makes users hesitant to trust it with root access and binary execution.
-  - "So, I am supposed to just give a random binary on a website that may or may not be malware... and I am not even allowed to review the code?" ([HN comments](https://news.ycombinator.com/item?id=49283063))
-- Many commenters note that harness improvements can easily be replicated via prompting or custom scripts, raising defensibility questions.
-  - "Proprietary software is no longer a moat, and for something like this it just makes your software very hard to trust." ([HN comments](https://news.ycombinator.com/item?id=49283063))
-- History of numerous rapid pivots prior to landing on this product idea.
-  - "So, Bullet started as an AI hedge fund, a browser-use agent, synthetic financial data (oof), a mobile IDE, and a bunch of other things." ([HN post](https://news.ycombinator.com/item?id=49283063))
+- History of frequent pivots (six pivots before this product) which may indicate a lack of long-term focus.
+  - "Bullet started as an AI hedge fund, a browser-use agent, synthetic financial data (oof), a mobile IDE, and a bunch of other things." ([HN post](https://news.ycombinator.com/item?id=49283063))
+  - "Is there another pivot coming? This would make me nervous." ([HN comment by throw03172019](https://news.ycombinator.com/item?id=49283063))
+- Security and trust issues due to closed-source distribution requiring root access.
+  - "Installing a .deb requires root. Okay, a coding agent that wants root access." ([HN comment by lrvick](https://news.ycombinator.com/item?id=49283063))
+  - "Proprietary software is no longer a moat, and for something like this it just makes your software very hard to trust." ([HN comment by lrvick](https://news.ycombinator.com/item?id=49283063))
+- Low defensibility as a harness that can be easily replicated or built via prompting.
+  - "I'm genuinely confused about what is mechanically different in this harness that could not be accomplished with a prompt/skill in another harness." ([HN comment by yetanotherjosh](https://news.ycombinator.com/item?id=49283063))
+  - "nobody would use it because they’d just point their own AI at it and clone it. It’s just not that hard." ([HN comment by lowbloodsugar](https://news.ycombinator.com/item?id=49283063))
 
 ## What would change the call
 
-- Open-sourcing the harness repository to address supply chain security concerns.
-- Demonstrating strong recurring revenue or retention metrics from engineering teams.
-- Proving structural technical advantages that cannot be replicated via standard prompting.
+- Evidence of paying enterprise customers willing to pay for a proprietary agent harness.
+- A detailed technical breakdown proving their parallel execution and context hygiene cannot be easily replicated via prompting in open-source harnesses.
+- Open-sourcing the core agent loop to resolve developer trust and security concerns while maintaining a monetization strategy.
 
 ## Data gaps
 
-- Revenue or paying customer metrics
-- GitHub repository link or open-source availability
-- Details on active user retention and usage frequency
-
-## Quotes that failed the source check
-
-- product (hn_post): "Bullet is a faster coding agent"
+- No information on how the company plans to generate revenue or monetize the product.
+- No details on the exact model providers supported or how API costs are handled.
+- No public GitHub repository or source code to verify security and implementation details.
 
 ---
 
-*Generated by src/memo.py from data/analyses.jsonl. Analysis model: gemini-3.5-flash-lite.*
+*Generated by src/memo.py from data/analyses.jsonl. Analysis model: gemini-3.5-flash.*

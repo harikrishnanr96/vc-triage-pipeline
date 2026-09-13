@@ -90,11 +90,14 @@ def render_memo(row):
         "# {}".format(row["name"]),
         "",
         "**{}** | {}/100 | {} | YC {}".format(
-            row["verdict"], row["score"], a["thesis_fit"], row.get("yc_batch") or "unknown"),
+            row["verdict"], row["score"], row["thesis_fit"], row.get("yc_batch") or "unknown"),
         "",
         "> {}".format(one_line(a.get("case_summary"))),
         "",
-        "**Why this call:** {}. {}".format(row["verdict_rule"], one_line(a.get("thesis_fit_reason"))),
+        "**Why this call:** {} ({}). {}".format(
+            row["verdict_rule"], row["thesis_fit_rule"], one_line((a.get("business_model") or {}).get("summary"))),
+        "",
+    ] + evidence_lines((a.get("business_model") or {}).get("evidence"), row) + [
         "",
         " | ".join(links),
         "",
@@ -165,8 +168,10 @@ def render_index(rows):
             len(rows), counts["Take a meeting"], counts["Watch"], counts["Pass"],
             ", {} failed".format(len(failed)) if failed else "", model),
         "",
-        "Verdicts are set by rule, not by the model: off-thesis is always Pass; on-thesis is "
-        "Take a meeting at 75+, Watch at 60-74, Pass below 60.",
+        "Fit and verdicts are set by rule, not by the model. The model classifies what customers "
+        "pay for and what the product is; companies paid for physical goods or services, or "
+        "outside AI infrastructure and engineering software, are off-thesis. Off-thesis is always "
+        "Pass; on-thesis is Take a meeting at 75+, Watch at 60-74, Pass below 60.",
         "",
         "| # | Company | Verdict | Score | Fit | Case | Quotes checked |",
         "|---|---|---|---|---|---|---|",
@@ -175,7 +180,7 @@ def render_index(rows):
         check = r.get("quote_check") or {"verified": 0, "total": 0}
         out.append("| {} | [{}]({}.md) | {} | {} | {} | {} | {}/{} |".format(
             i, r["name"], safe_filename(r["name"]), r["verdict"], r["score"],
-            r["analysis"]["thesis_fit"], cell(r["analysis"].get("case_summary")),
+            r["thesis_fit"], cell(r["analysis"].get("case_summary")),
             check["verified"], check["total"]))
     for r in failed:
         out.append("| - | [{}]({}.md) | No call | - | - | analysis failed | - |".format(
