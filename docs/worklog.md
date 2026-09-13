@@ -56,3 +56,6 @@ output was junk. Prompt saved in docs/sessions/01-fetch-hn.md.
 - Worked on the memo generation stage of pipeline. few issues found like verdicts are changing with prompt versions. There is no take meeting observed
 Proven metal creates circuit boards and still is on thesis. I think gemini sees free plugins for software engineers and gets confused.
 
+
+- I observed that Flash lite kept on calling Proven Metal "software" even while quoting the per orfer margin. Tested with 3.5 Flash and 3.8 Flash and worked for other tricky companies.
+
