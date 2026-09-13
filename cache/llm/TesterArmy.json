@@ -1,0 +1,69 @@
+{
+  "name": "TesterArmy",
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "73e9870339b49ccc6068681229901818fa33ecb1a05eea87b840fc94309b1942",
+  "created_at": "2026-09-13T12:09:52Z",
+  "attempts": 1,
+  "raw_response": "{\n  \"team\": {\n    \"summary\": \"Founded by Oskar, Szymon, and Piotr (YC P26), building technical dev tools in public.\",\n    \"source\": \"hn_post\"\n  },\n  \"product\": {\n    \"summary\": \"TesterArmy is an agentic testing platform that runs end-to-end checks before deployment and in production using natural language, supporting web, iOS, and Android platforms, and integrating with coding agents via MCP.\",\n    \"source\": \"site\"\n  },\n  \"market\": {\n    \"summary\": \"Engineering teams, developers, and QA professionals looking to automate web and mobile end-to-end testing without maintaining static scripts or selectors.\",\n    \"source\": \"hn_post\"\n  },\n  \"risks\": [\n    {\n      \"risk\": \"High token costs and execution time for full agentic test runs compared to deterministic frameworks like Playwright or Cypress.\",\n      \"source\": \"comments\"\n    },\n    {\n      \"risk\": \"Security and compliance hesitation regarding outsourcing authentication and critical application testing to a third-party SaaS.\",\n      \"source\": \"comments\"\n    },\n    {\n      \"risk\": \"Crowded competitive landscape with existing alternatives and skepticism over whether agentic E2E testing solves a primary unaddressed bottleneck.\",\n      \"source\": \"comments\"\n    }\n  ],\n  \"scores\": {\n    \"founder_depth\": {\n      \"score\": 22,\n      \"why\": \"Founders are technical, shipped an operational product accepted into YC P26, and actively engage with deep architectural and model-choice questions from engineers on HN.\",\n      \"source\": \"hn_post\"\n    },\n    \"shipping_evidence\": {\n      \"score\": 20,\n      \"why\": \"Demonstrated active product deployment with a fully functioning CLI/MCP integration, live video/documentation, scale to 30+ teams, and open source tooling released like unbox-ai.\",\n      \"source\": \"site\"\n    },\n    \"demand_signal\": {\n      \"score\": 18,\n      \"why\": \"Strong HN launch engagement (132 points, 69 comments), scaling from 0 to 30+ teams using the product daily, and testimonials from multiple startup founders and engineers.\",\n      \"source\": \"hn_post\"\n    },\n    \"defensibility\": {\n      \"score\": 12,\n      \"why\": \"Relies heavily on underlying foundation models and browser primitives with multiple competing agentic testing tools and straightforward copycat potential from coding assistants.\",\n      \"source\": \"site\"\n    }\n  },\n  \"verdict\": \"Take a meeting\",\n  \"verdict_reason\": \"Strong technical founder execution and active user traction in a hot dev tool category warrant a closer look despite defensibility concerns.\",\n  \"would_change_my_mind\": [\n    \"Unit economics proving positive margins despite high token usage per test run\",\n    \"Data showing enterprise adoption overcoming third-party security and data-leak concerns\",\n    \"Clear moat beyond wrappers around foundation models and MCP primitives\"\n  ],\n  \"thesis_fit\": \"on-thesis\",\n  \"data_gaps\": [\n    \"not found in sources\"\n  ]\n}",
+  "analysis": {
+    "team": {
+      "summary": "Founded by Oskar, Szymon, and Piotr (YC P26), building technical dev tools in public.",
+      "source": "hn_post"
+    },
+    "product": {
+      "summary": "TesterArmy is an agentic testing platform that runs end-to-end checks before deployment and in production using natural language, supporting web, iOS, and Android platforms, and integrating with coding agents via MCP.",
+      "source": "site"
+    },
+    "market": {
+      "summary": "Engineering teams, developers, and QA professionals looking to automate web and mobile end-to-end testing without maintaining static scripts or selectors.",
+      "source": "hn_post"
+    },
+    "risks": [
+      {
+        "risk": "High token costs and execution time for full agentic test runs compared to deterministic frameworks like Playwright or Cypress.",
+        "source": "comments"
+      },
+      {
+        "risk": "Security and compliance hesitation regarding outsourcing authentication and critical application testing to a third-party SaaS.",
+        "source": "comments"
+      },
+      {
+        "risk": "Crowded competitive landscape with existing alternatives and skepticism over whether agentic E2E testing solves a primary unaddressed bottleneck.",
+        "source": "comments"
+      }
+    ],
+    "scores": {
+      "founder_depth": {
+        "score": 22,
+        "why": "Founders are technical, shipped an operational product accepted into YC P26, and actively engage with deep architectural and model-choice questions from engineers on HN.",
+        "source": "hn_post"
+      },
+      "shipping_evidence": {
+        "score": 20,
+        "why": "Demonstrated active product deployment with a fully functioning CLI/MCP integration, live video/documentation, scale to 30+ teams, and open source tooling released like unbox-ai.",
+        "source": "site"
+      },
+      "demand_signal": {
+        "score": 18,
+        "why": "Strong HN launch engagement (132 points, 69 comments), scaling from 0 to 30+ teams using the product daily, and testimonials from multiple startup founders and engineers.",
+        "source": "hn_post"
+      },
+      "defensibility": {
+        "score": 12,
+        "why": "Relies heavily on underlying foundation models and browser primitives with multiple competing agentic testing tools and straightforward copycat potential from coding assistants.",
+        "source": "site"
+      }
+    },
+    "verdict": "Take a meeting",
+    "verdict_reason": "Strong technical founder execution and active user traction in a hot dev tool category warrant a closer look despite defensibility concerns.",
+    "would_change_my_mind": [
+      "Unit economics proving positive margins despite high token usage per test run",
+      "Data showing enterprise adoption overcoming third-party security and data-leak concerns",
+      "Clear moat beyond wrappers around foundation models and MCP primitives"
+    ],
+    "thesis_fit": "on-thesis",
+    "data_gaps": [
+      "not found in sources"
+    ]
+  }
+}

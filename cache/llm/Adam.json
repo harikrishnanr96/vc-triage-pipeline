@@ -1,0 +1,67 @@
+{
+  "name": "Adam",
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "4c4231660c6f4edab0f01849db63835e8b7ccc769af5abccc94ecb3cd19e82fc",
+  "created_at": "2026-09-13T12:09:12Z",
+  "attempts": 1,
+  "raw_response": "{\n  \"team\": {\n    \"summary\": \"Zach, part of YC batch W25, building Adam with technical open-source shipping approach.\",\n    \"source\": \"hn_post\"\n  },\n  \"product\": {\n    \"summary\": \"CADAM, an open-source Text to CAD platform running fully in-browser using WebAssembly and Three.js, generating OpenSCAD code with interactive parameter sliders.\",\n    \"source\": \"hn_post\"\n  },\n  \"market\": {\n    \"summary\": \"Mechanical design and CAD software users, developers, and engineers looking for AI-assisted 3D modeling.\",\n    \"source\": \"hn_post\"\n  },\n  \"risks\": [\n    {\n      \"risk\": \"Current LLMs have poor spatial awareness and struggle with technical accuracy and functional requirements for manufacturing.\",\n      \"source\": \"comments\"\n    },\n    {\n      \"risk\": \"OpenSCAD is viewed by some engineers as insufficient for serious production-grade mechanical design compared to constraint-driven modeling.\",\n      \"source\": \"comments\"\n    }\n  ],\n  \"scores\": {\n    \"founder_depth\": {\n      \"score\": 20,\n      \"why\": \"Founder is technical, shipping in public (W25), open-sourcing the core repo, and detailing specific architectural choices like WASM compilation and Vercel AI SDK integration.\",\n      \"source\": \"hn_post\"\n    },\n    \"shipping_evidence\": {\n      \"score\": 22,\n      \"why\": \"High GitHub traction with 5,134 stars, live working demo, and active commit history up to September 2026.\",\n      \"source\": \"github\"\n    },\n    \"demand_signal\": {\n      \"score\": 18,\n      \"why\": \"HN post gained 215 points and 97 comments with strong initial user engagement, positive feedback on simple tasks, alongside heavy technical skepticism.\",\n      \"source\": \"hn_post\"\n    },\n    \"defensibility\": {\n      \"score\": 10,\n      \"why\": \"Open-source codebase wrapping standard models via Vercel AI SDK with limited current moat discussed beyond UX polish and parametric slider regex updates.\",\n      \"source\": \"hn_post\"\n    }\n  },\n  \"verdict\": \"Take a meeting\",\n  \"verdict_reason\": \"Strong technical execution and impressive developer traction (5k+ stars) for an open-source AI dev tool, despite valid domain-specific engineering skepticism.\",\n  \"would_change_my_mind\": [\n    \"Demonstrating integration with professional geometry kernels or constraint-driven modeling like CadQuery/build123d\",\n    \"Evidence of production-grade usage where generated parts pass manufacturing tolerances\",\n    \"A clear path to commercial monetization beyond the open-source repo\"\n  ],\n  \"thesis_fit\": \"on-thesis\",\n  \"data_gaps\": [\n    \"Revenue model or commercialization plans for adam.new\",\n    \"Detailed team composition beyond Zach\",\n    \"Exact breakdown of active enterprise vs hobbyist users\"\n  ]\n}",
+  "analysis": {
+    "team": {
+      "summary": "Zach, part of YC batch W25, building Adam with technical open-source shipping approach.",
+      "source": "hn_post"
+    },
+    "product": {
+      "summary": "CADAM, an open-source Text to CAD platform running fully in-browser using WebAssembly and Three.js, generating OpenSCAD code with interactive parameter sliders.",
+      "source": "hn_post"
+    },
+    "market": {
+      "summary": "Mechanical design and CAD software users, developers, and engineers looking for AI-assisted 3D modeling.",
+      "source": "hn_post"
+    },
+    "risks": [
+      {
+        "risk": "Current LLMs have poor spatial awareness and struggle with technical accuracy and functional requirements for manufacturing.",
+        "source": "comments"
+      },
+      {
+        "risk": "OpenSCAD is viewed by some engineers as insufficient for serious production-grade mechanical design compared to constraint-driven modeling.",
+        "source": "comments"
+      }
+    ],
+    "scores": {
+      "founder_depth": {
+        "score": 20,
+        "why": "Founder is technical, shipping in public (W25), open-sourcing the core repo, and detailing specific architectural choices like WASM compilation and Vercel AI SDK integration.",
+        "source": "hn_post"
+      },
+      "shipping_evidence": {
+        "score": 22,
+        "why": "High GitHub traction with 5,134 stars, live working demo, and active commit history up to September 2026.",
+        "source": "github"
+      },
+      "demand_signal": {
+        "score": 18,
+        "why": "HN post gained 215 points and 97 comments with strong initial user engagement, positive feedback on simple tasks, alongside heavy technical skepticism.",
+        "source": "hn_post"
+      },
+      "defensibility": {
+        "score": 10,
+        "why": "Open-source codebase wrapping standard models via Vercel AI SDK with limited current moat discussed beyond UX polish and parametric slider regex updates.",
+        "source": "hn_post"
+      }
+    },
+    "verdict": "Take a meeting",
+    "verdict_reason": "Strong technical execution and impressive developer traction (5k+ stars) for an open-source AI dev tool, despite valid domain-specific engineering skepticism.",
+    "would_change_my_mind": [
+      "Demonstrating integration with professional geometry kernels or constraint-driven modeling like CadQuery/build123d",
+      "Evidence of production-grade usage where generated parts pass manufacturing tolerances",
+      "A clear path to commercial monetization beyond the open-source repo"
+    ],
+    "thesis_fit": "on-thesis",
+    "data_gaps": [
+      "Revenue model or commercialization plans for adam.new",
+      "Detailed team composition beyond Zach",
+      "Exact breakdown of active enterprise vs hobbyist users"
+    ]
+  }
+}

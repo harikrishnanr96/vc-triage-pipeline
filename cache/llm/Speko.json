@@ -1,0 +1,66 @@
+{
+  "name": "Speko",
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "86743e30e3f1e3d68b1713a51c76c1ddad2e8eec0eb752f28fcd7843c56b0402",
+  "created_at": "2026-09-13T12:10:44Z",
+  "attempts": 1,
+  "raw_response": "{\n  \"team\": {\n    \"summary\": \"Founder Bek spent four years as cofounder and CTO building voice agents for enterprises across Asia in 10+ languages.\",\n    \"source\": \"hn_post\"\n  },\n  \"product\": {\n    \"summary\": \"Speko is a platform and API that finds an optimal combination of speech-to-text, LLM, and text-to-speech models based on user constraints (accuracy, latency, cost, balanced) and benchmarks, featuring a hosted router and an open-source gateway for BYOK mode.\",\n    \"source\": \"hn_post\"\n  },\n  \"market\": {\n    \"summary\": \"Developers and companies building production voice agents (such as property management AI and medical teams) looking to optimize their model stack across STT, LLM, and TTS.\",\n    \"source\": \"hn_post\"\n  },\n  \"risks\": [\n    {\n      \"risk\": \"The industry may move toward end-to-end trained single models rather than three-piece architectures (STT, LLM, TTS), reducing the long-term value of multi-model routing.\",\n      \"source\": \"comments\"\n    },\n    {\n      \"risk\": \"Stakeholders often make model selection decisions once at the start of a project, which may limit the recurring demand for a dynamic routing layer.\",\n      \"source\": \"comments\"\n    }\n  ],\n  \"scores\": {\n    \"founder_depth\": {\n      \"score\": 22,\n      \"why\": \"The founder has deep domain experience, having spent 4 years as cofounder and CTO building enterprise voice agents across Asia in 10+ languages before launching Speko.\",\n      \"source\": \"hn_post\"\n    },\n    \"shipping_evidence\": {\n      \"score\": 20,\n      \"why\": \"The team launched a functional platform, public benchmark boards across multiple languages, an OpenAPI/AsyncAPI hosted router, and open-sourced their gateway binary on GitHub.\",\n      \"source\": \"hn_post\"\n    },\n    \"demand_signal\": {\n      \"score\": 18,\n      \"why\": \"The HN post received 118 points and 69 comments with active customer stories (property management AI, medical team, property founder) and external usage growing ~25 percent per week since late June.\",\n      \"source\": \"hn_post\"\n    },\n    \"defensibility\": {\n      \"score\": 12,\n      \"why\": \"Defensibility relies heavily on continuous benchmark data collection and impartial test runners, though multi-model routing faces architectural threats from emerging end-to-end voice models.\",\n      \"source\": \"hn_post\"\n    }\n  },\n  \"verdict\": \"Take a meeting\",\n  \"verdict_reason\": \"Speko is built by an experienced technical founder solving a real workflow pain for voice agent developers, backed by solid early traction and shipping evidence.\",\n  \"would_change_my_mind\": [\n    \"Voice agents universally shift to single end-to-end omni-models, eliminating the multi-vendor STT/LLM/TTS stack.\",\n    \"Customer churn accelerates because teams truly only choose their voice stack once and never switch.\",\n    \"Public benchmarks prove insufficient to maintain provider neutrality or trust.\"\n  ],\n  \"thesis_fit\": \"on-thesis\",\n  \"data_gaps\": [\n    \"Exact revenue or paying customer count numbers.\",\n    \"Detailed team composition beyond the solo founder mention.\"\n  ]\n}",
+  "analysis": {
+    "team": {
+      "summary": "Founder Bek spent four years as cofounder and CTO building voice agents for enterprises across Asia in 10+ languages.",
+      "source": "hn_post"
+    },
+    "product": {
+      "summary": "Speko is a platform and API that finds an optimal combination of speech-to-text, LLM, and text-to-speech models based on user constraints (accuracy, latency, cost, balanced) and benchmarks, featuring a hosted router and an open-source gateway for BYOK mode.",
+      "source": "hn_post"
+    },
+    "market": {
+      "summary": "Developers and companies building production voice agents (such as property management AI and medical teams) looking to optimize their model stack across STT, LLM, and TTS.",
+      "source": "hn_post"
+    },
+    "risks": [
+      {
+        "risk": "The industry may move toward end-to-end trained single models rather than three-piece architectures (STT, LLM, TTS), reducing the long-term value of multi-model routing.",
+        "source": "comments"
+      },
+      {
+        "risk": "Stakeholders often make model selection decisions once at the start of a project, which may limit the recurring demand for a dynamic routing layer.",
+        "source": "comments"
+      }
+    ],
+    "scores": {
+      "founder_depth": {
+        "score": 22,
+        "why": "The founder has deep domain experience, having spent 4 years as cofounder and CTO building enterprise voice agents across Asia in 10+ languages before launching Speko.",
+        "source": "hn_post"
+      },
+      "shipping_evidence": {
+        "score": 20,
+        "why": "The team launched a functional platform, public benchmark boards across multiple languages, an OpenAPI/AsyncAPI hosted router, and open-sourced their gateway binary on GitHub.",
+        "source": "hn_post"
+      },
+      "demand_signal": {
+        "score": 18,
+        "why": "The HN post received 118 points and 69 comments with active customer stories (property management AI, medical team, property founder) and external usage growing ~25 percent per week since late June.",
+        "source": "hn_post"
+      },
+      "defensibility": {
+        "score": 12,
+        "why": "Defensibility relies heavily on continuous benchmark data collection and impartial test runners, though multi-model routing faces architectural threats from emerging end-to-end voice models.",
+        "source": "hn_post"
+      }
+    },
+    "verdict": "Take a meeting",
+    "verdict_reason": "Speko is built by an experienced technical founder solving a real workflow pain for voice agent developers, backed by solid early traction and shipping evidence.",
+    "would_change_my_mind": [
+      "Voice agents universally shift to single end-to-end omni-models, eliminating the multi-vendor STT/LLM/TTS stack.",
+      "Customer churn accelerates because teams truly only choose their voice stack once and never switch.",
+      "Public benchmarks prove insufficient to maintain provider neutrality or trust."
+    ],
+    "thesis_fit": "on-thesis",
+    "data_gaps": [
+      "Exact revenue or paying customer count numbers.",
+      "Detailed team composition beyond the solo founder mention."
+    ]
+  }
+}

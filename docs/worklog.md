@@ -32,3 +32,18 @@ every Launch HN post, so it comes free when I fetch the thread text.
 Claude Code wrote both scripts from a single prompt each, worked first
 try. My changes were to the query params after seeing the Show HN
 output was junk. Prompt saved in docs/sessions/01-fetch-hn.md.
+
+
+
+## Sun Sep 13
+
+- Correction to last night's entry: not everything worked first try. The first Launch HN query matched "launch" anywhere, so only 8 of 50 results were real Launch HN posts. Claude caught it and restricted the search to exact phrase in titles. enrich.py also crashed on a failed GitHub lookup, which only showed up when Claude fed it bad URLs on purpose.
+- analyze.py is written but hasn't run for real, since I don't have a Gemini key set up yet. Claude tested the retry and cache logic with a fake model. Next: record my own verdicts on the 10 before running it.
+
+
+
+- Free tier only allows 5 calls a minute, so 9 of 10 failed. Switched to gemini-3.5-flash-lite and put a 13s gap between calls. All 10 ran in ~2 min.
+-  The prompt never says what's in or out of thesis, and the verdict isn't tied to the score. Committing this as the baseline before I fix it.
+
+- Didn't write down my own verdicts before running it, so I've got nothing to check the model against.
+

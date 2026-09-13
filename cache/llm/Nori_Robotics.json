@@ -1,0 +1,71 @@
+{
+  "name": "Nori Robotics",
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "cd727fdf9a65720fa1a1071661d16d2ab67c54a6ca194197b8b9855e97d31057",
+  "created_at": "2026-09-13T12:09:26Z",
+  "attempts": 1,
+  "raw_response": "{\n  \"team\": {\n    \"summary\": \"Antonio, founder of Nori Robotics and YC S26 batch, previously did robotics research at Columbia teaching robots through human demonstrations.\",\n    \"source\": \"hn_post\"\n  },\n  \"product\": {\n    \"summary\": \"Nori A3 is a $1,688 bimanual mobile robot featuring 19 degrees of freedom, two 7+1 DOF arms, a telescoping lift, wheeled base, RGB cameras, lidar, and a Raspberry Pi 5, designed for developers and researchers with an open SDK.\",\n    \"source\": \"hn_post\"\n  },\n  \"market\": {\n    \"summary\": \"Robotics developers, researchers, and hobbyists looking for affordable hardware to collect datasets and run experiments.\",\n    \"source\": \"hn_post\"\n  },\n  \"risks\": [\n    {\n      \"risk\": \"Hardware reliability and maintenance due to low-cost components like RC-style servos causing jerky motion and precision issues.\",\n      \"source\": \"comments\"\n    },\n    {\n      \"risk\": \"Sustainability of a low-cost hardware business model in competition with cheap foreign alternatives.\",\n      \"source\": \"comments\"\n    },\n    {\n      \"risk\": \"Customer skepticism regarding real capabilities versus marketing claims for everyday tasks.\",\n      \"source\": \"comments\"\n    }\n  ],\n  \"scores\": {\n    \"founder_depth\": {\n      \"score\": 18,\n      \"why\": \"Founder has direct background in robotics research at Columbia and built seven iterations to achieve the current design.\",\n      \"source\": \"hn_post\"\n    },\n    \"shipping_evidence\": {\n      \"score\": 18,\n      \"why\": \"They have shipped their first robot, are building the next batch, and provide an open SDK and browser-based simulator.\",\n      \"source\": \"hn_post\"\n    },\n    \"demand_signal\": {\n      \"score\": 15,\n      \"why\": \"The HN launch received 201 points and 66 comments with strong community engagement and interest in the $1,688 price point.\",\n      \"source\": \"hn_post\"\n    },\n    \"defensibility\": {\n      \"score\": 8,\n      \"why\": \"Parts of the hardware are open source, 3D print files are provided, and reliance on standard off-the-shelf components limits hardware moat.\",\n      \"source\": \"hn_post\"\n    }\n  },\n  \"verdict\": \"Take a meeting\",\n  \"verdict_reason\": \"The team has successfully built and shipped a remarkably low-cost bimanual mobile robot with strong initial developer interest, though long-term unit economics and hardware reliability remain open questions.\",\n  \"would_change_my_mind\": [\n    \"Evidence of robust autonomous execution on complex real-world tasks without cherry-picked setups.\",\n    \"Demonstration of sustainable software margins or recurring revenue attach rates.\",\n    \"Quantitative telemetry showing low hardware failure rates in customer hands.\"\n  ],\n  \"thesis_fit\": \"off-thesis\",\n  \"data_gaps\": [\n    \"Actual unit manufacturing cost and gross margins at scale.\",\n    \"Detailed metrics on customer retention and active developer usage of the SDK.\",\n    \"GitHub statistics and code contribution activity.\"\n  ]\n}",
+  "analysis": {
+    "team": {
+      "summary": "Antonio, founder of Nori Robotics and YC S26 batch, previously did robotics research at Columbia teaching robots through human demonstrations.",
+      "source": "hn_post"
+    },
+    "product": {
+      "summary": "Nori A3 is a $1,688 bimanual mobile robot featuring 19 degrees of freedom, two 7+1 DOF arms, a telescoping lift, wheeled base, RGB cameras, lidar, and a Raspberry Pi 5, designed for developers and researchers with an open SDK.",
+      "source": "hn_post"
+    },
+    "market": {
+      "summary": "Robotics developers, researchers, and hobbyists looking for affordable hardware to collect datasets and run experiments.",
+      "source": "hn_post"
+    },
+    "risks": [
+      {
+        "risk": "Hardware reliability and maintenance due to low-cost components like RC-style servos causing jerky motion and precision issues.",
+        "source": "comments"
+      },
+      {
+        "risk": "Sustainability of a low-cost hardware business model in competition with cheap foreign alternatives.",
+        "source": "comments"
+      },
+      {
+        "risk": "Customer skepticism regarding real capabilities versus marketing claims for everyday tasks.",
+        "source": "comments"
+      }
+    ],
+    "scores": {
+      "founder_depth": {
+        "score": 18,
+        "why": "Founder has direct background in robotics research at Columbia and built seven iterations to achieve the current design.",
+        "source": "hn_post"
+      },
+      "shipping_evidence": {
+        "score": 18,
+        "why": "They have shipped their first robot, are building the next batch, and provide an open SDK and browser-based simulator.",
+        "source": "hn_post"
+      },
+      "demand_signal": {
+        "score": 15,
+        "why": "The HN launch received 201 points and 66 comments with strong community engagement and interest in the $1,688 price point.",
+        "source": "hn_post"
+      },
+      "defensibility": {
+        "score": 8,
+        "why": "Parts of the hardware are open source, 3D print files are provided, and reliance on standard off-the-shelf components limits hardware moat.",
+        "source": "hn_post"
+      }
+    },
+    "verdict": "Take a meeting",
+    "verdict_reason": "The team has successfully built and shipped a remarkably low-cost bimanual mobile robot with strong initial developer interest, though long-term unit economics and hardware reliability remain open questions.",
+    "would_change_my_mind": [
+      "Evidence of robust autonomous execution on complex real-world tasks without cherry-picked setups.",
+      "Demonstration of sustainable software margins or recurring revenue attach rates.",
+      "Quantitative telemetry showing low hardware failure rates in customer hands."
+    ],
+    "thesis_fit": "off-thesis",
+    "data_gaps": [
+      "Actual unit manufacturing cost and gross margins at scale.",
+      "Detailed metrics on customer retention and active developer usage of the SDK.",
+      "GitHub statistics and code contribution activity."
+    ]
+  }
+}

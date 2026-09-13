@@ -1,0 +1,70 @@
+{
+  "name": "Manufact",
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "872a7ff51501812b9196cf86bca8715ec23cae5b662a0ebd9016761b21cbffcd",
+  "created_at": "2026-09-13T12:10:57Z",
+  "attempts": 1,
+  "raw_response": "{\n  \"team\": {\n    \"summary\": \"Pietro and Luigi are cofounders of Manufact (formerly mcp-use), building open-source SDKs and a cloud platform for MCP apps and servers since April 2025.\",\n    \"source\": \"hn_post\"\n  },\n  \"product\": {\n    \"summary\": \"Manufact is an MCP vertical cloud (Vercel for MCP) designed for dev teams putting MCP Apps and servers in production, offering hosting, cross-client testing, publishing checks, submission packs, cloud inspector, and MCP-native analytics.\",\n    \"source\": \"site\"\n  },\n  \"market\": {\n    \"summary\": \"Dev teams and companies building MCP servers and MCP Apps for distribution via AI model marketplaces and directories like ChatGPT Apps Store and Claude Connectors.\",\n    \"source\": \"hn_post\"\n  },\n  \"risks\": [\n    {\n      \"risk\": \"Skepticism over whether MCP is a durable paradigm or just a protocol/dead-end compared to CLIs, REST APIs, or custom agent skills.\",\n      \"source\": \"comments\"\n    },\n    {\n      \"risk\": \"Friction around mandatory signups to browse products and pricing confusion on credits.\",\n      \"source\": \"comments\"\n    },\n    {\n      \"risk\": \"Platform dependency and uncertainty around how major marketplaces (OpenAI/Anthropic) handle monetization and store rules.\",\n      \"source\": \"comments\"\n    }\n  ],\n  \"scores\": {\n    \"founder_depth\": {\n      \"score\": 22,\n      \"why\": \"Founders have been building deep in the MCP ecosystem since April 2025, transitioning from client-side agents to server-side tooling based on market shifts.\",\n      \"source\": \"hn_post\"\n    },\n    \"shipping_evidence\": {\n      \"score\": 23,\n      \"why\": \"10M+ SDK downloads, 10k+ GitHub stars, active open source repositories (mcp-use), live platform product with previews, testing, and analytics.\",\n      \"source\": \"site\"\n    },\n    \"demand_signal\": {\n      \"score\": 19,\n      \"why\": \"111 HN points, 70 comments with active developer engagement, case studies, and testimonials from real teams using it in production.\",\n      \"source\": \"hn_post\"\n    },\n    \"defensibility\": {\n      \"score\": 14,\n      \"why\": \"Built on top of an open standard (MCP) with open-source SDKs, relying primarily on developer workflow lock-in, deployment convenience, and marketplace compliance tooling.\",\n      \"source\": \"site\"\n    }\n  },\n  \"verdict\": \"Take a meeting\",\n  \"verdict_reason\": \"Strong technical founders with massive open-source traction (10M+ downloads) addressing a real pain point in the emerging MCP ecosystem.\",\n  \"would_change_my_mind\": [\n    \"Widespread developer abandonment of MCP in favor of raw CLIs or native agent skills\",\n    \"Major AI chat providers building native cloud hosting and testing tools that disintermediate third-party vertical clouds\",\n    \"Deteriorating retention or monetization among companies relying on MCP marketplaces\"\n  ],\n  \"thesis_fit\": \"on-thesis\",\n  \"data_gaps\": [\n    \"Direct GitHub repository link was not explicitly provided in the launch post text\",\n    \"Exact current ARR or paid conversion metrics are not disclosed\"\n  ]\n}",
+  "analysis": {
+    "team": {
+      "summary": "Pietro and Luigi are cofounders of Manufact (formerly mcp-use), building open-source SDKs and a cloud platform for MCP apps and servers since April 2025.",
+      "source": "hn_post"
+    },
+    "product": {
+      "summary": "Manufact is an MCP vertical cloud (Vercel for MCP) designed for dev teams putting MCP Apps and servers in production, offering hosting, cross-client testing, publishing checks, submission packs, cloud inspector, and MCP-native analytics.",
+      "source": "site"
+    },
+    "market": {
+      "summary": "Dev teams and companies building MCP servers and MCP Apps for distribution via AI model marketplaces and directories like ChatGPT Apps Store and Claude Connectors.",
+      "source": "hn_post"
+    },
+    "risks": [
+      {
+        "risk": "Skepticism over whether MCP is a durable paradigm or just a protocol/dead-end compared to CLIs, REST APIs, or custom agent skills.",
+        "source": "comments"
+      },
+      {
+        "risk": "Friction around mandatory signups to browse products and pricing confusion on credits.",
+        "source": "comments"
+      },
+      {
+        "risk": "Platform dependency and uncertainty around how major marketplaces (OpenAI/Anthropic) handle monetization and store rules.",
+        "source": "comments"
+      }
+    ],
+    "scores": {
+      "founder_depth": {
+        "score": 22,
+        "why": "Founders have been building deep in the MCP ecosystem since April 2025, transitioning from client-side agents to server-side tooling based on market shifts.",
+        "source": "hn_post"
+      },
+      "shipping_evidence": {
+        "score": 23,
+        "why": "10M+ SDK downloads, 10k+ GitHub stars, active open source repositories (mcp-use), live platform product with previews, testing, and analytics.",
+        "source": "site"
+      },
+      "demand_signal": {
+        "score": 19,
+        "why": "111 HN points, 70 comments with active developer engagement, case studies, and testimonials from real teams using it in production.",
+        "source": "hn_post"
+      },
+      "defensibility": {
+        "score": 14,
+        "why": "Built on top of an open standard (MCP) with open-source SDKs, relying primarily on developer workflow lock-in, deployment convenience, and marketplace compliance tooling.",
+        "source": "site"
+      }
+    },
+    "verdict": "Take a meeting",
+    "verdict_reason": "Strong technical founders with massive open-source traction (10M+ downloads) addressing a real pain point in the emerging MCP ecosystem.",
+    "would_change_my_mind": [
+      "Widespread developer abandonment of MCP in favor of raw CLIs or native agent skills",
+      "Major AI chat providers building native cloud hosting and testing tools that disintermediate third-party vertical clouds",
+      "Deteriorating retention or monetization among companies relying on MCP marketplaces"
+    ],
+    "thesis_fit": "on-thesis",
+    "data_gaps": [
+      "Direct GitHub repository link was not explicitly provided in the launch post text",
+      "Exact current ARR or paid conversion metrics are not disclosed"
+    ]
+  }
+}
