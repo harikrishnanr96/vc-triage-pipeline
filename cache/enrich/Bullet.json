@@ -1,0 +1,1407 @@
+{
+  "hn_thread": {
+    "url": "https://hn.algolia.com/api/v1/items/49283063",
+    "params": null,
+    "fetched_at": "2026-09-13T11:04:17Z",
+    "status": 200,
+    "content_type": "application/json",
+    "body": {
+      "author": "adi1",
+      "children": [
+        {
+          "author": "apimade",
+          "children": [
+            {
+              "author": "alsima",
+              "children": [
+                {
+                  "author": "poly2it",
+                  "children": [
+                    {
+                      "author": "xrisk",
+                      "children": [
+                        {
+                          "author": "alsima",
+                          "children": [],
+                          "created_at": "2026-08-13T18:49:46.000Z",
+                          "created_at_i": 1786646986,
+                          "id": 49290332,
+                          "options": [],
+                          "parent_id": 49288839,
+                          "points": null,
+                          "story_id": 49283063,
+                          "text": "We&#x27;re optimizing every day :)",
+                          "title": null,
+                          "type": "comment",
+                          "url": null
+                        }
+                      ],
+                      "created_at": "2026-08-13T17:01:35.000Z",
+                      "created_at_i": 1786640495,
+                      "id": 49288839,
+                      "options": [],
+                      "parent_id": 49288714,
+                      "points": null,
+                      "story_id": 49283063,
+                      "text": "Truly built on vibes.",
+                      "title": null,
+                      "type": "comment",
+                      "url": null
+                    }
+                  ],
+                  "created_at": "2026-08-13T16:52:45.000Z",
+                  "created_at_i": 1786639965,
+                  "id": 49288714,
+                  "options": [],
+                  "parent_id": 49284073,
+                  "points": null,
+                  "story_id": 49283063,
+                  "text": "&gt; We&#x27;ve disabled Cmd+Option+I in the new version<p>Bulletproof.",
+                  "title": null,
+                  "type": "comment",
+                  "url": null
+                },
+                {
+                  "author": "davidfiala",
+                  "children": [
+                    {
+                      "author": "alsima",
+                      "children": [
+                        {
+                          "author": "johntash",
+                          "children": [],
+                          "created_at": "2026-08-15T21:32:22.000Z",
+                          "created_at_i": 1786829542,
+                          "id": 49314533,
+                          "options": [],
+                          "parent_id": 49292794,
+                          "points": null,
+                          "story_id": 49283063,
+                          "text": "what does signing up get you?   Since it seemed to work without an account and OPs workaround?",
+                          "title": null,
+                          "type": "comment",
+                          "url": null
+                        }
+                      ],
+                      "created_at": "2026-08-13T22:58:43.000Z",
+                      "created_at_i": 1786661923,
+                      "id": 49292794,
+                      "options": [],
+                      "parent_id": 49292641,
+                      "points": null,
+                      "story_id": 49283063,
+                      "text": "We&#x27;re actively working on implementing a guest mode feature right now for users that don&#x27;t want to make an account. For reporting bugs, we have an in-app feedback form. Bugs are not automatically shared.",
+                      "title": null,
+                      "type": "comment",
+                      "url": null
+                    }
+                  ],
+                  "created_at": "2026-08-13T22:33:40.000Z",
+                  "created_at_i": 1786660420,
+                  "id": 49292641,
+                  "options": [],
+                  "parent_id": 49284073,
+                  "points": null,
+                  "story_id": 49283063,
+                  "text": "&gt; We&#x27;ve disabled Cmd+Option+I<p>OP was providing a userful tips to users, and they weren&#x27;t giving you a bug report to remove it. If anything, they were suggesting you remove a login-wall.<p>But now that you blocked the inspector tool, you&#x27;ll find it harder for users to report bugs. Unless of course those are automatically shared too? &#x2F;s",
+                  "title": null,
+                  "type": "comment",
+                  "url": null
+                }
+              ],
+              "created_at": "2026-08-13T10:48:35.000Z",
+              "created_at_i": 1786618115,
+              "id": 49284073,
+              "options": [],
+              "parent_id": 49283583,
+              "points": null,
+              "story_id": 49283063,
+              "text": "Thanks for bringing this up and trying it out! We&#x27;ve disabled Cmd+Option+I in the new version and also have a message during signup about sharing chats with Bullet, let us know if you run into any other issues!",
+              "title": null,
+              "type": "comment",
+              "url": null
+            }
+          ],
+          "created_at": "2026-08-13T09:37:22.000Z",
+          "created_at_i": 1786613842,
+          "id": 49283583,
+          "options": [],
+          "parent_id": 49283063,
+          "points": null,
+          "story_id": 49283063,
+          "text": "Skip signup:<p>Cmd+Option+I &gt; Console &gt; &#x27;allow pasting&#x27;<p>const onboarding = document.querySelector(&#x27;#onboarding&#x27;);\nconst app = document.querySelector(&#x27;#app&#x27;);\nonboarding.style.setProperty(&#x27;display&#x27;, &#x27;none&#x27;, &#x27;important&#x27;);\napp.inert = false;\napp.removeAttribute(&#x27;aria-hidden&#x27;);\ndocument.querySelector(&#x27;#prompt&#x27;)?.focus();<p>Also, warning:<p># Share chats with Bullet — helps us improve model routing and answer quality<p>Enabled by default.",
+          "title": null,
+          "type": "comment",
+          "url": null
+        },
+        {
+          "author": "hmokiguess",
+          "children": [
+            {
+              "author": "adi1",
+              "children": [],
+              "created_at": "2026-08-13T16:25:13.000Z",
+              "created_at_i": 1786638313,
+              "id": 49288340,
+              "options": [],
+              "parent_id": 49288295,
+              "points": null,
+              "story_id": 49283063,
+              "text": "haha fair enough, surprisingly people still struggle to find it, glad you found it and liked the game!",
+              "title": null,
+              "type": "comment",
+              "url": null
+            }
+          ],
+          "created_at": "2026-08-13T16:22:15.000Z",
+          "created_at_i": 1786638135,
+          "id": 49288295,
+          "options": [],
+          "parent_id": 49283063,
+          "points": null,
+          "story_id": 49283063,
+          "text": "&gt; P.S: we hid a code on the website, see if you can unlock the secret page at the footer, all built with Bullet<p>Is it even hidden when your AI ends up tagging it with `aria-label=&quot;Hidden secret code&quot;`? Lol. Fun mini game.",
+          "title": null,
+          "type": "comment",
+          "url": null
+        },
+        {
+          "author": "tontinton",
+          "children": [
+            {
+              "author": "Supermancho",
+              "children": [
+                {
+                  "author": "alsima",
+                  "children": [
+                    {
+                      "author": "Terretta",
+                      "children": [
+                        {
+                          "author": "alsima",
+                          "children": [],
+                          "created_at": "2026-08-13T22:34:28.000Z",
+                          "created_at_i": 1786660468,
+                          "id": 49292648,
+                          "options": [],
+                          "parent_id": 49292589,
+                          "points": null,
+                          "story_id": 49283063,
+                          "text": "Yes, we saw this and it&#x27;s really exciting, can’t wait to try it in Bullet. But faster inference only speeds up generation. In our own experience, testing, building, searching, and other tool work still dominate plenty of real tasks. We’ll have to test it in practice, but it’s a great development for everyone building agents.",
+                          "title": null,
+                          "type": "comment",
+                          "url": null
+                        }
+                      ],
+                      "created_at": "2026-08-13T22:26:51.000Z",
+                      "created_at_i": 1786660011,
+                      "id": 49292589,
+                      "options": [],
+                      "parent_id": 49290455,
+                      "points": null,
+                      "story_id": 49283063,
+                      "text": "Meanwhile, Cerebras running Sol at 750 tokens per second, the harness &quot;speed&quot; becomes irrelevant compared to making better use of results from insta-Sol.",
+                      "title": null,
+                      "type": "comment",
+                      "url": null
+                    }
+                  ],
+                  "created_at": "2026-08-13T18:58:56.000Z",
+                  "created_at_i": 1786647536,
+                  "id": 49290455,
+                  "options": [],
+                  "parent_id": 49288835,
+                  "points": null,
+                  "story_id": 49283063,
+                  "text": "I think that if there are many players in the space, it&#x27;s a problem worth working on! Like I said in the post, our main problem is speed and that&#x27;s what we&#x27;re trying to fix. It&#x27;s been a problem, and it still is a problem. We have tried tools like OpenCode, Pi, etc. but for our speed issue, it did not fix it. If we go down dying on this boat, so be it, at least we went down dying on a problem we care about!",
+                  "title": null,
+                  "type": "comment",
+                  "url": null
+                }
+              ],
+              "created_at": "2026-08-13T17:01:12.000Z",
+              "created_at_i": 1786640472,
+              "id": 49288835,
+              "options": [],
+              "parent_id": 49288442,
+              "points": null,
+              "story_id": 49283063,
+              "text": "I&#x27;m not sure why anyone would fund &quot;creating an agent&quot;.\nOpenCode is competing with Codex and Claude already.<p>&quot;The bullets&quot; are not any different than other new agent projects. New agent projects pop up and die constantly and it&#x27;s not from a lack of funding.",
+              "title": null,
+              "type": "comment",
+              "url": null
+            },
+            {
+              "author": "docheinestages",
+              "children": [
+                {
+                  "author": "tomhow",
+                  "children": [
+                    {
+                      "author": "kkotak",
+                      "children": [
+                        {
+                          "author": "tomhow",
+                          "children": [],
+                          "created_at": "2026-08-14T15:58:54.000Z",
+                          "created_at_i": 1786723134,
+                          "id": 49300565,
+                          "options": [],
+                          "parent_id": 49294499,
+                          "points": null,
+                          "story_id": 49283063,
+                          "text": "“Spray and pray” is a deliberately belittling term for an approach that YC largely pioneered and has delivered outsized returns over two decades. There’s no “pray” about it. YC partners work incredibly hard to attract and select the most promising founders and support them through their most nascent and fragile stages. They keep turning out huge successes, whilst also giving off the appearance that most funded companies are unimpressive. That’s always been true; it’s the easy thing to focus on for people who are motivated to be critical, but it’s a valueless observation.",
+                          "title": null,
+                          "type": "comment",
+                          "url": null
+                        }
+                      ],
+                      "created_at": "2026-08-14T03:38:19.000Z",
+                      "created_at_i": 1786678699,
+                      "id": 49294499,
+                      "options": [],
+                      "parent_id": 49291546,
+                      "points": null,
+                      "story_id": 49283063,
+                      "text": "That&#x27;s not just YC&#x27;s philosophy. That&#x27;s how seed level funding works in the industry. Spray and Pray.",
+                      "title": null,
+                      "type": "comment",
+                      "url": null
+                    }
+                  ],
+                  "created_at": "2026-08-13T20:39:57.000Z",
+                  "created_at_i": 1786653597,
+                  "id": 49291546,
+                  "options": [],
+                  "parent_id": 49288862,
+                  "points": null,
+                  "story_id": 49283063,
+                  "text": "People were saying that about YC in 2009, when Airbnb and Stripe were funded. YC’s philosophy has always been to invest in a great many companies, accepting that you can’t know in advance which will succeed, most will fail, but the ones that succeed will be successful enough to pay for all the losses.",
+                  "title": null,
+                  "type": "comment",
+                  "url": null
+                }
+              ],
+              "created_at": "2026-08-13T17:03:19.000Z",
+              "created_at_i": 1786640599,
+              "id": 49288862,
+              "options": [],
+              "parent_id": 49288442,
+              "points": null,
+              "story_id": 49283063,
+              "text": "YCombinator&#x27;s investments are unfortunately very questionable nowadays.",
+              "title": null,
+              "type": "comment",
+              "url": null
+            }
+          ],
+          "created_at": "2026-08-13T16:31:20.000Z",
+          "created_at_i": 1786638680,
+          "id": 49288442,
+          "options": [],
+          "parent_id": 49283063,
+          "points": null,
+          "story_id": 49283063,
+          "text": "Are you freaking kidding me with YC throwing money at something like this? I guess I can fund raise just by having built <a href=\"https:&#x2F;&#x2F;maki.sh\" rel=\"nofollow\">https:&#x2F;&#x2F;maki.sh</a>, and months ahead of other founders too...",
+          "title": null,
+          "type": "comment",
+          "url": null
+        },
+        {
+          "author": "docheinestages",
+          "children": [
+            {
+              "author": "KellyCriterion",
+              "children": [
+                {
+                  "author": "alsima",
+                  "children": [
+                    {
+                      "author": "waingake",
+                      "children": [
+                        {
+                          "author": "japborst",
+                          "children": [],
+                          "created_at": "2026-08-14T06:30:14.000Z",
+                          "created_at_i": 1786689014,
+                          "id": 49295346,
+                          "options": [],
+                          "parent_id": 49290323,
+                          "points": null,
+                          "story_id": 49283063,
+                          "text": "Same. I love this type of design",
+                          "title": null,
+                          "type": "comment",
+                          "url": null
+                        }
+                      ],
+                      "created_at": "2026-08-13T18:49:21.000Z",
+                      "created_at_i": 1786646961,
+                      "id": 49290323,
+                      "options": [],
+                      "parent_id": 49290278,
+                      "points": null,
+                      "story_id": 49283063,
+                      "text": "Website looks great FWIW.",
+                      "title": null,
+                      "type": "comment",
+                      "url": null
+                    }
+                  ],
+                  "created_at": "2026-08-13T18:45:30.000Z",
+                  "created_at_i": 1786646730,
+                  "id": 49290278,
+                  "options": [],
+                  "parent_id": 49289808,
+                  "points": null,
+                  "story_id": 49283063,
+                  "text": "We&#x27;ll get on that :)",
+                  "title": null,
+                  "type": "comment",
+                  "url": null
+                }
+              ],
+              "created_at": "2026-08-13T18:08:08.000Z",
+              "created_at_i": 1786644488,
+              "id": 49289808,
+              "options": [],
+              "parent_id": 49288856,
+              "points": null,
+              "story_id": 49283063,
+              "text": "++1\nYour comment was the solely reason why I clicked on their page! :-D<p>Looks like &quot;Techno music design of the 90s&quot; or similar :-D",
+              "title": null,
+              "type": "comment",
+              "url": null
+            }
+          ],
+          "created_at": "2026-08-13T17:02:49.000Z",
+          "created_at_i": 1786640569,
+          "id": 49288856,
+          "options": [],
+          "parent_id": 49283063,
+          "points": null,
+          "story_id": 49283063,
+          "text": "Your landing page is very hard to read. The font size is literally 10px for some content, while animations distract the reader.<p>Dear YC, please force the startups to dedicate some of the 500k funding for standard web design.",
+          "title": null,
+          "type": "comment",
+          "url": null
+        },
+        {
+          "author": "seizethecheese",
+          "children": [
+            {
+              "author": "seizethecheese",
+              "children": [
+                {
+                  "author": "alsima",
+                  "children": [
+                    {
+                      "author": "seizethecheese",
+                      "children": [
+                        {
+                          "author": "alsima",
+                          "children": [],
+                          "created_at": "2026-08-13T19:39:31.000Z",
+                          "created_at_i": 1786649971,
+                          "id": 49290914,
+                          "options": [],
+                          "parent_id": 49290706,
+                          "points": null,
+                          "story_id": 49283063,
+                          "text": "Mentioned in my comment above. Sorry, I thought you were talking about Gemini 3.6 Flash, not their new one. Yes, that&#x27;s the reason why we didn&#x27;t include the router in the benchmark to have a fair comparison of the harness itself.",
+                          "title": null,
+                          "type": "comment",
+                          "url": null
+                        }
+                      ],
+                      "created_at": "2026-08-13T19:21:11.000Z",
+                      "created_at_i": 1786648871,
+                      "id": 49290706,
+                      "options": [],
+                      "parent_id": 49290399,
+                      "points": null,
+                      "story_id": 49283063,
+                      "text": "Mentioned where?<p>What do you mean it wouldn&#x27;t preserve quality? I demonstrate in the comments here how it <i>would</i> on a saturated benchmark.",
+                      "title": null,
+                      "type": "comment",
+                      "url": null
+                    }
+                  ],
+                  "created_at": "2026-08-13T18:54:29.000Z",
+                  "created_at_i": 1786647269,
+                  "id": 49290399,
+                  "options": [],
+                  "parent_id": 49289192,
+                  "points": null,
+                  "story_id": 49283063,
+                  "text": "Like I mentioned, we omitted routing from the benchmark and evaluated with our strongest model modality. Also, randomly selecting between Fable and Gemini 3.7 Flash wouldn&#x27;t preserve quality.",
+                  "title": null,
+                  "type": "comment",
+                  "url": null
+                }
+              ],
+              "created_at": "2026-08-13T17:28:02.000Z",
+              "created_at_i": 1786642082,
+              "id": 49289192,
+              "options": [],
+              "parent_id": 49289059,
+              "points": null,
+              "story_id": 49283063,
+              "text": "The same thing holds for speed. I could build a system that speeds up Fable on GPQA Diamond ~50%, while improving score, by literally randomly selecting between Fable and Gemini 3.7 Flash. (Solve time for Flash is 0.1min and 0.8min for Fable, with Flash having a better score.)<p>Hell, I could publish better score at 87.5% time reduction by having the router always pick Flash!",
+              "title": null,
+              "type": "comment",
+              "url": null
+            },
+            {
+              "author": "adi1",
+              "children": [
+                {
+                  "author": "seizethecheese",
+                  "children": [
+                    {
+                      "author": "alsima",
+                      "children": [
+                        {
+                          "author": "seizethecheese",
+                          "children": [
+                            {
+                              "author": "alsima",
+                              "children": [],
+                              "created_at": "2026-08-13T19:30:30.000Z",
+                              "created_at_i": 1786649430,
+                              "id": 49290825,
+                              "options": [],
+                              "parent_id": 49290688,
+                              "points": null,
+                              "story_id": 49283063,
+                              "text": "Fair point, yes, the router is only in the live system (we&#x27;ll try to make that more clear). We thought that comparing the router to other harnesses on the benchmark wouldn&#x27;t be a fair evaluation because the speed&#x2F;cost gains from our harness would mostly be from using cheaper and simpler models rather than actually having a better harness.",
+                              "title": null,
+                              "type": "comment",
+                              "url": null
+                            }
+                          ],
+                          "created_at": "2026-08-13T19:19:57.000Z",
+                          "created_at_i": 1786648797,
+                          "id": 49290688,
+                          "options": [],
+                          "parent_id": 49290305,
+                          "points": null,
+                          "story_id": 49283063,
+                          "text": "Okay, that makes more sense, but then this post is very confusing. Why mention the router at all? Or does your live system have a router and the eval doesn&#x27;t? In which case why not publish an eval with the router?",
+                          "title": null,
+                          "type": "comment",
+                          "url": null
+                        }
+                      ],
+                      "created_at": "2026-08-13T18:47:56.000Z",
+                      "created_at_i": 1786646876,
+                      "id": 49290305,
+                      "options": [],
+                      "parent_id": 49289504,
+                      "points": null,
+                      "story_id": 49283063,
+                      "text": "The benchmark wasn&#x27;t evaluated with the router, we wanted an apples-to-apples comparison of our harness against other harnesses like mini-swe-agent on the same models to see if we added speed + cost value beyond routing.",
+                      "title": null,
+                      "type": "comment",
+                      "url": null
+                    }
+                  ],
+                  "created_at": "2026-08-13T17:47:56.000Z",
+                  "created_at_i": 1786643276,
+                  "id": 49289504,
+                  "options": [],
+                  "parent_id": 49289346,
+                  "points": null,
+                  "story_id": 49283063,
+                  "text": "I did read &quot;Full results and methodology&quot;. It doesn&#x27;t seem to show which agents you are routing to. Am I missing something? And how do those agents score on SWE-Bench Verified?",
+                  "title": null,
+                  "type": "comment",
+                  "url": null
+                }
+              ],
+              "created_at": "2026-08-13T17:37:54.000Z",
+              "created_at_i": 1786642674,
+              "id": 49289346,
+              "options": [],
+              "parent_id": 49289059,
+              "points": null,
+              "story_id": 49283063,
+              "text": "The breakdown with which model, per-task cost, and methodology is in the &quot;Full results and methodology&quot; link in the post, not omitted. Definitely check it out if you haven&#x27;t.<p>On the saturation point, we agree that a 95.8% result on a mature benchmark isn&#x27;t the main proof, which is why we&#x27;re currently running against harder, less saturated benchmarks like Terminal-Bench, CursorBench, and SlopCodeBench (going to publish results on these hard benchmarks shortly). Apart from current user experiences, that will show the value of our harness.",
+              "title": null,
+              "type": "comment",
+              "url": null
+            }
+          ],
+          "created_at": "2026-08-13T17:18:56.000Z",
+          "created_at_i": 1786641536,
+          "id": 49289059,
+          "options": [],
+          "parent_id": 49283063,
+          "points": null,
+          "story_id": 49283063,
+          "text": "This is a promising direction! Unfortunately, I think the benchmark result here is essentially meaningless.<p>I recently discovered this same lesson the hard way. I was trying to get a multi-agent system I was building to improve upon GPQA  Diamond scores (system here: <a href=\"http:&#x2F;&#x2F;pellmell.ai\" rel=\"nofollow\">http:&#x2F;&#x2F;pellmell.ai</a>). No matter how hard I tried, I could not get any lift. When Fable 5 dropped, it also did not improve upon Opus, and I realized my mistake. The benchmark was saturated!<p>Now, looking at the result here, I see a similar pattern. Fable is not better than Opus, and the score is ~95%.   Notably, this post omits which subagent is being used. Why? An intellectually honest way to tell if this thing really works would be to run that agent and report its score and cost as well.<p>Going back to my GPQA Diamond lesson, you can see here how a saturated leaderboard behaves <a href=\"https:&#x2F;&#x2F;artificialanalysis.ai&#x2F;evaluations&#x2F;gpqa-diamond\" rel=\"nofollow\">https:&#x2F;&#x2F;artificialanalysis.ai&#x2F;evaluations&#x2F;gpqa-diamond</a>.  Fable gets 92.6% for $0.22 per task while several models score <i>higher</i> for $0.01. I could easily publish a router that “enhances Fable on GPQA Diamond” showing improved score for lower cost, just by implementing a router that picks the model at random!",
+          "title": null,
+          "type": "comment",
+          "url": null
+        },
+        {
+          "author": "0kk33",
+          "children": [
+            {
+              "author": "adi1",
+              "children": [],
+              "created_at": "2026-08-13T17:41:21.000Z",
+              "created_at_i": 1786642881,
+              "id": 49289397,
+              "options": [],
+              "parent_id": 49289151,
+              "points": null,
+              "story_id": 49283063,
+              "text": "Thanks! We support a variety of model providers (OpenCode&#x2F;Codex&#x2F;Grok&#x2F;Claude) via their subscriptions and API keys. This can be seen in the app.",
+              "title": null,
+              "type": "comment",
+              "url": null
+            },
+            {
+              "author": "tmzt",
+              "children": [],
+              "created_at": "2026-08-15T11:47:44.000Z",
+              "created_at_i": 1786794464,
+              "id": 49309797,
+              "options": [],
+              "parent_id": 49289151,
+              "points": null,
+              "story_id": 49283063,
+              "text": "Does it work with Codex subscriptions like OMP? I realize others (such as Anthropic) restrict theirs and am not asking about per-call usage.",
+              "title": null,
+              "type": "comment",
+              "url": null
+            }
+          ],
+          "created_at": "2026-08-13T17:25:47.000Z",
+          "created_at_i": 1786641947,
+          "id": 49289151,
+          "options": [],
+          "parent_id": 49283063,
+          "points": null,
+          "story_id": 49283063,
+          "text": "Congrats on the launch.\nI can&#x27;t find which model providers are supported?\nAre you calling the claude-code CLI directly and make bullet usable with anthropic subscriptions like orca or herdr?<p>I guess however this is a harness and it needs to connect to the API?",
+          "title": null,
+          "type": "comment",
+          "url": null
+        },
+        {
+          "author": "lucasdimarco",
+          "children": [
+            {
+              "author": "adi1",
+              "children": [],
+              "created_at": "2026-08-13T18:26:32.000Z",
+              "created_at_i": 1786645592,
+              "id": 49290048,
+              "options": [],
+              "parent_id": 49289588,
+              "points": null,
+              "story_id": 49283063,
+              "text": "Thanks Lucas, appreciate the feedback as always!",
+              "title": null,
+              "type": "comment",
+              "url": null
+            }
+          ],
+          "created_at": "2026-08-13T17:53:40.000Z",
+          "created_at_i": 1786643620,
+          "id": 49289588,
+          "options": [],
+          "parent_id": 49283063,
+          "points": null,
+          "story_id": 49283063,
+          "text": "I recently switched over to using primarily Bullet for my projects and the speed of it makes it very nice to get projects off the ground quickly and work properly.  I also found that Adi and Alex make updates very regularly based on some of the feedback i&#x27;ve submitted to their feedback tab. Good work on this product guys! I&#x27;m excited to see how it develops in the future.",
+          "title": null,
+          "type": "comment",
+          "url": null
+        },
+        {
+          "author": "esafak",
+          "children": [
+            {
+              "author": "alsima",
+              "children": [],
+              "created_at": "2026-08-13T19:06:25.000Z",
+              "created_at_i": 1786647985,
+              "id": 49290534,
+              "options": [],
+              "parent_id": 49290178,
+              "points": null,
+              "story_id": 49283063,
+              "text": "Thanks for the feedback, we do focus on good tool management, context efficiency, etc. As for routing, ideally it isn&#x27;t the user who has to route themselves, but a layer that routes for them.<p>Thanks for the link to the repo! We have looked at things like <a href=\"https:&#x2F;&#x2F;github.com&#x2F;Graphify-Labs&#x2F;graphify\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;Graphify-Labs&#x2F;graphify</a> but haven&#x27;t had a chance to rigorously evaluate their speed boosts on our harness.",
+              "title": null,
+              "type": "comment",
+              "url": null
+            }
+          ],
+          "created_at": "2026-08-13T18:38:00.000Z",
+          "created_at_i": 1786646280,
+          "id": 49290178,
+          "options": [],
+          "parent_id": 49283063,
+          "points": null,
+          "story_id": 49283063,
+          "text": "I think this adds no value. I would stick to OpenCode.<p>Things I would value: high-fidelity visualization (bonus points for Figma-like visual edits), good tool use (don&#x27;t force me to tell the model), token efficiency, resource efficiency. Things that are not problems:<p>* Routing: OpenCode predefines subagents that you can set to appropriate models.\n* Search: there are AST and embedding-based search MCPs. I use <a href=\"https:&#x2F;&#x2F;github.com&#x2F;DeusData&#x2F;codebase-memory-mcp\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;DeusData&#x2F;codebase-memory-mcp</a>",
+          "title": null,
+          "type": "comment",
+          "url": null
+        },
+        {
+          "author": "drxcliu",
+          "children": [
+            {
+              "author": "alsima",
+              "children": [],
+              "created_at": "2026-08-13T20:23:47.000Z",
+              "created_at_i": 1786652627,
+              "id": 49291360,
+              "options": [],
+              "parent_id": 49291345,
+              "points": null,
+              "story_id": 49283063,
+              "text": "Thank you!",
+              "title": null,
+              "type": "comment",
+              "url": null
+            }
+          ],
+          "created_at": "2026-08-13T20:22:34.000Z",
+          "created_at_i": 1786652554,
+          "id": 49291345,
+          "options": [],
+          "parent_id": 49283063,
+          "points": null,
+          "story_id": 49283063,
+          "text": "It just works like magic!",
+          "title": null,
+          "type": "comment",
+          "url": null
+        },
+        {
+          "author": "retropragma",
+          "children": [
+            {
+              "author": "alsima",
+              "children": [],
+              "created_at": "2026-08-13T21:56:53.000Z",
+              "created_at_i": 1786658213,
+              "id": 49292354,
+              "options": [],
+              "parent_id": 49291928,
+              "points": null,
+              "story_id": 49283063,
+              "text": "No, we don’t support ACP today. Bullet uses its own internal harness and CLI integration. That said, we can definitely see it being something we work on in the future!",
+              "title": null,
+              "type": "comment",
+              "url": null
+            }
+          ],
+          "created_at": "2026-08-13T21:11:30.000Z",
+          "created_at_i": 1786655490,
+          "id": 49291928,
+          "options": [],
+          "parent_id": 49283063,
+          "points": null,
+          "story_id": 49283063,
+          "text": "does your harness support ACP?",
+          "title": null,
+          "type": "comment",
+          "url": null
+        },
+        {
+          "author": "etchalon",
+          "children": [
+            {
+              "author": "alsima",
+              "children": [],
+              "created_at": "2026-08-13T21:49:41.000Z",
+              "created_at_i": 1786657781,
+              "id": 49292289,
+              "options": [],
+              "parent_id": 49292123,
+              "points": null,
+              "story_id": 49283063,
+              "text": "This is a great point, we&#x27;re actively working on a fix.<p>If you’re up for giving it another shot, would love to hear other feedback on the app you have.",
+              "title": null,
+              "type": "comment",
+              "url": null
+            },
+            {
+              "author": "alsima",
+              "children": [],
+              "created_at": "2026-08-14T21:20:07.000Z",
+              "created_at_i": 1786742407,
+              "id": 49304734,
+              "options": [],
+              "parent_id": 49292123,
+              "points": null,
+              "story_id": 49283063,
+              "text": "We&#x27;ve since fixed this! There&#x27;s now an options in settings to remove Bullet as an author.",
+              "title": null,
+              "type": "comment",
+              "url": null
+            }
+          ],
+          "created_at": "2026-08-13T21:31:40.000Z",
+          "created_at_i": 1786656700,
+          "id": 49292123,
+          "options": [],
+          "parent_id": 49283063,
+          "points": null,
+          "story_id": 49283063,
+          "text": "Since I can&#x27;t get this thing not to annotate its commits with itself as an author, I can&#x27;t use it.<p>That should be an option, not forced.",
+          "title": null,
+          "type": "comment",
+          "url": null
+        },
+        {
+          "author": "AlexRisio",
+          "children": [
+            {
+              "author": "alsima",
+              "children": [],
+              "created_at": "2026-08-13T21:49:48.000Z",
+              "created_at_i": 1786657788,
+              "id": 49292291,
+              "options": [],
+              "parent_id": 49292215,
+              "points": null,
+              "story_id": 49283063,
+              "text": "Thanks!",
+              "title": null,
+              "type": "comment",
+              "url": null
+            }
+          ],
+          "created_at": "2026-08-13T21:41:01.000Z",
+          "created_at_i": 1786657261,
+          "id": 49292215,
+          "options": [],
+          "parent_id": 49283063,
+          "points": null,
+          "story_id": 49283063,
+          "text": "This is going to be so helpful!",
+          "title": null,
+          "type": "comment",
+          "url": null
+        },
+        {
+          "author": "FergusArgyll",
+          "children": [],
+          "created_at": "2026-08-13T23:18:11.000Z",
+          "created_at_i": 1786663091,
+          "id": 49292937,
+          "options": [],
+          "parent_id": 49283063,
+          "points": null,
+          "story_id": 49283063,
+          "text": "They shoot through walls!",
+          "title": null,
+          "type": "comment",
+          "url": null
+        },
+        {
+          "author": "ojr",
+          "children": [
+            {
+              "author": "alsima",
+              "children": [
+                {
+                  "author": "ojr",
+                  "children": [],
+                  "created_at": "2026-08-14T03:12:54.000Z",
+                  "created_at_i": 1786677174,
+                  "id": 49294400,
+                  "options": [],
+                  "parent_id": 49293290,
+                  "points": null,
+                  "story_id": 49283063,
+                  "text": "I have a way different taste, my coding agent doesn&#x27;t run in a shell and proposes file changes first without changing them, so its prompt -&gt; propose changes -&gt; accept, bullet has the typical agent workflow, prompt -&gt; create changes -&gt; revert (if you don&#x27;t like what was changed)<p>My coding agent leverages vector search and grep, just using grep takes longer and seems more expensive per task.",
+                  "title": null,
+                  "type": "comment",
+                  "url": null
+                }
+              ],
+              "created_at": "2026-08-14T00:09:36.000Z",
+              "created_at_i": 1786666176,
+              "id": 49293290,
+              "options": [],
+              "parent_id": 49293202,
+              "points": null,
+              "story_id": 49283063,
+              "text": "Agree, building real apps with the harness is the strongest proof. Would love to hear where Bullet fell short vs your setup, especially on speed for your builds.",
+              "title": null,
+              "type": "comment",
+              "url": null
+            }
+          ],
+          "created_at": "2026-08-13T23:55:04.000Z",
+          "created_at_i": 1786665304,
+          "id": 49293202,
+          "options": [],
+          "parent_id": 49283063,
+          "points": null,
+          "story_id": 49283063,
+          "text": "harnesses are becoming the new tech stack, I created my own and will compare it to how bullet operates, I’ve also built and deployed iOS and Android apps with my tool. When you have built something with the tool, other than the tool, it’s stronger proof.",
+          "title": null,
+          "type": "comment",
+          "url": null
+        },
+        {
+          "author": "arthurdls",
+          "children": [
+            {
+              "author": "alsima",
+              "children": [],
+              "created_at": "2026-08-14T00:26:36.000Z",
+              "created_at_i": 1786667196,
+              "id": 49293398,
+              "options": [],
+              "parent_id": 49293372,
+              "points": null,
+              "story_id": 49283063,
+              "text": "Thank you so much!!",
+              "title": null,
+              "type": "comment",
+              "url": null
+            }
+          ],
+          "created_at": "2026-08-14T00:22:05.000Z",
+          "created_at_i": 1786666925,
+          "id": 49293372,
+          "options": [],
+          "parent_id": 49283063,
+          "points": null,
+          "story_id": 49283063,
+          "text": "Critical for the future of AI native products. Congrats on the launch!",
+          "title": null,
+          "type": "comment",
+          "url": null
+        },
+        {
+          "author": "karanraina",
+          "children": [
+            {
+              "author": "alsima",
+              "children": [],
+              "created_at": "2026-08-14T02:20:16.000Z",
+              "created_at_i": 1786674016,
+              "id": 49294094,
+              "options": [],
+              "parent_id": 49293672,
+              "points": null,
+              "story_id": 49283063,
+              "text": "Thanks! Yes, adding MCP support and preserving skills is definitely a priority for us right now.",
+              "title": null,
+              "type": "comment",
+              "url": null
+            },
+            {
+              "author": "shunia_huang",
+              "children": [],
+              "created_at": "2026-08-14T03:06:42.000Z",
+              "created_at_i": 1786676802,
+              "id": 49294366,
+              "options": [],
+              "parent_id": 49293672,
+              "points": null,
+              "story_id": 49283063,
+              "text": "Here you are:<p>&quot;Codex in ChatGPT desktop app for Linux is now in preview&quot;\n<a href=\"https:&#x2F;&#x2F;community.openai.com&#x2F;t&#x2F;codex-in-chatgpt-desktop-app-for-linux-is-now-in-preview&#x2F;1390027\" rel=\"nofollow\">https:&#x2F;&#x2F;community.openai.com&#x2F;t&#x2F;codex-in-chatgpt-desktop-app-...</a>",
+              "title": null,
+              "type": "comment",
+              "url": null
+            }
+          ],
+          "created_at": "2026-08-14T01:11:03.000Z",
+          "created_at_i": 1786669863,
+          "id": 49293672,
+          "options": [],
+          "parent_id": 49283063,
+          "points": null,
+          "story_id": 49283063,
+          "text": "I use codex cli. It doens&#x27;t have a UI for linux. I use opencode for that but it doens&#x27;t work that well with the new 5.6 model suite from openai. Codex is both faster and better. \nI would have loved if there was a way to use a GUI that worked like codex. Gave this a try. I think this might be it.<p>Please consider atleast adding MCP support if you can. That&#x27;ll help",
+          "title": null,
+          "type": "comment",
+          "url": null
+        },
+        {
+          "author": "yetanotherjosh",
+          "children": [
+            {
+              "author": "andai",
+              "children": [],
+              "created_at": "2026-08-14T04:47:09.000Z",
+              "created_at_i": 1786682829,
+              "id": 49294839,
+              "options": [],
+              "parent_id": 49293755,
+              "points": null,
+              "story_id": 49283063,
+              "text": "(Not the author but) To your last question, I was able to replicate some of the benefits of my custom harness in Claude by just adding a custom MCP, startup hooks etc.<p>The issue I ran into is that I was fighting Claude&#x27;s system prompt, which told it to do things which negated most of the benefits of my setup...<p>For context my startup hook was &quot;grep def&quot;, lol. (Now working in js I have grep function, grep class, interface etc.). Gives it a little outline for context, saves time poking around blindly. My repos are small though, this is still a big blob if you have very large repos.",
+              "title": null,
+              "type": "comment",
+              "url": null
+            }
+          ],
+          "created_at": "2026-08-14T01:23:06.000Z",
+          "created_at_i": 1786670586,
+          "id": 49293755,
+          "options": [],
+          "parent_id": 49283063,
+          "points": null,
+          "story_id": 49283063,
+          "text": "Can someone explain how this actually can go faster than other harnesses?<p>1. Model routing. Do you regret giving a task to Fable when it could have literally been done by Sonnet?<p>This is the one thing that I can understand.<p>2. Targeted code + context search. We think embedding the whole repo is dumb. We also think sticking the whole context (or compressed context) in chat is dumb. So we do faster and better greps over both.<p>Is this just a different system prompt? Why would other harnesses not be able to do it this way given instructions to do so?<p>3. Aggressive context hygiene. Tool output is bounded, stale screenshots disappear, we don’t re-read files…the garbage never floods the model.<p>Existing harnesses already don&#x27;t re-read files that have not changed. And content that is already in the context window is cached tokens and doesn&#x27;t add significant latency, what am I missing? Removing context from history invalidates KV cache.<p>4. Efficient turns. Batch independent investigation, make one surgical edit, then perform one focused verification. Internal measurement showed 16% fewer round trips and 27% lower cost.<p>Isn&#x27;t this just a specific sub-agent strategy, also addressable with prompting?<p>I&#x27;m genuinely confused about what is mechanically different in this harness that could not be accomplished with a prompt&#x2F;skill in another harness.",
+          "title": null,
+          "type": "comment",
+          "url": null
+        },
+        {
+          "author": "mattm",
+          "children": [
+            {
+              "author": "alsima",
+              "children": [],
+              "created_at": "2026-08-14T02:18:36.000Z",
+              "created_at_i": 1786673916,
+              "id": 49294083,
+              "options": [],
+              "parent_id": 49293804,
+              "points": null,
+              "story_id": 49283063,
+              "text": "Thanks for trying it! If you want to time it against Claude&#x2F;Codex in app, we have a race lab you can use for that. Good to hear that the Linux support and integrated browser help.",
+              "title": null,
+              "type": "comment",
+              "url": null
+            }
+          ],
+          "created_at": "2026-08-14T01:31:48.000Z",
+          "created_at_i": 1786671108,
+          "id": 49293804,
+          "options": [],
+          "parent_id": 49283063,
+          "points": null,
+          "story_id": 49283063,
+          "text": "Hey just some feedback.  I&#x27;m giving it a try on a new project I&#x27;m spinning up.  It does seem faster although I haven&#x27;t timed it against Claude or anything.  I like the integrated browser to immediately see the changes (or see what the agent is doing).  Thanks for having Linux support.",
+          "title": null,
+          "type": "comment",
+          "url": null
+        },
+        {
+          "author": "throw03172019",
+          "children": [
+            {
+              "author": "alsima",
+              "children": [
+                {
+                  "author": "throw03172019",
+                  "children": [],
+                  "created_at": "2026-08-14T05:37:50.000Z",
+                  "created_at_i": 1786685870,
+                  "id": 49295070,
+                  "options": [],
+                  "parent_id": 49294821,
+                  "points": null,
+                  "story_id": 49283063,
+                  "text": "Great, thank you. Will try it.",
+                  "title": null,
+                  "type": "comment",
+                  "url": null
+                }
+              ],
+              "created_at": "2026-08-14T04:42:42.000Z",
+              "created_at_i": 1786682562,
+              "id": 49294821,
+              "options": [],
+              "parent_id": 49294720,
+              "points": null,
+              "story_id": 49283063,
+              "text": "No, we like that we&#x27;re making this for ourselves as well!",
+              "title": null,
+              "type": "comment",
+              "url": null
+            }
+          ],
+          "created_at": "2026-08-14T04:19:53.000Z",
+          "created_at_i": 1786681193,
+          "id": 49294720,
+          "options": [],
+          "parent_id": 49283063,
+          "points": null,
+          "story_id": 49283063,
+          "text": "&gt; Bullet started as an AI hedge fund, a browser-use agent, synthetic financial data (oof), a mobile IDE, and a bunch of other things.<p>Is there another pivot coming? This would make me nervous.",
+          "title": null,
+          "type": "comment",
+          "url": null
+        },
+        {
+          "author": "andai",
+          "children": [
+            {
+              "author": "alsima",
+              "children": [],
+              "created_at": "2026-08-14T04:45:25.000Z",
+              "created_at_i": 1786682725,
+              "id": 49294831,
+              "options": [],
+              "parent_id": 49294779,
+              "points": null,
+              "story_id": 49283063,
+              "text": "So sorry about that! We disabled download on iOS, but not Android (we&#x27;ll fix that), it&#x27;s not meant to be used on a phone (except for using our remote control feature).",
+              "title": null,
+              "type": "comment",
+              "url": null
+            }
+          ],
+          "created_at": "2026-08-14T04:34:05.000Z",
+          "created_at_i": 1786682045,
+          "id": 49294779,
+          "options": [],
+          "parent_id": 49283063,
+          "points": null,
+          "story_id": 49283063,
+          "text": "I expected Download to take me to a page with options, but it downloaded a 200MB .dmg file onto my Android phone.",
+          "title": null,
+          "type": "comment",
+          "url": null
+        },
+        {
+          "author": "andai",
+          "children": [
+            {
+              "author": "alsima",
+              "children": [
+                {
+                  "author": "andai",
+                  "children": [
+                    {
+                      "author": "alsima",
+                      "children": [],
+                      "created_at": "2026-08-14T21:23:09.000Z",
+                      "created_at_i": 1786742589,
+                      "id": 49304769,
+                      "options": [],
+                      "parent_id": 49299021,
+                      "points": null,
+                      "story_id": 49283063,
+                      "text": "Hmmm couple things you can do I think OpenCode charges a subscription for models you can use in app without porting over a subscription or API key from CC&#x2F;Codex, or you can charge enterprise clients, but that&#x27;s something we&#x27;ll have to figure out in the future, we&#x27;re currently focused on making users happy.",
+                      "title": null,
+                      "type": "comment",
+                      "url": null
+                    }
+                  ],
+                  "created_at": "2026-08-14T14:15:51.000Z",
+                  "created_at_i": 1786716951,
+                  "id": 49299021,
+                  "options": [],
+                  "parent_id": 49294878,
+                  "points": null,
+                  "story_id": 49283063,
+                  "text": "Yeah I forgot to specify &quot;everyone with infinite money&quot; hahahah.<p>Not sure how you monetize a harness either way though?",
+                  "title": null,
+                  "type": "comment",
+                  "url": null
+                }
+              ],
+              "created_at": "2026-08-14T04:54:15.000Z",
+              "created_at_i": 1786683255,
+              "id": 49294878,
+              "options": [],
+              "parent_id": 49294820,
+              "points": null,
+              "story_id": 49283063,
+              "text": "Really cool that you built your own harness off of mini-swe-agent, we took a lot of inspiration from that. We&#x27;re looking forward to trying out Sol Ultra Fast ourselves too! In our own experience, testing, building, searching, and other tool work still dominate a lot of time, but yes there could be a future where harnesses don&#x27;t matter at all...but we expect Cerebras will also be super expensive :&#x2F;",
+              "title": null,
+              "type": "comment",
+              "url": null
+            }
+          ],
+          "created_at": "2026-08-14T04:42:35.000Z",
+          "created_at_i": 1786682555,
+          "id": 49294820,
+          "options": [],
+          "parent_id": 49283063,
+          "points": null,
+          "story_id": 49283063,
+          "text": "35% faster than swe-mini-agent, nice. You say this is due to somehow parallelizing operations?<p>I&#x27;m using a custom harness based on swe-mini-agent (actually its little brother, their tutorial [0]) and found it way faster than codex (for small tasks) despite being &quot;just bash&quot; in a while loop.<p>The main difference is that I do the opposite of what you said, i.e. I do dump the context in the prompt. You don&#x27;t need to grep for what&#x27;s right in front of you :)<p>But my repos are small (often smaller than Claude&#x27;s system prompt!), and I have a script that dumps an &quot;outline&quot; (e.g. function headers and top level vars).<p>I had an even smaller harness for surgical edits but it was a bit too fiddly and I missed the &quot;let it poke around and figure stuff out&quot; mode of full agentic ones.<p>What I do miss from that old one though is that it could edit several files simultaneously, in one LLM call. Maybe someday I&#x27;ll add that back :)<p>That being said, within a few months everyone who cares about speed will be on Cerebras etc., which will make even the slow harnesses way faster than mine and yours! (I&#x27;ve tested them already and it&#x27;s insane how fast it is...)<p>[0] <a href=\"https:&#x2F;&#x2F;minimal-agent.com&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;minimal-agent.com&#x2F;</a>",
+          "title": null,
+          "type": "comment",
+          "url": null
+        },
+        {
+          "author": "lowbloodsugar",
+          "children": [
+            {
+              "author": "japborst",
+              "children": [
+                {
+                  "author": "lowbloodsugar",
+                  "children": [],
+                  "created_at": "2026-08-14T16:35:25.000Z",
+                  "created_at_i": 1786725325,
+                  "id": 49301105,
+                  "options": [],
+                  "parent_id": 49295336,
+                  "points": null,
+                  "story_id": 49283063,
+                  "text": "Right. But Dropbox is the service provider here: the owner of the hardware. The value of DropBox is that they&#x27;ve got a completel solution, including the harddrives. Is there a market for a paid Dropbox client, to use your analogy?",
+                  "title": null,
+                  "type": "comment",
+                  "url": null
+                }
+              ],
+              "created_at": "2026-08-14T06:28:04.000Z",
+              "created_at_i": 1786688884,
+              "id": 49295336,
+              "options": [],
+              "parent_id": 49295173,
+              "points": null,
+              "story_id": 49283063,
+              "text": "Yes. People don’t want to build their own harness. They want to get stuff done. ‘Dropbox is just rsync’",
+              "title": null,
+              "type": "comment",
+              "url": null
+            }
+          ],
+          "created_at": "2026-08-14T05:57:05.000Z",
+          "created_at_i": 1786687025,
+          "id": 49295173,
+          "options": [],
+          "parent_id": 49283063,
+          "points": null,
+          "story_id": 49283063,
+          "text": "Does anyone think a harness is something that can generate money? I’ve got my own harness. I use it in preference to any of the others. I even turned its tools into an MCP so Claude could use it. It vastly improved Claude’s iteration speed but I still prefer my own UI.  If I didn’t work at whatever we’re calling a FAANG these days it’d be on GitHub - and nobody would use it because they’d just point their own AI at it and clone it. It’s just not that hard. Learned a bunch about rust. Got a better harness. Time well spent.",
+          "title": null,
+          "type": "comment",
+          "url": null
+        },
+        {
+          "author": "japborst",
+          "children": [],
+          "created_at": "2026-08-14T06:31:00.000Z",
+          "created_at_i": 1786689060,
+          "id": 49295348,
+          "options": [],
+          "parent_id": 49283063,
+          "points": null,
+          "story_id": 49283063,
+          "text": "Would be helpful to make it more clear that this doesn’t require another subscription and is only a harness, not another model.",
+          "title": null,
+          "type": "comment",
+          "url": null
+        },
+        {
+          "author": "exe34",
+          "children": [
+            {
+              "author": "alsima",
+              "children": [],
+              "created_at": "2026-08-14T07:11:31.000Z",
+              "created_at_i": 1786691491,
+              "id": 49295556,
+              "options": [],
+              "parent_id": 49295451,
+              "points": null,
+              "story_id": 49283063,
+              "text": "Yes, the CLI can run in Docker. The desktop app is not designed to run in Docker. And yes, you can use any HTTPS OpenAI-compatible endpoint, including a custom base URL and model ID.",
+              "title": null,
+              "type": "comment",
+              "url": null
+            }
+          ],
+          "created_at": "2026-08-14T06:54:09.000Z",
+          "created_at_i": 1786690449,
+          "id": 49295451,
+          "options": [],
+          "parent_id": 49283063,
+          "points": null,
+          "story_id": 49283063,
+          "text": "Can it run inside docker? Can it use an arbitrary openai endpoint? Thanks!",
+          "title": null,
+          "type": "comment",
+          "url": null
+        },
+        {
+          "author": "brainless",
+          "children": [],
+          "created_at": "2026-08-14T08:21:26.000Z",
+          "created_at_i": 1786695686,
+          "id": 49295975,
+          "options": [],
+          "parent_id": 49283063,
+          "points": null,
+          "story_id": 49283063,
+          "text": "Good to see more harnesses coming out. I think the initial set of &quot;features&quot; that made into harnesses like tool calling, multi-turn chat, MCP, skills and so on can all be optimized. And then much more can be done on top.<p>I am trying out a two-model approach where small model has access to tools, large model does not. Small model shapes prompts from the repo graph. And repo graph is the only tool that small model has when reading. The small model is already given a set of context from git log, codebase and Markdown&#x2F;text files (generally design files) depending on the user&#x27;s prompt.<p>I do not want to use use multi-turn chat. Small model would instead create fresh prompts for the larger model feeding context and reshaping the original ask every time.<p>Also, reference repositories can be added for small model to help ask right questions. Once a plan is made by large model, execution is mostly task-by-task, done by small model. Lots of deterministic code doing all this orchestration.",
+          "title": null,
+          "type": "comment",
+          "url": null
+        },
+        {
+          "author": "lrvick",
+          "children": [
+            {
+              "author": "alsima",
+              "children": [],
+              "created_at": "2026-08-14T21:15:03.000Z",
+              "created_at_i": 1786742103,
+              "id": 49304684,
+              "options": [],
+              "parent_id": 49300096,
+              "points": null,
+              "story_id": 49283063,
+              "text": "Hi that makes sense, and yes, will definitely review the security permissions requested by our Linux app, sorry to hear that it was hard to trust. We&#x27;re definitely thinking about open-sourcing, it&#x27;s been highly requested.",
+              "title": null,
+              "type": "comment",
+              "url": null
+            }
+          ],
+          "created_at": "2026-08-14T15:28:18.000Z",
+          "created_at_i": 1786721298,
+          "id": 49300096,
+          "options": [],
+          "parent_id": 49283063,
+          "points": null,
+          "story_id": 49283063,
+          "text": "So I hit download, and I got a .deb file.<p>Installing a .deb requires root. Okay, a coding agent that wants root access. I know almost no one is good at supply chain security unless it is their core business, 2500 companies hacked this week for using LiteLLM, etc. So I look around for source code links and come up empty.<p>So, I am supposed to just give a random binary on a website that may or may not be malware depending on what NPM dependencies are in play, and give it root access, and trust whatever unknown CI&#x2F;CD system that builds it to be able to execute any commands on my system with root privileges, and I am not even allowed to review the code?<p>That is an amount of trust I would not even extend to family, and you are asking for it from every single user.<p>So I asked a local LLM to decompile it for me, the 198 dependencies, and license compliance.<p>From here I could have it write an extensive test suite, delete the code, have LLM re-write the code to pass all the tests, then open source the result myself.<p>I am probably not actually going to do this, but anyone could. Proprietary software is no longer a moat, and for something like this it just makes your software very hard to trust. Clean room code laundering is so easy now you might as well open source it yourself.",
+          "title": null,
+          "type": "comment",
+          "url": null
+        },
+        {
+          "author": "sparse-Matrix",
+          "children": [
+            {
+              "author": "alsima",
+              "children": [],
+              "created_at": "2026-08-14T21:18:06.000Z",
+              "created_at_i": 1786742286,
+              "id": 49304719,
+              "options": [],
+              "parent_id": 49300101,
+              "points": null,
+              "story_id": 49283063,
+              "text": "Understood, sorry to hear that! We&#x27;re actively working on a guest mode for people who prefer to not make an account.",
+              "title": null,
+              "type": "comment",
+              "url": null
+            }
+          ],
+          "created_at": "2026-08-14T15:28:31.000Z",
+          "created_at_i": 1786721311,
+          "id": 49300101,
+          "options": [],
+          "parent_id": 49283063,
+          "points": null,
+          "story_id": 49283063,
+          "text": "Sorry, this is a hard pass for me. If I need an account on your server to use it, I don&#x27;t need to use it.",
+          "title": null,
+          "type": "comment",
+          "url": null
+        },
+        {
+          "author": "sgammon",
+          "children": [
+            {
+              "author": "alsima",
+              "children": [],
+              "created_at": "2026-08-14T21:16:19.000Z",
+              "created_at_i": 1786742179,
+              "id": 49304704,
+              "options": [],
+              "parent_id": 49304230,
+              "points": null,
+              "story_id": 49283063,
+              "text": "We don&#x27;t charge any subscriptions or fees. We&#x27;re not open-source, but definitely considering it, has been highly requested. Business model TBD, right now we&#x27;re focusing on making a product people love.",
+              "title": null,
+              "type": "comment",
+              "url": null
+            }
+          ],
+          "created_at": "2026-08-14T20:34:55.000Z",
+          "created_at_i": 1786739695,
+          "id": 49304230,
+          "options": [],
+          "parent_id": 49283063,
+          "points": null,
+          "story_id": 49283063,
+          "text": "so… commercializing the same features that are free in omp? what’s the business model? you guys aren’t open source?",
+          "title": null,
+          "type": "comment",
+          "url": null
+        },
+        {
+          "author": "the_monocle",
+          "children": [
+            {
+              "author": "alsima",
+              "children": [],
+              "created_at": "2026-08-15T00:20:24.000Z",
+              "created_at_i": 1786753224,
+              "id": 49306214,
+              "options": [],
+              "parent_id": 49306130,
+              "points": null,
+              "story_id": 49283063,
+              "text": "Thanks! Hopefully for synchronous tasks that would take CC&#x2F;Codex &gt;30 minutes we&#x27;re looking for a ~30% speedup so feedback cycles are faster.",
+              "title": null,
+              "type": "comment",
+              "url": null
+            }
+          ],
+          "created_at": "2026-08-15T00:06:10.000Z",
+          "created_at_i": 1786752370,
+          "id": 49306130,
+          "options": [],
+          "parent_id": 49283063,
+          "points": null,
+          "story_id": 49283063,
+          "text": "Really cool, whats the productivity benefit you guys anticipate from this?",
+          "title": null,
+          "type": "comment",
+          "url": null
+        },
+        {
+          "author": "v11climbs",
+          "children": [],
+          "created_at": "2026-08-18T21:42:59.000Z",
+          "created_at_i": 1787089379,
+          "id": 49353111,
+          "options": [],
+          "parent_id": 49283063,
+          "points": null,
+          "story_id": 49283063,
+          "text": "Are there any speed gains being drawn from different infrastructure providers or purely software",
+          "title": null,
+          "type": "comment",
+          "url": null
+        }
+      ],
+      "created_at": "2026-08-13T08:14:30.000Z",
+      "created_at_i": 1786608870,
+      "id": 49283063,
+      "options": [],
+      "parent_id": null,
+      "points": 121,
+      "story_id": 49283063,
+      "text": "Hi HN! We’re Adi and Alex, founders of Bullet, a faster coding agent.<p>Bullet started in a senior year dorm. We were fresh out of working at AppLovin and Citadel, and naturally thought we were on a sure path to startup success. We were going to use our skills optimizing stock pricing calculation speeds and agent document context to take over the world. So, Bullet started as an AI hedge fund, a browser-use agent, synthetic financial data (oof), a mobile IDE, and a bunch of other things. We wanted to build something people wanted, but it seemed like everything we built was just terrible, useless, or both.<p>So, we decided to do something completely different, something completely out of the blue, something that no one had ever done before. Solve a problem we actually had.<p>Over the course of six pivots, we suffered. Throughout all of our adventures, one final boss kept getting in our way. Claude Code and his little brother Codex. We were spending hours waiting for coding agents like Claude Code and Codex, and got so frustrated to the point that I downloaded the Claude Code whip. We had spent months of time waiting for six codebases-worth of useless coding agent work.<p>Lightbulb moment. There’s nothing more noble than destroying the institutions! Let’s take on Claude Code and Codex, we can do it! Piece of cake!<p>And so, Bullet started off as a side project. We used the Claude Code to improve the Claude Code:<p>1. Model routing. Do you regret giving a task to Fable when it could have literally been done by Sonnet?<p>2. Targeted code + context search. We think embedding the whole repo is dumb. We also think sticking the whole context (or compressed context) in chat is dumb. So we do faster and better greps over both.<p>3. Aggressive context hygiene. Tool output is bounded, stale screenshots disappear, we don’t re-read files…the garbage never floods the model.<p>4. Efficient turns. Batch independent investigation, make one surgical edit, then perform one focused verification. Internal measurement showed 16% fewer round trips and 27% lower cost.<p>5. The Flash. We prayed to Barry Allen for speed.<p>And thank the Flash, he gave us speed! On SWE-bench Verified, Bullet resolved 479&#x2F;500 (95.8%) in one attempt, averaging 119s per task, 35–67% faster than mini-SWE-agent + Fable&#x2F;Sol depending on task. Full results and methodology here (<a href=\"https:&#x2F;&#x2F;www.codewithbullet.com&#x2F;blog&#x2F;benchmark-results.html\" rel=\"nofollow\">https:&#x2F;&#x2F;www.codewithbullet.com&#x2F;blog&#x2F;benchmark-results.html</a>)<p>Eventually we started using it every day and never went back.<p>Listed above were just some of the things about Claude Code that frustrated us the most, but we are constantly optimizing every day (look at that, maybe we did learn something from our jobs).<p>In our development, the biggest insight was that model speed matters less than reducing round trips. Independent searches, reads, and commands should happen in parallel, while dependent editing and verification stay sequential. One surprising obstacle was code search, small issues like regex-dialect mismatches caused silent misses and sent agents down completely wrong paths, so we built targeted search with fallbacks and bounded context. The most interesting use case so far has been long iterative work (like benchmarks, data pipelines, and evaluation loops), where each step depends on the last and running multiple agents can’t help as much.<p>Here’s the video demo (<a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=rWVmG5fRKgE\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=rWVmG5fRKgE</a>)<p>We hope that you guys try out Bullet if you are suffering with speed as much as we were, and we hope it brings you joy, rainbows, and faster responses. And if it’s terrible, let us know it’s terrible (we’re masochists btw)! We&#x27;ll be in the comments all day, you can also contact us at bullet@davidhf.com.<p>You can try it at <a href=\"https:&#x2F;&#x2F;codewithbullet.com\" rel=\"nofollow\">https:&#x2F;&#x2F;codewithbullet.com</a>.<p>P.S: we hid a code on the website, see if you can unlock the secret page at the footer, all built with Bullet",
+      "title": "Launch HN: Bullet (YC S26) – A Faster Coding Agent",
+      "type": "story",
+      "url": "https://www.codewithbullet.com"
+    },
+    "error": null
+  },
+  "site": {
+    "url": "https://www.codewithbullet.com",
+    "params": null,
+    "fetched_at": "2026-09-13T11:04:19Z",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "body": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <meta name=\"description\" content=\"Bullet is a really fast coding agent with a leaner orchestration layer.\">\n  <meta name=\"theme-color\" content=\"#050505\">\n  <meta name=\"bullet-windows-download\" content=\"https://github.com/trybullet/bullet-releases/releases/download/v1.4.17/Bullet-1.4.17-Setup-x64.exe\">\n  <meta property=\"og:title\" content=\"Bullet · Fast, by design.\">\n  <meta property=\"og:description\" content=\"The coding agent that gets out of your way.\">\n  <meta property=\"og:image\" content=\"assets/demo.jpg\">\n  <title>Bullet · Fast, by design.</title>\n  <link rel=\"icon\" href=\"assets/icon.png\">\n  <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n  <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n  <link href=\"https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Inter:wght@400;500;600;700;800&display=swap\" rel=\"stylesheet\">\n  <link rel=\"stylesheet\" href=\"styles.css\">\n  <script>\n    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };\n  </script>\n  <script defer src=\"/_vercel/insights/script.js\"></script>\n</head>\n<body>\n  <div class=\"grain\" aria-hidden=\"true\"></div>\n  <div class=\"progress\" aria-hidden=\"true\"></div>\n\n  <header class=\"nav\">\n    <a class=\"wordmark\" href=\"#top\" aria-label=\"Bullet home\"><img src=\"assets/logo-light.png\" alt=\"Bullet\"></a>\n    <nav class=\"nav-center\" aria-label=\"Company\">\n      <a href=\"blog/index.html\">BLOG</a>\n      <span aria-hidden=\"true\">/</span>\n      <a href=\"careers/index.html\">CAREERS</a>\n    </nav>\n    <div class=\"nav-right\">\n      <a class=\"nav-cta\" data-track=\"download_nav\" href=\"https://github.com/trybullet/bullet-releases/releases/download/v1.4.17/Bullet-1.4.17-arm64.dmg\" download>DOWNLOAD <span aria-hidden=\"true\">1.4.17</span></a>\n    </div>\n  </header>\n\n  <main id=\"top\">\n    <section class=\"hero\">\n      <div class=\"hero-index rail-label\">B–001 / INTRODUCTION</div>\n      <div class=\"hero-meta rail-label\">MACOS &nbsp;·&nbsp; LINUX &nbsp;·&nbsp; WINDOWS<br>FREE ACCESS</div>\n      <div class=\"hero-copy\">\n        <a class=\"announce reveal\" href=\"blog/benchmark-results.html\" data-track=\"blog_benchmark_hero\"><b>NEW</b><span>95.8% ON SWE-BENCH VERIFIED READ THE RESULTS</span><i aria-hidden=\"true\">→</i></a>\n        <p class=\"overline reveal\">A REALLY FAST CODING AGENT</p>\n        <h1 aria-label=\"Fast by design\">\n          <span class=\"title-line reveal\">FAST,</span>\n          <span class=\"title-line outline reveal\">BY DESIGN.</span>\n        </h1>\n        <div class=\"hero-bottom reveal\">\n          <p>Bullet routes, searches, and executes with one purpose: <strong>keeping up with you.</strong></p>\n          <div class=\"hero-actions\">\n            <a class=\"primary-action\" data-track=\"download_hero\" href=\"https://github.com/trybullet/bullet-releases/releases/download/v1.4.17/Bullet-1.4.17-arm64.dmg\" download><span>DOWNLOAD FOR MAC</span><b aria-hidden=\"true\">1.4.17</b></a>\n            <button class=\"cli-action\" type=\"button\" data-copy=\"npm install -g @trybullet/cli\" data-track=\"cli_copy_hero\" aria-label=\"Copy Bullet CLI install command\">\n              <span class=\"cli-action-label\">INSTALL CLI</span>\n              <code><span>npm install -g @trybullet/cli</span><span>$ bullet</span></code>\n            </button>\n          </div>\n        </div>\n        <a class=\"yc-main reveal\" href=\"https://www.ycombinator.com\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"Backed by Y Combinator\">\n          <img src=\"assets/yc-mark.svg\" alt=\"Y Combinator logo\">\n          <span>Backed by <strong>Y Combinator</strong></span>\n        </a>\n        <a class=\"community-link reveal\" data-track=\"discord_hero\" href=\"https://discord.gg/nGj97KffS4\" target=\"_blank\" rel=\"noopener noreferrer\">JOIN THE DISCORD ↗</a>\n      </div>\n\n      <div class=\"ballistic\" aria-hidden=\"true\">\n        <div class=\"trail\"></div>\n        <div class=\"projectile\"><i></i><span></span></div>\n      </div>\n      <div class=\"scroll-label\">SCROLL TO EXPLORE <i></i></div>\n    </section>\n\n\n    <section class=\"system chapter\" id=\"system\">\n      <div class=\"chapter-no\">01</div>\n      <div class=\"section-top reveal\">\n        <div><p class=\"eyebrow\">THE BULLET SYSTEM</p><h2>LEANER<br>BY DEFAULT.</h2></div>\n        <p>Same model → tools → results pattern.<br>A tighter loop around it.</p>\n      </div>\n\n      <div class=\"protocols\">\n        <article class=\"protocol reveal\">\n          <div class=\"protocol-head\"><span>PROTOCOL 01</span><span>ROUTE / ESCALATE</span></div>\n          <div class=\"route-visual visual\">\n            <div class=\"incoming\">TASK IN</div>\n            <div class=\"route-line\"><i class=\"round\"></i></div>\n            <div class=\"route-stack\">\n              <div class=\"selected\"><b>FAST</b><span>STRAIGHTFORWARD</span></div>\n              <div><b>DEEP</b><span>COMPLEX</span></div>\n              <div><b>REASON</b><span>HARDEST</span></div>\n            </div>\n          </div>\n          <div class=\"protocol-copy\"><h3>Right model.<br>Right moment.</h3><p>Route straightforward work to fast models. Escalate only when the mission demands it.</p></div>\n        </article>\n\n        <article class=\"protocol reveal\">\n          <div class=\"protocol-head\"><span>PROTOCOL 02</span><span>SEARCH / ACQUIRE</span></div>\n          <div class=\"search-visual visual\">\n            <div class=\"search-query\"><span>⌕</span><code>auth middleware</code><i></i></div>\n            <div class=\"result\"><span>01</span><code>src/router.ts</code><b>94.2</b></div>\n            <div class=\"result\"><span>02</span><code>src/auth.ts</code><b>88.7</b></div>\n            <div class=\"scanline\"></div>\n            <div class=\"context-readout\"><small>REPOSITORY CONTEXT</small><strong>08%</strong></div>\n          </div>\n          <div class=\"protocol-copy\"><h3>Acquire the target.<br>Ignore the noise.</h3><p>Targeted search and file reads find relevant code without embedding the whole repo.</p></div>\n        </article>\n\n        <article class=\"protocol wide reveal\">\n          <div class=\"protocol-head\"><span>PROTOCOL 03</span><span>PARALLEL EXECUTION</span></div>\n          <div class=\"parallel-visual visual\">\n            <div class=\"parallel-labels\"><span>SEARCH</span><span>READ</span><span>VERIFY</span></div>\n            <div class=\"parallel-tracks\"><i style=\"--w:82%;--d:0s\"></i><i style=\"--w:61%;--d:.18s\"></i><i style=\"--w:73%;--d:.36s\"></i></div>\n            <div class=\"chrono\"><small>ELAPSED</small><strong>00:02.31</strong><span>3 OPERATIONS / SIMULTANEOUS</span></div>\n          </div>\n          <div class=\"protocol-copy\"><h3>Never queue what can run together.</h3><p>Independent tool calls execute in parallel. Duplicate calls and stuck loops are intercepted before they waste another second.</p></div>\n        </article>\n      </div>\n    </section>\n\n\n    <section class=\"demo chapter\" id=\"demo\">\n      <div class=\"chapter-no\">02</div>\n      <div class=\"section-top reveal\">\n        <div><p class=\"eyebrow\">FIELD TEST / 001</p><h2>SEE BULLET<br>IN ACTION.</h2></div>\n        <p>Real prompt. Real repository.<br>No cinematic shortcuts.</p>\n      </div>\n      <div class=\"film reveal\" data-track=\"demo_video\">\n        <iframe src=\"https://www.youtube-nocookie.com/embed/rWVmG5fRKgE\" title=\"Bullet product demo\" loading=\"lazy\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n      </div>\n    </section>\n\n    <section class=\"terminal chapter\" id=\"cli\">\n      <div class=\"chapter-no\">03</div>\n      <div class=\"section-top reveal\">\n        <div><p class=\"eyebrow\">GET BULLET / CLI</p><h2>NO GUI.<br>SAME AGENT.</h2></div>\n        <p>Same router, tools, and agent loop.<br>Now it lives in your shell.</p>\n      </div>\n      <div class=\"cli-install reveal\">\n        <div class=\"term-window\">\n          <div class=\"term-bar\"><i></i><i></i><i></i><span>zsh</span></div>\n          <div class=\"term-body\">\n            <p><span class=\"term-prompt\">$</span> npm install -g @trybullet/cli</p>\n            <p><span class=\"term-prompt\">$</span> bullet</p>\n          </div>\n          <button class=\"term-copy\" type=\"button\" data-copy=\"npm install -g @trybullet/cli\" data-track=\"cli_copy\" aria-label=\"Copy install command\">COPY</button>\n        </div>\n        <p class=\"cli-note\">macOS &amp; Linux &middot; Node 18+ &middot; free, no key required to start</p>\n      </div>\n    </section>\n\n    <section class=\"story chapter\" id=\"story\">\n      <div class=\"chapter-no\">04</div>\n      <div class=\"founder-note reveal\">\n        <div class=\"founder-heading\">\n          <p class=\"eyebrow\">FOUNDERS' NOTE</p>\n          <h2>BUILT OUT OF<br>FRUSTRATION.</h2>\n        </div>\n        <div class=\"story-columns\">\n          <p>At our company, we were burning hours waiting on agent runs. We were building with Claude Code every day, watching capable models move through needlessly slow machinery.</p>\n          <p>So Bullet began as a passion project: route simple work faster, read only what matters, run independent tools together, and stop loops before they spiral.</p>\n          <p>We use it internally now. It saved us a headache. We thought it might save you one too.</p>\n        </div>\n        <blockquote>DON'T LET YOUR CODE<br>HOLD YOU HOSTAGE.</blockquote>\n      </div>\n    </section>\n\n\n    <section class=\"final-cta\">\n      <div class=\"final-lines\" aria-hidden=\"true\"></div>\n      <p class=\"eyebrow reveal\">FREE ACCESS</p>\n      <h2 class=\"reveal\">STOP<br><span>WAITING.</span></h2>\n      <p class=\"final-copy reveal\">Free to use. No subscriptions.<br>Just a faster way to ship.</p>\n      <a class=\"final-button reveal\" data-track=\"download_final\" href=\"https://github.com/trybullet/bullet-releases/releases/download/v1.4.17/Bullet-1.4.17-arm64.dmg\" download><span>DOWNLOAD FOR MAC</span><b aria-hidden=\"true\">1.4.17</b></a>\n    </section>\n  </main>\n\n\n  <footer>\n    <div class=\"footer-brand\">\n      <img src=\"assets/logo-light.png\" alt=\"Bullet\">\n      <span><span id=\"year\"></span> BULLET</span>\n    </div>\n    <div class=\"footer-links\"><a href=\"#system\">SYSTEM</a><a href=\"#demo\">DEMO ↗</a><a href=\"#cli\">CLI</a><a href=\"#story\">ORIGIN</a><a href=\"blog/index.html\">BLOG</a><a href=\"careers/index.html\">CAREERS</a><a href=\"privacy/index.html\">PRIVACY</a><a data-track=\"discord_footer\" href=\"https://discord.gg/nGj97KffS4\" target=\"_blank\" rel=\"noopener noreferrer\">DISCORD ↗</a></div>\n    <div class=\"footer-tools\">\n      <small class=\"easter-egg\" aria-label=\"Site credit\">made with Bullet</small>\n      <form class=\"code-unlock\" id=\"code-unlock\" autocomplete=\"off\" aria-label=\"Secret code unlock\">\n        <input id=\"secret-code\" name=\"secretCode\" type=\"text\" placeholder=\"ENTER CODE\" aria-label=\"Secret code\">\n        <button type=\"submit\">UNLOCK</button>\n      </form>\n    </div>\n    <small class=\"secret-ink\" aria-label=\"Hidden secret code\">FPS-777-BULLET</small>\n  </footer>\n\n  <script src=\"platform.js\"></script>\n  <script src=\"script.js\"></script>\n</body>\n</html>",
+    "error": null
+  }
+}
