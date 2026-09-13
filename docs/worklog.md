@@ -47,3 +47,9 @@ output was junk. Prompt saved in docs/sessions/01-fetch-hn.md.
 
 - Didn't write down my own verdicts before running it, so I've got nothing to check the model against.
 
+# evening
+- Discovered Materials: on-thesis. Their core is the AI agent harness and the benchmark they published, which counts as AI infra even though they sell into materials science.
+
+- Adam: on-thesis. Dev tools covers tools for any kind of enginees, not only software developers, and they ship in public (open-source repo, 5k+ GitHub stars)
+
+
