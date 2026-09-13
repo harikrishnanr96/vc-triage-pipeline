@@ -72,9 +72,17 @@ A company is off-thesis if customers pay for physical goods or services, or if t
 
 ## What Claude Code wrote
 
-All the code, end to end: every script in src, run.py, the tests, the requirements file and .env example, and the ignore file. Each came from your prompt for that stage.
-The factual README sections: install, how it works, thesis rules and known limits.
-The analysis prompt, rewritten several times. You supplied the original prompt and JSON shape. Claude later added the thesis scope, score anchors, quote evidence, and the business-model classification.
+All the code, end to end: every script in src, run.py, the tests,
+requirements.txt, .env.example, .gitignore. Each one came from a
+prompt of mine for that stage.
+
+The factual README sections: install, how it works, thesis rules,
+known limits.
+
+The analysis prompt went through several rounds. I wrote the first
+version and the JSON shape; Claude added the thesis scope rules,
+score anchors, quote evidence, and the business-model classification
+after I told it the first run was mislabelling on-thesis companies.
 
 ## Decisions I took
 
