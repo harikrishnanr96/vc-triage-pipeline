@@ -52,4 +52,7 @@ output was junk. Prompt saved in docs/sessions/01-fetch-hn.md.
 
 - Adam: on-thesis. Dev tools covers tools for any kind of enginees, not only software developers, and they ship in public (open-source repo, 5k+ GitHub stars)
 
+## memo stage
+- Worked on the memo generation stage of pipeline. few issues found like verdicts are changing with prompt versions. There is no take meeting observed
+Proven metal creates circuit boards and still is on thesis. I think gemini sees free plugins for software engineers and gets confused.
 
