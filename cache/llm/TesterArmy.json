@@ -1,69 +1,66 @@
 {
   "name": "TesterArmy",
   "model": "gemini-3.5-flash-lite",
-  "prompt_hash": "73e9870339b49ccc6068681229901818fa33ecb1a05eea87b840fc94309b1942",
-  "created_at": "2026-09-13T12:09:52Z",
+  "prompt_hash": "05a3fb0a7971f10fe56aded868fbe715c0771798d5ea8a09e65b8243b84381af",
+  "created_at": "2026-09-13T12:33:04Z",
   "attempts": 1,
-  "raw_response": "{\n  \"team\": {\n    \"summary\": \"Founded by Oskar, Szymon, and Piotr (YC P26), building technical dev tools in public.\",\n    \"source\": \"hn_post\"\n  },\n  \"product\": {\n    \"summary\": \"TesterArmy is an agentic testing platform that runs end-to-end checks before deployment and in production using natural language, supporting web, iOS, and Android platforms, and integrating with coding agents via MCP.\",\n    \"source\": \"site\"\n  },\n  \"market\": {\n    \"summary\": \"Engineering teams, developers, and QA professionals looking to automate web and mobile end-to-end testing without maintaining static scripts or selectors.\",\n    \"source\": \"hn_post\"\n  },\n  \"risks\": [\n    {\n      \"risk\": \"High token costs and execution time for full agentic test runs compared to deterministic frameworks like Playwright or Cypress.\",\n      \"source\": \"comments\"\n    },\n    {\n      \"risk\": \"Security and compliance hesitation regarding outsourcing authentication and critical application testing to a third-party SaaS.\",\n      \"source\": \"comments\"\n    },\n    {\n      \"risk\": \"Crowded competitive landscape with existing alternatives and skepticism over whether agentic E2E testing solves a primary unaddressed bottleneck.\",\n      \"source\": \"comments\"\n    }\n  ],\n  \"scores\": {\n    \"founder_depth\": {\n      \"score\": 22,\n      \"why\": \"Founders are technical, shipped an operational product accepted into YC P26, and actively engage with deep architectural and model-choice questions from engineers on HN.\",\n      \"source\": \"hn_post\"\n    },\n    \"shipping_evidence\": {\n      \"score\": 20,\n      \"why\": \"Demonstrated active product deployment with a fully functioning CLI/MCP integration, live video/documentation, scale to 30+ teams, and open source tooling released like unbox-ai.\",\n      \"source\": \"site\"\n    },\n    \"demand_signal\": {\n      \"score\": 18,\n      \"why\": \"Strong HN launch engagement (132 points, 69 comments), scaling from 0 to 30+ teams using the product daily, and testimonials from multiple startup founders and engineers.\",\n      \"source\": \"hn_post\"\n    },\n    \"defensibility\": {\n      \"score\": 12,\n      \"why\": \"Relies heavily on underlying foundation models and browser primitives with multiple competing agentic testing tools and straightforward copycat potential from coding assistants.\",\n      \"source\": \"site\"\n    }\n  },\n  \"verdict\": \"Take a meeting\",\n  \"verdict_reason\": \"Strong technical founder execution and active user traction in a hot dev tool category warrant a closer look despite defensibility concerns.\",\n  \"would_change_my_mind\": [\n    \"Unit economics proving positive margins despite high token usage per test run\",\n    \"Data showing enterprise adoption overcoming third-party security and data-leak concerns\",\n    \"Clear moat beyond wrappers around foundation models and MCP primitives\"\n  ],\n  \"thesis_fit\": \"on-thesis\",\n  \"data_gaps\": [\n    \"not found in sources\"\n  ]\n}",
+  "raw_response": "{\n  \"team\": {\n    \"summary\": \"Founders Oskar, Szymon, and Piotr built TesterArmy, backed by Y Combinator (P26).\",\n    \"source\": \"hn_post\"\n  },\n  \"product\": {\n    \"summary\": \"An agentic end-to-end testing platform that runs checks via natural language, MCP integrations, and browser automation before deployment and in production for web and mobile apps.\",\n    \"source\": \"site\"\n  },\n  \"market\": {\n    \"summary\": \"Engineering teams and developers building web and mobile applications who need automated QA and testing for pull requests.\",\n    \"source\": \"hn_post\"\n  },\n  \"risks\": [\n    {\n      \"risk\": \"Third-party SaaS trust and security concerns regarding outsourcing core testing and handling authentication/OTPs.\",\n      \"source\": \"comments\"\n    },\n    {\n      \"risk\": \"Competition from existing traditional and AI-driven testing tools and wrappers built on basic browser primitives.\",\n      \"source\": \"comments\"\n    }\n  ],\n  \"scores\": {\n    \"founder_depth\": {\n      \"score\": 15,\n      \"why\": \"Technical founders participating in YC with a shipped product, but specific deep technical domain prior exits or advanced background details are sparse in text.\",\n      \"source\": \"hn_post\"\n    },\n    \"shipping_evidence\": {\n      \"score\": 22,\n      \"why\": \"Live product with demos, MCP integration, documentation, blog posts, and active use by 30+ teams.\",\n      \"source\": \"site\"\n    },\n    \"demand_signal\": {\n      \"score\": 19,\n      \"why\": \"132 HN points, 69 comments, scaling to 30+ teams using it daily, and multiple customer testimonials on the site.\",\n      \"source\": \"hn_post\"\n    },\n    \"defensibility\": {\n      \"score\": 12,\n      \"why\": \"Integrations with agent workflows and MCP provide some depth, but commenters note similarities to basic browser-control wrappers.\",\n      \"source\": \"comments\"\n    }\n  },\n  \"thesis_fit\": \"on-thesis\",\n  \"thesis_fit_reason\": \"TesterArmy is an AI-native developer tool and agent harness used by engineers to automate testing and QA workflows.\",\n  \"case_summary\": \"Strong engineering execution and active early user adoption, offset by questions around defensibility against raw browser MCP setups.\",\n  \"would_change_my_mind\": [\n    \"Published benchmark data proving higher test reliability and lower token consumption than DIY agent setups.\",\n    \"Expansion of enterprise customer logos with substantial ARR committed.\",\n    \"Deep technical moat protecting against native LLM browser control frameworks.\"\n  ],\n  \"data_gaps\": [\n    \"Detailed background profiles and prior history of founders Oskar, Szymon, and Piotr.\",\n    \"Exact revenue figures and retention metrics beyond claiming 30+ daily active teams.\"\n  ]\n}",
   "analysis": {
     "team": {
-      "summary": "Founded by Oskar, Szymon, and Piotr (YC P26), building technical dev tools in public.",
+      "summary": "Founders Oskar, Szymon, and Piotr built TesterArmy, backed by Y Combinator (P26).",
       "source": "hn_post"
     },
     "product": {
-      "summary": "TesterArmy is an agentic testing platform that runs end-to-end checks before deployment and in production using natural language, supporting web, iOS, and Android platforms, and integrating with coding agents via MCP.",
+      "summary": "An agentic end-to-end testing platform that runs checks via natural language, MCP integrations, and browser automation before deployment and in production for web and mobile apps.",
       "source": "site"
     },
     "market": {
-      "summary": "Engineering teams, developers, and QA professionals looking to automate web and mobile end-to-end testing without maintaining static scripts or selectors.",
+      "summary": "Engineering teams and developers building web and mobile applications who need automated QA and testing for pull requests.",
       "source": "hn_post"
     },
     "risks": [
       {
-        "risk": "High token costs and execution time for full agentic test runs compared to deterministic frameworks like Playwright or Cypress.",
+        "risk": "Third-party SaaS trust and security concerns regarding outsourcing core testing and handling authentication/OTPs.",
         "source": "comments"
       },
       {
-        "risk": "Security and compliance hesitation regarding outsourcing authentication and critical application testing to a third-party SaaS.",
-        "source": "comments"
-      },
-      {
-        "risk": "Crowded competitive landscape with existing alternatives and skepticism over whether agentic E2E testing solves a primary unaddressed bottleneck.",
+        "risk": "Competition from existing traditional and AI-driven testing tools and wrappers built on basic browser primitives.",
         "source": "comments"
       }
     ],
     "scores": {
       "founder_depth": {
-        "score": 22,
-        "why": "Founders are technical, shipped an operational product accepted into YC P26, and actively engage with deep architectural and model-choice questions from engineers on HN.",
+        "score": 15,
+        "why": "Technical founders participating in YC with a shipped product, but specific deep technical domain prior exits or advanced background details are sparse in text.",
         "source": "hn_post"
       },
       "shipping_evidence": {
-        "score": 20,
-        "why": "Demonstrated active product deployment with a fully functioning CLI/MCP integration, live video/documentation, scale to 30+ teams, and open source tooling released like unbox-ai.",
+        "score": 22,
+        "why": "Live product with demos, MCP integration, documentation, blog posts, and active use by 30+ teams.",
         "source": "site"
       },
       "demand_signal": {
-        "score": 18,
-        "why": "Strong HN launch engagement (132 points, 69 comments), scaling from 0 to 30+ teams using the product daily, and testimonials from multiple startup founders and engineers.",
+        "score": 19,
+        "why": "132 HN points, 69 comments, scaling to 30+ teams using it daily, and multiple customer testimonials on the site.",
         "source": "hn_post"
       },
       "defensibility": {
         "score": 12,
-        "why": "Relies heavily on underlying foundation models and browser primitives with multiple competing agentic testing tools and straightforward copycat potential from coding assistants.",
-        "source": "site"
+        "why": "Integrations with agent workflows and MCP provide some depth, but commenters note similarities to basic browser-control wrappers.",
+        "source": "comments"
       }
     },
-    "verdict": "Take a meeting",
-    "verdict_reason": "Strong technical founder execution and active user traction in a hot dev tool category warrant a closer look despite defensibility concerns.",
-    "would_change_my_mind": [
-      "Unit economics proving positive margins despite high token usage per test run",
-      "Data showing enterprise adoption overcoming third-party security and data-leak concerns",
-      "Clear moat beyond wrappers around foundation models and MCP primitives"
-    ],
     "thesis_fit": "on-thesis",
+    "thesis_fit_reason": "TesterArmy is an AI-native developer tool and agent harness used by engineers to automate testing and QA workflows.",
+    "case_summary": "Strong engineering execution and active early user adoption, offset by questions around defensibility against raw browser MCP setups.",
+    "would_change_my_mind": [
+      "Published benchmark data proving higher test reliability and lower token consumption than DIY agent setups.",
+      "Expansion of enterprise customer logos with substantial ARR committed.",
+      "Deep technical moat protecting against native LLM browser control frameworks."
+    ],
     "data_gaps": [
-      "not found in sources"
+      "Detailed background profiles and prior history of founders Oskar, Szymon, and Piotr.",
+      "Exact revenue figures and retention metrics beyond claiming 30+ daily active teams."
     ]
   }
 }

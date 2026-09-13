@@ -1,71 +1,65 @@
 {
   "name": "ProvenMetal",
   "model": "gemini-3.5-flash-lite",
-  "prompt_hash": "58b490dc891551b8a329bdbc67fa18998270bfc7557ef2d792f5719f8b41f459",
-  "created_at": "2026-09-13T12:09:02Z",
+  "prompt_hash": "b68b18f07a71917c7ae9331a0aa11fb5d173531346ebf1305b7c207bbf12da14",
+  "created_at": "2026-09-13T12:32:15Z",
   "attempts": 1,
-  "raw_response": "{\n  \"team\": {\n    \"summary\": \"Will & Johnny, backed by Y Combinator (S26). Started by assembling circuit boards out of a garage with prosumer grade equipment before pivoting to front of house automation.\",\n    \"source\": \"hn_post\"\n  },\n  \"product\": {\n    \"summary\": \"ProvenMetal delivers assembled circuit boards in 5-7 days by automating front of house workflows (quoting, DFM review using Anthropic in zero-retention mode or manual review, and part procurement via KiCAD and Altium plugins) and coordinating bare board fabs and assembly houses.\",\n    \"source\": \"hn_post\"\n  },\n  \"market\": {\n    \"summary\": \"Domestic PCB supply chain and manufacturing, targeting sectors like drone and defense, where the US global production share dropped from 30% in 2000 to 4% while China dominates at 55%.\",\n    \"source\": \"hn_post\"\n  },\n  \"risks\": [\n    {\n      \"risk\": \"High pricing compared to cheap overseas manufacturers in China.\",\n      \"source\": \"comments\"\n    },\n    {\n      \"risk\": \"Component sourcing latency and supply chain bottlenecks.\",\n      \"source\": \"comments\"\n    },\n    {\n      \"risk\": \"Lack of detailed documentation on manufacturing constraints, layer limits, and precise technical capabilities on the website.\",\n      \"source\": \"comments\"\n    }\n  ],\n  \"scores\": {\n    \"founder_depth\": {\n      \"score\": 18,\n      \"why\": \"Founders experienced the garage assembly constraints firsthand and pivoted their technical approach to software automation and supply chain integration via EDA plugins.\",\n      \"source\": \"hn_post\"\n    },\n    \"shipping_evidence\": {\n      \"score\": 18,\n      \"why\": \"Took first paying order in less than a week, did roughly $70k across 11 orders in 6 weeks, and built KiCad and Altium plugins.\",\n      \"source\": \"hn_post\"\n    },\n    \"demand_signal\": {\n      \"score\": 16,\n      \"why\": \"Strong HN engagement with 237 points and 156 comments, plus $70k in early revenue across 11 orders in 6 weeks.\",\n      \"source\": \"hn_post\"\n    },\n    \"defensibility\": {\n      \"score\": 10,\n      \"why\": \"Relying largely on front-of-house workflow software and partner coordination while hardware manufacturing capacity remains commoditized and capital-intensive.\",\n      \"source\": \"hn_post\"\n    }\n  },\n  \"verdict\": \"Take a meeting\",\n  \"verdict_reason\": \"They have impressive initial traction ($70k in 6 weeks) and technical founders who understand the supply chain bottlenecks, though long-term defensibility in hardware brokerage remains a challenge.\",\n  \"would_change_my_mind\": [\n    \"Demonstrating sustainable gross margins without relying strictly on defense/ITAR premium pricing\",\n    \"Proving that software automation significantly reduces lead times compared to established domestic competitors\",\n    \"Successfully scaling physical capacity bottlenecks once software automation reaches its limits\"\n  ],\n  \"thesis_fit\": \"on-thesis\",\n  \"data_gaps\": [\n    \"Detailed metrics on unit economics and repeat customer retention\",\n    \"Specific partner network agreements and geographic breakdown of fabrication partners\",\n    \"Comprehensive technical capability sheets for advanced layer counts and microvias\"\n  ]\n}",
+  "raw_response": "{\n  \"team\": {\n    \"summary\": \"Will & Johnny, founders from YC S26, building ProvenMetal.\",\n    \"source\": \"hn_post\"\n  },\n  \"product\": {\n    \"summary\": \"Front-of-house automation platform and plugins for KiCAD and Altium that coordinate component procurement, bare board fabrication, and assembly to deliver circuit boards in 5-7 days.\",\n    \"source\": \"hn_post\"\n  },\n  \"market\": {\n    \"summary\": \"Hardware engineers, drone and defense teams, and electronics developers needing domestic PCB supply chains and rapid turnaround times.\",\n    \"source\": \"hn_post\"\n  },\n  \"risks\": [\n    {\n      \"risk\": \"Intense competition from established players (e.g., Macrofab, Sierra Circuits, JLCPCB) and cheap overseas manufacturing.\",\n      \"source\": \"comments\"\n    },\n    {\n      \"risk\": \"Capital-intensive nature and low profit margins of hardware and manufacturing supply chains.\",\n      \"source\": \"comments\"\n    }\n  ],\n  \"scores\": {\n    \"founder_depth\": {\n      \"score\": 12,\n      \"why\": \"Founders are technical and shipping product, but prior domain depth or exits are not stated in sources.\",\n      \"source\": \"hn_post\"\n    },\n    \"shipping_evidence\": {\n      \"score\": 19,\n      \"why\": \"Live product with public KiCAD and Altium plugins on GitHub and active paying orders.\",\n      \"source\": \"hn_post\"\n    },\n    \"demand_signal\": {\n      \"score\": 17,\n      \"why\": \"Strong HN engagement with 237 points, 156 comments, and $70k across 11 orders in 6 weeks.\",\n      \"source\": \"hn_post\"\n    },\n    \"defensibility\": {\n      \"score\": 8,\n      \"why\": \"Thin workflow wrapper over existing third-party fabricators and assembly houses with many named competitors.\",\n      \"source\": \"comments\"\n    }\n  },\n  \"thesis_fit\": \"off-thesis\",\n  \"thesis_fit_reason\": \"ProvenMetal is a manufacturing supply chain and brokerage service for physical circuit boards, which is a physical product and service layer over physical work rather than an AI infrastructure or engineering software tool.\",\n  \"case_summary\": \"Strong initial traction and public software integrations, against the core risk of competing in a commoditized, capital-intensive physical manufacturing market.\",\n  \"would_change_my_mind\": [\n    \"Pivoting the business model exclusively to a pure software dev tool or CAD extension rather than managing physical manufacturing operations.\",\n    \"Proving sustainable software margins without capital-intensive physical supply chain constraints.\"\n  ],\n  \"data_gaps\": [\n    \"Detailed background on founders' prior professional experience or exits.\",\n    \"Direct repository metrics (stars, forks) for the GitHub plugins.\"\n  ]\n}",
   "analysis": {
     "team": {
-      "summary": "Will & Johnny, backed by Y Combinator (S26). Started by assembling circuit boards out of a garage with prosumer grade equipment before pivoting to front of house automation.",
+      "summary": "Will & Johnny, founders from YC S26, building ProvenMetal.",
       "source": "hn_post"
     },
     "product": {
-      "summary": "ProvenMetal delivers assembled circuit boards in 5-7 days by automating front of house workflows (quoting, DFM review using Anthropic in zero-retention mode or manual review, and part procurement via KiCAD and Altium plugins) and coordinating bare board fabs and assembly houses.",
+      "summary": "Front-of-house automation platform and plugins for KiCAD and Altium that coordinate component procurement, bare board fabrication, and assembly to deliver circuit boards in 5-7 days.",
       "source": "hn_post"
     },
     "market": {
-      "summary": "Domestic PCB supply chain and manufacturing, targeting sectors like drone and defense, where the US global production share dropped from 30% in 2000 to 4% while China dominates at 55%.",
+      "summary": "Hardware engineers, drone and defense teams, and electronics developers needing domestic PCB supply chains and rapid turnaround times.",
       "source": "hn_post"
     },
     "risks": [
       {
-        "risk": "High pricing compared to cheap overseas manufacturers in China.",
+        "risk": "Intense competition from established players (e.g., Macrofab, Sierra Circuits, JLCPCB) and cheap overseas manufacturing.",
         "source": "comments"
       },
       {
-        "risk": "Component sourcing latency and supply chain bottlenecks.",
-        "source": "comments"
-      },
-      {
-        "risk": "Lack of detailed documentation on manufacturing constraints, layer limits, and precise technical capabilities on the website.",
+        "risk": "Capital-intensive nature and low profit margins of hardware and manufacturing supply chains.",
         "source": "comments"
       }
     ],
     "scores": {
       "founder_depth": {
-        "score": 18,
-        "why": "Founders experienced the garage assembly constraints firsthand and pivoted their technical approach to software automation and supply chain integration via EDA plugins.",
+        "score": 12,
+        "why": "Founders are technical and shipping product, but prior domain depth or exits are not stated in sources.",
         "source": "hn_post"
       },
       "shipping_evidence": {
-        "score": 18,
-        "why": "Took first paying order in less than a week, did roughly $70k across 11 orders in 6 weeks, and built KiCad and Altium plugins.",
+        "score": 19,
+        "why": "Live product with public KiCAD and Altium plugins on GitHub and active paying orders.",
         "source": "hn_post"
       },
       "demand_signal": {
-        "score": 16,
-        "why": "Strong HN engagement with 237 points and 156 comments, plus $70k in early revenue across 11 orders in 6 weeks.",
+        "score": 17,
+        "why": "Strong HN engagement with 237 points, 156 comments, and $70k across 11 orders in 6 weeks.",
         "source": "hn_post"
       },
       "defensibility": {
-        "score": 10,
-        "why": "Relying largely on front-of-house workflow software and partner coordination while hardware manufacturing capacity remains commoditized and capital-intensive.",
-        "source": "hn_post"
+        "score": 8,
+        "why": "Thin workflow wrapper over existing third-party fabricators and assembly houses with many named competitors.",
+        "source": "comments"
       }
     },
-    "verdict": "Take a meeting",
-    "verdict_reason": "They have impressive initial traction ($70k in 6 weeks) and technical founders who understand the supply chain bottlenecks, though long-term defensibility in hardware brokerage remains a challenge.",
+    "thesis_fit": "off-thesis",
+    "thesis_fit_reason": "ProvenMetal is a manufacturing supply chain and brokerage service for physical circuit boards, which is a physical product and service layer over physical work rather than an AI infrastructure or engineering software tool.",
+    "case_summary": "Strong initial traction and public software integrations, against the core risk of competing in a commoditized, capital-intensive physical manufacturing market.",
     "would_change_my_mind": [
-      "Demonstrating sustainable gross margins without relying strictly on defense/ITAR premium pricing",
-      "Proving that software automation significantly reduces lead times compared to established domestic competitors",
-      "Successfully scaling physical capacity bottlenecks once software automation reaches its limits"
+      "Pivoting the business model exclusively to a pure software dev tool or CAD extension rather than managing physical manufacturing operations.",
+      "Proving sustainable software margins without capital-intensive physical supply chain constraints."
     ],
-    "thesis_fit": "on-thesis",
     "data_gaps": [
-      "Detailed metrics on unit economics and repeat customer retention",
-      "Specific partner network agreements and geographic breakdown of fabrication partners",
-      "Comprehensive technical capability sheets for advanced layer counts and microvias"
+      "Detailed background on founders' prior professional experience or exits.",
+      "Direct repository metrics (stars, forks) for the GitHub plugins."
     ]
   }
 }

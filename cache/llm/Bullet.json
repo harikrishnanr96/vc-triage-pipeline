@@ -1,71 +1,70 @@
 {
   "name": "Bullet",
   "model": "gemini-3.5-flash-lite",
-  "prompt_hash": "e5f24e2e899aa56a01df4ba1f5323e803b5fb9b1b9ae145568c1a1c31e7c1ce4",
-  "created_at": "2026-09-13T12:10:05Z",
+  "prompt_hash": "5d200d4a422ff4b6e62f43b38410f98445beb6d0c295cf0ea63b9353e62c465f",
+  "created_at": "2026-09-13T12:33:17Z",
   "attempts": 1,
-  "raw_response": "{\n  \"team\": {\n    \"summary\": \"Adi and Alex, fresh out of working at AppLovin and Citadel, started Bullet in a senior year dorm after going through six pivots including an AI hedge fund and browser-use agent.\",\n    \"source\": \"hn_post\"\n  },\n  \"product\": {\n    \"summary\": \"Bullet is a faster coding agent and harness providing model routing, targeted search, aggressive context hygiene, and efficient parallel execution, claiming 95.8% resolution on SWE-bench Verified.\",\n    \"source\": \"site\"\n  },\n  \"market\": {\n    \"summary\": \"Developers and engineers using AI coding agents who suffer from slow execution speeds and latency from tools like Claude Code and Codex.\",\n    \"source\": \"hn_post\"\n  },\n  \"risks\": [\n    {\n      \"risk\": \"Frequent pivots prior to this project raise sustainability and conviction questions.\",\n      \"source\": \"hn_post\"\n    },\n    {\n      \"risk\": \"Closed-source proprietary binary with high permission requirements (root/exec) raises supply chain security and trust concerns.\",\n      \"source\": \"comments\"\n    },\n    {\n      \"risk\": \"Harness defensibility is low as users can replicate routing and prompt strategies in open tools.\",\n      \"source\": \"comments\"\n    }\n  ],\n  \"scores\": {\n    \"founder_depth\": {\n      \"score\": 18,\n      \"why\": \"Technical backgrounds at AppLovin and Citadel, shipping in public, built out of personal frustration.\",\n      \"source\": \"hn_post\"\n    },\n    \"shipping_evidence\": {\n      \"score\": 20,\n      \"why\": \"Shipped desktop downloads, CLI via npm, video demo, and documented benchmark results.\",\n      \"source\": \"site\"\n    },\n    \"demand_signal\": {\n      \"score\": 15,\n      \"why\": \"Strong community engagement with 121 points and 89 comments on HN, though accompanied by critical user feedback.\",\n      \"source\": \"hn_post\"\n    },\n    \"defensibility\": {\n      \"score\": 5,\n      \"why\": \"It is a closed-source harness wrapping existing model APIs; users note it can easily be cloned or replicated via prompts and MCPs.\",\n      \"source\": \"comments\"\n    }\n  },\n  \"verdict\": \"Pass\",\n  \"verdict_reason\": \"Low defensibility for an AI coding harness combined with proprietary binary distribution security concerns make this off-thesis for long-term venture infrastructure.\",\n  \"would_change_my_mind\": [\n    \"Open-sourcing the core codebase for security auditability\",\n    \"Proving sustainable enterprise monetization beyond a wrapper harness\",\n    \"Demonstrating compounding technical moats that cannot be replicated via prompt engineering or MCPs\"\n  ],\n  \"thesis_fit\": \"off-thesis\",\n  \"data_gaps\": [\n    \"GitHub repository link\",\n    \"Detailed revenue or monetization metrics\",\n    \"Exact proprietary IP details beyond wrapper/routing logic\"\n  ]\n}",
+  "raw_response": "{\n  \"team\": {\n    \"summary\": \"Adi and Alex, YC S26 founders fresh out of AppLovin and Citadel, built Bullet after six pivots.\",\n    \"source\": \"hn_post\"\n  },\n  \"product\": {\n    \"summary\": \"Bullet is a faster coding agent and harness featuring model routing, targeted search, context hygiene, and parallel tool execution.\",\n    \"source\": \"hn_post\"\n  },\n  \"market\": {\n    \"summary\": \"Software engineers and developers experiencing latency with existing coding agents like Claude Code and Codex.\",\n    \"source\": \"hn_post\"\n  },\n  \"risks\": [\n    {\n      \"risk\": \"Proprietary binary-only distribution raises supply chain security and trust concerns among engineers.\",\n      \"source\": \"comments\"\n    },\n    {\n      \"risk\": \"Harness features can be easily cloned or replicated via custom prompts and open-source alternatives.\",\n      \"source\": \"comments\"\n    },\n    {\n      \"risk\": \"History of frequent pivots makes some users skeptical about long-term commitment.\",\n      \"source\": \"comments\"\n    }\n  ],\n  \"scores\": {\n    \"founder_depth\": {\n      \"score\": 19,\n      \"why\": \"Founders have background at AppLovin and Citadel, show deep domain engagement, and shipped multiple iterations before landing on Bullet.\",\n      \"source\": \"hn_post\"\n    },\n    \"shipping_evidence\": {\n      \"score\": 19,\n      \"why\": \"Live downloadable desktop app, CLI tool via npm (`@trybullet/cli`), video demo, benchmark results, and regular updates.\",\n      \"source\": \"hn_post\"\n    },\n    \"demand_signal\": {\n      \"score\": 14,\n      \"why\": \"Solid HN engagement with 121 points and 89 comments, with active users testing and giving feedback, though no named revenue customers yet.\",\n      \"source\": \"hn_post\"\n    },\n    \"defensibility\": {\n      \"score\": 7,\n      \"why\": \"Commenters point out that it is a wrapper/harness easily replicated with prompts or open source, and lacks open-source transparency.\",\n      \"source\": \"comments\"\n    }\n  },\n  \"thesis_fit\": \"on-thesis\",\n  \"thesis_fit_reason\": \"Bullet is an AI dev tool (coding agent harness) built by technical founders for software engineers.\",\n  \"case_summary\": \"Strong engineering velocity and shipping evidence, offset by low defensibility as an easily cloneable closed-source harness.\",\n  \"would_change_my_mind\": [\n    \"Open-sourcing the core harness to build community trust\",\n    \"Demonstrating proprietary moats beyond routing and prompting\",\n    \"Showing sustained commercial traction or paying enterprise users\"\n  ],\n  \"data_gaps\": [\n    \"Revenue and customer metrics\",\n    \"Exact model provider architecture and API routing mechanics\"\n  ]\n}",
   "analysis": {
     "team": {
-      "summary": "Adi and Alex, fresh out of working at AppLovin and Citadel, started Bullet in a senior year dorm after going through six pivots including an AI hedge fund and browser-use agent.",
+      "summary": "Adi and Alex, YC S26 founders fresh out of AppLovin and Citadel, built Bullet after six pivots.",
       "source": "hn_post"
     },
     "product": {
-      "summary": "Bullet is a faster coding agent and harness providing model routing, targeted search, aggressive context hygiene, and efficient parallel execution, claiming 95.8% resolution on SWE-bench Verified.",
-      "source": "site"
+      "summary": "Bullet is a faster coding agent and harness featuring model routing, targeted search, context hygiene, and parallel tool execution.",
+      "source": "hn_post"
     },
     "market": {
-      "summary": "Developers and engineers using AI coding agents who suffer from slow execution speeds and latency from tools like Claude Code and Codex.",
+      "summary": "Software engineers and developers experiencing latency with existing coding agents like Claude Code and Codex.",
       "source": "hn_post"
     },
     "risks": [
       {
-        "risk": "Frequent pivots prior to this project raise sustainability and conviction questions.",
-        "source": "hn_post"
-      },
-      {
-        "risk": "Closed-source proprietary binary with high permission requirements (root/exec) raises supply chain security and trust concerns.",
+        "risk": "Proprietary binary-only distribution raises supply chain security and trust concerns among engineers.",
         "source": "comments"
       },
       {
-        "risk": "Harness defensibility is low as users can replicate routing and prompt strategies in open tools.",
+        "risk": "Harness features can be easily cloned or replicated via custom prompts and open-source alternatives.",
+        "source": "comments"
+      },
+      {
+        "risk": "History of frequent pivots makes some users skeptical about long-term commitment.",
         "source": "comments"
       }
     ],
     "scores": {
       "founder_depth": {
-        "score": 18,
-        "why": "Technical backgrounds at AppLovin and Citadel, shipping in public, built out of personal frustration.",
+        "score": 19,
+        "why": "Founders have background at AppLovin and Citadel, show deep domain engagement, and shipped multiple iterations before landing on Bullet.",
         "source": "hn_post"
       },
       "shipping_evidence": {
-        "score": 20,
-        "why": "Shipped desktop downloads, CLI via npm, video demo, and documented benchmark results.",
-        "source": "site"
+        "score": 19,
+        "why": "Live downloadable desktop app, CLI tool via npm (`@trybullet/cli`), video demo, benchmark results, and regular updates.",
+        "source": "hn_post"
       },
       "demand_signal": {
-        "score": 15,
-        "why": "Strong community engagement with 121 points and 89 comments on HN, though accompanied by critical user feedback.",
+        "score": 14,
+        "why": "Solid HN engagement with 121 points and 89 comments, with active users testing and giving feedback, though no named revenue customers yet.",
         "source": "hn_post"
       },
       "defensibility": {
-        "score": 5,
-        "why": "It is a closed-source harness wrapping existing model APIs; users note it can easily be cloned or replicated via prompts and MCPs.",
+        "score": 7,
+        "why": "Commenters point out that it is a wrapper/harness easily replicated with prompts or open source, and lacks open-source transparency.",
         "source": "comments"
       }
     },
-    "verdict": "Pass",
-    "verdict_reason": "Low defensibility for an AI coding harness combined with proprietary binary distribution security concerns make this off-thesis for long-term venture infrastructure.",
+    "thesis_fit": "on-thesis",
+    "thesis_fit_reason": "Bullet is an AI dev tool (coding agent harness) built by technical founders for software engineers.",
+    "case_summary": "Strong engineering velocity and shipping evidence, offset by low defensibility as an easily cloneable closed-source harness.",
     "would_change_my_mind": [
-      "Open-sourcing the core codebase for security auditability",
-      "Proving sustainable enterprise monetization beyond a wrapper harness",
-      "Demonstrating compounding technical moats that cannot be replicated via prompt engineering or MCPs"
+      "Open-sourcing the core harness to build community trust",
+      "Demonstrating proprietary moats beyond routing and prompting",
+      "Showing sustained commercial traction or paying enterprise users"
     ],
-    "thesis_fit": "off-thesis",
     "data_gaps": [
-      "GitHub repository link",
-      "Detailed revenue or monetization metrics",
-      "Exact proprietary IP details beyond wrapper/routing logic"
+      "Revenue and customer metrics",
+      "Exact model provider architecture and API routing mechanics"
     ]
   }
 }

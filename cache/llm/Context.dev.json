@@ -1,71 +1,66 @@
 {
   "name": "Context.dev",
   "model": "gemini-3.5-flash-lite",
-  "prompt_hash": "6874501356252d0a2ef75773ceab472ba333824995ea9a20e5c29fe468a0fb7d",
-  "created_at": "2026-09-13T12:10:31Z",
+  "prompt_hash": "8e82d67fcf7d93aef3b2e38387bd637b990334e1c87dda88e8594215ee28e99b",
+  "created_at": "2026-09-13T12:33:44Z",
   "attempts": 1,
-  "raw_response": "{\n  \"team\": {\n    \"summary\": \"Built by Yahia, a solo founder (YC S26) who previously worked at Amazon and Sunrun, co-founded StockAlarm.io and essense.io (both acquired), and built knifegeek.io and Brand.dev before expanding into Context.dev.\",\n    \"source\": \"hn_post\"\n  },\n  \"product\": {\n    \"summary\": \"An API and developer platform (Context.dev) that extracts structured data, clean Markdown, rendered HTML, screenshots, and brand intelligence (logos, colors, fonts, socials) from any website or domain using JSON schemas for AI agents and developer products.\",\n    \"source\": \"site\"\n  },\n  \"market\": {\n    \"summary\": \"AI infra and dev tools market focused on web data retrieval, scraping, RAG grounding, and brand enrichment for developers building AI agents, chatbots, and onboarding flows.\",\n    \"source\": \"hn_post\"\n  },\n  \"risks\": [\n    {\n      \"risk\": \"High competition in a crowded web scraping and retrieval market with many established players and well-funded competitors like Firecrawl, Exa, and Tavily.\",\n      \"source\": \"comments\"\n    },\n    {\n      \"risk\": \"Website blocking, anti-bot mechanisms, and pushback from site owners regarding server-side scraping and crawler citizenship.\",\n      \"source\": \"comments\"\n    },\n    {\n      \"risk\": \"Potential risk of new frontier models natively performing web fetching and structured extraction without intermediaries.\",\n      \"source\": \"comments\"\n    }\n  ],\n  \"scores\": {\n    \"founder_depth\": {\n      \"score\": 25,\n      \"why\": \"Solo founder with multiple prior acquisitions (StockAlarm.io, essense.io) and a strong history of shipping relevant scraping and brand data products (knifegeek.io, Brand.dev).\",\n      \"source\": \"hn_post\"\n    },\n    \"shipping_evidence\": {\n      \"score\": 25,\n      \"why\": \"Fully functional API with public docs, SDKs across multiple languages (TypeScript, Python, Ruby, Go, PHP), self-serve onboarding, free tier, and active early customers like Mintlify and SiteGPT.\",\n      \"source\": \"site\"\n    },\n    \"demand_signal\": {\n      \"score\": 20,\n      \"why\": \"119 points and 86 comments on Hacker News, featuring active discussion, positive customer feedback, and notable production users scaling with the product.\",\n      \"source\": \"hn_post\"\n    },\n    \"defensibility\": {\n      \"score\": 10,\n      \"why\": \"Operating in a heavily commoditized and crowded web scraping/retrieval API category where differentiation primarily rests on execution speed, caching, and feature packaging rather than deep technical moats.\",\n      \"source\": \"comments\"\n    }\n  },\n  \"verdict\": \"Take a meeting\",\n  \"verdict_reason\": \"The founder has a proven track record of shipping and exiting previous products, and has rapidly iterated from Brand.dev into a broader web context API with real early customers and strong execution speed.\",\n  \"would_change_my_mind\": [\n    \"Evidence of proprietary anti-bot or proxy infrastructure that permanently solves high-value data access better than competitors.\",\n    \"Rapid acceleration of net-negative churn and enterprise logo expansion despite heavy market crowding.\",\n    \"Demonstrated structural moat preventing commodity pricing pressure from well-funded rivals.\"\n  ],\n  \"thesis_fit\": \"on-thesis\",\n  \"data_gaps\": [\n    \"Exact current ARR or MRR numbers\",\n    \"Detailed metrics on API success rates against advanced cloudflare/turnstile protections\",\n    \"GitHub repository stats and open-source contributions\"\n  ]\n}",
+  "raw_response": "{\n  \"team\": {\n    \"summary\": \"Built by Yahia, a solo founder with prior experience at Amazon and Sunrun, and co-founded StockAlarm.io and essense.io (both acquired), plus knifegeek.io and Brand.dev.\",\n    \"source\": \"hn_post\"\n  },\n  \"product\": {\n    \"summary\": \"Context.dev is an API that provides structured data, clean Markdown, rendered HTML, brand assets, and LLM-ready context from any website for software products and AI agents.\",\n    \"source\": \"site\"\n  },\n  \"market\": {\n    \"summary\": \"Targeting developers and AI agent builders needing live web data, competing in a crowded web scraping and retrieval API space.\",\n    \"source\": \"hn_post\"\n  },\n  \"risks\": [\n    {\n      \"risk\": \"Extremely crowded and commoditized market with many direct competitors like Firecrawl, Browserbase, and well-funded players like Exa and Parallel.\",\n      \"source\": \"hn_post\"\n    },\n    {\n      \"risk\": \"Pushback from website owners and anti-scraping measures blocking requests or restricting access.\",\n      \"source\": \"comments\"\n    }\n  ],\n  \"scores\": {\n    \"founder_depth\": {\n      \"score\": 24,\n      \"why\": \"Founder Yahia has deep domain expertise with prior shipped products and multiple exits (StockAlarm.io, essense.io) and previous iterations in the space (Brand.dev, knifegeek.io).\",\n      \"source\": \"hn_post\"\n    },\n    \"shipping_evidence\": {\n      \"score\": 22,\n      \"why\": \"Product is live with working APIs, SDKs in multiple languages, docs, a public site, tiered pricing, and active production usage.\",\n      \"source\": \"site\"\n    },\n    \"demand_signal\": {\n      \"score\": 20,\n      \"why\": \"Strong HN launch with 119 points and 86 comments, plus named customers like Mintlify, SiteGPT, and daily.dev.\",\n      \"source\": \"hn_post\"\n    },\n    \"defensibility\": {\n      \"score\": 10,\n      \"why\": \"Features caching layers and brand extraction depth, but operates in a highly commoditized scraping and API wrapper market with numerous alternatives.\",\n      \"source\": \"hn_post\"\n    }\n  },\n  \"thesis_fit\": \"on-thesis\",\n  \"thesis_fit_reason\": \"Context.dev is an AI infrastructure and developer tool providing APIs for web data and agent context, used by software engineers and AI builders.\",\n  \"case_summary\": \"Strong technical founder with a proven shipping track record and live enterprise customers, offset by intense competition in a crowded scraping market.\",\n  \"would_change_my_mind\": [\n    \"Demonstrating proprietary scraping infrastructure that consistently bypasses advanced anti-bot measures better than competitors\",\n    \"Achieving rapid net-new ARR growth despite a crowded field of well-funded incumbents\",\n    \"Building unique defensible data assets beyond standard web extraction and caching\"\n  ],\n  \"data_gaps\": [\n    \"Exact revenue or current paid customer counts\",\n    \"GitHub repository stats or public open-source code contributions\"\n  ]\n}",
   "analysis": {
     "team": {
-      "summary": "Built by Yahia, a solo founder (YC S26) who previously worked at Amazon and Sunrun, co-founded StockAlarm.io and essense.io (both acquired), and built knifegeek.io and Brand.dev before expanding into Context.dev.",
+      "summary": "Built by Yahia, a solo founder with prior experience at Amazon and Sunrun, and co-founded StockAlarm.io and essense.io (both acquired), plus knifegeek.io and Brand.dev.",
       "source": "hn_post"
     },
     "product": {
-      "summary": "An API and developer platform (Context.dev) that extracts structured data, clean Markdown, rendered HTML, screenshots, and brand intelligence (logos, colors, fonts, socials) from any website or domain using JSON schemas for AI agents and developer products.",
+      "summary": "Context.dev is an API that provides structured data, clean Markdown, rendered HTML, brand assets, and LLM-ready context from any website for software products and AI agents.",
       "source": "site"
     },
     "market": {
-      "summary": "AI infra and dev tools market focused on web data retrieval, scraping, RAG grounding, and brand enrichment for developers building AI agents, chatbots, and onboarding flows.",
+      "summary": "Targeting developers and AI agent builders needing live web data, competing in a crowded web scraping and retrieval API space.",
       "source": "hn_post"
     },
     "risks": [
       {
-        "risk": "High competition in a crowded web scraping and retrieval market with many established players and well-funded competitors like Firecrawl, Exa, and Tavily.",
-        "source": "comments"
+        "risk": "Extremely crowded and commoditized market with many direct competitors like Firecrawl, Browserbase, and well-funded players like Exa and Parallel.",
+        "source": "hn_post"
       },
       {
-        "risk": "Website blocking, anti-bot mechanisms, and pushback from site owners regarding server-side scraping and crawler citizenship.",
-        "source": "comments"
-      },
-      {
-        "risk": "Potential risk of new frontier models natively performing web fetching and structured extraction without intermediaries.",
+        "risk": "Pushback from website owners and anti-scraping measures blocking requests or restricting access.",
         "source": "comments"
       }
     ],
     "scores": {
       "founder_depth": {
-        "score": 25,
-        "why": "Solo founder with multiple prior acquisitions (StockAlarm.io, essense.io) and a strong history of shipping relevant scraping and brand data products (knifegeek.io, Brand.dev).",
+        "score": 24,
+        "why": "Founder Yahia has deep domain expertise with prior shipped products and multiple exits (StockAlarm.io, essense.io) and previous iterations in the space (Brand.dev, knifegeek.io).",
         "source": "hn_post"
       },
       "shipping_evidence": {
-        "score": 25,
-        "why": "Fully functional API with public docs, SDKs across multiple languages (TypeScript, Python, Ruby, Go, PHP), self-serve onboarding, free tier, and active early customers like Mintlify and SiteGPT.",
+        "score": 22,
+        "why": "Product is live with working APIs, SDKs in multiple languages, docs, a public site, tiered pricing, and active production usage.",
         "source": "site"
       },
       "demand_signal": {
         "score": 20,
-        "why": "119 points and 86 comments on Hacker News, featuring active discussion, positive customer feedback, and notable production users scaling with the product.",
+        "why": "Strong HN launch with 119 points and 86 comments, plus named customers like Mintlify, SiteGPT, and daily.dev.",
         "source": "hn_post"
       },
       "defensibility": {
         "score": 10,
-        "why": "Operating in a heavily commoditized and crowded web scraping/retrieval API category where differentiation primarily rests on execution speed, caching, and feature packaging rather than deep technical moats.",
-        "source": "comments"
+        "why": "Features caching layers and brand extraction depth, but operates in a highly commoditized scraping and API wrapper market with numerous alternatives.",
+        "source": "hn_post"
       }
     },
-    "verdict": "Take a meeting",
-    "verdict_reason": "The founder has a proven track record of shipping and exiting previous products, and has rapidly iterated from Brand.dev into a broader web context API with real early customers and strong execution speed.",
-    "would_change_my_mind": [
-      "Evidence of proprietary anti-bot or proxy infrastructure that permanently solves high-value data access better than competitors.",
-      "Rapid acceleration of net-negative churn and enterprise logo expansion despite heavy market crowding.",
-      "Demonstrated structural moat preventing commodity pricing pressure from well-funded rivals."
-    ],
     "thesis_fit": "on-thesis",
+    "thesis_fit_reason": "Context.dev is an AI infrastructure and developer tool providing APIs for web data and agent context, used by software engineers and AI builders.",
+    "case_summary": "Strong technical founder with a proven shipping track record and live enterprise customers, offset by intense competition in a crowded scraping market.",
+    "would_change_my_mind": [
+      "Demonstrating proprietary scraping infrastructure that consistently bypasses advanced anti-bot measures better than competitors",
+      "Achieving rapid net-new ARR growth despite a crowded field of well-funded incumbents",
+      "Building unique defensible data assets beyond standard web extraction and caching"
+    ],
     "data_gaps": [
-      "Exact current ARR or MRR numbers",
-      "Detailed metrics on API success rates against advanced cloudflare/turnstile protections",
-      "GitHub repository stats and open-source contributions"
+      "Exact revenue or current paid customer counts",
+      "GitHub repository stats or public open-source code contributions"
     ]
   }
 }

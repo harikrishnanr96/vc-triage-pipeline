@@ -30,6 +30,29 @@ THESIS = (
     "because the buyers are engineers."
 )
 
+# The boundary is what makes thesis_fit a category call instead of a quality call.
+# Borderline calls made on Sep 13: Discovered Materials (AI discovery harness) and
+# Adam (AI CAD for mechanical engineers) are both in.
+THESIS_SCOPE = """IN SCOPE:
+- AI infrastructure: model serving, routing, compute, evals and benchmarks,
+  agent harnesses and runtimes, data or web access for models and agents,
+  MCP and agent tooling.
+- Developer and engineering tools: software used by engineers of any
+  discipline (software, mechanical, electrical, hardware design) in their
+  technical work. This includes AI-native tools such as coding agents,
+  testing tools, and mechanical CAD or design software. The tool must be
+  software; a physical product is out of scope even if engineers buy it.
+- AI systems applied to a technical domain, when the AI system itself is the
+  main asset (for example, agents that run scientific discovery).
+
+OUT OF SCOPE:
+- Hardware and physical products, including robots and devices, even when
+  sold to developers.
+- Manufacturing, logistics, or brokerage services where software is a layer
+  over physical work.
+- Healthcare, pharma, consumer, fintech, insurance, and other vertical
+  businesses that are not AI infrastructure or engineering tools."""
+
 # Placeholders are swapped with str.replace, not str.format, because the JSON
 # example is full of literal braces.
 PROMPT_TEMPLATE = """You are a seed-stage VC analyst. Below is everything publicly
@@ -38,9 +61,30 @@ comments on it, their website text, and GitHub stats if any.
 
 THESIS: [THESIS]
 
+[SCOPE]
+
+THESIS FIT: decide "on-thesis" or "off-thesis" only from what the product is
+and who uses it. Never decide fit from quality, traction, team strength, or
+defensibility. Those belong in the scores.
+
 Analyse ONLY from the text provided. If something isn't in the
 text, write "not found in sources". Never use outside knowledge
 about this company. Never guess.
+
+SCORING (each 0-25). Missing evidence scores low, not in the middle.
+Reserve 18-25 for strong, explicit evidence in the sources.
+- founder_depth: 0-8 no founder information or no technical background
+  shown; 9-17 technical backgrounds stated but little domain depth or prior
+  shipping; 18-25 deep domain expertise plus prior shipped products or exits.
+- shipping_evidence: 0-8 waitlist, demo, or claims only; 9-17 product is live
+  but the public engineering trail is thin; 18-25 public code, docs,
+  benchmarks, frequent releases, or paying users.
+- demand_signal: 0-8 little engagement, or sceptical comments dominate;
+  9-17 solid HN engagement but no named users or revenue; 18-25 revenue,
+  named customers, or many commenters who want to use it.
+- defensibility: 0-8 thin wrapper, commenters say it is easy to copy, or many
+  named competitors; 9-17 some workflow, integration, or data depth;
+  18-25 proprietary data, a hard technical moat, or network effects.
 
 Return JSON only, no markdown fences:
 
@@ -55,10 +99,10 @@ Return JSON only, no markdown fences:
     "demand_signal":     {"score": 0-25, "why": "...", "source": "..."},
     "defensibility":     {"score": 0-25, "why": "...", "source": "..."}
   },
-  "verdict": "Pass|Watch|Take a meeting",
-  "verdict_reason": "one sentence",
-  "would_change_my_mind": ["...", "...", "..."],
   "thesis_fit": "on-thesis|off-thesis",
+  "thesis_fit_reason": "one sentence on what the product is and who uses it",
+  "case_summary": "one sentence: the strongest point for and against",
+  "would_change_my_mind": ["...", "...", "..."],
   "data_gaps": ["..."]
 }
 
@@ -67,9 +111,15 @@ SOURCES:
 """
 
 REQUIRED_KEYS = (
-    "team", "product", "market", "risks", "scores", "verdict",
-    "verdict_reason", "would_change_my_mind", "thesis_fit", "data_gaps",
+    "team", "product", "market", "risks", "scores", "thesis_fit",
+    "thesis_fit_reason", "case_summary", "would_change_my_mind", "data_gaps",
 )
+SCORE_KEYS = ("founder_depth", "shipping_evidence", "demand_signal", "defensibility")
+
+# The verdict is set here, not by the model, so the thesis is applied the same
+# way to every company. Off-thesis is always Pass.
+MEETING_CUTOFF = 75
+WATCH_CUTOFF = 60
 
 _model = None
 
@@ -187,12 +237,32 @@ def parse_response(text):
     missing = [key for key in REQUIRED_KEYS if key not in data]
     if missing:
         return None, "missing keys: {}".format(", ".join(missing))
+    if data["thesis_fit"] not in ("on-thesis", "off-thesis"):
+        return None, "thesis_fit must be on-thesis or off-thesis, got {!r}".format(data["thesis_fit"])
+    scores = data["scores"] if isinstance(data["scores"], dict) else {}
+    for key in SCORE_KEYS:
+        value = (scores.get(key) or {}).get("score") if isinstance(scores.get(key), dict) else None
+        if not isinstance(value, (int, float)) or isinstance(value, bool):
+            return None, "scores.{}.score is not a number".format(key)
     return data, None
+
+
+def decide(analysis):
+    """Turn the model's scores and fit into a total and a verdict, by fixed rules."""
+    score = sum(max(0, min(25, int(round(analysis["scores"][key]["score"])))) for key in SCORE_KEYS)
+    if analysis["thesis_fit"] == "off-thesis":
+        return score, "Pass", "off-thesis is always Pass"
+    if score >= MEETING_CUTOFF:
+        return score, "Take a meeting", "on-thesis and score {} >= {}".format(score, MEETING_CUTOFF)
+    if score >= WATCH_CUTOFF:
+        return score, "Watch", "on-thesis and score {} is {}-{}".format(score, WATCH_CUTOFF, MEETING_CUTOFF - 1)
+    return score, "Pass", "on-thesis but score {} < {}".format(score, WATCH_CUTOFF)
 
 
 def analyze(row):
     """Return (analysis, error, from_cache)."""
-    prompt = PROMPT_TEMPLATE.replace("[THESIS]", THESIS).replace("[SOURCES]", build_sources(row))
+    prompt = (PROMPT_TEMPLATE.replace("[THESIS]", THESIS).replace("[SCOPE]", THESIS_SCOPE)
+              .replace("[SOURCES]", build_sources(row)))
     # The model name is part of the key so switching models never serves a stale answer.
     prompt_hash = hashlib.sha256((MODEL_NAME + "\n" + prompt).encode("utf-8")).hexdigest()
     cache_path = os.path.join(CACHE_DIR, safe_filename(row["name"]) + ".json")
@@ -253,16 +323,16 @@ for row in rows:
 
     row["analysis"] = analysis
     row["analysis_error"] = error
+    row["score"], row["verdict"], row["verdict_rule"] = None, None, None
+    if analysis is not None:
+        # Applied to cached answers too, so changing a cutoff needs no API calls.
+        row["score"], row["verdict"], row["verdict_rule"] = decide(analysis)
     results.append(row)
 
     if analysis is not None:
-        try:
-            total = sum(int(s.get("score") or 0) for s in analysis["scores"].values())
-        except (AttributeError, TypeError, ValueError):
-            total = "?"
-        print("{:<20.20} {:<6} {:<15} score={:<4} {}".format(
+        print("{:<20.20} {:<6} {:<15} score={:<4} {:<11} {}".format(
             str(row.get("name")), "cached" if from_cache else "live",
-            str(analysis.get("verdict")), total, analysis.get("thesis_fit")))
+            row["verdict"], row["score"], analysis["thesis_fit"], row["verdict_rule"]))
     else:
         print("{:<20.20} ERROR  {}".format(str(row.get("name")), " ".join(error.split())[:150]))
 

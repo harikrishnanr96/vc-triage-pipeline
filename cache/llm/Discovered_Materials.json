@@ -1,71 +1,67 @@
 {
   "name": "Discovered Materials",
   "model": "gemini-3.5-flash-lite",
-  "prompt_hash": "a00d06a4621872057dd095b9e46687e0a992abc6cbb5a2dd020f32f3a424360e",
-  "created_at": "2026-09-13T12:09:39Z",
+  "prompt_hash": "20293ac994ccfaa72f4d95c50f723ff504e7309031d845f1445f1c078c9324cb",
+  "created_at": "2026-09-13T12:32:52Z",
   "attempts": 1,
-  "raw_response": "{\n  \"team\": {\n    \"summary\": \"Advaith studied AI at Carnegie Mellon and was a research engineer building video models and agents at Persona AI and Luma Labs. Akash has a PhD in Material Science from Stanford University, with 11 years studying semiconductor chip materials.\",\n    \"source\": \"hn_post\"\n  },\n  \"product\": {\n    \"summary\": \"AI agents that discover new materials for the semiconductor industry (focusing on thermally conductive dielectric materials to unlock 3D chips), along with a research benchmark (Material Discovery Bench) measuring frontier LLM progress.\",\n    \"source\": \"hn_post\"\n  },\n  \"market\": {\n    \"summary\": \"Semiconductor industry and chemical companies, specifically targeting the thermal management and packaging challenges of GPUs and AI accelerators (e.g., managing rising TDP in H100, Blackwell, and Rubin chips).\",\n    \"source\": \"hn_post\"\n  },\n  \"risks\": [\n    {\n      \"risk\": \"Models perform poorly at generating plausible synthesis recipes for lab creation, with the vast majority judged as critically flawed.\",\n      \"source\": \"site\"\n    },\n    {\n      \"risk\": \"Frontier models exhibit severe reward hacking, lying, or losing the plot/fatiguing over long-horizon runs.\",\n      \"source\": \"site\"\n    },\n    {\n      \"risk\": \"Getting a new material into a semiconductor fab takes years and hundreds of millions of dollars.\",\n      \"source\": \"hn_post\"\n    }\n  ],\n  \"scores\": {\n    \"founder_depth\": {\n      \"score\": 23,\n      \"why\": \"Akash holds a PhD in Material Science from Stanford with 11 years of relevant domain experience, paired with Advaith's strong AI engineering background from CMU and Luma Labs.\",\n      \"source\": \"hn_post\"\n    },\n    \"shipping_evidence\": {\n      \"score\": 20,\n      \"why\": \"Shipped a public research benchmark, tested 7 frontier models across 30-100M token runs, released hundreds of discovered materials, and simulated/synthesized/tested TIMs.\",\n      \"source\": \"site\"\n    },\n    \"demand_signal\": {\n      \"score\": 15,\n      \"why\": \"High HN engagement (162 points, 37 comments) and validation from external experts/researchers, though commercial design-partner revenue or letters of intent are not mentioned.\",\n      \"source\": \"hn_post\"\n    },\n    \"defensibility\": {\n      \"score\": 14,\n      \"why\": \"Proprietary discovery harness, custom evaluation rubrics, and generated IP on novel materials, though heavily reliant on underlying foundation models and public MLIP tools.\",\n      \"source\": \"site\"\n    }\n  },\n  \"verdict\": \"Take a meeting\",\n  \"verdict_reason\": \"The founding team combines deep Stanford materials science expertise with top-tier AI engineering, and they have shipped a concrete, highly rigorous evaluation harness and benchmark addressing a multi-billion dollar semiconductor bottleneck.\",\n  \"would_change_my_mind\": [\n    \"Demonstrating repeatable, automated synthesis of a novel material in a physical lab without heavy human intervention.\",\n    \"Securing paid commercial pilots or co-development agreements with major semiconductor foundries or chemical companies.\",\n    \"Solving the model context fatigue and reward-hacking failure modes during long-horizon autonomous runs.\"\n  ],\n  \"thesis_fit\": \"on-thesis\",\n  \"data_gaps\": [\n    \"GitHub repository or open-source codebase link\",\n    \"Customer revenue or formal LOIs from semiconductor/chemical companies\",\n    \"Specific details on internal laboratory equipment capabilities and experimental throughput\"\n  ]\n}",
+  "raw_response": "{\n  \"team\": {\n    \"summary\": \"Advaith studied AI at Carnegie Mellon and was a research engineer at Persona AI and Luma Labs; Akash has a PhD in Material Science from Stanford with 11 years of semiconductor materials experience.\",\n    \"source\": \"hn_post\"\n  },\n  \"product\": {\n    \"summary\": \"AI agents and an open-ended research benchmark (Material Discovery Bench) designed to computationally discover new thermally conductive dielectric materials for semiconductor chips.\",\n    \"source\": \"site\"\n  },\n  \"market\": {\n    \"summary\": \"Semiconductor and chemical companies facing thermal and energy challenges with advanced chips like GPUs and datacenters.\",\n    \"source\": \"hn_post\"\n  },\n  \"risks\": [\n    {\n      \"risk\": \"Models struggle severely to propose plausible, safe, and actionable synthesis recipes for lab creation.\",\n      \"source\": \"site\"\n    },\n    {\n      \"risk\": \"AI agent reward-hacking and fabrication of properties (e.g., thermal conductivity values, duplicate supercell submissions).\",\n      \"source\": \"site\"\n    }\n  ],\n  \"scores\": {\n    \"founder_depth\": {\n      \"score\": 23,\n      \"why\": \"Akash holds a PhD in Material Science from Stanford with 11 years of domain experience, and Advaith is a Carnegie Mellon AI alumnus with background building video models and agents.\",\n      \"source\": \"hn_post\"\n    },\n    \"shipping_evidence\": {\n      \"score\": 19,\n      \"why\": \"The team shipped an active research benchmark web platform, publicly released hundreds of discovered materials, documented detailed agent failure modes, and ran physical experiments.\",\n      \"source\": \"site\"\n    },\n    \"demand_signal\": {\n      \"score\": 14,\n      \"why\": \"Generated strong HN engagement (162 points, 37 comments) and discussion from domain professionals, but lacks named commercial customers or revenue at this stage.\",\n      \"source\": \"hn_post\"\n    },\n    \"defensibility\": {\n      \"score\": 12,\n      \"why\": \"Combines custom agent harnesses, specific MLIP tools, and proprietary empirical lab testing, but relies on frontier foundation models and open-source packages.\",\n      \"source\": \"site\"\n    }\n  },\n  \"thesis_fit\": \"on-thesis\",\n  \"thesis_fit_reason\": \"Discovered Materials builds AI agents and automated discovery harnesses used by engineers and researchers to find novel materials for semiconductor chips.\",\n  \"case_summary\": \"Strong technical founder pairing with deep domain depth and a live benchmark product, countered by the core bottleneck that frontier AI models fail to generate plausible lab synthesis recipes.\",\n  \"would_change_my_mind\": [\n    \"Demonstrating repeatable, successful lab synthesis of multiple AI-discovered materials without human intervention.\",\n    \"Securing paid enterprise contracts or licensing agreements with major semiconductor/chemical companies.\",\n    \"Releasing the core agent harness and discovery code open-source with active community adoption.\"\n  ],\n  \"data_gaps\": [\n    \"Exact revenue figures or signed LOIs from semiconductor partners.\",\n    \"Public GitHub repository links for the harness and grading code.\",\n    \"Comprehensive cost breakdown of the physical lab validation pipeline.\"\n  ]\n}",
   "analysis": {
     "team": {
-      "summary": "Advaith studied AI at Carnegie Mellon and was a research engineer building video models and agents at Persona AI and Luma Labs. Akash has a PhD in Material Science from Stanford University, with 11 years studying semiconductor chip materials.",
+      "summary": "Advaith studied AI at Carnegie Mellon and was a research engineer at Persona AI and Luma Labs; Akash has a PhD in Material Science from Stanford with 11 years of semiconductor materials experience.",
       "source": "hn_post"
     },
     "product": {
-      "summary": "AI agents that discover new materials for the semiconductor industry (focusing on thermally conductive dielectric materials to unlock 3D chips), along with a research benchmark (Material Discovery Bench) measuring frontier LLM progress.",
-      "source": "hn_post"
+      "summary": "AI agents and an open-ended research benchmark (Material Discovery Bench) designed to computationally discover new thermally conductive dielectric materials for semiconductor chips.",
+      "source": "site"
     },
     "market": {
-      "summary": "Semiconductor industry and chemical companies, specifically targeting the thermal management and packaging challenges of GPUs and AI accelerators (e.g., managing rising TDP in H100, Blackwell, and Rubin chips).",
+      "summary": "Semiconductor and chemical companies facing thermal and energy challenges with advanced chips like GPUs and datacenters.",
       "source": "hn_post"
     },
     "risks": [
       {
-        "risk": "Models perform poorly at generating plausible synthesis recipes for lab creation, with the vast majority judged as critically flawed.",
+        "risk": "Models struggle severely to propose plausible, safe, and actionable synthesis recipes for lab creation.",
         "source": "site"
       },
       {
-        "risk": "Frontier models exhibit severe reward hacking, lying, or losing the plot/fatiguing over long-horizon runs.",
+        "risk": "AI agent reward-hacking and fabrication of properties (e.g., thermal conductivity values, duplicate supercell submissions).",
         "source": "site"
-      },
-      {
-        "risk": "Getting a new material into a semiconductor fab takes years and hundreds of millions of dollars.",
-        "source": "hn_post"
       }
     ],
     "scores": {
       "founder_depth": {
         "score": 23,
-        "why": "Akash holds a PhD in Material Science from Stanford with 11 years of relevant domain experience, paired with Advaith's strong AI engineering background from CMU and Luma Labs.",
+        "why": "Akash holds a PhD in Material Science from Stanford with 11 years of domain experience, and Advaith is a Carnegie Mellon AI alumnus with background building video models and agents.",
         "source": "hn_post"
       },
       "shipping_evidence": {
-        "score": 20,
-        "why": "Shipped a public research benchmark, tested 7 frontier models across 30-100M token runs, released hundreds of discovered materials, and simulated/synthesized/tested TIMs.",
+        "score": 19,
+        "why": "The team shipped an active research benchmark web platform, publicly released hundreds of discovered materials, documented detailed agent failure modes, and ran physical experiments.",
         "source": "site"
       },
       "demand_signal": {
-        "score": 15,
-        "why": "High HN engagement (162 points, 37 comments) and validation from external experts/researchers, though commercial design-partner revenue or letters of intent are not mentioned.",
+        "score": 14,
+        "why": "Generated strong HN engagement (162 points, 37 comments) and discussion from domain professionals, but lacks named commercial customers or revenue at this stage.",
         "source": "hn_post"
       },
       "defensibility": {
-        "score": 14,
-        "why": "Proprietary discovery harness, custom evaluation rubrics, and generated IP on novel materials, though heavily reliant on underlying foundation models and public MLIP tools.",
+        "score": 12,
+        "why": "Combines custom agent harnesses, specific MLIP tools, and proprietary empirical lab testing, but relies on frontier foundation models and open-source packages.",
         "source": "site"
       }
     },
-    "verdict": "Take a meeting",
-    "verdict_reason": "The founding team combines deep Stanford materials science expertise with top-tier AI engineering, and they have shipped a concrete, highly rigorous evaluation harness and benchmark addressing a multi-billion dollar semiconductor bottleneck.",
-    "would_change_my_mind": [
-      "Demonstrating repeatable, automated synthesis of a novel material in a physical lab without heavy human intervention.",
-      "Securing paid commercial pilots or co-development agreements with major semiconductor foundries or chemical companies.",
-      "Solving the model context fatigue and reward-hacking failure modes during long-horizon autonomous runs."
-    ],
     "thesis_fit": "on-thesis",
+    "thesis_fit_reason": "Discovered Materials builds AI agents and automated discovery harnesses used by engineers and researchers to find novel materials for semiconductor chips.",
+    "case_summary": "Strong technical founder pairing with deep domain depth and a live benchmark product, countered by the core bottleneck that frontier AI models fail to generate plausible lab synthesis recipes.",
+    "would_change_my_mind": [
+      "Demonstrating repeatable, successful lab synthesis of multiple AI-discovered materials without human intervention.",
+      "Securing paid enterprise contracts or licensing agreements with major semiconductor/chemical companies.",
+      "Releasing the core agent harness and discovery code open-source with active community adoption."
+    ],
     "data_gaps": [
-      "GitHub repository or open-source codebase link",
-      "Customer revenue or formal LOIs from semiconductor/chemical companies",
-      "Specific details on internal laboratory equipment capabilities and experimental throughput"
+      "Exact revenue figures or signed LOIs from semiconductor partners.",
+      "Public GitHub repository links for the harness and grading code.",
+      "Comprehensive cost breakdown of the physical lab validation pipeline."
     ]
   }
 }
