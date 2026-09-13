@@ -63,3 +63,10 @@ Proven metal creates circuit boards and still is on thesis. I think gemini sees 
 ## FInal Testing
 Observed that while testing the full pipeline with the topic MCP companies like ADAM came up which didnt have MCP key word and was a false match.
 source.py now checks the post text itself and drops anything missing a topic word. Memos show the sentence that matched.
+
+
+- Tested the full pipeline with different topics. Added Readme , requirements file,.env example file.
+
+- Tested with the topic coding agents - 28 laucnhes matched and 6 were dropped. Trigger.dev matched on "vibe coding" plus "agents" in separate places. I did'nt go with phrase matching instead noted it. Phrase matching might miss launches if written differently like an agent for coding instead of coding agents.
+
+- I will do final round of testing and record the loom video
