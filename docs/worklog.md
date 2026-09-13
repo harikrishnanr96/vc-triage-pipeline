@@ -59,3 +59,7 @@ Proven metal creates circuit boards and still is on thesis. I think gemini sees 
 
 - I observed that Flash lite kept on calling Proven Metal "software" even while quoting the per orfer margin. Tested with 3.5 Flash and 3.8 Flash and worked for other tricky companies.
 
+
+## FInal Testing
+Observed that while testing the full pipeline with the topic MCP companies like ADAM came up which didnt have MCP key word and was a false match.
+source.py now checks the post text itself and drops anything missing a topic word. Memos show the sentence that matched.
