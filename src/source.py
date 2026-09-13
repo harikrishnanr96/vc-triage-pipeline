@@ -5,9 +5,10 @@ import json
 import os
 import re
 
-CACHE_PATH = os.path.join("cache", "hn_raw.json")
-OUTPUT_PATH = os.path.join("data", "candidates.jsonl")
-TOP_N = 10
+RUN_DIR = os.environ.get("RUN_DIR", ".")  # set by run.py for topic runs
+CACHE_PATH = os.path.join(RUN_DIR, "cache", "hn_raw.json")
+OUTPUT_PATH = os.path.join(RUN_DIR, "data", "candidates.jsonl")
+TOP_N = int(os.environ.get("TOP_N") or 10)
 
 # "Launch HN: Bullet (YC S26) - A Faster Coding Agent"
 #             ^^^^^^  ^^^^^^^^   ^^^^^^^^^^^^^^^^^^^
@@ -23,7 +24,10 @@ LEADING_SEP_RE = re.compile(r"^[\s–—:-]+")
 def parse_title(title):
     match = TITLE_RE.match(title)
     if not match:
-        return title.replace("Launch HN:", "").strip(), None, ""
+        # No "(YC ...)" in the title, e.g. "Launch HN: Freestyle - Sandboxes for Coding Agents".
+        rest = re.sub(r"^Launch HN:\s*", "", title)
+        parts = re.split(r"\s+[–—-]\s+", rest, maxsplit=1)
+        return parts[0].strip(), None, (parts[1].strip() if len(parts) > 1 else "")
     name = match.group("name")
     batch = match.group("batch")
     tagline = LEADING_SEP_RE.sub("", match.group("tagline")).strip()
@@ -35,6 +39,9 @@ with io.open(CACHE_PATH, encoding="utf-8") as handle:
 
 rows = []
 for hit in payload.get("hits", []):
+    # A topic search matches post text, so skip anything that isn't itself a launch.
+    if not (hit.get("title") or "").startswith("Launch HN"):
+        continue
     name, batch, tagline = parse_title(hit.get("title") or "")
 
     # Text-only launches have no url key; anything pointing back at HN is not a
@@ -63,6 +70,9 @@ with io.open(OUTPUT_PATH, "w", encoding="utf-8") as handle:
         handle.write(json.dumps(row, ensure_ascii=False) + "\n")
 
 print("wrote {} rows to {}".format(len(top), OUTPUT_PATH))
+if len(top) < TOP_N:
+    print("WARNING: only {} Launch HN posts matched, fewer than the {} asked for. "
+          "Try a broader topic or a longer window (--days).".format(len(top), TOP_N))
 for row in top:
     print("{:>4} pts  {:<20.20} {:<6} {}".format(
         row["points"], row["name"], row["yc_batch"] or "-", row["site_url"] or "(no site)"))

@@ -6,8 +6,9 @@ import json
 import os
 import re
 
-INPUT_PATH = os.path.join("data", "analyses.jsonl")
-MEMO_DIR = "memos"
+RUN_DIR = os.environ.get("RUN_DIR", ".")  # set by run.py for topic runs
+INPUT_PATH = os.path.join(RUN_DIR, "data", "analyses.jsonl")
+MEMO_DIR = os.path.join(RUN_DIR, "memos")
 MAX_QUOTES = 2  # per claim, to keep each memo to roughly one page
 
 VERDICT_ORDER = {"Take a meeting": 0, "Watch": 1, "Pass": 2}

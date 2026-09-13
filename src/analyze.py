@@ -11,15 +11,19 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-INPUT_PATH = os.path.join("data", "enriched.jsonl")
-OUTPUT_PATH = os.path.join("data", "analyses.jsonl")
-CACHE_DIR = os.path.join("cache", "llm")
 # Pinned rather than an alias like "gemini-flash-latest", so a reviewer's rerun
 # gets the same model. Flash Lite was tried first and kept labelling a
 # circuit-board maker as software even while quoting its per-order margin; full
 # Flash labels it correctly. Free tier: about 5 requests a minute and a small
 # daily cap per model, enough for one run of 10-20 companies.
 MODEL_NAME = os.environ.get("GEMINI_MODEL", "gemini-3.5-flash")
+
+RUN_DIR = os.environ.get("RUN_DIR", ".")  # set by run.py for topic runs
+INPUT_PATH = os.path.join(RUN_DIR, "data", "enriched.jsonl")
+OUTPUT_PATH = os.path.join(RUN_DIR, "data", "analyses.jsonl")
+# Shared across runs, one folder per model, so trying another model never
+# overwrites existing answers.
+CACHE_DIR = os.path.join("cache", "llm", MODEL_NAME)
 ATTEMPTS = 2  # first try plus one retry when the JSON is unusable
 
 # Free-tier quotas are per minute, so space out live calls and, if Google still
@@ -163,13 +167,19 @@ WATCH_CUTOFF = 60
 _model = None
 
 
+class MissingApiKey(Exception):
+    pass
+
+
 def get_model():
     # Created on first cache miss, so a fully cached run needs no API key.
     global _model
     if _model is None:
         api_key = os.environ.get("GEMINI_API_KEY")
         if not api_key:
-            raise SystemExit("GEMINI_API_KEY is not set. Add it to .env in the project root.")
+            # Only companies without a cached answer need a key; they get "No call"
+            # and the rest of the run still produces memos.
+            raise MissingApiKey("not in cache for this model and GEMINI_API_KEY is not set (add it to .env)")
         import google.generativeai as genai
         genai.configure(api_key=api_key)
         _model = genai.GenerativeModel(
@@ -202,11 +212,12 @@ def retry_delay_seconds(exc, default=30):
 
 def call_model(prompt):
     """Return the model's text. Waits out rate limits; raises on any other failure."""
+    model = get_model()  # raises MissingApiKey before any throttle wait
     for attempt in range(RATE_LIMIT_RETRIES + 1):
         throttle()
         try:
             # Without a timeout a stalled request blocks the whole run indefinitely.
-            return get_model().generate_content(prompt, request_options={"timeout": REQUEST_TIMEOUT}).text
+            return model.generate_content(prompt, request_options={"timeout": REQUEST_TIMEOUT}).text
         except SystemExit:
             raise
         except Exception as exc:

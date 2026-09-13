@@ -13,9 +13,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-INPUT_PATH = os.path.join("data", "candidates.jsonl")
-OUTPUT_PATH = os.path.join("data", "enriched.jsonl")
-CACHE_DIR = os.path.join("cache", "enrich")
+RUN_DIR = os.environ.get("RUN_DIR", ".")  # set by run.py for topic runs
+INPUT_PATH = os.path.join(RUN_DIR, "data", "candidates.jsonl")
+OUTPUT_PATH = os.path.join(RUN_DIR, "data", "enriched.jsonl")
+CACHE_DIR = os.path.join("cache", "enrich")  # shared across runs
 TIMEOUT = 20
 
 HN_ITEM_URL = "https://hn.algolia.com/api/v1/items/{}"
