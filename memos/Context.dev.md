@@ -2,9 +2,11 @@
 
 **Take a meeting** | 81/100 | on-thesis | YC S26
 
+> **Strongest: shipping evidence (24/25).** The product is fully live with comprehensive documentation, multiple official SDKs, and active paying users who have integrated the API into production.
+>
 > The strongest point is the founder's proven track record of shipping and exits combined with immediate, high-quality customer adoption from named startups; the weakest point is the intense competition and low technical defensibility in a highly commoditized web scraping market.
 
-**Why this call:** on-thesis and score 81 >= 75 (ai infrastructure, customers pay for software). Context.dev provides a web scraping and brand data API that delivers structured data, markdown, and brand intelligence to developers and AI agents on a subscription or usage-based credit model.
+**Why this call:** on-thesis and score 81 >= 75 (AI infrastructure; customers pay for software). Context.dev provides a web scraping and brand data API that delivers structured data, markdown, and brand intelligence to developers and AI agents on a subscription or usage-based credit model.
 
 - "Context.dev offers Developer ($25/mo), Pro ($149/mo), and Scale ($499/mo), plus Enterprise for teams that need more than 2M credits a month" ([website](https://www.context.dev))
 

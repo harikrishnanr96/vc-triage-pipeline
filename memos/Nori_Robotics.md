@@ -2,6 +2,8 @@
 
 **Pass** | 50/100 | off-thesis | YC S26
 
+> **Passed as off-thesis:** customers pay for physical goods.
+>
 > The strongest point is the highly disruptive $1,688 price point that democratizes robotics development, while the weakest point is the severe technical limitation of using cheap RC servos and a Raspberry Pi 5, which may prevent the robot from performing precise real-world tasks.
 
 **Why this call:** off-thesis is always Pass (customers pay for physical goods). Nori Robotics builds and sells a low-cost bimanual mobile robot for $1,688, targeted at robotics developers and researchers, with optional paid software.

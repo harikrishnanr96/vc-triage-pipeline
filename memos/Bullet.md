@@ -2,9 +2,11 @@
 
 **Pass** | 48/100 | on-thesis | YC S26
 
+> **Held back by: defensibility (6/25).** The product is a closed-source harness/wrapper around existing LLMs, which commenters note is easy to replicate, clone, or replace with custom prompts and open-source alternatives.
+>
 > The strongest point for Bullet is its impressive speed and high SWE-bench score (95.8%), while the strongest point against is its lack of defensibility as a closed-source agent harness that users can easily replicate or replace with open-source alternatives.
 
-**Why this call:** on-thesis but score 48 < 60 (engineering software, customers pay for unclear). Bullet is a fast coding agent for software developers, currently offered for free with no clear monetization model mentioned.
+**Why this call:** on-thesis but score 48 < 60 (engineering software; no revenue model stated yet). Bullet is a fast coding agent for software developers, currently offered for free with no clear monetization model mentioned.
 
 - "Free to use. No subscriptions. Just a faster way to ship." ([website](https://www.codewithbullet.com))
 - "A Faster Coding Agent" ([HN post](https://news.ycombinator.com/item?id=49283063))

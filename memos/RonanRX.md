@@ -2,6 +2,8 @@
 
 **Pass** | 45/100 | off-thesis | YC S26
 
+> **Passed as off-thesis:** customers pay for physical goods.
+>
 > The strongest point is the founder's proven capability to scale complex physical manufacturing operations using software, while the weakest point is the immense legal and patent risk from giant pharmaceutical companies.
 
 **Why this call:** off-thesis is always Pass (customers pay for physical goods). RonanRx is a vertically integrated pharmaceutical company that sells custom-compounded GLP-1s and peptides directly to patients.

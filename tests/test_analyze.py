@@ -99,3 +99,8 @@ def test_quote_found(item, found):
 def test_retry_delay_read_from_error_text():
     assert retry_delay_seconds(Exception("429 ... retry_delay {\n  seconds: 38\n}")) == 40
     assert retry_delay_seconds(Exception("429 quota exceeded"), default=30) == 30
+
+
+def test_fit_rule_reads_as_plain_words():
+    _, rule = fit_from_business_model({"customers_pay_for": "unclear", "category": "engineering_software"})
+    assert rule == "engineering software; no revenue model stated yet"

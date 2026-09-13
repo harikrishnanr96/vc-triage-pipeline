@@ -374,15 +374,30 @@ def parse_response(text):
     return data, None
 
 
+PAY_FOR_TEXT = {
+    "software": "customers pay for software",
+    "ip_or_research": "customers pay for IP or research",
+    "physical_goods": "customers pay for physical goods",
+    "services": "customers pay for services",
+    "unclear": "no revenue model stated yet",
+}
+CATEGORY_TEXT = {
+    "ai_infrastructure": "AI infrastructure",
+    "engineering_software": "engineering software",
+    "ai_for_technical_domain": "AI for a technical domain",
+    "hardware": "hardware",
+    "other": "outside AI infrastructure and engineering software",
+}
+
+
 def fit_from_business_model(business):
-    """Apply the thesis to the model's classification. Returns (fit, rule)."""
+    """Apply the thesis to the model's classification. Returns (fit, rule in plain words)."""
     pay_for, category = business["customers_pay_for"], business["category"]
     if pay_for in OFF_THESIS_PAY_FOR:
-        return "off-thesis", "customers pay for {}".format(pay_for.replace("_", " "))
+        return "off-thesis", PAY_FOR_TEXT[pay_for]
     if category not in IN_SCOPE_CATEGORIES:
-        return "off-thesis", "category is {}".format(category.replace("_", " "))
-    return "on-thesis", "{}, customers pay for {}".format(
-        category.replace("_", " "), pay_for.replace("_", " "))
+        return "off-thesis", "the product is {}".format(CATEGORY_TEXT[category])
+    return "on-thesis", "{}; {}".format(CATEGORY_TEXT[category], PAY_FOR_TEXT[pay_for])
 
 
 def decide(analysis):

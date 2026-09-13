@@ -2,9 +2,11 @@
 
 **Watch** | 60/100 | on-thesis | YC P26
 
+> **Held back by: founder depth (9/25).** The founders are named but there is no information about their technical backgrounds, prior shipped products, or domain expertise in the sources.
+>
 > The strongest point is the rapid adoption by 30+ daily active teams and strong testimonials from engineering leaders, while the weakest point is the high token cost of running LLM agents and the risk of customers building their own local solutions using open-source tools.
 
-**Why this call:** on-thesis and score 60 is 60-74 (engineering software, customers pay for software). An agentic end-to-end testing platform for web and mobile apps that allows engineers to define tests in natural language and pay for test runs or subscriptions.
+**Why this call:** on-thesis and score 60 is 60-74 (engineering software; customers pay for software). An agentic end-to-end testing platform for web and mobile apps that allows engineers to define tests in natural language and pay for test runs or subscriptions.
 
 - "TesterArmy is an agentic testing platform that runs end-to-end checks before deployment and in production." ([HN post](https://news.ycombinator.com/item?id=48586299))
 
