@@ -2,7 +2,7 @@
 
 **Thesis:** Seed-stage AI infra and dev tools with technical founders shipping in public. For this category the engineering trail is a better early signal than the pitch, because the buyers are engineers.
 
-10 companies: 2 Take a meeting, 3 Watch, 4 Pass, 1 failed. Analysis model: gemini-3.5-flash.
+10 companies: 2 Take a meeting, 3 Watch, 5 Pass. Analysis model: gemini-3.5-flash.
 
 Fit and verdicts are set by rule, not by the model. The model classifies what customers pay for and what the product is; companies paid for physical goods or services, or outside AI infrastructure and engineering software, are off-thesis. Off-thesis is always Pass; on-thesis is Take a meeting at 75+, Watch at 60-74, Pass below 60.
 
@@ -17,4 +17,4 @@ Fit and verdicts are set by rule, not by the model. The model classifies what cu
 | 7 | [Adam](Adam.md) | Pass | 53 | on-thesis | The strongest point is the highly accessible, open-source, in-browser implementation that has garnered significant developer interest (over 5,000 GitHub stars), while the weakest point is the fundamental limitation of current LLMs in spatial reasoning, leading to inaccurate models that fail to meet professional engineering standards. | 27/27 |
 | 8 | [Nori Robotics](Nori_Robotics.md) | Pass | 50 | off-thesis | The strongest point is the highly disruptive $1,688 price point that democratizes robotics development, while the weakest point is the severe technical limitation of using cheap RC servos and a Raspberry Pi 5, which may prevent the robot from performing precise real-world tasks. | 26/26 |
 | 9 | [Bullet](Bullet.md) | Pass | 48 | on-thesis | The strongest point for Bullet is its impressive speed and high SWE-bench score (95.8%), while the strongest point against is its lack of defensibility as a closed-source agent harness that users can easily replicate or replace with open-source alternatives. | 26/26 |
-| - | [RonanRX](RonanRX.md) | No call | - | - | analysis failed | - |
+| 10 | [RonanRX](RonanRX.md) | Pass | 45 | off-thesis | The strongest point is the founder's proven capability to scale complex physical manufacturing operations using software, while the weakest point is the immense legal and patent risk from giant pharmaceutical companies. | 24/24 |

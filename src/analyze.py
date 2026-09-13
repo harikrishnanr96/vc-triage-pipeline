@@ -158,6 +158,9 @@ REQUIRED_KEYS = (
 SCORE_KEYS = ("founder_depth", "shipping_evidence", "demand_signal", "defensibility")
 MARKET_KEYS = ("size_hint", "competitors", "why_now")
 TEMPERATURE = 0  # lowest run-to-run variance, though scores can still drift slightly
+# At temperature 0 a retry returns the identical reply, so a broken one stays broken
+# (RonanRX failed four times with the same malformed JSON). Retries sample instead.
+RETRY_TEMPERATURE = 0.7
 
 # The verdict is set here, not by the model, so the thesis is applied the same
 # way to every company. Off-thesis is always Pass.
@@ -210,14 +213,16 @@ def retry_delay_seconds(exc, default=30):
     return int(match.group(1)) + 2 if match else default
 
 
-def call_model(prompt):
+def call_model(prompt, temperature):
     """Return the model's text. Waits out rate limits; raises on any other failure."""
     model = get_model()  # raises MissingApiKey before any throttle wait
     for attempt in range(RATE_LIMIT_RETRIES + 1):
         throttle()
         try:
             # Without a timeout a stalled request blocks the whole run indefinitely.
-            return model.generate_content(prompt, request_options={"timeout": REQUEST_TIMEOUT}).text
+            config = {"response_mime_type": "application/json", "temperature": temperature}
+            return model.generate_content(prompt, generation_config=config,
+                                          request_options={"timeout": REQUEST_TIMEOUT}).text
         except SystemExit:
             raise
         except Exception as exc:
@@ -420,7 +425,8 @@ def analyze(row):
     failures = []
     for attempt in range(1, ATTEMPTS + 1):
         try:
-            text = call_model(prompt)
+            temperature = TEMPERATURE if attempt == 1 else RETRY_TEMPERATURE
+            text = call_model(prompt, temperature)
         except SystemExit:
             raise
         except Exception as exc:
@@ -437,11 +443,12 @@ def analyze(row):
                     "prompt_hash": prompt_hash,
                     "created_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
                     "attempts": attempt,
+                    "temperature": temperature,
                     "raw_response": text,
                     "analysis": analysis,
                 }, handle, indent=2, ensure_ascii=False)
             return analysis, None, False
-        failures.append({"attempt": attempt, "error": last_error, "raw_response": text})
+        failures.append({"attempt": attempt, "temperature": temperature, "error": last_error, "raw_response": text})
 
     # Kept beside the cache so a bad reply can be inspected; never read back as a result.
     with io.open(cache_path.replace(".json", ".failed.json"), "w", encoding="utf-8") as handle:

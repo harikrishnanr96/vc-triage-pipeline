@@ -1,0 +1,216 @@
+{
+  "name": "RonanRX",
+  "model": "gemini-3.5-flash",
+  "prompt_hash": "49f7722d07740667689de1e053ecf0edf487e5c6d592ba666aaf160a6f8d10e0",
+  "created_at": "2026-09-13T18:02:33Z",
+  "attempts": 2,
+  "temperature": 0.7,
+  "raw_response": "{\n  \"business_model\": {\n    \"customers_pay_for\": \"physical_goods\",\n    \"category\": \"other\",\n    \"summary\": \"RonanRx is a vertically integrated pharmaceutical company that sells custom-compounded GLP-1s and peptides directly to patients.\",\n    \"evidence\": [\n      {\n        \"quote\": \"We make money by selling drugs we manufacture.\",\n        \"source\": \"hn_post\"\n      },\n      {\n        \"quote\": \"We are building a vertically integrated pharmaceutical company with software for prescribing, telehealth, compounding, manufacturing, and delivery.\",\n        \"source\": \"hn_post\"\n      }\n    ]\n  },\n  \"team\": {\n    \"summary\": \"The company is led by Lloyd, a founder with a software background and experience scaling a mask manufacturing business to $50M in revenue, alongside an unnamed second founder.\",\n    \"evidence\": [\n      {\n        \"quote\": \"I’m Lloyd, one of two founders of RonanRx\",\n        \"source\": \"hn_post\"\n      },\n      {\n        \"quote\": \"I had a background in software from my YC W10 company\",\n        \"source\": \"hn_post\"\n      },\n      {\n        \"quote\": \"We built an efficient manufacturing operation and grew the business to 50 million dollars in revenue.\",\n        \"source\": \"hn_post\"\n      }\n    ]\n  },\n  \"product\": {\n    \"summary\": \"A vertically integrated platform spanning telehealth, prescribing, compounding, manufacturing, and delivery, which uses patient feedback data to personalize GLP-1 dosing.\",\n    \"evidence\": [\n      {\n        \"quote\": \"Our software follows the prescription through drug formulation, compounding, quality testing, and drug dispensing and distribution.\",\n        \"source\": \"hn_post\"\n      },\n      {\n        \"quote\": \"The most interesting feature is the feedback loop. As the patient is undergoing treatment, their response becomes data\",\n        \"source\": \"hn_post\"\n      }\n    ]\n  },\n  \"market\": {\n    \"size_hint\": {\n      \"summary\": \"The market is seeing massive growth and saturation, with numerous compounding pharmacists and new telehealth practices entering the space.\",\n      \"evidence\": [\n        {\n          \"quote\": \"the external pressure from every compounding pharmacist scaling into peptides\",\n          \"source\": \"comments\",\n          \"author\": \"rootsudo\"\n        }\n      ]\n    },\n    \"competitors\": {\n      \"summary\": \"Competitors include established telehealth brands like Ro (Roman), AgelessRx, Hims, and various compounding pharmacies or grey market peptide sellers.\",\n      \"names\": [\n        \"Ro\",\n        \"AgelessRx\",\n        \"Hims\"\n      ],\n      \"evidence\": [\n        {\n          \"quote\": \"Off by one letter compared to \\\"Roman\\\", which is a GLP prescriber farm\",\n          \"source\": \"comments\",\n          \"author\": \"ipsum2\"\n        },\n        {\n          \"quote\": \"I'm a big fan of, and customer of AgelessRx\",\n          \"source\": \"comments\",\n          \"author\": \"andsoitis\"\n        },\n        {\n          \"quote\": \"surely you'll get sued by the GLP-1 patent owners like HIMs did\",\n          \"source\": \"comments\",\n          \"author\": \"make3\"\n        }\n      ]\n    },\n    \"why_now\": {\n      \"summary\": \"The opportunity is driven by recent Medicare coverage changes for GLP-1s and the upcoming approval of highly anticipated new peptides like Retatrutide.\",\n      \"evidence\": [\n        {\n          \"quote\": \"The July Medicare glp1 coverage also makes this most opportune.\",\n          \"source\": \"comments\",\n          \"author\": \"rootsudo\"\n        },\n        {\n          \"quote\": \"Are you ready for the retatrutide gold rush when that gets approved?\",\n          \"source\": \"comments\",\n          \"author\": \"colingauvin\"\n        }\n      ]\n    }\n  },\n  \"risks\": [\n    {\n      \"risk\": \"Severe legal and patent litigation from major pharmaceutical companies (such as Eli Lilly) who own the patents for GLP-1 drugs.\",\n      \"evidence\": [\n        {\n          \"quote\": \"surely you'll get sued by the GLP-1 patent owners like HIMs did if you sell your own product?\",\n          \"source\": \"comments\",\n          \"author\": \"make3\"\n        }\n      ]\n    },\n    {\n      \"risk\": \"Regulatory shutdown if the FDA determines that brand-name drug manufacturers can meet the market demand, ending the legal window for compounding.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Are you at risk of being shut down on a dime if the FDA decides Lilly can meet demand?\",\n          \"source\": \"comments\",\n          \"author\": \"colingauvin\"\n        }\n      ]\n    },\n    {\n      \"risk\": \"Low barriers to entry for competitors who can easily set up drop-shipped compounding pharmacies with minimal capital.\",\n      \"evidence\": [\n        {\n          \"quote\": \"I ran the numbers and 50k is is all you need to get a service agreement with a compounding pharmacy\",\n          \"source\": \"comments\",\n          \"author\": \"rootsudo\"\n        }\n      ]\n    }\n  ],\n  \"scores\": {\n    \"founder_depth\": {\n      \"score\": 12,\n      \"why\": \"Lloyd has a strong track record of software and physical manufacturing success ($50M in revenue), but there is no evidence of medical, pharmaceutical, or biological domain expertise for either founder in the sources.\",\n      \"evidence\": [\n        {\n          \"quote\": \"We built an efficient manufacturing operation and grew the business to 50 million dollars in revenue.\",\n          \"source\": \"hn_post\"\n        },\n        {\n          \"quote\": \"So your other founder is a doctor or a pharmacist right? Right?\",\n          \"source\": \"comments\",\n          \"author\": \"throwawayffffas\"\n        }\n      ]\n    },\n    \"shipping_evidence\": {\n      \"score\": 12,\n      \"why\": \"The product is live and users can sign up and book appointments, but the engineering trail is thin, and early users report bugs, poor mobile layouts, and slow support responses.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Signed up, made an appointment, the time was wrong; need a way to reschedule.\",\n          \"source\": \"comments\",\n          \"author\": \"tikimcfee\"\n        },\n        {\n          \"quote\": \"Your website sucks though. We can tell you vibe coded it quickly\",\n          \"source\": \"comments\",\n          \"author\": \"Reubend\"\n        }\n      ]\n    },\n    \"demand_signal\": {\n      \"score\": 11,\n      \"why\": \"There is solid engagement on the Hacker News launch post and immediate signup interest, but no named enterprise customers or revenue have been established for this new entity yet.\",\n      \"evidence\": [\n        {\n          \"quote\": \"I love the idea and the fully integrated approach!\",\n          \"source\": \"comments\",\n          \"author\": \"joshgachnang\"\n        },\n        {\n          \"quote\": \"Signed up, made an appointment, the time was wrong\",\n          \"source\": \"comments\",\n          \"author\": \"tikimcfee\"\n        }\n      ]\n    },\n    \"defensibility\": {\n      \"score\": 10,\n      \"why\": \"The theoretical moat of full vertical integration is strong, but commenters argue that competitors can easily clone the MSO/compounding setup for $50k, and patent lawsuits present an existential threat.\",\n      \"evidence\": [\n        {\n          \"quote\": \"I ran the numbers and 50k is is all you need to get a service agreement with a compounding pharmacy\",\n          \"source\": \"comments\",\n          \"author\": \"rootsudo\"\n        },\n        {\n          \"quote\": \"surely you'll get sued by the GLP-1 patent owners like HIMs did if you sell your own product?\",\n          \"source\": \"comments\",\n          \"author\": \"make3\"\n        }\n      ]\n    }\n  },\n  \"case_summary\": \"The strongest point is the founder's proven capability to scale complex physical manufacturing operations using software, while the weakest point is the immense legal and patent risk from giant pharmaceutical companies.\",\n  \"would_change_my_mind\": [\n    \"If the second founder is revealed to have deep regulatory or pharmaceutical manufacturing expertise.\",\n    \"If they obtain a proprietary or patent-safe modification to the peptide sequences that shields them from Eli Lilly's lawsuits.\",\n    \"If they demonstrate a significantly lower cost of production that makes grey-market buyers switch to their platform.\"\n  ],\n  \"data_gaps\": [\n    \"The professional background, medical credentials, and identity of the second co-founder.\",\n    \"Whether the company is synthesizing the active pharmaceutical ingredients (APIs) in-house or purchasing them from external suppliers.\",\n    \"The exact pricing structure for their customized GLP-1 and peptide treatments.\"\n  ]\n}",
+  "analysis": {
+    "business_model": {
+      "customers_pay_for": "physical_goods",
+      "category": "other",
+      "summary": "RonanRx is a vertically integrated pharmaceutical company that sells custom-compounded GLP-1s and peptides directly to patients.",
+      "evidence": [
+        {
+          "quote": "We make money by selling drugs we manufacture.",
+          "source": "hn_post"
+        },
+        {
+          "quote": "We are building a vertically integrated pharmaceutical company with software for prescribing, telehealth, compounding, manufacturing, and delivery.",
+          "source": "hn_post"
+        }
+      ]
+    },
+    "team": {
+      "summary": "The company is led by Lloyd, a founder with a software background and experience scaling a mask manufacturing business to $50M in revenue, alongside an unnamed second founder.",
+      "evidence": [
+        {
+          "quote": "I’m Lloyd, one of two founders of RonanRx",
+          "source": "hn_post"
+        },
+        {
+          "quote": "I had a background in software from my YC W10 company",
+          "source": "hn_post"
+        },
+        {
+          "quote": "We built an efficient manufacturing operation and grew the business to 50 million dollars in revenue.",
+          "source": "hn_post"
+        }
+      ]
+    },
+    "product": {
+      "summary": "A vertically integrated platform spanning telehealth, prescribing, compounding, manufacturing, and delivery, which uses patient feedback data to personalize GLP-1 dosing.",
+      "evidence": [
+        {
+          "quote": "Our software follows the prescription through drug formulation, compounding, quality testing, and drug dispensing and distribution.",
+          "source": "hn_post"
+        },
+        {
+          "quote": "The most interesting feature is the feedback loop. As the patient is undergoing treatment, their response becomes data",
+          "source": "hn_post"
+        }
+      ]
+    },
+    "market": {
+      "size_hint": {
+        "summary": "The market is seeing massive growth and saturation, with numerous compounding pharmacists and new telehealth practices entering the space.",
+        "evidence": [
+          {
+            "quote": "the external pressure from every compounding pharmacist scaling into peptides",
+            "source": "comments",
+            "author": "rootsudo"
+          }
+        ]
+      },
+      "competitors": {
+        "summary": "Competitors include established telehealth brands like Ro (Roman), AgelessRx, Hims, and various compounding pharmacies or grey market peptide sellers.",
+        "names": [
+          "Ro",
+          "AgelessRx",
+          "Hims"
+        ],
+        "evidence": [
+          {
+            "quote": "Off by one letter compared to \"Roman\", which is a GLP prescriber farm",
+            "source": "comments",
+            "author": "ipsum2"
+          },
+          {
+            "quote": "I'm a big fan of, and customer of AgelessRx",
+            "source": "comments",
+            "author": "andsoitis"
+          },
+          {
+            "quote": "surely you'll get sued by the GLP-1 patent owners like HIMs did",
+            "source": "comments",
+            "author": "make3"
+          }
+        ]
+      },
+      "why_now": {
+        "summary": "The opportunity is driven by recent Medicare coverage changes for GLP-1s and the upcoming approval of highly anticipated new peptides like Retatrutide.",
+        "evidence": [
+          {
+            "quote": "The July Medicare glp1 coverage also makes this most opportune.",
+            "source": "comments",
+            "author": "rootsudo"
+          },
+          {
+            "quote": "Are you ready for the retatrutide gold rush when that gets approved?",
+            "source": "comments",
+            "author": "colingauvin"
+          }
+        ]
+      }
+    },
+    "risks": [
+      {
+        "risk": "Severe legal and patent litigation from major pharmaceutical companies (such as Eli Lilly) who own the patents for GLP-1 drugs.",
+        "evidence": [
+          {
+            "quote": "surely you'll get sued by the GLP-1 patent owners like HIMs did if you sell your own product?",
+            "source": "comments",
+            "author": "make3"
+          }
+        ]
+      },
+      {
+        "risk": "Regulatory shutdown if the FDA determines that brand-name drug manufacturers can meet the market demand, ending the legal window for compounding.",
+        "evidence": [
+          {
+            "quote": "Are you at risk of being shut down on a dime if the FDA decides Lilly can meet demand?",
+            "source": "comments",
+            "author": "colingauvin"
+          }
+        ]
+      },
+      {
+        "risk": "Low barriers to entry for competitors who can easily set up drop-shipped compounding pharmacies with minimal capital.",
+        "evidence": [
+          {
+            "quote": "I ran the numbers and 50k is is all you need to get a service agreement with a compounding pharmacy",
+            "source": "comments",
+            "author": "rootsudo"
+          }
+        ]
+      }
+    ],
+    "scores": {
+      "founder_depth": {
+        "score": 12,
+        "why": "Lloyd has a strong track record of software and physical manufacturing success ($50M in revenue), but there is no evidence of medical, pharmaceutical, or biological domain expertise for either founder in the sources.",
+        "evidence": [
+          {
+            "quote": "We built an efficient manufacturing operation and grew the business to 50 million dollars in revenue.",
+            "source": "hn_post"
+          },
+          {
+            "quote": "So your other founder is a doctor or a pharmacist right? Right?",
+            "source": "comments",
+            "author": "throwawayffffas"
+          }
+        ]
+      },
+      "shipping_evidence": {
+        "score": 12,
+        "why": "The product is live and users can sign up and book appointments, but the engineering trail is thin, and early users report bugs, poor mobile layouts, and slow support responses.",
+        "evidence": [
+          {
+            "quote": "Signed up, made an appointment, the time was wrong; need a way to reschedule.",
+            "source": "comments",
+            "author": "tikimcfee"
+          },
+          {
+            "quote": "Your website sucks though. We can tell you vibe coded it quickly",
+            "source": "comments",
+            "author": "Reubend"
+          }
+        ]
+      },
+      "demand_signal": {
+        "score": 11,
+        "why": "There is solid engagement on the Hacker News launch post and immediate signup interest, but no named enterprise customers or revenue have been established for this new entity yet.",
+        "evidence": [
+          {
+            "quote": "I love the idea and the fully integrated approach!",
+            "source": "comments",
+            "author": "joshgachnang"
+          },
+          {
+            "quote": "Signed up, made an appointment, the time was wrong",
+            "source": "comments",
+            "author": "tikimcfee"
+          }
+        ]
+      },
+      "defensibility": {
+        "score": 10,
+        "why": "The theoretical moat of full vertical integration is strong, but commenters argue that competitors can easily clone the MSO/compounding setup for $50k, and patent lawsuits present an existential threat.",
+        "evidence": [
+          {
+            "quote": "I ran the numbers and 50k is is all you need to get a service agreement with a compounding pharmacy",
+            "source": "comments",
+            "author": "rootsudo"
+          },
+          {
+            "quote": "surely you'll get sued by the GLP-1 patent owners like HIMs did if you sell your own product?",
+            "source": "comments",
+            "author": "make3"
+          }
+        ]
+      }
+    },
+    "case_summary": "The strongest point is the founder's proven capability to scale complex physical manufacturing operations using software, while the weakest point is the immense legal and patent risk from giant pharmaceutical companies.",
+    "would_change_my_mind": [
+      "If the second founder is revealed to have deep regulatory or pharmaceutical manufacturing expertise.",
+      "If they obtain a proprietary or patent-safe modification to the peptide sequences that shields them from Eli Lilly's lawsuits.",
+      "If they demonstrate a significantly lower cost of production that makes grey-market buyers switch to their platform."
+    ],
+    "data_gaps": [
+      "The professional background, medical credentials, and identity of the second co-founder.",
+      "Whether the company is synthesizing the active pharmaceutical ingredients (APIs) in-house or purchasing them from external suppliers.",
+      "The exact pricing structure for their customized GLP-1 and peptide treatments."
+    ]
+  }
+}
