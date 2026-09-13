@@ -15,47 +15,52 @@ TOPIC = os.environ.get("TOPIC", "").strip()
 # window than the default run to find enough matches.
 DAYS = int(os.environ.get("DAYS") or (365 if TOPIC else 90))
 
-cutoff = int(time.time()) - DAYS * 24 * 60 * 60
 
-if TOPIC:
-    # Every topic word must appear in the title or the launch post text. The
-    # match is loose (a post that mentions "testing" in passing counts); the
-    # thesis rules in the analysis stage do the real filtering.
-    params = {
-        "tags": "story",
-        "query": '"Launch HN" {}'.format(TOPIC),
-        "numericFilters": "created_at_i>{}".format(cutoff),
-        "hitsPerPage": 1000,
-        "restrictSearchableAttributes": "title,story_text",
-    }
-else:
-    params = {
-        "tags": "story",
-        "query": '"Launch HN"',
-        "numericFilters": "created_at_i>{}".format(cutoff),
-        "hitsPerPage": 50,
-        # Phrase-quoted query plus title-only search: without both, Algolia's loose
-        # full-text match pulls in any story with "launch" in its title or URL.
-        "restrictSearchableAttributes": "title",
-    }
+def main():
+    cutoff = int(time.time()) - DAYS * 24 * 60 * 60
 
-response = requests.get(API_URL, params=params, timeout=60)
-response.raise_for_status()
-payload = response.json()
-payload["query_params"] = params  # so the raw file records how it was fetched
+    if TOPIC:
+        # Searches title and post text. The search also returns posts that never
+        # contain the words, so source.py re-checks every result against the text.
+        params = {
+            "tags": "story",
+            "query": '"Launch HN" {}'.format(TOPIC),
+            "numericFilters": "created_at_i>{}".format(cutoff),
+            "hitsPerPage": 1000,
+            "restrictSearchableAttributes": "title,story_text",
+        }
+    else:
+        params = {
+            "tags": "story",
+            "query": '"Launch HN"',
+            "numericFilters": "created_at_i>{}".format(cutoff),
+            "hitsPerPage": 50,
+            # Phrase-quoted query plus title-only search: without both, Algolia's loose
+            # full-text match pulls in any story with "launch" in its title or URL.
+            "restrictSearchableAttributes": "title",
+        }
 
-os.makedirs(os.path.dirname(CACHE_PATH), exist_ok=True)
-with open(CACHE_PATH, "w", encoding="utf-8") as handle:
-    json.dump(payload, handle, indent=2, ensure_ascii=False)
+    response = requests.get(API_URL, params=params, timeout=60)
+    response.raise_for_status()
+    payload = response.json()
+    payload["query_params"] = params  # so the raw file records how it was fetched
 
-hits = payload.get("hits", [])
-print("{} stories since {}{}\n".format(
-    len(hits), time.strftime("%Y-%m-%d", time.localtime(cutoff)),
-    ' matching "{}"'.format(TOPIC) if TOPIC else ""))
+    os.makedirs(os.path.dirname(CACHE_PATH), exist_ok=True)
+    with open(CACHE_PATH, "w", encoding="utf-8") as handle:
+        json.dump(payload, handle, indent=2, ensure_ascii=False)
 
-for hit in hits:
-    title = hit.get("title") or "(no title)"
-    points = hit.get("points") or 0
-    num_comments = hit.get("num_comments") or 0
-    url = hit.get("url") or "https://news.ycombinator.com/item?id={}".format(hit.get("objectID"))
-    print("{:<60.60}  {:>4} pts  {:>4} cmts  {}".format(title, points, num_comments, url))
+    hits = payload.get("hits", [])
+    print("{} stories since {}{}\n".format(
+        len(hits), time.strftime("%Y-%m-%d", time.localtime(cutoff)),
+        ' matching "{}"'.format(TOPIC) if TOPIC else ""))
+
+    for hit in hits:
+        title = hit.get("title") or "(no title)"
+        points = hit.get("points") or 0
+        num_comments = hit.get("num_comments") or 0
+        url = hit.get("url") or "https://news.ycombinator.com/item?id={}".format(hit.get("objectID"))
+        print("{:<60.60}  {:>4} pts  {:>4} cmts  {}".format(title, points, num_comments, url))
+
+
+if __name__ == "__main__":
+    main()

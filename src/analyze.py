@@ -457,48 +457,53 @@ def analyze(row):
     return None, "unusable model output after {} attempts: {}".format(ATTEMPTS, last_error), False
 
 
-with io.open(INPUT_PATH, encoding="utf-8") as handle:
-    rows = [json.loads(line) for line in handle if line.strip()]
+def main():
+    with io.open(INPUT_PATH, encoding="utf-8") as handle:
+        rows = [json.loads(line) for line in handle if line.strip()]
 
-os.makedirs(CACHE_DIR, exist_ok=True)
-results = []
-print("model: {}  (live calls spaced {:.0f}s apart; cached rows are instant)\n".format(
-    MODEL_NAME, MIN_CALL_INTERVAL))
+    os.makedirs(CACHE_DIR, exist_ok=True)
+    results = []
+    print("model: {}  (live calls spaced {:.0f}s apart; cached rows are instant)\n".format(
+        MODEL_NAME, MIN_CALL_INTERVAL))
 
-for row in rows:
-    try:
-        analysis, error, from_cache = analyze(row)
-    except SystemExit:
-        raise
-    except Exception as exc:
-        # A bug on one candidate must not lose the rest of the run.
-        analysis, error, from_cache = None, "internal: {}: {}".format(type(exc).__name__, exc), False
+    for row in rows:
+        try:
+            analysis, error, from_cache = analyze(row)
+        except SystemExit:
+            raise
+        except Exception as exc:
+            # A bug on one candidate must not lose the rest of the run.
+            analysis, error, from_cache = None, "internal: {}: {}".format(type(exc).__name__, exc), False
 
-    row["analysis"] = analysis
-    row["analysis_error"] = error
-    row["model"] = MODEL_NAME
-    row["thesis"] = THESIS
-    row.update({"thesis_fit": None, "thesis_fit_rule": None, "score": None,
-                "verdict": None, "verdict_rule": None, "quote_check": None})
-    if analysis is not None:
-        # Applied to cached answers too, so changing a rule, a cutoff, or the
-        # quote check needs no API calls.
-        row.update(decide(analysis))
-        row["quote_check"] = check_quotes(analysis, row)
-    results.append(row)
+        row["analysis"] = analysis
+        row["analysis_error"] = error
+        row["model"] = MODEL_NAME
+        row["thesis"] = THESIS
+        row.update({"thesis_fit": None, "thesis_fit_rule": None, "score": None,
+                    "verdict": None, "verdict_rule": None, "quote_check": None})
+        if analysis is not None:
+            # Applied to cached answers too, so changing a rule, a cutoff, or the
+            # quote check needs no API calls.
+            row.update(decide(analysis))
+            row["quote_check"] = check_quotes(analysis, row)
+        results.append(row)
 
-    if analysis is not None:
-        print("{:<20.20} {:<6} {:<15} score={:<4} {:<11} {:<48} quotes {}/{}".format(
-            str(row.get("name")), "cached" if from_cache else "live", row["verdict"], row["score"],
-            row["thesis_fit"], row["thesis_fit_rule"], row["quote_check"]["verified"],
-            row["quote_check"]["total"]), flush=True)
-    else:
-        print("{:<20.20} ERROR  {}".format(str(row.get("name")), " ".join(error.split())[:150]), flush=True)
+        if analysis is not None:
+            print("{:<20.20} {:<6} {:<15} score={:<4} {:<11} {:<48} quotes {}/{}".format(
+                str(row.get("name")), "cached" if from_cache else "live", row["verdict"], row["score"],
+                row["thesis_fit"], row["thesis_fit_rule"], row["quote_check"]["verified"],
+                row["quote_check"]["total"]), flush=True)
+        else:
+            print("{:<20.20} ERROR  {}".format(str(row.get("name")), " ".join(error.split())[:150]), flush=True)
 
-os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
-with io.open(OUTPUT_PATH, "w", encoding="utf-8") as handle:
-    for row in results:
-        handle.write(json.dumps(row, ensure_ascii=False) + "\n")
+    os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
+    with io.open(OUTPUT_PATH, "w", encoding="utf-8") as handle:
+        for row in results:
+            handle.write(json.dumps(row, ensure_ascii=False) + "\n")
 
-failed = sum(1 for row in results if row["analysis_error"])
-print("\nwrote {} rows to {} ({} failed)".format(len(results), OUTPUT_PATH, failed))
+    failed = sum(1 for row in results if row["analysis_error"])
+    print("\nwrote {} rows to {} ({} failed)".format(len(results), OUTPUT_PATH, failed))
+
+
+if __name__ == "__main__":
+    main()

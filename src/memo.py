@@ -195,21 +195,26 @@ def render_index(rows):
     return "\n".join(out) + "\n"
 
 
-with io.open(INPUT_PATH, encoding="utf-8") as handle:
-    rows = [json.loads(line) for line in handle if line.strip()]
+def main():
+    with io.open(INPUT_PATH, encoding="utf-8") as handle:
+        rows = [json.loads(line) for line in handle if line.strip()]
 
-os.makedirs(MEMO_DIR, exist_ok=True)
-# Rebuilt from scratch each run, so a company dropped from the input leaves no stale memo.
-for old in glob.glob(os.path.join(MEMO_DIR, "*.md")):
-    os.remove(old)
+    os.makedirs(MEMO_DIR, exist_ok=True)
+    # Rebuilt from scratch each run, so a company dropped from the input leaves no stale memo.
+    for old in glob.glob(os.path.join(MEMO_DIR, "*.md")):
+        os.remove(old)
 
-for row in rows:
-    text = render_memo(row) if row.get("analysis") else render_failed(row)
-    path = os.path.join(MEMO_DIR, safe_filename(row["name"]) + ".md")
-    with io.open(path, "w", encoding="utf-8") as handle:
-        handle.write(text)
+    for row in rows:
+        text = render_memo(row) if row.get("analysis") else render_failed(row)
+        path = os.path.join(MEMO_DIR, safe_filename(row["name"]) + ".md")
+        with io.open(path, "w", encoding="utf-8") as handle:
+            handle.write(text)
 
-with io.open(os.path.join(MEMO_DIR, "README.md"), "w", encoding="utf-8") as handle:
-    handle.write(render_index(rows))
+    with io.open(os.path.join(MEMO_DIR, "README.md"), "w", encoding="utf-8") as handle:
+        handle.write(render_index(rows))
 
-print("wrote {} memos and {}".format(len(rows), os.path.join(MEMO_DIR, "README.md")))
+    print("wrote {} memos and {}".format(len(rows), os.path.join(MEMO_DIR, "README.md")))
+
+
+if __name__ == "__main__":
+    main()

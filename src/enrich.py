@@ -182,37 +182,42 @@ def enrich_candidate(candidate):
     return row
 
 
-with io.open(INPUT_PATH, encoding="utf-8") as handle:
-    candidates = [json.loads(line) for line in handle if line.strip()]
+def main():
+    with io.open(INPUT_PATH, encoding="utf-8") as handle:
+        candidates = [json.loads(line) for line in handle if line.strip()]
 
-os.makedirs(CACHE_DIR, exist_ok=True)
-enriched = []
+    os.makedirs(CACHE_DIR, exist_ok=True)
+    enriched = []
 
-for candidate in candidates:
-    try:
-        row = enrich_candidate(candidate)
-    except Exception as exc:
-        # Last line of defence: a bug on one candidate must not lose the others.
-        row = dict(candidate)
-        row.update({"hn_post_text": None, "hn_comments": [], "site_text": None, "github": None})
-        row["errors"] = [{"source": "internal", "url": None, "error": "{}: {}".format(type(exc).__name__, exc)}]
-    enriched.append(row)
+    for candidate in candidates:
+        try:
+            row = enrich_candidate(candidate)
+        except Exception as exc:
+            # Last line of defence: a bug on one candidate must not lose the others.
+            row = dict(candidate)
+            row.update({"hn_post_text": None, "hn_comments": [], "site_text": None, "github": None})
+            row["errors"] = [{"source": "internal", "url": None, "error": "{}: {}".format(type(exc).__name__, exc)}]
+        enriched.append(row)
 
-    stars = (row.get("github") or {}).get("stars")
-    print("{:<20.20} comments={:<3} post={:<5} site={:<6} stars={:<6} errors={}".format(
-        str(row.get("name")),
-        len(row.get("hn_comments") or []),
-        len(row.get("hn_post_text") or ""),
-        len(row.get("site_text") or ""),
-        "-" if stars is None else stars,
-        len(row["errors"]),
-    ))
-    for error in row["errors"]:
-        print("    ! {}: {}".format(error["source"], error["error"][:120]))
+        stars = (row.get("github") or {}).get("stars")
+        print("{:<20.20} comments={:<3} post={:<5} site={:<6} stars={:<6} errors={}".format(
+            str(row.get("name")),
+            len(row.get("hn_comments") or []),
+            len(row.get("hn_post_text") or ""),
+            len(row.get("site_text") or ""),
+            "-" if stars is None else stars,
+            len(row["errors"]),
+        ))
+        for error in row["errors"]:
+            print("    ! {}: {}".format(error["source"], error["error"][:120]))
 
-os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
-with io.open(OUTPUT_PATH, "w", encoding="utf-8") as handle:
-    for row in enriched:
-        handle.write(json.dumps(row, ensure_ascii=False) + "\n")
+    os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
+    with io.open(OUTPUT_PATH, "w", encoding="utf-8") as handle:
+        for row in enriched:
+            handle.write(json.dumps(row, ensure_ascii=False) + "\n")
 
-print("\nwrote {} rows to {}".format(len(enriched), OUTPUT_PATH))
+    print("\nwrote {} rows to {}".format(len(enriched), OUTPUT_PATH))
+
+
+if __name__ == "__main__":
+    main()

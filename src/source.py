@@ -66,56 +66,61 @@ def topic_match(hit, words):
     return " ".join(text[max(0, first.start() - 80):first.end() + 80].split())
 
 
-with io.open(CACHE_PATH, encoding="utf-8") as handle:
-    payload = json.load(handle)
+def main():
+    with io.open(CACHE_PATH, encoding="utf-8") as handle:
+        payload = json.load(handle)
 
-words = topic_words(TOPIC) if TOPIC else []
-rows, dropped = [], 0
-for hit in payload.get("hits", []):
-    # A topic search matches post text, so skip anything that isn't itself a launch.
-    if not (hit.get("title") or "").startswith("Launch HN"):
-        continue
-    snippet = topic_match(hit, words) if words else None
-    if words and snippet is None:
-        dropped += 1
-        continue
-    name, batch, tagline = parse_title(hit.get("title") or "")
+    words = topic_words(TOPIC) if TOPIC else []
+    rows, dropped = [], 0
+    for hit in payload.get("hits", []):
+        # A topic search matches post text, so skip anything that isn't itself a launch.
+        if not (hit.get("title") or "").startswith("Launch HN"):
+            continue
+        snippet = topic_match(hit, words) if words else None
+        if words and snippet is None:
+            dropped += 1
+            continue
+        name, batch, tagline = parse_title(hit.get("title") or "")
 
-    # Text-only launches have no url key; anything pointing back at HN is not a
-    # company site either. Both become null, and the row is kept regardless.
-    site_url = hit.get("url") or None
-    if site_url and "news.ycombinator.com" in site_url:
-        site_url = None
+        # Text-only launches have no url key; anything pointing back at HN is not a
+        # company site either. Both become null, and the row is kept regardless.
+        site_url = hit.get("url") or None
+        if site_url and "news.ycombinator.com" in site_url:
+            site_url = None
 
-    rows.append({
-        "name": name,
-        "yc_batch": batch,
-        "tagline": tagline,
-        "hn_url": "https://news.ycombinator.com/item?id={}".format(hit.get("objectID")),
-        "site_url": site_url,
-        "points": hit.get("points") or 0,
-        "num_comments": hit.get("num_comments") or 0,
-        "created_at": hit.get("created_at"),
-    })
+        rows.append({
+            "name": name,
+            "yc_batch": batch,
+            "tagline": tagline,
+            "hn_url": "https://news.ycombinator.com/item?id={}".format(hit.get("objectID")),
+            "site_url": site_url,
+            "points": hit.get("points") or 0,
+            "num_comments": hit.get("num_comments") or 0,
+            "created_at": hit.get("created_at"),
+        })
+        if words:
+            rows[-1]["topic"] = TOPIC
+            rows[-1]["topic_match"] = snippet
+
+    rows.sort(key=lambda row: row["points"], reverse=True)
+    top = rows[:TOP_N]
+
+    os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
+    with io.open(OUTPUT_PATH, "w", encoding="utf-8") as handle:
+        for row in top:
+            handle.write(json.dumps(row, ensure_ascii=False) + "\n")
+
     if words:
-        rows[-1]["topic"] = TOPIC
-        rows[-1]["topic_match"] = snippet
-
-rows.sort(key=lambda row: row["points"], reverse=True)
-top = rows[:TOP_N]
-
-os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
-with io.open(OUTPUT_PATH, "w", encoding="utf-8") as handle:
+        print("topic {!r}: {} launches contain every word, {} returned by search did not".format(
+            TOPIC, len(rows), dropped))
+    print("wrote {} rows to {}".format(len(top), OUTPUT_PATH))
+    if len(top) < TOP_N:
+        print("WARNING: only {} Launch HN posts matched, fewer than the {} asked for. "
+              "Try a broader topic or a longer window (--days).".format(len(top), TOP_N))
     for row in top:
-        handle.write(json.dumps(row, ensure_ascii=False) + "\n")
+        print("{:>4} pts  {:<20.20} {:<6} {}".format(
+            row["points"], row["name"], row["yc_batch"] or "-", row["site_url"] or "(no site)"))
 
-if words:
-    print("topic {!r}: {} launches contain every word, {} returned by search did not".format(
-        TOPIC, len(rows), dropped))
-print("wrote {} rows to {}".format(len(top), OUTPUT_PATH))
-if len(top) < TOP_N:
-    print("WARNING: only {} Launch HN posts matched, fewer than the {} asked for. "
-          "Try a broader topic or a longer window (--days).".format(len(top), TOP_N))
-for row in top:
-    print("{:>4} pts  {:<20.20} {:<6} {}".format(
-        row["points"], row["name"], row["yc_batch"] or "-", row["site_url"] or "(no site)"))
+
+if __name__ == "__main__":
+    main()
