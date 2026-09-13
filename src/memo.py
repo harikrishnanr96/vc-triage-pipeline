@@ -72,7 +72,8 @@ def render_failed(row):
         "",
         "[HN launch]({})".format(row.get("hn_url")),
         "",
-    ])
+    ] + (['Matched topic "{}": "...{}..."'.format(row["topic"], one_line(row["topic_match"])), ""]
+         if row.get("topic_match") else []))
 
 
 def render_memo(row):
@@ -102,6 +103,11 @@ def render_memo(row):
         "",
         " | ".join(links),
         "",
+    ] + ([
+        '**Why it matched "{}":** "...{}..." ([HN post]({}))'.format(
+            row["topic"], one_line(row["topic_match"]), row["hn_url"]),
+        "",
+    ] if row.get("topic_match") else []) + [
         "{} of {} supporting quotes were found word for word in the sources.".format(
             check["verified"], check["total"]),
         "",

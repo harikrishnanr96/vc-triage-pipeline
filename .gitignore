@@ -21,3 +21,6 @@ __pycache__/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Topic runs from run.py --topic (exploratory, regenerate on demand)
+runs/
