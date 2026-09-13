@@ -47,19 +47,29 @@ def test_index_ranks_by_verdict_then_score(make_analysis):
     assert order == ["MeetCo", "WatchHigh", "WatchLow", "PassCo", "Broken"]
 
 
-def test_pass_leads_with_weakest_score(make_analysis):
+def test_pass_leads_with_weakest_score_only(make_analysis):
     r = row("Acme", "Pass", 48, make_analysis)
     r["analysis"]["scores"]["defensibility"].update(score=6, why="Easy to copy.")
-    assert "> **Held back by: defensibility (6/25).** Easy to copy." in render_memo(r)
+    text = render_memo(r)
+    assert "> **Held back by defensibility (6/25).** Easy to copy." in text
+    assert "For and against." not in text  # the model's summary would repeat it
 
 
-def test_meeting_leads_with_strongest_score(make_analysis):
-    r = row("Acme", "Take a meeting", 80, make_analysis)
-    r["analysis"]["scores"]["shipping_evidence"].update(score=24, why="Public code.")
-    assert "> **Strongest: shipping evidence (24/25).** Public code." in render_memo(r)
+def test_meeting_shows_model_summary_only(make_analysis):
+    text = render_memo(row("Acme", "Take a meeting", 80, make_analysis))
+    assert "> For and against." in text
+    assert "Held back by" not in text
 
 
 def test_off_thesis_leads_with_fit_reason(make_analysis):
     r = row("Acme", "Pass", 90, make_analysis, thesis_fit="off-thesis",
             thesis_fit_rule="customers pay for physical goods")
-    assert "> **Passed as off-thesis:** customers pay for physical goods." in render_memo(r)
+    text = render_memo(r)
+    assert "> **Passed as off-thesis:** customers pay for physical goods." in text
+    assert "For and against." not in text
+
+
+def test_exactly_one_summary_paragraph(make_analysis):
+    for verdict in ("Take a meeting", "Watch", "Pass"):
+        lines = render_memo(row("Acme", verdict, 70, make_analysis)).splitlines()
+        assert sum(1 for line in lines if line.startswith(">")) == 1, verdict

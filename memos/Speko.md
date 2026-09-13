@@ -2,9 +2,7 @@
 
 **Watch** | 72/100 | on-thesis | YC S26
 
-> **Held back by: defensibility (13/25).** While they have built a custom TTS naturalness scorer and aggregate valuable multi-language benchmarks, routing layers are vulnerable to competition from larger platforms like OpenRouter or direct integrations.
->
-> The strongest point is the founder's deep domain expertise and rapid shipping of a highly practical multi-model routing tool; the weakest point is the existential risk that the industry shifts to end-to-end or local voice models, rendering three-tier routing obsolete.
+> **Held back by defensibility (13/25).** While they have built a custom TTS naturalness scorer and aggregate valuable multi-language benchmarks, routing layers are vulnerable to competition from larger platforms like OpenRouter or direct integrations.
 
 **Why this call:** on-thesis and score 72 is 60-74 (AI infrastructure; customers pay for software). Speko provides a hosted router and open-source gateway that benchmarks and routes voice AI models, charging for the hosted router and managed keys.
 

@@ -3,8 +3,6 @@
 **Pass** | 60/100 | off-thesis | YC S26
 
 > **Passed as off-thesis:** customers pay for physical goods.
->
-> The strongest point is their impressive early traction of $70k in 6 weeks by solving the critical front-of-house and procurement bottlenecks for domestic PCB buyers, while the weakest point is their lack of proprietary physical capacity, making them vulnerable to established quick-turn competitors and brokers.
 
 **Why this call:** off-thesis is always Pass (customers pay for physical goods). ProvenMetal coordinates fast-turnaround PCB fabrication and assembly domestically, charging a margin on the order value.
 

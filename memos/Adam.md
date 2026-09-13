@@ -2,9 +2,7 @@
 
 **Pass** | 53/100 | on-thesis | YC W25
 
-> **Held back by: founder depth (5/25).** The sources only mention one founder, Zach, with no details about his technical background, prior shipped products, or domain depth.
->
-> The strongest point is the highly accessible, open-source, in-browser implementation that has garnered significant developer interest (over 5,000 GitHub stars), while the weakest point is the fundamental limitation of current LLMs in spatial reasoning, leading to inaccurate models that fail to meet professional engineering standards.
+> **Held back by founder depth (5/25).** The sources only mention one founder, Zach, with no details about his technical background, prior shipped products, or domain depth.
 
 **Why this call:** on-thesis but score 53 < 60 (engineering software; no revenue model stated yet). An open-source AI-powered Text-to-CAD platform that generates parametric 3D models from natural language, though how the company plans to generate revenue is not specified in the sources.
 

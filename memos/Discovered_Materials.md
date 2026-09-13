@@ -2,9 +2,7 @@
 
 **Watch** | 65/100 | on-thesis | YC P26
 
-> **Held back by: demand signal (11/25).** The launch received solid HN engagement with technical discussions, but there are no named paying customers or revenue mentioned in the sources.
->
-> The strongest point is the exceptional founder-market fit combining deep Stanford materials science expertise with CMU AI engineering to solve a critical GPU cooling bottleneck; the weakest point is the massive gap between computational discovery and physical synthesis, with LLMs currently failing to generate viable synthesis recipes for 99.8% of discovered materials.
+> **Held back by demand signal (11/25).** The launch received solid HN engagement with technical discussions, but there are no named paying customers or revenue mentioned in the sources.
 
 **Why this call:** on-thesis and score 65 is 60-74 (AI for a technical domain; customers pay for software). The company plans to sell the AI agent harness and tools to semiconductor and chemical companies to discover materials, or license the IP of discovered materials.
 

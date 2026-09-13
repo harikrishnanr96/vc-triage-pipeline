@@ -62,6 +62,7 @@ A company is off-thesis if customers pay for physical goods or services, or if t
 - **Founder evidence is thin.** It comes from the launch post and top-level comments only. Founders' replies in nested comments aren't collected.
 - **No JavaScript rendering.** Websites built mostly in JavaScript yield little text.
 - **Text-only launches show no website,** even when the post names one.
+- **Demand score can't tell a customer from a well-wisher.** Enthusiastic comments count as demand even when they read like friends of the founders.
 - **Scores drift between runs** by several points, so companies near a cutoff can flip between runs. The committed cache freezes one run.
 - **Off-thesis memos still list "what would change the call",** even though only a change in business model would.
 - **Free-tier Gemini limits.** About 5 requests a minute and roughly 20 a day per model, which is enough for one fresh run of 10 to 20 companies a day. Google may use free-tier prompts to improve its products. Only public HN posts, comments and website text are sent.

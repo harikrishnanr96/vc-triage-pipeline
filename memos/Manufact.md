@@ -2,8 +2,6 @@
 
 **Take a meeting** | 81/100 | on-thesis | YC S25
 
-> **Strongest: shipping evidence (24/25).** The product is fully live with extensive features, detailed documentation, open-source SDKs, and a clear pricing structure.
->
 > The strongest point is the founders' deep domain expertise and massive open-source traction with mcp-use, while the weakest point is the risk that MCP is just a simple protocol that developers will choose to host on general-purpose platforms like Vercel.
 
 **Why this call:** on-thesis and score 81 >= 75 (AI infrastructure; customers pay for software). Manufact is a cloud platform for deploying, testing, observing, and publishing MCP servers and apps, which developers pay for via subscription and usage-based pricing.

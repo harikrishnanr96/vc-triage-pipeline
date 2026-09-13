@@ -62,19 +62,21 @@ def claim_block(claim, row):
     return [one_line(claim.get("summary")) or "not found in sources", ""] + evidence_lines(claim.get("evidence"), row)
 
 
-def lead_line(row):
-    """Open with what decided the call, taken from the scores, so it can't contradict the verdict.
+def summary_line(row):
+    """One paragraph under the verdict, chosen so it can't contradict the call.
 
     The model writes case_summary without knowing the verdict (code sets it afterwards),
-    so its for/against order can put the upside first on a Pass.
+    and on a Pass it often leads with the upside. So a meeting shows the model's
+    for/against summary, anything else shows what held it back, and off-thesis shows why.
+    Printing both produced two paragraphs that repeated or contradicted each other.
     """
     if row["thesis_fit"] == "off-thesis":
         return "**Passed as off-thesis:** {}.".format(row["thesis_fit_rule"])
+    if row["verdict"] == "Take a meeting":
+        return one_line(row["analysis"].get("case_summary"))
     scores = row["analysis"]["scores"]
-    ranked = sorted(SCORE_LABELS, key=lambda item: scores[item[0]]["score"])
-    key, label = ranked[-1] if row["verdict"] == "Take a meeting" else ranked[0]
-    heading = "Strongest" if row["verdict"] == "Take a meeting" else "Held back by"
-    return "**{}: {} ({}/25).** {}".format(heading, label.lower(), scores[key]["score"], one_line(scores[key].get("why")))
+    key, label = min(SCORE_LABELS, key=lambda item: scores[item[0]]["score"])
+    return "**Held back by {} ({}/25).** {}".format(label.lower(), scores[key]["score"], one_line(scores[key].get("why")))
 
 
 def render_failed(row):
@@ -109,9 +111,7 @@ def render_memo(row):
         "**{}** | {}/100 | {} | YC {}".format(
             row["verdict"], row["score"], row["thesis_fit"], row.get("yc_batch") or "unknown"),
         "",
-        "> {}".format(lead_line(row)),
-        ">",
-        "> {}".format(one_line(a.get("case_summary"))),
+        "> {}".format(summary_line(row)),
         "",
         "**Why this call:** {} ({}). {}".format(
             row["verdict_rule"], row["thesis_fit_rule"], one_line((a.get("business_model") or {}).get("summary"))),
