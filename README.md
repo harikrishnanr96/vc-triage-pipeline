@@ -90,12 +90,12 @@ after I told it the first run was mislabelling on-thesis companies.
 
 ## Decisions I took
 
-HN as the source, skipping Product Hunt, Crunchbase and the YC directory. This is in your worklog from before the coding started.
+HN as the source, skipping Product Hunt, Crunchbase and the YC directory. This is in my worklog from before the coding started.
 Launch HN over Show HN, after Show HN turned up mostly weekend projects.
 The thesis wording.
 Gemini's free tier, so a reviewer can run it.
 Keeping off-thesis companies in the set, so the pipeline visibly rejects some.
-Committing the cache. Claude had added it to the ignore file, and you reversed that because HN search only covers a rolling window.
+Committing the cache. Claude had added it to the ignore file, and I  reversed that because HN search only covers a rolling window.
 The borderline calls: Discovered Materials and Adam on-thesis, with strict cutoffs.
 Two quality calls: requiring a one-command run a reviewer could actually use, and pushing on free-tier quota as a real problem.
 Spotting Adam in the MCP results, which led to the exact-word topic filter.
