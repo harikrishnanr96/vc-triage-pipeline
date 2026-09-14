@@ -2,6 +2,9 @@
 
 Turns Hacker News "Launch HN" posts into one-page investment memos with a Pass / Watch / Take a meeting call, scored against a fixed thesis. Every claim in a memo carries a quote that is checked, in code, against the source it cites.
 
+**Walkthrough video (5 min):** [Loom link] https://www.loom.com/share/eca35e984a274f7db37513b289a12324 , which follows Context.dev end to end, then a live topic run.
+
+
 **Start here:** [memos/README.md](memos/README.md) ranks the 10 companies from the committed run (2 Take a meeting, 3 Watch, 5 Pass). All 227 supporting quotes in those memos were found word for word in their sources.
 
 ## Run it
