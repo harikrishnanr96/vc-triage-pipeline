@@ -1,8 +1,11 @@
 """Run the whole pipeline with one command.
 
     python run.py                      replay the committed run from cache (no API key needed)
-    python run.py --topic "voice AI"   fetch Launch HN posts on a topic and write memos to runs/<topic>/
-    python run.py --refresh            refetch the default Launch HN list instead of using the cached one
+    python run.py --topic "voice AI"   search Launch HN posts on a topic and write memos to runs/<topic>/
+    python run.py --refresh            fetch the Launch HN list again instead of reusing the cached one
+
+A run reuses its cached Launch HN list when one exists, for topics too, so rerunning
+the same command gives the same companies and needs no new Gemini calls.
 
 Stages, each a plain script that reads the previous stage's output:
     fetch_hn -> source -> enrich -> analyze -> memo
@@ -36,7 +39,7 @@ def main():
     parser.add_argument("--days", type=int, help="how far back to search (default 365 with a topic, 90 without)")
     parser.add_argument("--top", type=int, default=10, help="how many candidates to analyse (default 10)")
     parser.add_argument("--refresh", action="store_true",
-                        help="refetch the default Launch HN list instead of replaying the cached one")
+                        help="fetch the Launch HN list again instead of reusing the cached one")
     args = parser.parse_args()
 
     env = dict(os.environ)
@@ -44,24 +47,26 @@ def main():
     if args.days:
         env["DAYS"] = str(args.days)
 
+    run_dir = os.path.join("runs", slug(args.topic)) if args.topic else "."
     if args.topic:
-        run_dir = os.path.join("runs", slug(args.topic))
         env["TOPIC"] = args.topic
-        fetch = True
-    else:
-        run_dir = "."
-        # Launch HN search only covers a rolling window, so a refetch returns a
-        # different set of companies. Replaying the cached list keeps the
-        # committed results reproducible.
-        fetch = args.refresh
-        if not fetch and not os.path.exists(os.path.join(ROOT, "cache", "hn_raw.json")):
-            print("No cached Launch HN list found, fetching a fresh one.")
-            fetch = True
     env["RUN_DIR"] = run_dir
 
-    if fetch:
+    # Launch HN search only covers a rolling window, so fetching again returns a
+    # different set of companies. Reusing the cached list keeps a run reproducible;
+    # --refresh or a new --days window fetches again.
+    cached_list = os.path.join(ROOT, run_dir, "cache", "hn_raw.json")
+    if args.refresh or args.days or not os.path.exists(cached_list):
         run_stage("fetch_hn.py", env)
-    for script in ("source.py", "enrich.py", "analyze.py", "memo.py"):
+    else:
+        print("Reusing the cached Launch HN list in {} (pass --refresh to fetch again).".format(
+            os.path.relpath(cached_list, ROOT)))
+    run_stage("source.py", env)
+    with open(os.path.join(ROOT, run_dir, "data", "candidates.jsonl"), encoding="utf-8") as handle:
+        if not any(line.strip() for line in handle):
+            print("\nNo candidates matched, so there is nothing to analyse. No memos were written.")
+            return
+    for script in ("enrich.py", "analyze.py", "memo.py"):
         run_stage(script, env)
 
     print("\nDone. Start with {}".format(os.path.join(run_dir, "memos", "README.md")))

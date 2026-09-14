@@ -54,12 +54,11 @@ def main():
         len(hits), time.strftime("%Y-%m-%d", time.localtime(cutoff)),
         ' matching "{}"'.format(TOPIC) if TOPIC else ""))
 
-    for hit in hits:
-        title = hit.get("title") or "(no title)"
-        points = hit.get("points") or 0
-        num_comments = hit.get("num_comments") or 0
-        url = hit.get("url") or "https://news.ycombinator.com/item?id={}".format(hit.get("objectID"))
-        print("{:<60.60}  {:>4} pts  {:>4} cmts  {}".format(title, points, num_comments, url))
+    # The full list is in the cache file; the source stage prints the ones it keeps.
+    for hit in sorted(hits, key=lambda h: -(h.get("points") or 0))[:5]:
+        print("  {:>4} pts  {}".format(hit.get("points") or 0, (hit.get("title") or "(no title)")[:80]))
+    if len(hits) > 5:
+        print("  ... and {} more".format(len(hits) - 5))
 
 
 if __name__ == "__main__":

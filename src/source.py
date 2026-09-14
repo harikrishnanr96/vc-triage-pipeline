@@ -113,6 +113,14 @@ def main():
     if words:
         print("topic {!r}: {} launches contain every word, {} returned by search did not".format(
             TOPIC, len(rows), dropped))
+    if words and not rows:
+        launches = [h for h in payload.get("hits", []) if (h.get("title") or "").startswith("Launch HN")]
+        absent = [w for w in words if not any(topic_match(h, [w]) for h in launches)]
+        kept = [w for w in words if w not in absent]
+        print("No Launch HN post in this window mentions {}.".format(
+            " or ".join('"{}"'.format(w) for w in absent) if absent else "all of those words together"))
+        if absent and kept:
+            print('Try a broader topic, e.g. --topic "{}"'.format(" ".join(kept)))
     print("wrote {} rows to {}".format(len(top), OUTPUT_PATH))
     if len(top) < TOP_N:
         print("WARNING: only {} Launch HN posts matched, fewer than the {} asked for. "

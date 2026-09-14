@@ -41,6 +41,13 @@ def test_topic_match_plural_topic_finds_singular_text():
     assert topic_match(hit("small business owners"), topic_words("businesses"))
 
 
+def test_topic_match_single_word_used_to_explain_empty_results():
+    # source.py checks each word alone to say which one no launch mentions.
+    launches = [hit("AI agents that collaborate"), hit("Analytics for AI agents")]
+    assert not any(topic_match(h, ["smbs"]) for h in launches)
+    assert all(topic_match(h, ["agents"]) for h in launches)
+
+
 def test_topic_match_returns_snippet_around_match():
     snippet = topic_match(hit("Intro text. One MCP server for everything."), ["mcp"])
     assert "One MCP server" in snippet

@@ -21,9 +21,11 @@ To analyse a topic you need a free Gemini key from [Google AI Studio](https://ai
 ```bash
 python run.py --topic "voice AI"               # memos land in runs/voice-ai/memos/
 python run.py --topic "MCP" --top 15 --days 180
-python run.py --refresh                        # refetch the default Launch HN list (changes the companies)
-python -m pytest                               # 47 tests, no network
+python run.py --refresh                        # fetch the Launch HN list again (changes the companies)
+python -m pytest                               # 52 tests, no network
 ```
+
+Rerunning the same command reuses that run's cached Launch HN list and Gemini answers, so it returns the same companies without new API calls. Add `--refresh` to search again.
 
 ## How it works
 
@@ -59,6 +61,7 @@ A company is off-thesis if customers pay for physical goods or services, or if t
 
 - **One source.** Launch HN only, so it covers YC companies and roughly 100 launches a year. Most topic searches find fewer than 10 matches, and the runner warns when that happens.
 - **Topic matching is keyword-based.** A launch is kept if every topic word appears in its title or post, even in passing.
+- **Narrow topics can find nothing.** The brief's example "AI agents for SMBs" returns no companies, because no Launch HN post in the past year mentions SMBs. The run stops, names the missing word and suggests a broader topic.
 - **Founder evidence is thin.** It comes from the launch post and top-level comments only. Founders' replies in nested comments aren't collected.
 - **No JavaScript rendering.** Websites built mostly in JavaScript yield little text.
 - **Text-only launches show no website,** even when the post names one.
